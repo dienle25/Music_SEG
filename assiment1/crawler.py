@@ -16,7 +16,7 @@ from bs4 import BeautifulSoup
 
 import config
 from database import Database
-from parser import extract_links, extract_page_info
+from parser import extract_links, extract_page_info, extract_song_info
 from url_frontier import URLFrontier, get_domain
 
 
@@ -35,6 +35,7 @@ class Crawler:
         self.failed_requests = 0    # timeout / connection errors
         self.robots_blocked = 0
         self.non_html_skipped = 0
+        self.stop_reason = ""
 
     # ----------------------------------------------------------
     # robots.txt
@@ -63,6 +64,8 @@ class Crawler:
         return rp
 
     def can_fetch(self, url):
+        if not config.RESPECT_ROBOTS:
+            return True
         rp = self._get_robot_parser(url)
         if rp is None:
             return True
@@ -142,8 +145,13 @@ class Crawler:
             if status == 200 and "html" in content_type:
                 soup = BeautifulSoup(response.text, "html.parser")
 
-                # extract links BEFORE extract_page_info (which removes <script>)
+                # extract links and song info BEFORE extract_page_info
+                # (extract_page_info modifies the soup: removes <script> etc.)
                 links = extract_links(soup, url)
+
+                song = extract_song_info(soup, url)
+                if song:
+                    self.db.save_song(song)
 
                 # 7-8. extract page info and save
                 page = extract_page_info(soup, url, depth, status)
@@ -164,6 +172,9 @@ class Crawler:
                 print(f"  URL   : {url}")
                 print(f"  Status: {status}")
                 print(f"  Title : {page['title'][:70]}")
+                if song:
+                    has_lyrics = "yes" if song["lyrics"] else "no"
+                    print(f"  Song  : {song['title'][:40]} | {song['artist'][:30]} | lyrics: {has_lyrics}")
                 print(f"  Links : {len(links)} (new in frontier: {accepted})")
                 print(f"  Time  : {elapsed:.2f} sec")
             else:
@@ -222,6 +233,8 @@ class Crawler:
         print(f"Blocked by robots.txt  : {self.robots_blocked}")
         print(f"Failed Requests        : {self.failed_requests}")
         print(f"Links stored           : {self.db.count_links()}")
+        print(f"Songs stored           : {self.db.count_songs()}")
+        print(f"Songs with lyrics      : {self.db.count_songs_with_lyrics()}")
         print(f"Maximum Depth (config) : {config.MAX_DEPTH}")
 
         print("Pages per depth:")

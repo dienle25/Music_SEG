@@ -4,6 +4,7 @@ database.py - SQLite storage (Task 8)
 Tables:
   pages : one row per crawled URL (including failed ones with status_code)
   links : one row per extracted hyperlink (source -> target)
+  songs : one row per song page (title, artist, album, genre, lyrics)
 """
 
 import os
@@ -49,6 +50,25 @@ class Database:
             )
             """
         )
+        cur.execute(
+            """
+            CREATE TABLE IF NOT EXISTS songs (
+                id          INTEGER PRIMARY KEY AUTOINCREMENT,
+                url         TEXT UNIQUE,
+                title       TEXT,
+                artist      TEXT,
+                album       TEXT,
+                genre       TEXT,
+                lyrics      TEXT,
+                crawled_at  TEXT
+            )
+            """
+        )
+        # migration: old songs tables may not have the lyrics column
+        columns = [r["name"] for r in cur.execute("PRAGMA table_info(songs)")]
+        if "lyrics" not in columns:
+            cur.execute("ALTER TABLE songs ADD COLUMN lyrics TEXT")
+
         cur.execute("CREATE INDEX IF NOT EXISTS idx_links_source ON links(source_url)")
         cur.execute("CREATE INDEX IF NOT EXISTS idx_links_target ON links(target_url)")
         self.conn.commit()
@@ -58,7 +78,10 @@ class Database:
         cur = self.conn.cursor()
         cur.execute("DELETE FROM links")
         cur.execute("DELETE FROM pages")
-        cur.execute("DELETE FROM sqlite_sequence WHERE name IN ('pages','links')")
+        cur.execute("DELETE FROM songs")
+        cur.execute(
+            "DELETE FROM sqlite_sequence WHERE name IN ('pages','links','songs')"
+        )
         self.conn.commit()
 
     # ----------------------------------------------------------
@@ -82,6 +105,26 @@ class Database:
         )
         self.conn.commit()
 
+    def save_song(self, song):
+        """Insert (or replace) a song record (dict)."""
+        self.conn.execute(
+            """
+            INSERT OR REPLACE INTO songs
+                (url, title, artist, album, genre, lyrics, crawled_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                song["url"],
+                song["title"],
+                song["artist"],
+                song["album"],
+                song["genre"],
+                song["lyrics"],
+                song["crawled_at"],
+            ),
+        )
+        self.conn.commit()
+
     def save_links(self, source_url, target_urls):
         """Insert all links found on a page."""
         self.conn.executemany(
@@ -98,6 +141,14 @@ class Database:
 
     def count_links(self):
         return self.conn.execute("SELECT COUNT(*) FROM links").fetchone()[0]
+
+    def count_songs(self):
+        return self.conn.execute("SELECT COUNT(*) FROM songs").fetchone()[0]
+
+    def count_songs_with_lyrics(self):
+        return self.conn.execute(
+            "SELECT COUNT(*) FROM songs WHERE lyrics IS NOT NULL AND lyrics != ''"
+        ).fetchone()[0]
 
     def pages_per_depth(self):
         rows = self.conn.execute(

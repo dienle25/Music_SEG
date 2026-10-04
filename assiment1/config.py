@@ -19,7 +19,6 @@ ALLOWED_DOMAINS = [
     "nhac.vn",
 ]
 
-
 # Domain rule: a URL is allowed if its host equals an allowed domain
 # or is a subdomain of it (www.example.com and sub.example.com
 # both match "example.com").
@@ -32,6 +31,18 @@ MAX_DEPTH = 3
 MAX_PAGES = 300
 REQUEST_TIMEOUT = 10   # seconds
 CRAWL_DELAY = 1        # seconds between two requests (politeness)
+
+# ---------------------------------------------------------------
+# Behaviour switches
+# ---------------------------------------------------------------
+# True  -> download and obey robots.txt
+# False -> skip robots.txt checking
+RESPECT_ROBOTS = True
+
+# True  -> also store song lyrics (songs.lyrics and pages.content)
+# False -> lyric blocks are removed before saving
+# Educational use only: do not publish or redistribute the database.
+STORE_LYRICS = True
 
 # ---------------------------------------------------------------
 # HTTP settings
@@ -75,4 +86,6 @@ def print_config():
     print(f"Maximum Pages  : {MAX_PAGES}")
     print(f"Request Timeout: {REQUEST_TIMEOUT} seconds")
     print(f"Crawl Delay    : {CRAWL_DELAY} second(s)")
+    print(f"Respect robots : {RESPECT_ROBOTS}")
+    print(f"Store lyrics   : {STORE_LYRICS}")
     print("===========================================")
