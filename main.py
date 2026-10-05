@@ -1,47 +1,38 @@
-from config import (
-    ALLOWED_DOMAINS,
-    DB_PATH,
-    MAX_DEPTH,
-    MAX_PAGES,
-    REQUEST_TIMEOUT,
-    CRAWL_DELAY,
-    SEED_URLS,
-    TOPIC,
-)
-from crawler import FocusedMusicCrawler
+# =========================================================
+# main.py  –  chạy chương trình:  python main.py
+# =========================================================
+
+import config
+from crawler import Crawler
 
 
 def print_config():
-    print("=" * 55)
-    print("          FOCUSED WEB CRAWLER - MUSIC")
-    print("=" * 55)
-    print(f"Topic            : {TOPIC}")
-    print("Seed URLs:")
-    for i, url in enumerate(SEED_URLS, 1):
-        print(f"  {i}. {url}")
+    print("=" * 42)
+    print("          FOCUSED WEB CRAWLER")
+    print("=" * 42)
+    print()
+    print("=" * 10, "CRAWLER CONFIGURATION", "=" * 10)
+    print()
+    print(f"{'Topic':<16}: {config.TOPIC}")
+    print(f"{'Seed URLs':<16}: {len(config.SEED_URLS)}")
+
+    for i, url in enumerate(config.SEED_URLS, start=1):
+        print(f"    {i}. {url}")
 
     print("Allowed Domains:")
-    for domain in ALLOWED_DOMAINS:
-        print(f"  - {domain}")
+    for host, site in config.DOMAINS.items():
+        print(f"    - {host:<22} ({site['name']})")
 
-    print(f"Maximum Pages    : {MAX_PAGES}")
-    print(f"Maximum Depth    : {MAX_DEPTH}")
-    print(f"Request Timeout  : {REQUEST_TIMEOUT} seconds")
-    print(f"Crawl Delay      : {CRAWL_DELAY} second(s)")
-    print(f"Database         : {DB_PATH}")
-    print("=" * 55)
-
-
-def main():
-    print_config()
-
-    crawler = FocusedMusicCrawler(SEED_URLS, DB_PATH)
-
-    try:
-        crawler.run()
-    finally:
-        crawler.close()
+    print()
+    print(f"{'Maximum Depth':<16}: {config.MAX_DEPTH}")
+    print(f"{'Maximum Pages':<16}: {config.MAX_PAGES} "
+          f"(tối đa {config.MAX_PAGES_PER_DOMAIN} / domain)")
+    print(f"{'Request Timeout':<16}: {config.REQUEST_TIMEOUT} seconds")
+    print(f"{'Crawl Delay':<16}: {config.CRAWL_DELAY} second")
+    print(f"{'Sitemap feeds':<16}: {'ON' if config.USE_SITEMAPS else 'OFF'} "
+          f"({config.SITEMAP_URL_LIMIT} URL / sitemap)")
 
 
 if __name__ == "__main__":
-    main()
+    print_config()
+    Crawler().run()

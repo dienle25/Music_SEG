@@ -1,32 +1,57 @@
+# =========================================================
+# url_frontier.py  –  TASK 2: URL Frontier (BFS)
+# =========================================================
+# Hàng đợi FIFO: URL vào trước được crawl trước
+#   -> crawl hết depth 0, rồi depth 1, rồi depth 2 ... (BFS)
+
 from collections import deque
 
 
 class URLFrontier:
-    """URL Frontier sử dụng BFS."""
 
     def __init__(self):
-        self.queue = deque()
-        self.waiting = set()
+        self.queue = deque()     # (url, depth) đang chờ crawl
+        self.queued = set()      # URL đang nằm trong queue
+        self.visited = set()     # URL đã lấy ra để crawl
 
     def add(self, url, depth):
-        if url in self.waiting:
+        """Thêm URL nếu chưa crawl và chưa có trong hàng đợi."""
+        if url in self.visited or url in self.queued:
             return False
+
         self.queue.append((url, depth))
-        self.waiting.add(url)
+        self.queued.add(url)
         return True
 
-    def get_next(self):
-        if not self.queue:
-            return None
+    def pop(self):
         url, depth = self.queue.popleft()
-        self.waiting.discard(url)
+        self.queued.discard(url)
         return url, depth
 
-    def empty(self):
-        return len(self.queue) == 0
+    def mark_visited(self, url):
+        self.visited.add(url)
+
+    def is_visited(self, url):
+        return url in self.visited
+
+    def is_queued(self, url):
+        return url in self.queued
+
+    def is_empty(self):
+        return not self.queue
 
     def __len__(self):
         return len(self.queue)
 
-    def items(self):
-        return list(self.queue)
+    def show(self, limit=15):
+        print()
+        print("=" * 10, "URL FRONTIER", "=" * 10)
+        print()
+
+        for i, (url, depth) in enumerate(list(self.queue)[:limit], start=1):
+            print(f"[{i}] {url}   (depth {depth})")
+
+        if len(self.queue) > limit:
+            print(f"... và {len(self.queue) - limit} URL khác")
+
+        print()
