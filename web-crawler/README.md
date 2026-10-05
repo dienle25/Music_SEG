@@ -270,9 +270,4 @@ Số trang theo domain (`python check_db.py`) và độ dài cột `content`:
 
 `python check_db.py` in ra 40 trang cho mỗi domain (`nhac.vn`, `www.nhaccuatui.com`, `open.spotify.com`, `hopamchuan.com`), tổng cộng 160 trang và 10270 link.
 
-**Nhận xét:**
 
-- Nhac.vn cho nhiều dữ liệu (bài hát có lời, nghệ sĩ, BXH) vì HTML render sẵn.
-- NhacCuaTui không có thẻ `<a href>`: crawler lấy link trong `<script>` / JSON và sitemap. 18 trang gắn `noindex` được tôn trọng (không lưu), crawler tự lấy trang khác trong hàng đợi để đủ 40 trang.
-- Spotify chỉ lấy được tiêu đề và mô tả (93–298 ký tự/trang) vì phần còn lại render bằng JavaScript; link đi theo thẻ `<meta music:*>`. 3 seed chỉ dẫn tới 31 trang ở depth 1, nên 6 trang còn lại nằm ở depth 2.
-- Hợp Âm Chuẩn có HTML render sẵn, trang bài hát chứa lời + hợp âm nên content dài nhất (trung bình khoảng 5.100 ký tự/trang).
