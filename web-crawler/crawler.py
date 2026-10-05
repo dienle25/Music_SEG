@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 import config
 from database import create_tables, save_page, save_links, BASE_DIR
 from parser import (extract_page_data, extract_links, read_meta_robots,
-                    looks_like_js_app, parse_sitemap)
+                    parse_sitemap)
 from robots import RobotsChecker
 from url_filter import normalize_url, check_url_rules, get_domain
 from url_frontier import URLFrontier
@@ -223,9 +223,6 @@ class Crawler:
 
         can_index, can_follow, robots_meta = read_meta_robots(soup, response.headers)
 
-        if looks_like_js_app(soup):
-            print("[NOTE] Trang render bằng JavaScript – HTML gần như không có nội dung")
-
         # ---------- SAVE PAGE ----------
         if can_index:
             save_page(page)
@@ -267,7 +264,9 @@ class Crawler:
         print("-" * 50)
 
         try:
-            while not self.frontier.is_empty() and self.pages_crawled < config.MAX_PAGES:
+            # Giới hạn tính theo số trang ĐÃ LƯU: trang lỗi / noindex không được
+            # lưu nên crawler lấy tiếp URL kế trong hàng đợi để bù.
+            while not self.frontier.is_empty() and self.pages_saved < config.MAX_PAGES:
 
                 url, depth = self.frontier.pop()
                 domain = get_domain(url)
@@ -276,7 +275,7 @@ class Crawler:
                     self.duplicate_skipped += 1
                     continue
 
-                if self.crawled_per_domain[domain] >= config.MAX_PAGES_PER_DOMAIN:
+                if self.saved_per_domain[domain] >= config.MAX_PAGES_PER_DOMAIN:
                     self.skip(url, "DOMAIN_LIMIT")
                     continue
 
@@ -306,7 +305,7 @@ class Crawler:
     # =====================================================
 
     def print_summary(self):
-        if self.pages_crawled >= config.MAX_PAGES:
+        if self.pages_saved >= config.MAX_PAGES:
             stop_reason = "MAX_PAGES reached"
         elif self.frontier.is_empty():
             stop_reason = "URL Frontier is empty"

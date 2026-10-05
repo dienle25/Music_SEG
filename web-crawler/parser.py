@@ -113,12 +113,6 @@ def extract_page_data(url, depth, status_code, soup):
     }
 
 
-def looks_like_js_app(soup):
-    """Trang chỉ là 'vỏ' JavaScript: gần như không có chữ."""
-    text = soup.get_text(" ", strip=True)
-    return len(text) < 300 and "javascript" in text.lower()
-
-
 # ---------------------------------------------------------
 # TASK 5 – EXTRACT HYPERLINKS
 # ---------------------------------------------------------

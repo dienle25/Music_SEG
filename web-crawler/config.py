@@ -86,18 +86,21 @@ DOMAINS = {
         ],
     },
 
-    # ---------- ZING MP3: web app JavaScript, mọi trang gắn noindex,nofollow ----------
-    "zingmp3.vn": {
-        "name": "Zing MP3",
-        "aliases": ["www.zingmp3.vn"],
+    # ---------- HỢP ÂM CHUẨN: HTML render sẵn (lời + hợp âm), có đầy đủ <a href> ----------
+    # (thay cho Zing MP3: Zing là web app JavaScript, HTML gần như rỗng)
+    "hopamchuan.com": {
+        "name": "HopAmChuan",
+        "aliases": ["www.hopamchuan.com"],
         "seeds": [
-            "https://zingmp3.vn/",
-            "https://zingmp3.vn/playlist/Nhung-Bai-Hat-Hay-Nhat-Cua-Son-Tung-M-TP/ZWZAC9BF.html",
+            "https://hopamchuan.com/artist/21205/son-tung-m-tp",
+            "https://hopamchuan.com/song/8926/lac-troi",
+            "https://hopamchuan.com/song/41085/chung-ta-cua-hien-tai",
+            "https://hopamchuan.com/",
         ],
         "allow": [
-            r"^/$",
-            r"^/(bai-hat|album|playlist|video-clip)/[\w-]+/\w+\.html$",
-            r"^/[A-Z][\w-]*$",                               # trang nghệ sĩ: /Son-Tung-M-TP
+            r"^/$",                                          # trang chủ
+            r"^/song/\d+/[\w-]+$",                           # bài hát   /song/8926/lac-troi
+            r"^/artist/\d+/[\w-]+$",                         # nghệ sĩ   /artist/21205/son-tung-m-tp
         ],
     },
 }
@@ -118,8 +121,9 @@ DOMAIN_ALIASES = {
 # ---------------------------------------------------------
 
 MAX_DEPTH = 2              # seed = depth 0
-MAX_PAGES = 120            # tổng số trang gửi request
-MAX_PAGES_PER_DOMAIN = 40  # để 1 website không chiếm hết lượt crawl
+MAX_PAGES = 160            # tổng số trang LƯU vào database (4 domain x 40)
+MAX_PAGES_PER_DOMAIN = 40  # mỗi domain lưu tối đa 40 trang
+# Trang lỗi / trang noindex không được lưu nên không tính vào 2 giới hạn trên.
 
 REQUEST_TIMEOUT = 10       # giây
 CRAWL_DELAY = 1.0          # giây nghỉ sau mỗi request
