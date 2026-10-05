@@ -100,7 +100,7 @@ Sitemap URLs per sitemap : 8
 
 - **Crawl delay 1 giây:** crawler nghỉ 1 giây sau mỗi request nên gửi tối đa khoảng 1 request/giây. Không site nào khai báo `Crawl-delay` trong robots.txt. Vì crawl xen kẽ 4 domain, mỗi website thực tế nhận ít hơn 1 request/giây. Đây là mức lịch sự với server mà 160 trang vẫn chạy xong trong khoảng 4 phút.
 - **160 trang = 4 domain × 40 trang:** Nhac.vn có rất nhiều link nên nếu không giới hạn theo domain, một site sẽ chiếm hết lượt crawl và các site khác không được crawl.
-- **Giới hạn tính theo số trang đã lưu:** trang có `noindex` hoặc request bị lỗi thì không được lưu, nên không tính vào giới hạn; crawler lấy URL kế tiếp trong hàng đợi để bù. Ở lần chạy cuối, NhacCuaTui có 14 trang gắn `noindex` nên crawler gửi 54 request để lưu đủ 40 trang; Spotify có 1 request lỗi HTTP 504 nên gửi 41 request.
+- **Giới hạn tính theo số trang đã lưu:** trang có `noindex` hoặc request bị lỗi thì không được lưu, nên không tính vào giới hạn; crawler lấy URL kế tiếp trong hàng đợi để bù. Ở lần chạy cuối, NhacCuaTui có 18 trang gắn `noindex` nên crawler gửi 58 request để lưu đủ 40 trang.
 - **Timeout 10 giây:** quá thời gian này request được ghi nhận là thất bại và crawler chuyển sang URL tiếp theo, không dừng chương trình.
 
 ## 4. Chiến lược crawl (Crawling strategy)
@@ -215,77 +215,64 @@ Topic                       : Music (Âm nhạc) – Sơn Tùng M-TP & nhạc Vi
 Stop reason                 : MAX_PAGES reached
 
 Seed URLs                   : 16 (+16 từ sitemap)
-Pages Crawled               : 175
+Pages Crawled               : 178
 Pages Saved (DB)            : 160
-Not saved (noindex)         : 14
-Unique URLs Discovered      : 2942
-Skipped URLs                : 2569
-Duplicate URLs Skipped      : 2377
-Failed Requests             : 1
-Links Found                 : 10189
-Links Saved (DB)            : 10189
-Avg Response Time           : 0.30 sec
+Not saved (noindex)         : 18
+Unique URLs Discovered      : 3134
+Skipped URLs                : 2683
+Duplicate URLs Skipped      : 2269
+Failed Requests             : 0
+Links Found                 : 10270
+Links Saved (DB)            : 10270
+Avg Response Time           : 0.26 sec
 
 Maximum Depth               : 2
 
 Depth 0                     : 32 pages
-Depth 1                     : 136 pages
-Depth 2                     : 7 pages
+Depth 1                     : 140 pages
+Depth 2                     : 6 pages
 
-HTTP 200                    : 174
-HTTP 504                    : 1
+HTTP 200                    : 178
 
 Pages per domain (crawled / saved):
     Nhac.vn                 : 40 / 40
-    NhacCuaTui              : 54 / 40
-    Spotify                 : 41 / 40
+    NhacCuaTui              : 58 / 40
+    Spotify                 : 40 / 40
     HopAmChuan              : 40 / 40
 
 Skipped URLs by reason:
-    DOMAIN_LIMIT            : 1689
-    NOT_MUSIC_PAGE          : 847
-    OUTSIDE_DOMAIN          : 29
-    MAX_DEPTH               : 4
-
-Failed requests:
-    [HTTP 504] https://open.spotify.com/album/5hxm3ulOLVvjFdZNFO3n4M
+    DOMAIN_LIMIT            : 1751
+    NOT_MUSIC_PAGE          : 874
+    OUTSIDE_DOMAIN          : 30
+    MAX_DEPTH               : 28
 ======================================
 ```
 
 | Chỉ số | Giá trị |
 |---|---|
-| Pages Crawled (số trang đã gửi request) | 175 |
+| Pages Crawled (số trang đã gửi request) | 178 |
 | Pages Saved (DB) | 160 |
-| Not saved (noindex) | 14 (đều là trang NhacCuaTui) |
-| Unique URLs Discovered | 2942 |
-| Skipped URLs | 2569 |
-| Failed Requests | 1 (HTTP 504, Spotify) |
-| Links Saved (DB) | 10189 |
-| Depth 0 / 1 / 2 (trang đã crawl) | 32 / 136 / 7 |
+| Not saved (noindex) | 18 (đều là trang NhacCuaTui) |
+| Unique URLs Discovered | 3134 |
+| Skipped URLs | 2683 |
+| Failed Requests | 0 |
+| Links Saved (DB) | 10270 |
+| Depth 0 / 1 / 2 (trang đã crawl) | 32 / 140 / 6 |
 
 Số trang theo domain (`python check_db.py`) và độ dài cột `content`:
 
 | Domain | Đã crawl | Lưu vào DB | Content (ký tự): min / trung bình / max |
 |---|---|---|---|
-| Nhac.vn | 40 | 40 | 2130 / 3373 / 4764 |
-| NhacCuaTui | 54 | 40 | 648 / 1911 / 5442 |
-| Spotify | 41 | 40 | 93 / 180 / 298 |
-| HopAmChuan | 40 | 40 | 1160 / 5096 / 12434 |
+| Nhac.vn | 40 | 40 | 2130 / 3374 / 4764 |
+| NhacCuaTui | 58 | 40 | 459 / 1813 / 5479 |
+| Spotify | 40 | 40 | 93 / 181 / 298 |
+| HopAmChuan | 40 | 40 | 1252 / 5115 / 12434 |
 
-```
-===== PAGES PER DOMAIN =====
-www.nhaccuatui.com     40
-open.spotify.com       40
-nhac.vn                40
-hopamchuan.com         40
-...
-===== LINKS =====
-Total links: 10189
-```
+`python check_db.py` in ra 40 trang cho mỗi domain (`nhac.vn`, `www.nhaccuatui.com`, `open.spotify.com`, `hopamchuan.com`), tổng cộng 160 trang và 10270 link.
 
 **Nhận xét:**
 
 - Nhac.vn cho nhiều dữ liệu (bài hát có lời, nghệ sĩ, BXH) vì HTML render sẵn.
-- NhacCuaTui không có thẻ `<a href>`: crawler lấy link trong `<script>` / JSON và sitemap. 14 trang gắn `noindex` được tôn trọng (không lưu), crawler tự lấy trang khác trong hàng đợi để đủ 40 trang.
+- NhacCuaTui không có thẻ `<a href>`: crawler lấy link trong `<script>` / JSON và sitemap. 18 trang gắn `noindex` được tôn trọng (không lưu), crawler tự lấy trang khác trong hàng đợi để đủ 40 trang.
 - Spotify chỉ lấy được tiêu đề và mô tả (93–298 ký tự/trang) vì phần còn lại render bằng JavaScript; link đi theo thẻ `<meta music:*>`. 3 seed chỉ dẫn tới 31 trang ở depth 1, nên 6 trang còn lại nằm ở depth 2.
 - Hợp Âm Chuẩn có HTML render sẵn, trang bài hát chứa lời + hợp âm nên content dài nhất (trung bình khoảng 5.100 ký tự/trang).
