@@ -3,33 +3,35 @@
 Topic                       : Music (Âm nhạc) – Sơn Tùng M-TP & nhạc Việt
 Stop reason                 : MAX_PAGES reached
 
-Seed URLs                   : 14 (+16 từ sitemap)
-Pages Crawled               : 120
-Pages Saved (DB)            : 116
-Not saved (noindex)         : 4
-Unique URLs Discovered      : 2154
-Skipped URLs                : 888
-Duplicate URLs Skipped      : 1404
+Seed URLs                   : 16 (+16 từ sitemap)
+Pages Crawled               : 178
+Pages Saved (DB)            : 160
+Not saved (noindex)         : 18
+Unique URLs Discovered      : 3134
+Skipped URLs                : 2683
+Duplicate URLs Skipped      : 2269
 Failed Requests             : 0
-Links Found                 : 6808
-Links Saved (DB)            : 6808
-Avg Response Time           : 0.43 sec
+Links Found                 : 10270
+Links Saved (DB)            : 10270
+Avg Response Time           : 0.26 sec
 
 Maximum Depth               : 2
 
-Depth 0                     : 30 pages
-Depth 1                     : 90 pages
+Depth 0                     : 32 pages
+Depth 1                     : 140 pages
+Depth 2                     : 6 pages
 
-HTTP 200                    : 120
+HTTP 200                    : 178
 
 Pages per domain (crawled / saved):
     Nhac.vn                 : 40 / 40
-    NhacCuaTui              : 40 / 36
-    Spotify                 : 34 / 34
-    Zing MP3                : 6 / 6
+    NhacCuaTui              : 58 / 40
+    Spotify                 : 40 / 40
+    HopAmChuan              : 40 / 40
 
 Skipped URLs by reason:
-    DOMAIN_LIMIT            : 501
-    NOT_MUSIC_PAGE          : 362
-    OUTSIDE_DOMAIN          : 25
+    DOMAIN_LIMIT            : 1751
+    NOT_MUSIC_PAGE          : 874
+    OUTSIDE_DOMAIN          : 30
+    MAX_DEPTH               : 28
 ======================================
