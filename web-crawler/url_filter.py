@@ -19,6 +19,12 @@ REWRITE_RULES = {
     for host, site in config.DOMAINS.items()
 }
 
+# Luật nhận diện TRANG BÀI HÁT (lưu thêm vào bảng songs)
+SONG_RULES = {
+    host: [re.compile(pattern) for pattern in site.get("song_pages", [])]
+    for host, site in config.DOMAINS.items()
+}
+
 IGNORED_SCHEMES = ("mailto:", "javascript:", "tel:", "sms:", "data:")
 
 
@@ -105,3 +111,9 @@ def check_url_rules(url, depth):
 def is_music_url(url):
     """URL thuộc domain đang crawl và là trang âm nhạc (bỏ qua depth)."""
     return check_url_rules(url, 0)[0] and urlparse(url).path != "/"
+
+
+def is_song_url(url):
+    """URL là một trang bài hát (sẽ được tách và lưu vào bảng songs)."""
+    parsed = urlparse(url)
+    return any(rule.search(parsed.path) for rule in SONG_RULES.get(parsed.netloc, []))

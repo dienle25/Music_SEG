@@ -2,7 +2,8 @@
 
 Crawler viết bằng Python 3 + Requests + BeautifulSoup + SQLite.
 Bắt đầu từ các Seed URL, đi theo hyperlink theo chiến lược **BFS**, lọc URL,
-lưu trang và link vào `data/crawler.db`, cuối cùng in thống kê.
+lưu trang, link và bài hát (title, artist, album, genre, lyrics) vào `data/crawler.db`,
+cuối cùng in thống kê.
 
 ## Cấu trúc project
 
@@ -13,10 +14,12 @@ web-crawler/
 ├── url_frontier.py   # Task 2 – URL Frontier (deque FIFO + visited/queued)
 ├── crawler.py        # Task 3, 6, 7, 9 – vòng lặp BFS + thống kê
 ├── parser.py         # Task 4, 5 – lấy title/content, trích xuất link
-├── url_filter.py     # Task 5, 7 – chuẩn hoá URL, luật lọc URL
+├── song_parser.py    # bảng songs – tách title/artist/album/genre/lyrics của trang bài hát
+├── url_filter.py     # Task 5, 7 – chuẩn hoá URL, luật lọc URL, nhận diện trang bài hát
 ├── robots.py         # kiểm tra robots.txt
-├── database.py       # Task 8 – SQLite (pages, links)
-├── check_db.py       # xem nhanh dữ liệu đã crawl
+├── database.py       # Task 8 – SQLite (pages, links, songs)
+├── check_db.py       # xem nhanh dữ liệu đã crawl (gồm cả bảng songs)
+├── run.bat           # Windows: bấm đúp để cài thư viện, crawl và xem dữ liệu
 ├── data/
 │   ├── crawler.db
 │   └── crawl_summary.txt
@@ -31,7 +34,15 @@ Yêu cầu Python 3.10 trở lên.
 ```bash
 pip install -r requirements.txt
 python main.py        # crawl, mất khoảng 4 phút
-python check_db.py    # xem dữ liệu trong data/crawler.db
+python check_db.py    # xem dữ liệu trong data/crawler.db (pages, songs, links)
+```
+
+Trên Windows có thể bấm đúp `run.bat`: tự cài thư viện, chạy `main.py` rồi `check_db.py`.
+
+Kiểm tra một trang bài hát đã lưu từ trình duyệt (xem `song_parser.py` tách ra những gì):
+
+```bash
+python song_parser.py trang.html https://nhac.vn/bai-hat/chung-ta-cua-hien-tai-son-tung-m-tp-solpo1X
 ```
 
 ---
@@ -172,6 +183,7 @@ Hợp Âm Chuẩn bỏ qua trang quản lý / duyệt bài (`/manage/…`), tran
   - `noindex`: không lưu trang vào database;
   - `nofollow`: không đi theo link trong trang.
   - Ví dụ thực tế: NhacCuaTui gắn `noindex, nofollow` cho một số trang bài hát (như *Remember Me*, *Bình Yên Những Phút Giây*), crawler tải trang nhưng không lưu và không đi theo link.
+- Trang được lưu vào `pages` mà URL khớp luật trang bài hát (`song_pages` trong `config.py`) thì được tách thêm title / artist / album / genre / lyrics và lưu vào bảng `songs` (mục 6).
 
 **robots.txt** (`robots.py`): mỗi domain chỉ đọc một lần rồi lưu cache.
 Trước khi đưa cho `RobotFileParser`, nội dung được chuẩn hoá theo RFC 9309: gộp các nhóm `User-agent` trùng nhau và ưu tiên luật có path dài hơn.
@@ -203,9 +215,52 @@ File: `data/crawler.db`
 **`links`** – đồ thị liên kết: mỗi dòng là một hyperlink `source_url → target_url` lấy được từ trang đã crawl (gồm cả link ra ngoài domain).
 Có `UNIQUE INDEX (source_url, target_url)` để không lưu trùng.
 
+**`songs`** – mỗi dòng là một **bài hát** (chỉ trang bài hát, không gồm trang nghệ sĩ / album / playlist). Tên bảng, tên cột và thứ tự cột theo đúng yêu cầu đề bài:
+
+| Cột | Ý nghĩa |
+|---|---|
+| id | khoá chính (tự tăng) |
+| url | URL đã chuẩn hoá của trang bài hát (UNIQUE) |
+| title | tên bài hát (đã bỏ tên website, tên ca sĩ, “mp3 download”, “Hợp âm”… khỏi tiêu đề) |
+| artist | ca sĩ / nghệ sĩ |
+| album | album |
+| genre | thể loại |
+| lyrics | lời bài hát (đã bỏ hợp âm `[Am]`, giữ xuống dòng) |
+| crawled_at | thời điểm crawl |
+
+Cột nào trang không có thì để `NULL`, crawler không điền giá trị đoán. Trang bài hát chỉ vào bảng `songs` khi được lưu vào `pages` (trang `noindex` không lưu vào cả hai bảng). Vì `songs` lấy từ các trang đã lưu, số bài hát của mỗi domain không vượt quá `MAX_PAGES_PER_DOMAIN`; muốn nhiều bài hơn thì tăng giới hạn trong `config.py`.
+
+Trang nào là **trang bài hát** do `song_pages` trong `config.py` quyết định:
+
+| Domain | Trang bài hát |
+|---|---|
+| Nhac.vn | `/bai-hat/...-so…` |
+| NhacCuaTui | `/song/<id>` |
+| Spotify | `/track/<ID 22 ký tự>` |
+| HopAmChuan | `/song/<id>/<slug>` |
+
+`song_parser.py` thử lần lượt nhiều nguồn cho từng cột, nguồn nào có dữ liệu trước thì dùng:
+
+| Cột | Nguồn (theo thứ tự ưu tiên) |
+|---|---|
+| title | JSON-LD; `<h1>`; `og:title`; `<title>`. Chỉ nhận `<h1>` khi tên đó cũng nằm trong `<title>` / `og:title`, để không lấy nhầm logo hay khẩu hiệu của website |
+| artist | JSON-LD; mô tả Spotify; nhãn `Ca sĩ:`; phần `Tên bài - Ca sĩ` trong tiêu đề; nhãn `Tác giả:` |
+| album | JSON-LD; mô tả Spotify; nhãn `Album:` |
+| genre | JSON-LD; nhãn `Thể loại:` |
+| lyrics | JSON-LD; khối có `id` / `class` chứa chữ `lyric`; khối nằm sau tiêu đề `Lời bài hát` / `Lyrics` / `Chord by …`; khối chứa hợp âm `[Am]` |
+
+Cách tách theo từng site:
+
+- **Nhac.vn:** tiêu đề dạng `Tên bài - Ca sĩ - Nhac.vn` nên tách được cả tên bài và ca sĩ; thể loại lấy từ nhãn `Thể loại:`; lời nằm sau tiêu đề `Lời bài hát`.
+- **NhacCuaTui:** tiêu đề dạng `Lạc Trôi - Sơn Tùng M-TP - mp3 download | lyric - NhacCuaTui`; phần “mp3 download”, “lyric” và tên website bị bỏ; lời nằm sau tiêu đề `Lyrics`.
+- **Hợp Âm Chuẩn:** tiêu đề dạng `Hợp âm Lạc Trôi - Sơn Tùng M-TP (Hợp âm cơ bản) - Hợp Âm Chuẩn`; thể loại lấy từ nhãn `Thể loại:`; lời có hợp âm dạng `[Am]` nên hợp âm bị bỏ, chỉ giữ lời.
+- **Spotify:** tên bài lấy từ `og:title`; ca sĩ và album lấy từ mô tả `Ca sĩ · Album · Song · Năm` trong thẻ `<meta>`; HTML không có lời bài hát và thể loại nên hai cột này để `NULL` (`has_lyrics: False` trong `config.py`).
+
+Nhãn chữ (`Ca sĩ`, `Thể loại`…) phải có dấu `:` để không nhầm với mục menu như “Album”, “Nghệ sĩ”. Danh sách nhãn và các cụm chữ bị bỏ khỏi tiêu đề (`SONG_LABELS`, `TITLE_NOISE`, `TITLE_PREFIXES`) nằm trong `config.py`, muốn thêm nhãn mới thì sửa ở đó, không cần sửa code.
+
 ## 7. Kết quả crawl (Crawling results)
 
-Sau khi chạy, thống kê được in ra màn hình và lưu vào `data/crawl_summary.txt`.
+Sau khi chạy, thống kê được in ra màn hình và lưu vào `data/crawl_summary.txt` (gồm cả số bài hát lưu vào bảng `songs` của từng domain).
 Kết quả lần chạy cuối (05/10/2026, khoảng 4 phút):
 
 ```
@@ -270,4 +325,9 @@ Số trang theo domain (`python check_db.py`) và độ dài cột `content`:
 
 `python check_db.py` in ra 40 trang cho mỗi domain (`nhac.vn`, `www.nhaccuatui.com`, `open.spotify.com`, `hopamchuan.com`), tổng cộng 160 trang và 10270 link.
 
+**Nhận xét:**
 
+- Nhac.vn cho nhiều dữ liệu (bài hát có lời, nghệ sĩ, BXH) vì HTML render sẵn.
+- NhacCuaTui không có thẻ `<a href>`: crawler lấy link trong `<script>` / JSON và sitemap. 18 trang gắn `noindex` được tôn trọng (không lưu), crawler tự lấy trang khác trong hàng đợi để đủ 40 trang.
+- Spotify chỉ lấy được tiêu đề và mô tả (93–298 ký tự/trang) vì phần còn lại render bằng JavaScript; link đi theo thẻ `<meta music:*>`. 3 seed chỉ dẫn tới 31 trang ở depth 1, nên 6 trang còn lại nằm ở depth 2.
+- Hợp Âm Chuẩn có HTML render sẵn, trang bài hát chứa lời + hợp âm nên content dài nhất (trung bình khoảng 5.100 ký tự/trang).

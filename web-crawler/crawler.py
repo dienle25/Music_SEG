@@ -4,17 +4,18 @@
 
 import os
 import time
-from collections import Counter
+from collections import Counter, defaultdict
 
 import requests
 from bs4 import BeautifulSoup
 
 import config
-from database import create_tables, save_page, save_links, BASE_DIR
+from database import create_tables, save_page, save_links, save_song, BASE_DIR
 from parser import (extract_page_data, extract_links, read_meta_robots,
                     parse_sitemap)
 from robots import RobotsChecker
-from url_filter import normalize_url, check_url_rules, get_domain
+from song_parser import extract_song_data
+from url_filter import normalize_url, check_url_rules, get_domain, is_song_url
 from url_frontier import URLFrontier
 
 
@@ -52,6 +53,12 @@ class Crawler:
         self.depth_counter = Counter()
         self.crawled_per_domain = Counter()
         self.saved_per_domain = Counter()
+
+        # ---------- thống kê bảng songs ----------
+        self.songs_saved = 0
+        self.songs_failed = 0                       # trang bài hát không tách được
+        self.songs_per_domain = Counter()
+        self.song_fields = defaultdict(Counter)     # domain -> số bài có artist / album / ...
 
     # =====================================================
     # HELPERS
@@ -104,6 +111,39 @@ class Crawler:
         except requests.RequestException as e:
             error = type(e).__name__
         return None, time.perf_counter() - start, error
+
+    def store_song(self, url, soup, page):
+        """
+        Trang bài hát: tách title / artist / album / genre / lyrics
+        và lưu thêm vào bảng songs (ngoài bảng pages).
+        """
+        if not is_song_url(url):
+            return
+
+        try:
+            song = extract_song_data(url, soup, page["crawled_at"])
+            problem = "không tìm thấy tên bài hát"
+        except Exception as error:        # lỗi ở một trang không được làm dừng crawler
+            song = None
+            problem = f"{type(error).__name__}: {error}"
+
+        if song is None:
+            self.songs_failed += 1
+            print(f"Song  : không lưu vào songs ({problem})")
+            return
+
+        save_song(song)
+
+        host = get_domain(url)
+        self.songs_saved += 1
+        self.songs_per_domain[host] += 1
+        for column in ("artist", "album", "genre", "lyrics"):
+            if song[column]:
+                self.song_fields[host][column] += 1
+
+        print(f"Song  : {song['title']} | {song['artist'] or '-'}")
+        print(f"        album: {song['album'] or '-'} | genre: {song['genre'] or '-'} | "
+              f"lyrics: {len(song['lyrics'] or '')} chars")
 
     # =====================================================
     # 1–2. LOAD SEEDS (+ SITEMAP)
@@ -228,6 +268,7 @@ class Crawler:
             save_page(page)
             self.pages_saved += 1
             self.saved_per_domain[domain] += 1
+            self.store_song(url, soup, page)       # trang bài hát -> thêm vào bảng songs
         else:
             self.noindex_pages += 1
             print(f"[META ROBOTS] '{robots_meta}' -> không lưu trang")
@@ -328,6 +369,7 @@ class Crawler:
             row("Pages Crawled", self.pages_crawled),
             row("Pages Saved (DB)", self.pages_saved),
             row("Not saved (noindex)", self.noindex_pages),
+            row("Songs Saved (DB)", self.songs_saved),
             row("Unique URLs Discovered", len(self.discovered)),
             row("Skipped URLs", len(self.skipped)),
             row("Duplicate URLs Skipped", self.duplicate_skipped),
@@ -354,6 +396,16 @@ class Crawler:
         for host, site in config.DOMAINS.items():
             lines.append(row(f"    {site['name']}",
                              f"{self.crawled_per_domain[host]} / {self.saved_per_domain[host]}"))
+        lines.append("")
+
+        lines.append("Songs per domain (saved | artist / album / genre / lyrics):")
+        for host, site in config.DOMAINS.items():
+            fields = self.song_fields[host]
+            lines.append(row(f"    {site['name']}",
+                             f"{self.songs_per_domain[host]} | {fields['artist']} / "
+                             f"{fields['album']} / {fields['genre']} / {fields['lyrics']}"))
+        if self.songs_failed:
+            lines.append(row("    Song pages not saved", self.songs_failed))
         lines.append("")
 
         lines.append("Skipped URLs by reason:")

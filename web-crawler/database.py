@@ -22,6 +22,7 @@ def create_tables(reset=False):
     cursor = conn.cursor()
 
     if reset:
+        cursor.execute("DROP TABLE IF EXISTS songs")
         cursor.execute("DROP TABLE IF EXISTS links")
         cursor.execute("DROP TABLE IF EXISTS pages")
 
@@ -54,6 +55,22 @@ def create_tables(reset=False):
     ON links(source_url, target_url)
     """)
 
+    # ---------- TABLE: songs ----------
+    # Đúng tên bảng, tên cột và thứ tự cột theo yêu cầu đề bài.
+    # Cột nào không tìm thấy trong trang thì để NULL.
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS songs (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        url TEXT UNIQUE,
+        title TEXT,
+        artist TEXT,
+        album TEXT,
+        genre TEXT,
+        lyrics TEXT,
+        crawled_at TEXT
+    )
+    """)
+
     conn.commit()
     conn.close()
 
@@ -81,6 +98,35 @@ def save_page(page):
         page["depth"],
         page["status_code"],
         page["crawled_at"],
+    ))
+
+    conn.commit()
+    conn.close()
+
+
+def save_song(song):
+    """Lưu một bài hát vào bảng songs (URL đã có -> cập nhật, không lưu trùng)."""
+    conn = connect_db()
+
+    conn.execute("""
+    INSERT INTO songs
+        (url, title, artist, album, genre, lyrics, crawled_at)
+    VALUES (?, ?, ?, ?, ?, ?, ?)
+    ON CONFLICT(url) DO UPDATE SET
+        title      = excluded.title,
+        artist     = excluded.artist,
+        album      = excluded.album,
+        genre      = excluded.genre,
+        lyrics     = excluded.lyrics,
+        crawled_at = excluded.crawled_at
+    """, (
+        song["url"],
+        song["title"],
+        song["artist"],
+        song["album"],
+        song["genre"],
+        song["lyrics"],
+        song["crawled_at"],
     ))
 
     conn.commit()

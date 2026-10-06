@@ -18,6 +18,11 @@ TOPIC = "Music (Âm nhạc) – Sơn Tùng M-TP & nhạc Việt"
 #   sitemaps : (tuỳ chọn) sitemap do chính website công bố trong
 #              robots.txt – nguồn URL bổ sung cho site điều hướng
 #              bằng JavaScript (HTML không có thẻ <a href>)
+#   song_pages : regex cho PATH của TRANG BÀI HÁT. Trang khớp luật này
+#              được tách thành title / artist / album / genre / lyrics
+#              và lưu vào bảng songs (ngoài bảng pages)
+#   has_lyrics : (tuỳ chọn, mặc định True) False nếu HTML của site không
+#              có lời bài hát (Spotify) -> cột lyrics để NULL
 # ---------------------------------------------------------
 
 DOMAINS = {
@@ -41,6 +46,9 @@ DOMAINS = {
             r"^/bang-xep-hang-[\w-]+-bx\w+$",                # BXH      ...-bxXXXX
             r"^/nhung-bai-hat-hay-nhat-cua-[\w-]+-ca\w+$",   # tuyển tập nghệ sĩ
         ],
+        "song_pages": [
+            r"^/bai-hat/[\w-]+-so\w+$",                      # bài hát  ...-soXXXX
+        ],
     },
 
     # ---------- NHACCUATUI: có nội dung, nhưng link mở bằng JavaScript ----------
@@ -57,6 +65,9 @@ DOMAINS = {
         "allow": [
             r"^/$",
             r"^/(song|playlist|artist|album|video)/[\w-]+$",
+        ],
+        "song_pages": [
+            r"^/song/[\w-]+$",                               # bài hát (sau khi rewrite)
         ],
         "rewrite": [
             # /bai-hat/lac-troi-son-tung-m-tp.3tvGi3UEZLVT.html -> /song/3tvGi3UEZLVT
@@ -80,6 +91,10 @@ DOMAINS = {
         "allow": [
             r"^/(artist|album|track|playlist)/[A-Za-z0-9]{22}$",
         ],
+        "song_pages": [
+            r"^/track/[A-Za-z0-9]{22}$",                     # bài hát (track)
+        ],
+        "has_lyrics": False,      # HTML chỉ có tiêu đề + mô tả, không có lời bài hát
         "rewrite": [
             # /intl-vi/track/ID -> /track/ID
             (r"^/intl-[\w-]+(/.*)$", r"\1"),
@@ -101,6 +116,9 @@ DOMAINS = {
             r"^/$",                                          # trang chủ
             r"^/song/\d+/[\w-]+$",                           # bài hát   /song/8926/lac-troi
             r"^/artist/\d+/[\w-]+$",                         # nghệ sĩ   /artist/21205/son-tung-m-tp
+        ],
+        "song_pages": [
+            r"^/song/\d+/[\w-]+$",                           # bài hát   /song/8926/lac-troi
         ],
     },
 }
@@ -138,6 +156,38 @@ BLOCKED_EXTENSIONS = (
     ".css", ".js", ".json", ".xml", ".zip", ".rar", ".pdf",
     ".mp3", ".mp4", ".m4a", ".flac", ".wav",
 )
+
+
+# ---------------------------------------------------------
+# BẢNG songs: cách tách thông tin bài hát (song_parser.py)
+# ---------------------------------------------------------
+# Bảng songs có đúng 8 cột theo yêu cầu đề bài:
+#   id, url, title, artist, album, genre, lyrics, crawled_at
+
+# Nhãn chữ trong trang, dạng "Thể loại: Nhạc Trẻ" (không phân biệt hoa/thường).
+# Bắt buộc có dấu ":" để không nhầm với mục menu như "Album", "Nghệ sĩ".
+SONG_LABELS = {
+    "artist": ["Ca sĩ", "Nghệ sĩ", "Trình bày", "Thể hiện", "Singer", "Artist"],
+    "author": ["Tác giả", "Sáng tác", "Nhạc sĩ", "Composer"],   # chỉ dùng khi chưa biết ca sĩ
+    "album":  ["Album"],
+    "genre":  ["Thể loại", "Thể loại nhạc", "Genre"],
+}
+
+# Tiêu đề trang có dạng "Tên bài - Ca sĩ - Tên website", ví dụ:
+#   "Lạc Trôi - Sơn Tùng M-TP - mp3 download | lyric - NhacCuaTui"
+# Các cụm dưới đây (khớp CẢ cụm, không phân biệt hoa/thường) bị bỏ đi,
+# phần còn lại là tên bài hát và ca sĩ.
+TITLE_NOISE = [
+    # tên website
+    "Nhac.vn", "Nhạc.vn", "NhacCuaTui", "NhacCuaTui.com", "Nhạc Của Tui",
+    "Hợp Âm Chuẩn", "HopAmChuan", "HopAmChuan.com", "Spotify",
+    # cụm chữ chung chung
+    "mp3", "mp3 download", "download", "lyric", "lyrics", "lời bài hát",
+    "lời nhạc", "hợp âm", "chord", "chords", "nghe nhạc", "tải nhạc",
+]
+
+# Từ website thêm vào ĐẦU tên bài:  "Hợp âm Lạc Trôi"  ->  "Lạc Trôi"
+TITLE_PREFIXES = ["Lời bài hát", "Lời nhạc", "Hợp âm", "Lyrics", "Chord"]
 
 
 # ---------------------------------------------------------
