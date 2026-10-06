@@ -1,9 +1,9 @@
 name: Spotify crawler tests
 on:
   push:
-    paths: ['spotify/**', '.github/workflows/spotify-tests.yml']
+    paths: ['members/dienle25/spotify-crawler/**', '.github/workflows/spotify-tests.yml']
   pull_request:
-    paths: ['spotify/**', '.github/workflows/spotify-tests.yml']
+    paths: ['members/dienle25/spotify-crawler/**', '.github/workflows/spotify-tests.yml']
 permissions:
   contents: read
 jobs:
@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: spotify
+        working-directory: members/dienle25/spotify-crawler
     strategy:
       matrix:
         python: ['3.12', '3.13']

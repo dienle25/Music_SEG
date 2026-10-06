@@ -1,5 +1,21 @@
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
 .venv/
+venv/
 .env
-data/*.db
+
+# IDE / editor
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# SQLite temporary files
+# (the crawl results data/*.db ARE committed on purpose)
+*.db-journal
+*.db-wal
+*.db-shm
