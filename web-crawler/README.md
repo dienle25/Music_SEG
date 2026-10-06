@@ -5,6 +5,8 @@ Bắt đầu từ các Seed URL, đi theo hyperlink theo chiến lược **BFS**
 lưu trang, link và bài hát (title, artist, album, genre, lyrics) vào `data/crawler.db`,
 cuối cùng in thống kê.
 
+Bảng đối chiếu từng yêu cầu của đề bài với code nằm ở [mục 8](#8-đối-chiếu-yêu-cầu-đề-bài).
+
 ## Cấu trúc project
 
 ```
@@ -20,6 +22,8 @@ web-crawler/
 ├── database.py       # Task 8 – SQLite (pages, links, songs)
 ├── check_db.py       # xem nhanh dữ liệu đã crawl (gồm cả bảng songs)
 ├── run.bat           # Windows: bấm đúp để cài thư viện, crawl và xem dữ liệu
+├── tests/
+│   └── test_crawler.py   # 31 test offline (không gửi request ra Internet)
 ├── data/
 │   ├── crawler.db
 │   └── crawl_summary.txt
@@ -38,6 +42,12 @@ python check_db.py    # xem dữ liệu trong data/crawler.db (pages, songs, lin
 ```
 
 Trên Windows có thể bấm đúp `run.bat`: tự cài thư viện, chạy `main.py` rồi `check_db.py`.
+
+Chạy kiểm thử (offline, vài giây; GitHub Actions cũng tự chạy mỗi lần push):
+
+```bash
+python -m unittest discover -s tests -v
+```
 
 Kiểm tra một trang bài hát đã lưu từ trình duyệt (xem `song_parser.py` tách ra những gì):
 
@@ -349,3 +359,24 @@ Số bài hát trong bảng `songs` theo domain (số bài có giá trị ở t�
 - NhacCuaTui không có thẻ `<a href>`: crawler lấy link trong `<script>` / JSON và sitemap. 14 trang gắn `noindex` được tôn trọng (không lưu), crawler tự lấy trang khác trong hàng đợi để đủ 40 trang.
 - Spotify chỉ lấy được tiêu đề và mô tả (93–298 ký tự/trang) vì phần còn lại render bằng JavaScript; link đi theo thẻ `<meta music:*>`. 3 seed chỉ dẫn tới 31 trang ở depth 1, nên 6 trang còn lại nằm ở depth 2.
 - Hợp Âm Chuẩn có HTML render sẵn, trang bài hát chứa lời + hợp âm nên content dài nhất (trung bình khoảng 5.200 ký tự/trang).
+
+## 8. Đối chiếu yêu cầu đề bài
+
+| Yêu cầu | Cách nhóm thực hiện | File / hàm |
+|---|---|---|
+| Python 3, Requests, BeautifulSoup, SQLite | `requests.Session`, `BeautifulSoup(html, "html.parser")`, `sqlite3` (thư viện chuẩn) | `requirements.txt`, `crawler.py`, `database.py` |
+| Chọn chủ đề, ít nhất 2 domain | Music, 4 domain: Nhac.vn, NhacCuaTui, Spotify, Hợp Âm Chuẩn | `config.DOMAINS` |
+| Kiểm tra robots.txt và HTML trước khi crawl, đổi domain nếu không crawl được | Bảng kiểm tra ở mục 1; Zing MP3 (web app JavaScript) được thay bằng Hợp Âm Chuẩn | mục 1 |
+| **Task 1** – Seed URLs, cấu hình tách khỏi logic, in cấu hình khi chạy | 16 seed + 16 URL từ sitemap; mọi thông số nằm trong `config.py` | `config.py`, `main.print_config()` |
+| **Task 2** – URL Frontier | `deque` chứa `(url, depth)`, `append()` / `popleft()` (FIFO), tập `queued` và `visited` | `url_frontier.URLFrontier` |
+| **Task 3** – Gửi HTTP request | Timeout 10 giây, đo thời gian phản hồi, nghỉ 1 giây sau mỗi request; HTTP 403/404/500, timeout, lỗi kết nối được ghi nhận, crawler không dừng | `Crawler.fetch()`, `Crawler.crawl_page()` |
+| **Task 4** – Lấy thông tin trang | `url, domain, title, content, depth, status_code, crawled_at`; content chưa tiền xử lý NLP | `parser.extract_page_data()` |
+| **Task 5** – Trích xuất và lọc hyperlink | `<a href>` + `urljoin`; thêm `<meta music:*>` (Spotify) và URL trong `<script>` (NhacCuaTui); lọc protocol, domain, đuôi file, trang không phải âm nhạc | `parser.extract_links()`, `url_filter.check_url_rules()` |
+| **Task 6** – Giới hạn độ sâu | Seed ở depth 0, link tìm thấy ở depth `d` có depth `d + 1`, chỉ nhận khi ≤ `MAX_DEPTH` (2) | `Crawler.try_add()`, `check_url_rules()` |
+| **Task 7** – Chống trùng URL | Chuẩn hoá URL trước khi so sánh; `visited` / `queued`; `UNIQUE` trên `pages.url`, `songs.url`, `(source_url, target_url)` | `url_filter.normalize_url()`, `url_frontier.py`, `database.py` |
+| **Task 8** – Lưu SQLite | Bảng `pages`, `links` và `songs` trong `data/crawler.db` (160 trang, 10175 link, 95 bài hát) | `database.py` |
+| **Task 9** – Crawler hoàn chỉnh, điều kiện dừng | Dừng khi lưu đủ `MAX_PAGES`, khi URL Frontier rỗng hoặc khi nhấn Ctrl+C (vẫn in thống kê) | `Crawler.run()` |
+| robots.txt | Đọc một lần cho mỗi domain, chuẩn hoá theo RFC 9309; tôn trọng `noindex` / `nofollow` | `robots.py`, `parser.read_meta_robots()` |
+| Thống kê crawl | Tự đếm trong lúc crawl: số trang, URL duy nhất, URL bị bỏ qua (theo lý do), request lỗi, số trang theo depth, theo mã HTTP, theo domain | `Crawler.print_summary()` → `data/crawl_summary.txt` |
+| README | Chủ đề, seed, cấu hình, chiến lược, luật lọc URL, database, kết quả | mục 1–7 |
+| Kiểm thử (bổ sung) | 31 test offline cho chuẩn hoá / lọc URL, frontier, robots.txt, parser, bảng songs, SQLite và dữ liệu đã nộp; GitHub Actions chạy trên Python 3.10 và 3.13 | `tests/test_crawler.py` |

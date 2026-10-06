@@ -1,5 +1,8 @@
 # Music_TMG – Focused Web Crawler chủ đề Âm nhạc
 
+[![Web crawler tests](https://github.com/dienle25/Music_TMG/actions/workflows/web-crawler-tests.yml/badge.svg)](https://github.com/dienle25/Music_TMG/actions/workflows/web-crawler-tests.yml)
+[![Spotify crawler tests](https://github.com/dienle25/Music_TMG/actions/workflows/spotify-tests.yml/badge.svg)](https://github.com/dienle25/Music_TMG/actions/workflows/spotify-tests.yml)
+
 Bài **Assignment 1 – SEG301 (Crawls and Feeds)** của nhóm 4 thành viên, chủ đề **Music (Âm nhạc)**.
 Mỗi thành viên làm một crawler cho một website âm nhạc, sau đó nhóm gộp và thống nhất thành **một crawler chung cho 4 website**.
 
@@ -7,6 +10,18 @@ Mỗi thành viên làm một crawler cho một website âm nhạc, sau đó nh�
 |---|---|
 | [`web-crawler/`](web-crawler/) | **Sản phẩm cuối của nhóm**: crawler chung cho Nhac.vn, NhacCuaTui, Spotify và Hợp Âm Chuẩn, kèm báo cáo chi tiết |
 | [`members/`](members/) | Bài cá nhân của từng thành viên (giai đoạn làm riêng, trước khi gộp) |
+
+### Xem nhanh
+
+| Cần xem | Ở đâu |
+|---|---|
+| Code crawler chung | [`web-crawler/`](web-crawler/) |
+| Báo cáo: chủ đề, seed, cấu hình, BFS, luật lọc URL, database, kết quả | [`web-crawler/README.md`](web-crawler/README.md) |
+| Đối chiếu từng yêu cầu đề bài (Task 1–9) với code | [mục 8 của báo cáo](web-crawler/README.md#8-đối-chiếu-yêu-cầu-đề-bài) |
+| Database đã crawl (`pages`, `links`, `songs`) | [`web-crawler/data/crawler.db`](web-crawler/data/crawler.db) |
+| Thống kê lần chạy cuối | [`web-crawler/data/crawl_summary.txt`](web-crawler/data/crawl_summary.txt) |
+| Kiểm thử | [`web-crawler/tests/`](web-crawler/tests/) (31 test), kết quả ở tab **Actions** |
+| Bài cá nhân của từng thành viên | [`members/`](members/) |
 
 ## Thành viên và phân công
 
@@ -55,6 +70,7 @@ cd web-crawler
 pip install -r requirements.txt
 python main.py        # crawl khoảng 4–5 phút, ghi vào data/crawler.db
 python check_db.py    # xem dữ liệu: pages, songs, links
+python -m unittest discover -s tests -v   # 31 test offline
 ```
 
 Trên Windows có thể bấm đúp `web-crawler/run.bat`.
@@ -80,6 +96,7 @@ Music_TMG/
 │   ├── run.bat                        # Windows: cài thư viện, crawl, xem dữ liệu
 │   ├── requirements.txt
 │   ├── README.md                      # báo cáo chi tiết
+│   ├── tests/test_crawler.py          # 31 test offline
 │   └── data/
 │       ├── crawler.db
 │       └── crawl_summary.txt
@@ -91,7 +108,9 @@ Music_TMG/
 │   ├── dienle25/spotify-crawler/
 │   ├── quy205/zingmp3-crawler/
 │   └── quy205/musicbrainz-crawler/
-└── .github/workflows/spotify-tests.yml  # CI: chạy test của spotify-crawler
+└── .github/workflows/                 # GitHub Actions: tự chạy test khi push
+    ├── web-crawler-tests.yml
+    └── spotify-tests.yml
 ```
 
 Lịch sử commit của từng file vẫn được giữ sau khi sắp xếp lại thư mục: trên GitHub mở file → **History**,
