@@ -10,8 +10,9 @@ Kết quả được lưu vào `data/spotify.db`:
 
 `export_c2c.py` xuất dữ liệu sang đúng schema của đề tài nghiên cứu **C2C-VN**.
 
-> Bản này do [@dienle25](https://github.com/dienle25) tách từ crawler chung 4 website của nhóm ([`web-crawler/`](../../../web-crawler/)) để dùng cho đề tài nghiên cứu.
-> Crawler chung của nhóm và bài cá nhân đầu tiên ([`../spotify-crawler/`](../spotify-crawler/)) vẫn giữ nguyên.
+> Bản này do [@dienle25](https://github.com/dienle25) tách từ [crawler chung 4 website của nhóm](https://github.com/dienle25/Music_TMG/tree/main/web-crawler) để dùng cho đề tài nghiên cứu.
+> Trên GitHub, bản này nằm ở [`members/dienle25/spotify-crawler-v2/`](https://github.com/dienle25/Music_TMG/tree/main/members/dienle25/spotify-crawler-v2).
+> Crawler chung của nhóm và [bài cá nhân đầu tiên](https://github.com/dienle25/Music_TMG/tree/main/members/dienle25/spotify-crawler) vẫn giữ nguyên.
 
 ## Cấu trúc project
 
@@ -257,6 +258,9 @@ Sau mỗi lần chạy, thống kê được in ra màn hình và lưu vào `dat
 
 `python check_db.py` in nhanh nội dung của từng bảng.
 
+`data/spotify_summary.txt` được ghi ngay khi crawl xong, **trước** bước tra lời, nên dòng về lyrics trong file đó ghi `NULL`.
+Số bài có lời xem ở `data/lyrics_summary.txt` (mục 8).
+
 Lần chạy đầy đủ ngày 06/10/2026 (26 seed, 1 giờ 1 phút, dừng vì URL Frontier rỗng):
 
 ```
@@ -304,17 +308,17 @@ Các quy tắc khác:
 - **`--from-db`** đọc bảng `songs(title, artist, lyrics)` theo đề bài từ database crawl của thành viên khác (NhacCuaTui, Nhac.vn, Hợp Âm Chuẩn…). Lời được lấy khi trùng tên bài và ca sĩ. Bước này chạy trước LRCLIB.
 - Thống kê được lưu vào `data/lyrics_summary.txt`.
 
-Lần tra lời ngày 06/10/2026 cho 2194 bài hát:
+Kết quả tra lời cho 2194 bài hát. Lần chạy ngày 06/10/2026 tra hết; lần chạy ngày 07/10/2026 tra lại 15 bài bị lỗi mạng ở lần đầu:
 
 ```
-Có lời (songs.lyrics)  : 1566 (71%)
-    search             : 1492   (cùng tên bài, ca sĩ, thời lượng)
-    base_title         : 57     (lời bản gốc của bản live / remix / feat.)
+Có lời (songs.lyrics)  : 1572 (72%)
+    search             : 1497   (cùng tên bài, ca sĩ, thời lượng)
+    base_title         : 58     (lời bản gốc của bản live / remix / feat.)
     exact              : 10
     other_version      : 7
 Nhạc không lời         : 71
-Không tìm thấy         : 542
-Lỗi mạng (tra lại sau) : 15
+Không tìm thấy         : 551
+Chưa tra               : 0
 ```
 
 > Lời bài hát có bản quyền: chỉ lưu trong máy để học / nghiên cứu, không đăng lại.
@@ -349,7 +353,19 @@ Sau khi xuất, chương trình in và lưu (`data/c2c_spotify_report.json`) b�
 - số nghệ sĩ;
 - số nghệ sĩ có ≥ 30 bài và ≥ 24 bài.
 
-Testbed cần nhiều nghệ sĩ có ≥ 30 bài (bản HopAmChuan có 56). Nếu số này thấp, hãy thêm playlist “This Is <nghệ sĩ>” vào `seeds.txt` rồi crawl lại.
+Lần xuất ngày 06/10/2026 (`data/c2c_spotify_report.json`):
+
+```
+Bài hát (bảng songs)           : 2194
+Bỏ: nhiều nghệ sĩ / trùng bài  : 897 / 110
+Bản ghi dùng được              : 1187  (bài 1 nghệ sĩ, đã gộp bài trùng)
+Số nghệ sĩ                     : 139
+Nghệ sĩ có >= 30 bài           : 9
+Nghệ sĩ có >= 24 bài           : 10
+```
+
+Testbed cần nhiều nghệ sĩ có ≥ 30 bài; bản HopAmChuan có 56 tác giả như vậy. Với 9 nghệ sĩ, dữ liệu Spotify hiện **chỉ đủ cho phân tích thăm dò**.
+Muốn tăng số này, hãy thêm playlist “This Is <nghệ sĩ>” vào `seeds.txt` rồi crawl lại.
 
 Lưu ý khi dùng cho bài báo:
 

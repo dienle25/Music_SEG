@@ -3,22 +3,22 @@ Nguồn lời                     : LRCLIB (lrclib.net) + database khác nếu c
 Kết thúc                      : Đã tra hết
 
 Lần chạy này:
-    Bài cần tra               : 2194
-    Có lời                    : 1566
-    Nhạc không lời            : 71
-    Không tìm thấy            : 542
-    Lỗi (lần sau tra lại)     : 15
-    Request LRCLIB (retry)    : 3914 (1009)
+    Bài cần tra               : 15
+    Có lời                    : 6
+    Nhạc không lời            : 0
+    Không tìm thấy            : 9
+    Lỗi (lần sau tra lại)     : 0
+    Request LRCLIB (retry)    : 28 (1)
 
 Toàn bộ database:
     Bài hát (tracks)          : 2194
-    Có lời (songs.lyrics)     : 1566 (71%)
+    Có lời (songs.lyrics)     : 1572 (72%)
     Nhạc không lời            : 71
-    Không tìm thấy            : 542
-    Chưa tra                  : 15
+    Không tìm thấy            : 551
+    Chưa tra                  : 0
 Có lời theo nguồn / kiểu khớp:
-    lrclib / search           : 1492
-    lrclib / base_title       : 57
+    lrclib / search           : 1497
+    lrclib / base_title       : 58
     lrclib / exact            : 10
     lrclib / other_version    : 7
   exact / search  : cùng tên bài, ca sĩ, thời lượng lệch <= 3 giây
