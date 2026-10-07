@@ -1,11 +1,13 @@
-# Báo cáo: Focused Web Crawler cho chủ đề Music (nhac.vn)
+# Báo cáo: Focused Web Crawler và Score Ranking cho chủ đề Music (nhac.vn)
 
 Assignment 1 – SEG301 (Crawls and Feeds)
 
-Project Python thực hiện đầy đủ pipeline:
-**Seed URL → URL Frontier (BFS) → kiểm tra URL → robots.txt → HTTP Request → BeautifulSoup → trích xuất dữ liệu và liên kết → lọc URL → SQLite → thống kê.**
+Project Python gồm hai phần:
 
-**Trạng thái:** hoàn thành phần crawl. Lần chạy gần nhất thu thập 300 trang từ `nhac.vn`, lưu vào `data/crawler.db` (3 bảng: `pages`, `links`, `songs`). Phần xử lý TF-IDF + BM25 là bước tiếp theo, chưa nằm trong báo cáo này.
+1. **Crawl dữ liệu:** Seed URL → URL Frontier (BFS) → kiểm tra URL → robots.txt → HTTP Request → BeautifulSoup → trích xuất dữ liệu và liên kết → lọc URL → SQLite → thống kê.
+2. **Score Ranking:** từ database, tiền xử lý văn bản rồi tính điểm bằng **TF-IDF kết hợp BM25** để xếp hạng trang theo truy vấn.
+
+**Trạng thái:** hoàn thành cả hai phần. Lần chạy crawl gần nhất thu thập 300 trang từ `nhac.vn`, lưu vào `data/crawler.db` (3 bảng: `pages`, `links`, `songs`). Script `ranking.py` đọc database này và xếp hạng 287 trang có nội dung.
 
 ---
 
@@ -24,7 +26,7 @@ Project Python thực hiện đầy đủ pipeline:
 
 ---
 
-## 2. Quy trình thực hiện
+## 2. Quy trình crawl
 
 ```
 config.py ─► khởi tạo Frontier + Database ─► thêm seed (depth 0)
@@ -32,8 +34,8 @@ config.py ─► khởi tạo Frontier + Database ─► thêm seed (depth 0)
         ┌────────────────▼─────────────────┐
         │ 1. Lấy URL tiếp theo (BFS, FIFO) │
         │ 2. Kiểm tra robots.txt           │
-        │ 3. Gửi HTTP request (timeout)    │
-        │ 4. Phân tích HTML (nếu 200)      │
+        │ 3. Gửi HTTP request (requests)   │
+        │ 4. Phân tích HTML (BeautifulSoup)│
         │ 5. Lưu pages / songs / links     │
         │ 6. Lọc và thêm link mới (d + 1)  │
         │ 7. Nghỉ CRAWL_DELAY giây         │
@@ -52,6 +54,7 @@ config.py ─► khởi tạo Frontier + Database ─► thêm seed (depth 0)
 | 4. Tải trang, robots.txt | `crawler.py` → `fetch()`, `can_fetch()` |
 | 5. Phân tích HTML | `parser.py` → `extract_links`, `extract_song_info`, `extract_page_info` |
 | 6. Lưu trữ, thống kê | `database.py` |
+| 7. Xếp hạng (TF-IDF + BM25) | `ranking.py` |
 
 ---
 
@@ -64,7 +67,7 @@ config.py ─► khởi tạo Frontier + Database ─► thêm seed (depth 0)
 | `REQUEST_TIMEOUT` | 10 giây | Thời gian chờ mỗi request |
 | `CRAWL_DELAY` | 1 giây | Nghỉ giữa hai request, tránh làm quá tải server |
 | `RESPECT_ROBOTS` | True | Tải và tuân thủ robots.txt |
-| `STORE_LYRICS` | True / False | Bật/tắt lưu lời bài hát |
+| `STORE_LYRICS` | True | Lưu lời bài hát (đặt False để xóa khối lời trước khi lưu) |
 | `MAX_CONTENT_LENGTH` | 20 000 ký tự | Giới hạn văn bản lưu mỗi trang |
 
 Toàn bộ tham số nằm trong `config.py`, không cần sửa logic crawler để thay đổi.
@@ -99,8 +102,8 @@ Toàn bộ tham số nằm trong `config.py`, không cần sửa logic crawler �
 Ba hàm trong `parser.py`, gọi theo đúng thứ tự vì `extract_page_info` sửa cây HTML (xóa `<script>`, `<style>`):
 
 1. **`extract_links`** – lấy mọi thẻ `<a href>`, đổi liên kết tương đối thành tuyệt đối bằng `urljoin`, lọc, chuẩn hóa và loại trùng.
-2. **`extract_song_info`** – chỉ chạy với URL chứa `/bai-hat/`. Lấy tên bài, ca sĩ, album, thể loại từ thẻ meta và lời bài hát từ khối có class/id gợi ý lyric.
-3. **`extract_page_info`** – lấy tiêu đề và toàn bộ văn bản hiển thị, cắt tối đa 20 000 ký tự. Chưa tiền xử lý (không tách từ, không bỏ stopword) vì đó là việc của bước TF-IDF/BM25.
+2. **`extract_song_info`** – chạy với URL chứa `/bai-hat/`. Tên bài và ca sĩ lấy từ thẻ `og:title` (tách tại dấu ` - `), album và thể loại từ thẻ `music:album`, `music:genre`, lời bài hát từ khối có class/id gợi ý lyric.
+3. **`extract_page_info`** – lấy tiêu đề và toàn bộ văn bản hiển thị, cắt tối đa 20 000 ký tự. Chưa tiền xử lý (không tách từ, không bỏ stopword); việc đó thực hiện ở bước xếp hạng (mục 11).
 
 ---
 
@@ -157,15 +160,15 @@ File: `data/crawler.db` (SQLite).
 | `lyrics` | Lời bài hát (rỗng nếu `STORE_LYRICS = False` hoặc không tìm thấy) |
 | `crawled_at` | Thời điểm crawl |
 
-`pages` là nguồn dữ liệu cho bước TF-IDF/BM25. `songs` cung cấp các trường có cấu trúc để thống nhất schema (modal) trong nhóm và để xếp hạng theo từng trường. `links` giữ đồ thị web phục vụ phân tích liên kết.
+`pages` là nguồn dữ liệu cho bước TF-IDF/BM25. `songs` cung cấp các trường có cấu trúc để thống nhất schema (modal) trong nhóm. `links` giữ đồ thị web phục vụ phân tích liên kết.
 
 ---
 
 ## 9. Bản quyền và đạo đức crawl
 
 - Dữ liệu chỉ phục vụ **mục đích học tập**, lưu cục bộ, không dùng cho kinh doanh.
-- **Không đưa `crawler.db` và thư mục `data/` lên GitHub** (đã khai báo trong `.gitignore`), vì cơ sở dữ liệu có thể chứa lời bài hát thuộc bản quyền của tác giả.
-- Có thể tắt hoàn toàn việc lưu lời bài hát bằng `STORE_LYRICS = False`; khi đó khối lyric bị xóa trước khi lưu.
+- Lời bài hát thuộc bản quyền của tác giả. Database bản hiện tại (có cột `lyrics`) **không được đưa lên GitHub công khai**; nếu giảng viên cần xem dữ liệu thì nộp file `crawler.db` riêng qua kênh của lớp.
+- Có thể tắt việc lưu lời bài hát bằng `STORE_LYRICS = False`; khi đó khối lyric bị xóa trước khi lưu.
 - Giữ `CRAWL_DELAY = 1` giây và tuân thủ robots.txt (`RESPECT_ROBOTS = True`).
 
 ---
@@ -213,8 +216,9 @@ HTTP status:
 | Trang trả HTTP 500 | 12 (4,0 %) |
 | Request không có phản hồi | 1 (0,3 %) |
 | URL bị robots.txt chặn | 1 |
-| Bài hát lưu trong `songs` | 47 |
-| Bài hát có lời | 12 (khoảng 25,5 % số bài) |
+| Dòng trong bảng `songs` | 47 |
+| Trang bài hát thật (URL kết thúc `-so...`) | 12, cả 12 đều có ca sĩ và lời |
+| Trang danh sách bị nhận nhầm là bài hát (URL kết thúc `-gr...`) | 35 |
 
 ### Phân bố theo độ sâu
 
@@ -227,46 +231,115 @@ HTTP status:
 
 ---
 
-## 11. Phân tích kết quả
+## 11. Score Ranking: TF-IDF kết hợp BM25
 
-1. **Không có trang ở độ sâu 3.** `MAX_DEPTH = 3` nhưng crawl dừng ở độ sâu 2. Trang chủ liên kết tới rất nhiều danh mục, bảng xếp hạng và bài hát nên riêng độ sâu 1 đã có 162 trang. Vì BFS hoàn thành từng tầng, giới hạn `MAX_PAGES = 300` đạt được giữa tầng 2 (137 trang), trước khi lấy bất kỳ trang tầng 3 nào.
+### 11.1. Mục tiêu
 
-2. **Tỷ lệ trùng lặp rất cao.** Có 29 911 liên kết được lưu nhưng chỉ 3 695 URL duy nhất được phát hiện; 26 217 liên kết bị bỏ qua. Trung bình mỗi trang chứa khoảng 100 liên kết, phần lớn là menu, header và footer lặp lại. Nếu không có các tập `visited` và `in_frontier`, crawler sẽ tải đi tải lại cùng một trang.
+Từ database, nhận một câu truy vấn và trả về danh sách trang xếp theo mức độ liên quan. Phần này nằm trong file `ranking.py`, chỉ dùng thư viện chuẩn của Python.
 
-3. **Lỗi HTTP 500.** 12 trang (4 %) trả lỗi 500 từ phía server. Những trang này được ghi lại với `status_code = 500` và không có nội dung. Đây là lỗi của website, không phải của crawler.
+### 11.2. Các bước
 
-4. **Dữ liệu bài hát.** Có 47 trang bài hát được lưu vào `songs`, trong đó 12 trang tìm được lời. 35 bài còn lại có thể do trang không có lời, hoặc lời nằm trong khối có tên class khác với danh sách gợi ý (`LYRIC_CONTAINER_HINTS`). Các trường `artist`, `album`, `genre` dựa vào thẻ meta và chưa được kiểm tra đầy đủ trên toàn bộ 47 bài; cần mở bảng `songs` để xác nhận trước khi dùng cho bước tiếp theo.
+| Bước | Việc làm |
+|---|---|
+| 1. Nạp dữ liệu | Đọc bảng `pages`, chỉ lấy trang mã 200 có nội dung: **287 tài liệu** |
+| 2. Tiền xử lý | Chữ thường, bỏ dấu, tách theo âm tiết, bỏ từ dừng, thêm cặp hai từ liền nhau (ví dụ `nhac_tre`) |
+| 3. Loại nội dung lặp | Bỏ khỏi phần nội dung các từ xuất hiện ở hơn 50 % số trang (menu, chân trang): **548 từ/cụm từ** |
+| 4. Lập chỉ mục | Đếm tần suất từ (tf), số trang chứa từ (df), độ dài từng trang; tiêu đề tính nặng gấp 3 lần nội dung |
+| 5. Chấm điểm | Tính TF-IDF và BM25 cho từng trang |
+| 6. Kết hợp | Chuẩn hóa hai điểm về thang 0–1 rồi lấy trung bình |
+| 7. Xếp hạng | Sắp theo điểm kết hợp giảm dần |
 
-5. **robots.txt.** Có 1 URL bị chặn và 1 request thất bại do không có phản hồi; crawler ghi nhận cả hai rồi tiếp tục bình thường.
+Kích thước chỉ mục: 23 164 từ/cụm từ khác nhau, độ dài trung bình 380 mục mỗi trang (trước khi loại nội dung lặp là 1 301).
+
+### 11.3. Công thức
+
+**TF-IDF (độ tương đồng cosine):**
+- Trọng số một từ: `(1 + log tf) × idf`, với `idf = log((N + 1) / (df + 1)) + 1`
+- Điểm = cosine giữa vector truy vấn và vector tài liệu.
+
+**BM25:**
+- Với mỗi từ của truy vấn: `idf × tf × (k1 + 1) / (tf + k1 × (1 − b + b × dl / avgdl))`, trong đó `idf = log(1 + (N − df + 0,5) / (df + 0,5))`
+- `k1 = 1,5`, `b = 0,75`; `dl` là độ dài tài liệu, `avgdl` là độ dài trung bình.
+- Điểm tài liệu là tổng điểm của các từ truy vấn.
+
+**Kết hợp:** mỗi điểm được chia cho điểm lớn nhất trong lần tìm để về thang 0–1, sau đó:
+
+`điểm cuối = 0,5 × BM25 + 0,5 × TF-IDF` (đổi tỷ lệ bằng tham số `--alpha`).
+
+Lý do kết hợp: hai mô hình có thể xếp hạng khác nhau (TF-IDF ưu tiên độ tương đồng tổng thể, BM25 ưu tiên tần suất có bão hòa và chuẩn hóa độ dài); điểm kết hợp chọn trang được cả hai đánh giá tốt.
+
+### 11.4. Kết quả
+
+| Truy vấn | Số trang khớp | Kết quả đứng đầu |
+|---|---|---|
+| bảng xếp hạng | 19 / 287 | Các trang "Bảng xếp hạng ... tuần 40/2026" (cả 10 kết quả đầu đều là trang BXH) |
+| nhạc trẻ | 222 / 287 | Ba trang "Nhạc Trẻ HOT" (album, bài hát, video) |
+| tình yêu | 78 / 287 | "Tình Yêu Giản Đơn", "Yêu Thương Không Là Mãi Mãi", "Một Khi Đã Yêu" |
+| nhạc hot | 265 / 287 | "Nhạc Hot - V.A", "Nhạc HOT 2015" |
+| sơn tùng | 61 / 287 | "Âm Nhạc Năm 2015", "Nhạc Việt Remix HOT", trang bài hát "Muộn Rồi Mà Sao Còn - Sơn Tùng M-TP" (hạng 3) |
+
+### 11.5. Ảnh hưởng của việc loại nội dung lặp
+
+Mọi trang của nhac.vn đều chứa menu và chân trang, nên các từ như "nhạc", "trẻ", "bảng xếp hạng" xuất hiện ở hầu hết các trang.
+
+| Truy vấn "nhạc trẻ" | Chưa loại | Đã loại (mặc định) |
+|---|---|---|
+| Số trang khớp | 285 / 287 | 222 / 287 |
+| Giá trị idf của từ "nhac" | 0,01 | cao hơn đáng kể |
+| Hạng 1–3 | Nhạc Trẻ HOT, Nhạc Phim Việt Nam, Nhạc Hàn HOT | Nhạc Trẻ HOT (album), Nhạc Trẻ HOT (bài hát), Nhạc Trẻ HOT (MV) |
+
+Khi chưa loại, idf gần 0 nên điểm gần như chỉ phụ thuộc độ dài trang. Sau khi loại, ba kết quả đầu đều đúng chủ đề. Điều này cho thấy chất lượng dữ liệu đầu vào quyết định kết quả của TF-IDF và BM25. Có thể kiểm tra bằng `python ranking.py "nhạc trẻ" --max-df 0`.
 
 ---
 
-## 12. Hạn chế và vấn đề gặp phải
+## 12. Phân tích kết quả crawl
+
+1. **Không có trang ở độ sâu 3.** `MAX_DEPTH = 3` nhưng crawl dừng ở độ sâu 2. Độ sâu 1 đã có 162 trang. Vì BFS hoàn thành từng tầng, giới hạn `MAX_PAGES = 300` đạt được giữa tầng 2 (137 trang).
+
+2. **Tỷ lệ trùng lặp rất cao.** 29 911 liên kết được lưu nhưng chỉ 3 695 URL duy nhất; 26 217 liên kết bị bỏ qua. Trung bình mỗi trang chứa khoảng 100 liên kết, phần lớn là menu, header và footer lặp lại.
+
+3. **Lỗi HTTP 500.** 12 trang (4 %) trả lỗi 500 từ phía server; được ghi lại với `status_code = 500` và không có nội dung.
+
+4. **Dữ liệu bài hát.** Bảng `songs` có 47 dòng nhưng chỉ **12 dòng là trang bài hát thật** (URL dạng `...-soXXXX`); cả 12 đều có ca sĩ và lời. 35 dòng còn lại là trang danh sách nằm dưới `/bai-hat/` (URL dạng `...-grXXXX`, ví dụ `/bai-hat/nhac-hot-gr3m`) bị nhận nhầm là bài hát vì quy tắc chỉ kiểm tra chuỗi `/bai-hat/`. Hai cột `album` và `genre` trống ở cả 47 dòng vì nhac.vn không có thẻ `music:album`, `music:genre` như dự đoán. Cột `artist` của bài hát thật còn dính hậu tố "| NHAC.VN".
+
+5. **robots.txt.** Có 1 URL bị chặn và 1 request không có phản hồi; crawler ghi nhận cả hai rồi tiếp tục.
+
+---
+
+## 13. Hạn chế
 
 | Vấn đề | Chi tiết / hướng xử lý |
 |---|---|
 | Chỉ 1 domain | `nhaccuatui.com` cần JavaScript, `chiasenhac.vn` không truy cập được. |
-| Có trang không phải nội dung nhạc | Một số URL kỹ thuật hoặc tài khoản (ví dụ `/auth`) vẫn qua quy tắc domain. Có thể thêm danh sách đường dẫn bị loại. |
-| URL có tham số `?` | Được giữ lại vì có thể trỏ tới nội dung khác, nhưng một số có thể trùng gần giống nhau. |
-| Tiêu đề chung chung | Một số trang chỉ có tiêu đề "Nhac.vn", nên cần dùng thêm `content`. |
-| Selector bài hát dựa trên phỏng đoán | Cấu trúc HTML của nhac.vn có thể thay đổi; cần kiểm tra lại `extract_song_info` khi cột bị rỗng. |
+| Bảng `songs` lẫn trang danh sách | Đổi quy tắc nhận diện bài hát thành URL kết thúc `-so...`; cần crawl lại để cập nhật. |
+| `album`, `genre` trống | Cần tìm đúng thẻ HTML chứa thông tin này (xem "Inspect" trên một trang bài hát). |
+| Menu, chân trang lẫn vào `content` | Hiện xử lý ở bước xếp hạng (loại từ lặp); cách tốt hơn là chỉ lấy khối nội dung chính khi crawl. |
+| Xếp hạng chỉ đọc tiêu đề và nội dung | Tên nghệ sĩ nằm trong URL (ví dụ `son-tung-m-tp`) chưa được đưa vào chỉ mục nên tìm tên người chưa tốt; một số trang nghệ sĩ chỉ có tiêu đề "Nhac.vn". |
+| Trang trùng nội dung | Nhiều URL khác nhau có cùng tiêu đề và nội dung cho cùng điểm; chưa gộp. |
+| Chưa dùng thư viện tách từ tiếng Việt | Thay bằng tách âm tiết và cặp từ liền nhau. |
+| Một số trang không phải nội dung nhạc | Các URL kỹ thuật (ví dụ `/auth`) vẫn qua quy tắc domain; có thể thêm danh sách đường dẫn bị loại. |
 | Chỉ crawl 300 trang | Chưa phủ hết website (hơn 3 600 URL còn trong frontier khi dừng). |
 
 ---
 
-## 13. Cách chạy
+## 14. Cách chạy
 
 ```bash
 pip install -r requirements.txt
 python check_domain.py     # (tùy chọn) kiểm tra website trước khi crawl
-python main.py             # crawl và in thống kê
+python main.py             # crawl và in thống kê (xóa dữ liệu cũ trong crawler.db)
+python ranking.py --demo   # xếp hạng thử 5 truy vấn mẫu
+python ranking.py "nhạc trẻ" --top 5
+python ranking.py "nhạc trẻ" --explain
 ```
 
-Cơ sở dữ liệu được tạo tại `data/crawler.db`. Có thể mở bằng *DB Browser for SQLite* để xem các bảng `pages`, `links`, `songs`.
+Lưu ý: `python main.py` xóa dữ liệu cũ trước khi crawl; nên sao lưu `data/crawler.db` nếu muốn giữ.
+
+Các tham số của `ranking.py`: `--top` (số kết quả), `--alpha` (trọng số BM25, 0 là chỉ TF-IDF, 1 là chỉ BM25), `--max-df` (ngưỡng loại từ lặp, 0 là không loại), `--source pages|songs`, `--explain` (xem điểm từng từ).
 
 ---
 
-## 14. Cấu trúc project
+## 15. Cấu trúc project
 
 ```
 music_crawler/
@@ -277,16 +350,17 @@ music_crawler/
 ├── database.py        # bảng SQLite và các truy vấn
 ├── config.py          # toàn bộ tham số crawl
 ├── check_domain.py    # kiểm tra robots.txt và khả năng crawl
+├── ranking.py         # xếp hạng TF-IDF + BM25 trên dữ liệu trong database
 ├── requirements.txt
-├── .gitignore         # bỏ qua data/, *.db, __pycache__/
-└── data/crawler.db    # CSDL đầu ra (không đưa lên Git)
+└── data/crawler.db    # CSDL đầu ra (không đưa lên GitHub công khai)
 ```
 
 ---
 
-## 15. Bước tiếp theo
+## 16. Hướng phát triển
 
-1. Thống nhất schema (modal) với nhóm dựa trên bảng `songs`.
-2. Tiền xử lý văn bản từ `pages.content` và `songs`: tách từ tiếng Việt, loại stopword.
-3. Cài đặt TF-IDF kết hợp BM25 trên dữ liệu trong DB.
-4. Nhận truy vấn và trả danh sách kết quả xếp hạng theo điểm (Score Ranking).
+1. Sửa quy tắc nhận diện trang bài hát (`-so...`) và tìm thẻ chứa album, thể loại để bảng `songs` đầy đủ hơn.
+2. Chỉ lấy khối nội dung chính của trang khi crawl, bỏ menu và chân trang ngay từ đầu.
+3. Đưa chữ trong URL vào chỉ mục để tìm tên nghệ sĩ tốt hơn; gộp các trang trùng nội dung.
+4. Thử thư viện tách từ tiếng Việt chuyên dụng và so sánh kết quả với cách tách âm tiết hiện tại.
+5. Thống nhất schema (modal) với nhóm dựa trên bảng `songs` và gộp dữ liệu nhiều website.
