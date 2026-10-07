@@ -1,0 +1,26 @@
+
+==========================================================
+hopamchuan_phuquy - HOPAMCHUAN CRAWLING SUMMARY
+==========================================================
+Topic                 : Music - HopAmChuan
+Target valid songs    : 200
+Valid songs in DB     : 200
+Stop reason           : 300 valid songs reached
+Pages fetched         : 251
+Pages saved           : 249
+Song pages seen       : 200
+Songs rejected        : 0
+URLs discovered       : 6146
+Links found           : 23174
+Links saved           : 23174
+Failed pages          : 2
+Maximum depth         : 3
+Elapsed               : 665.4 seconds
+Database              : c:\Users\COMPUTER\Downloads\hopamchuan_phuquy\hopamchuan_phuquy\data\hopamchuan_phuquy.db
+
+Skipped by reason:
+  NOT_FOCUSED_PAGE        : 3145
+
+Failed URLs:
+  [404 Client Error: Not Found for url: https://hopamchuan.com/rhythm/v/blues/] https://hopamchuan.com/rhythm/v/blues/
+  [404 Client Error: Not Found for url: https://hopamchuan.com/song/654/anh-chi-biet-cam-nin-nghe-tieng-em-khoc/] https://hopamchuan.com/song/654/anh-chi-biet-cam-nin-nghe-tieng-em-khoc/
