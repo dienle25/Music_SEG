@@ -39,29 +39,6 @@ Zing MP3 được thay bằng Hợp Âm Chuẩn trong crawler chung vì Zing MP3
 
 Chi tiết từng bài cá nhân (website, dữ liệu, cách chạy): [members/README.md](members/README.md).
 
-## Crawler chung – `web-crawler/`
-
-Python 3 + Requests + BeautifulSoup + SQLite. Crawl theo **BFS** từ 16 seed URL (+16 URL từ sitemap NhacCuaTui),
-kiểm tra robots.txt, lọc URL theo luật riêng của từng website, lưu `pages`, `links` và `songs` vào `data/crawler.db`.
-
-| Cấu hình | Giá trị |
-|---|---|
-| Maximum pages | 160 (40 trang / domain) |
-| Maximum depth | 2 |
-| Request timeout | 10 giây |
-| Crawl delay | 1 giây |
-
-Kết quả lần chạy cuối (05/10/2026):
-
-| Domain | Trang lưu vào DB | Bài hát (bảng `songs`) |
-|---|---|---|
-| Nhac.vn | 40 | 10 |
-| NhacCuaTui | 40 | 27 |
-| Spotify | 40 | 31 |
-| Hợp Âm Chuẩn | 40 | 27 |
-| **Tổng** | **160** | **95** |
-
-Tổng cộng 174 trang đã crawl (14 trang NhacCuaTui gắn `noindex` nên không lưu), 10175 link, 0 request lỗi.
 
 ### Cách chạy
 
@@ -75,7 +52,7 @@ python check_db.py    # xem dữ liệu: pages, songs, links
 python -m unittest discover -s tests -v   # 31 test offline
 ```
 
-Trên Windows có thể bấm đúp `web-crawler/run.bat`.
+
 
 Báo cáo đầy đủ (seed URL, chiến lược BFS, luật lọc URL, thiết kế database, thống kê): [web-crawler/README.md](web-crawler/README.md).
 
