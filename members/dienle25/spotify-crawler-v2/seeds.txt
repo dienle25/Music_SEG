@@ -1,0 +1,41 @@
+# Seed bổ sung cho crawler Spotify – mỗi dòng một link, phần sau dấu # là ghi chú.
+# Lấy link: mở playlist / album trên Spotify -> Chia sẻ -> Sao chép liên kết, dán vào đây
+# (phần ?si=... và /intl-vi/ được crawler tự bỏ).
+#
+# Chỉ dùng playlist do Spotify biên tập (id bắt đầu bằng 37i9dQZ) và album;
+# không dùng playlist cá nhân. Các link dưới đây lấy từ kết quả tìm kiếm web ngày
+# 06/10/2026; link sai hoặc đã bị gỡ sẽ trả HTTP 404 và bị bỏ qua khi crawl.
+#
+# Mẹo cho đề tài: mỗi playlist "This Is <nghệ sĩ>" dẫn tới khoảng 30 bài của một
+# nghệ sĩ, từ đó crawler đi tiếp sang album -> các bài khác trong album. Muốn có
+# nhiều nghệ sĩ đủ 30 bài thì thêm nhiều playlist "This Is ...".
+
+# --- Bảng xếp hạng / tuyển tập nhạc Việt (Spotify) ---
+https://open.spotify.com/playlist/37i9dQZEVXbLdGSmz6xilI   # Top 50 - Vietnam
+https://open.spotify.com/playlist/37i9dQZEVXbKZyn1mKjmIl   # Top Songs - Vietnam
+https://open.spotify.com/playlist/37i9dQZF1DWYXyOUMgURXb   # Top Bài Hát 2025 Việt Nam
+https://open.spotify.com/playlist/37i9dQZF1DX9ka1GXLYW6g   # Top Bài Hát 2024 Việt Nam
+https://open.spotify.com/playlist/37i9dQZF1DX0DaTVvjIMEq   # Top Nhạc Việt 2020
+https://open.spotify.com/playlist/37i9dQZF1DX3B7QboN6ESE   # Indie Việt 2020
+https://open.spotify.com/playlist/37i9dQZF1DX76s5hZN35NG   # Indie Việt 2021
+
+# --- "This Is <nghệ sĩ>" (Spotify) ---
+https://open.spotify.com/playlist/37i9dQZF1DZ06evO34291n   # This Is Sơn Tùng M-TP
+https://open.spotify.com/playlist/37i9dQZF1DZ06evO0Ughqg   # This Is Mỹ Tâm
+https://open.spotify.com/playlist/37i9dQZF1DZ06evO35aYHO   # This Is Bích Phương
+https://open.spotify.com/playlist/37i9dQZF1DZ06evO28qX5o   # This Is Hà Anh Tuấn
+https://open.spotify.com/playlist/37i9dQZF1DZ06evO1WR3HS   # This Is Noo Phước Thịnh
+https://open.spotify.com/playlist/37i9dQZF1DZ06evO3UDvj2   # This Is SOOBIN
+https://open.spotify.com/playlist/37i9dQZF1DZ06evO2vg7BM   # This Is Đàm Vĩnh Hưng
+https://open.spotify.com/playlist/37i9dQZF1DZ06evO0nLIDl   # This Is Bằng Kiều
+https://open.spotify.com/playlist/37i9dQZF1DZ06evO26gPeO   # This Is Hoà Minzy
+https://open.spotify.com/playlist/37i9dQZF1DZ06evO3liayY   # This Is Đức Phúc
+https://open.spotify.com/playlist/37i9dQZF1DZ06evO41N3c4   # This Is Hoàng Dũng
+https://open.spotify.com/playlist/37i9dQZF1DZ06evO3zHjpK   # This Is Văn Mai Hương
+https://open.spotify.com/playlist/37i9dQZF1DZ06evO021r20   # This Is Phan Mạnh Quỳnh
+https://open.spotify.com/playlist/37i9dQZF1DZ06evO01iT6T   # This Is Lê Hoàng Vinh
+
+# --- Album tuyển tập bolero / nhạc vàng ---
+https://open.spotify.com/album/7l7BYefDNVbFORkDwm7y6v      # Tuyển Tập Nhạc Bolero Hay Nhất Mọi Thời Đại
+https://open.spotify.com/album/5RXCZfjhAmHXc1cyTOO4EH      # Bolero song ca tuyệt phẩm nhạc vàng
+https://open.spotify.com/album/2xFjpj556d4gorNxX7MTc8      # Song Ca Nhạc Vàng Bolero Và Remix Phần 2

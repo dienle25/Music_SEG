@@ -1,0 +1,27 @@
+========== LYRICS SUMMARY ==========
+Nguồn lời                     : LRCLIB (lrclib.net) + database khác nếu có --from-db
+Kết thúc                      : Đã tra hết
+
+Lần chạy này:
+    Bài cần tra               : 2194
+    Có lời                    : 1566
+    Nhạc không lời            : 71
+    Không tìm thấy            : 542
+    Lỗi (lần sau tra lại)     : 15
+    Request LRCLIB (retry)    : 3914 (1009)
+
+Toàn bộ database:
+    Bài hát (tracks)          : 2194
+    Có lời (songs.lyrics)     : 1566 (71%)
+    Nhạc không lời            : 71
+    Không tìm thấy            : 542
+    Chưa tra                  : 15
+Có lời theo nguồn / kiểu khớp:
+    lrclib / search           : 1492
+    lrclib / base_title       : 57
+    lrclib / exact            : 10
+    lrclib / other_version    : 7
+  exact / search  : cùng tên bài, ca sĩ, thời lượng lệch <= 3 giây
+  other_version   : cùng tên bài và ca sĩ, thời lượng khác (bản edit, bản khác)
+  base_title      : lời của bản gốc (bài Spotify là bản live / remix / feat.)
+====================================

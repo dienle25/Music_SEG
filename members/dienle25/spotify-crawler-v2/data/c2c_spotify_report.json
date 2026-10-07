@@ -1,0 +1,108 @@
+{
+  "rows": 2194,
+  "not_single_author": 897,
+  "duplicate_title_author": 110,
+  "records": 1187,
+  "authors": 139,
+  "authors_ge30": 9,
+  "authors_ge24": 10,
+  "top_authors": [
+    [
+      "Đàm Vĩnh Hưng",
+      157
+    ],
+    [
+      "Mỹ Tâm",
+      109
+    ],
+    [
+      "Noo Phước Thịnh",
+      86
+    ],
+    [
+      "Hà Anh Tuấn",
+      68
+    ],
+    [
+      "Bằng Kiều",
+      63
+    ],
+    [
+      "Phan Mạnh Quỳnh",
+      53
+    ],
+    [
+      "Bích Phương",
+      45
+    ],
+    [
+      "Sơn Tùng M-TP",
+      38
+    ],
+    [
+      "Văn Mai Hương",
+      30
+    ],
+    [
+      "SOOBIN",
+      27
+    ],
+    [
+      "Hoàng Dũng",
+      20
+    ],
+    [
+      "HIEUTHUHAI",
+      20
+    ],
+    [
+      "TRANG",
+      18
+    ],
+    [
+      "Vũ Cát Tường",
+      15
+    ],
+    [
+      "Cá Hồi Hoang",
+      15
+    ],
+    [
+      "Ngọt",
+      14
+    ],
+    [
+      "BTS",
+      14
+    ],
+    [
+      "Minh Tuyết",
+      14
+    ],
+    [
+      "ROSÉ",
+      13
+    ],
+    [
+      "Đức Phúc",
+      13
+    ]
+  ],
+  "exported_utc": "2026-10-06T15:26:48+00:00",
+  "source_db": "spotify.db",
+  "source_db_sha256": "43786c5c3095b15fdafabfd4aceeef35c14b8dba851f01c86932eec0a1763fbf",
+  "out_db": "c2c_spotify.sqlite",
+  "songs": 2194,
+  "listings": 460,
+  "song_id_collisions": 0,
+  "semantics": {
+    "source": "open.spotify.com (HTML công khai, không đăng nhập, tôn trọng robots.txt)",
+    "authors": "performer – nghệ sĩ trình bày trên Spotify, KHÔNG phải tác giả sáng tác",
+    "author_ids": "id nghệ sĩ Spotify (chuỗi 22 ký tự)",
+    "genre": "NULL – trang Spotify không có thể loại",
+    "rhythm": "NULL – trang Spotify không có điệu",
+    "song_id": "int(sha1(track_id).hexdigest()[:15], 16)",
+    "lyrics": "không có – lời bài hát chỉ hiện khi đăng nhập, crawler không lấy",
+    "use": "exploratory / post hoc; không thay testbed HopAmChuan đã đăng ký trước"
+  }
+}

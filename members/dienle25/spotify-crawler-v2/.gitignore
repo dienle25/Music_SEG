@@ -1,0 +1,9 @@
+# Database không đưa lên GitHub: spotify.db chứa lời bài hát có bản quyền
+# (lấy từ LRCLIB) và dữ liệu crawl từ Spotify. Chạy run.bat để tạo lại.
+data/*.db
+data/*.sqlite
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+__pycache__/
+*.py[cod]

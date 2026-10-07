@@ -1,0 +1,71 @@
+========== CRAWLING SUMMARY ==========
+
+Topic                       : Music (Âm nhạc) – nhạc Việt trên Spotify
+Crawler version             : spotify-1.0.0
+Stop reason                 : URL Frontier is empty
+Run time                    : 1:01:20
+
+Seed URLs                   : 26
+Pages Crawled               : 2657
+Pages Saved (DB)            : 2654
+    playlist                : 21
+    album                   : 439
+    track                   : 2194
+Not saved (noindex)         : 0
+Unique URLs Discovered      : 3264
+Skipped URLs                : 607
+Duplicate URLs Skipped      : 2371
+Failed Requests             : 3
+Retries (HTTP 429/503)      : 0
+Links Found                 : 9487
+Links Saved (DB)            : 9487
+Avg Response Time           : 0.32 sec
+
+Maximum Depth               : 6
+
+Depth 0                     : 26 pages
+Depth 1                     : 611 pages
+Depth 2                     : 435 pages
+Depth 3                     : 1585 pages
+
+HTTP 200                    : 2654
+HTTP 404                    : 1
+HTTP 500                    : 2
+
+Tracks (bảng tracks + songs):
+    Tracks saved            : 2194
+    with album              : 2194
+    with release date       : 2194
+    with duration           : 2194
+    single-artist tracks    : 1297
+    distinct artists        : 606
+    artists >= 30 tracks    : 22
+    artists >= 24 tracks    : 29
+    lyrics / genre          : không có (NULL) – HTML Spotify không chứa
+
+Albums / playlists saved:
+    album                   : 439
+    playlist                : 21
+
+Top artists (số bài):
+    Đàm Vĩnh Hưng           : 178
+    Noo Phước Thịnh         : 132
+    Mỹ Tâm                  : 116
+    Bằng Kiều               : 116
+    Sơn Tùng M-TP           : 101
+    Hà Anh Tuấn             : 81
+    Văn Mai Hương           : 70
+    Phan Mạnh Quỳnh         : 68
+    Anh Trai Vượt Ngàn Chông: 68
+    Bích Phương             : 62
+
+robots.txt (open.spotify.com): HTTP 200, sha256 f4d19243e326c223
+
+Skipped URLs by reason:
+    NOT_MUSIC_PAGE          : 607
+
+Failed requests:
+    [HTTP 404] https://open.spotify.com/playlist/37i9dQZF1DX3B7QboN6ESE
+    [HTTP 500] https://open.spotify.com/track/06Qo2fYR2KS1F7bL338iVT
+    [HTTP 500] https://open.spotify.com/track/0KnWLhf5GqPEC4m7sHhxrY
+======================================
