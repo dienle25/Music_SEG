@@ -1,0 +1,12 @@
+TARGET_SONGS = 300
+SEED_URLS = ["https://www.nhaccuatui.com/chart/1-1-d9-2026"]
+ALLOWED_DOMAINS = {"nhaccuatui.com", "www.nhaccuatui.com"}
+SONG_PATH_MARKERS = ("/bai-hat/", "/song/")
+MAX_PAGES = 5000
+MAX_DEPTH = 8
+REQUEST_TIMEOUT = 20
+MAX_RETRIES = 3
+CRAWL_DELAY = 1.0
+USER_AGENT = "nhaccuatui-hieuthanh-300-song-crawler/1.0"
+DB_PATH = "data/music.db"
+RESPECT_ROBOTS = True

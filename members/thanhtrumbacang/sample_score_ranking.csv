@@ -1,0 +1,41 @@
+﻿query,score,tfidf_score,bm25_score,id,title,artist,url
+yêu em,0.956102,0.185796,1.22583,128,ĐÃ LỠ YÊU EM NHIỀU,"The Masked Singer, GAUCI",https://www.nhaccuatui.com/song/4jib7vCKNlME
+yêu em,0.824919,0.120984,1.342026,197,Ghen,"MIN, ERIK, Khắc Hưng",https://www.nhaccuatui.com/song/JFyV37FQW823
+yêu em,0.785194,0.11703,1.263864,2,Anh Đã Không Biết Cách Yêu Em,Quang Đăng Trần,https://www.nhaccuatui.com/song/RjjlFp5VePzi
+yêu em,0.75511,0.094797,1.343812,103,Không Yêu Em Thì Yêu Ai?,"Vũ., Low G",https://www.nhaccuatui.com/song/exrnjWcqFJNW
+yêu em,0.741018,0.096958,1.29031,25,Dù Cho Tận Thế,ERIK,https://www.nhaccuatui.com/song/szDsaurUCtvX
+yêu em,0.732317,0.091093,1.309339,282,Từng Ngày Yêu Em,buitruonglinh,https://www.nhaccuatui.com/song/0uvhkrobLlp0
+yêu em,0.699377,0.082453,1.283305,63,Anh Đã Không Biết Cách Yêu Em (Thịnh Louis Remix),Quang Đăng Trần,https://www.nhaccuatui.com/song/t6jy0631DfNP
+yêu em,0.660938,0.071359,1.26023,124,VỖ TAY,"EM XINH ""SAY HI"", Phương Ly",https://www.nhaccuatui.com/song/GhjCJqbl700Z
+yêu em,0.654244,0.073628,1.22583,135,Em Mới Là Người Yêu Anh,The Masked Singer,https://www.nhaccuatui.com/song/yYsNYZgDSRwd
+yêu em,0.649686,0.073756,1.212653,185,May Mắn,Anh Quân,https://www.nhaccuatui.com/song/DMzgrYSE42XZ
+quang hùng,0.993368,0.102189,8.640841,50,"SECRET (feat. Quang Hùng MasterD, CODYNAMVO, CONGB & Wren Evans)","TINH HÀ ""SAY HI"", Quang Hùng MasterD, CODYNAMVO, CONGB, Wren Evans",https://www.nhaccuatui.com/song/g7NJxyCLLTR6
+quang hùng,0.989833,0.100111,8.756993,74,50 CUỘC GỌI NHỠ,"TINH HÀ ""SAY HI"", CoolKid, Quang Hùng MasterD, Jaysonlei, CODYNAMVO",https://www.nhaccuatui.com/song/q4bHsqfsR8bp
+quang hùng,0.884367,0.092011,7.604007,3,Chất Gây Hại,"Quang Hùng MasterD, Low G, Hino",https://www.nhaccuatui.com/song/QoTmvhC2PH42
+quang hùng,0.838286,0.085109,7.388406,294,Chất Gây Hại (KProx Remix),"Quang Hùng MasterD, Low G, 1 9 6 7",https://www.nhaccuatui.com/song/6DrRpT215R1P
+quang hùng,0.80793,0.081209,7.190956,72,CASTING,"TINH HÀ ""SAY HI"", Quang Hùng MasterD",https://www.nhaccuatui.com/song/5QGEnqXNe1Ld
+quang hùng,0.767086,0.078572,6.701587,69,Tình Đầu Quá Chén,"ANH TRAI ""SAY HI"", Quang Hùng MasterD, Negav, Pháp Kiều, ERIK",https://www.nhaccuatui.com/song/ZViQdtds3AH7
+quang hùng,0.740116,0.072015,6.791153,71,TRỄ GIỜ CƠM,"TINH HÀ ""SAY HI"", Quang Hùng MasterD, Xuân Định K.Y, WEAN, Sơn.K",https://www.nhaccuatui.com/song/0DkHm04ikOgq
+quang hùng,0.73856,0.070883,6.860841,70,MỘNG DUYÊN,"TINH HÀ ""SAY HI"", Quang Hùng MasterD, Song Luân, JSOL, Sơn.K, Emil Vergo",https://www.nhaccuatui.com/song/WBksxom1P0Lm
+quang hùng,0.701956,0.069217,6.362576,75,LAVIEM,"TINH HÀ ""SAY HI"", Quang Hùng MasterD, CAPTAIN BOY, Pháp Kiều, CoolKid, Danny Chung",https://www.nhaccuatui.com/song/cdDJjfkc8OFC
+quang hùng,0.678974,0.069007,5.978063,73,CHÂN THÀNH,"ANH TRAI ""SAY HI"", RHYDER, CAPTAIN BOY, Quang Hùng MasterD, WEAN, Ali Hoàng Dương",https://www.nhaccuatui.com/song/ABLMB2aG7Gtr
+tình yêu,0.956867,0.089386,1.880895,187,Anh Mệt Rồi,Anh Quân,https://www.nhaccuatui.com/song/PiEbJ06E2QPd
+tình yêu,0.871269,0.0735,1.894333,51,Từng Quen,"Wren Evans, Itsnk",https://www.nhaccuatui.com/song/eXYzq6JAh6Ho
+tình yêu,0.869671,0.068847,1.994918,96,VƯỢT NGƯỠNG TÌNH YÊU,"TINH HÀ ""SAY HI"", HURRYKNG, Dương Domic, KIMLONG, Xuân Định K.Y, FrancisGotHeat",https://www.nhaccuatui.com/song/ttUixTob1Hqd
+tình yêu,0.856518,0.070677,1.898617,277,Nắng Dưới Chân Mây (Hchun Remix),Nguyễn Hữu Kha,https://www.nhaccuatui.com/song/p6yr36iDvWE7
+tình yêu,0.852396,0.066359,1.981089,172,Phải Chăng Em Đã Yêu?,"Juky San, RedT",https://www.nhaccuatui.com/song/MRUP1c69kN0R
+tình yêu,0.834259,0.073303,1.74651,190,Nói Trước Bước Không Qua (Tee.D Lofi),Anh Quân,https://www.nhaccuatui.com/song/1iOUlTvFcAbk
+tình yêu,0.831905,0.066385,1.896118,194,Yêu Đương Khó Quá Thì Chạy Về Khóc Với Anh,ERIK,https://www.nhaccuatui.com/song/B6rEC4ZEO7oD
+tình yêu,0.814663,0.065529,1.844863,282,Từng Ngày Yêu Em,buitruonglinh,https://www.nhaccuatui.com/song/0uvhkrobLlp0
+tình yêu,0.802929,0.065682,1.793031,290,Triệu Vì Tinh Tú,"Nguyễn Trung Đức, Đặng Vĩnh Thịnh",https://www.nhaccuatui.com/song/GRXaXj2LxRgq
+tình yêu,0.801182,0.053843,2.058473,49,chẳng phải tình đầu sao đau đến thế,"MIN, Dangrangto, antransax",https://www.nhaccuatui.com/song/aV6cyHFUBioS
+em,0.94922,0.08398,0.346315,135,Em Mới Là Người Yêu Anh,The Masked Singer,https://www.nhaccuatui.com/song/yYsNYZgDSRwd
+em,0.928089,0.079878,0.348854,136,Em Gái Mưa,The Masked Singer,https://www.nhaccuatui.com/song/64sOossQkhE2
+em,0.896413,0.074743,0.348003,134,Em Hát Ai Nghe,The Masked Singer,https://www.nhaccuatui.com/song/CTBMOTHMGrHb
+em,0.843846,0.066281,0.346315,128,ĐÃ LỠ YÊU EM NHIỀU,"The Masked Singer, GAUCI",https://www.nhaccuatui.com/song/4jib7vCKNlME
+em,0.795189,0.052816,0.370611,66,Trò Đùa,"Châu Khải Phong, Quang Đăng Trần",https://www.nhaccuatui.com/song/PAWzWkj2n132
+em,0.79311,0.050998,0.37735,44,Ngàn Năm Ánh Sáng,"Đặng Vĩnh Thịnh, BMZ",https://www.nhaccuatui.com/song/xnhwlEUv6mPq
+em,0.780317,0.051816,0.363736,184,Có Anh Ở Đây Rồi,Anh Quân,https://www.nhaccuatui.com/song/t5qDCXhYMs1y
+em,0.779521,0.05566,0.345476,244,Chấp Niệm Trong Em (ZZ Remix),"Ngân Ngân, Meme Media",https://www.nhaccuatui.com/song/6WO6P0pXFU1b
+em,0.775753,0.050489,0.366307,67,Đánh Mất Em,Quang Đăng Trần,https://www.nhaccuatui.com/song/zClOrRpFXmIS
+em,0.772602,0.045786,0.385462,22,Hôn Vào Đây Đi,"VSTRA, Tyronee",https://www.nhaccuatui.com/song/1jdbAwutJSg9
