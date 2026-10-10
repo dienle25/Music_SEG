@@ -1,8 +1,8 @@
-# Music_TMG – Focused Web Crawler chủ đề Âm nhạc
+# Music_SEG – Focused Web Crawler chủ đề Âm nhạc
 
-[![Web crawler tests](https://github.com/dienle25/Music_TMG/actions/workflows/web-crawler-tests.yml/badge.svg)](https://github.com/dienle25/Music_TMG/actions/workflows/web-crawler-tests.yml)
-[![Spotify crawler tests](https://github.com/dienle25/Music_TMG/actions/workflows/spotify-tests.yml/badge.svg)](https://github.com/dienle25/Music_TMG/actions/workflows/spotify-tests.yml)
-[![Spotify crawler v2 tests](https://github.com/dienle25/Music_TMG/actions/workflows/spotify-v2-tests.yml/badge.svg)](https://github.com/dienle25/Music_TMG/actions/workflows/spotify-v2-tests.yml)
+[![Web crawler tests](https://github.com/dienle25/Music_SEG/actions/workflows/web-crawler-tests.yml/badge.svg)](https://github.com/dienle25/Music_SEG/actions/workflows/web-crawler-tests.yml)
+[![Spotify crawler tests](https://github.com/dienle25/Music_SEG/actions/workflows/spotify-tests.yml/badge.svg)](https://github.com/dienle25/Music_SEG/actions/workflows/spotify-tests.yml)
+[![Spotify crawler v2 tests](https://github.com/dienle25/Music_SEG/actions/workflows/spotify-v2-tests.yml/badge.svg)](https://github.com/dienle25/Music_SEG/actions/workflows/spotify-v2-tests.yml)
 
 Bài **Assignment 1 – SEG301 (Crawls and Feeds)** của nhóm 4 thành viên, chủ đề **Music (Âm nhạc)**.
 Mỗi thành viên làm một crawler cho một website âm nhạc, sau đó nhóm gộp và thống nhất thành **một crawler chung cho 4 website**.
@@ -32,7 +32,7 @@ Mỗi thành viên làm một crawler cho một website âm nhạc, sau đó nh�
 | [@TranKhoaDang](https://github.com/TranKhoaDang) | Nhac.vn | [nhacvn-crawler](members/TranKhoaDang/nhacvn-crawler/) |
 | [@thanhtrumbacang](https://github.com/thanhtrumbacang) | NhacCuaTui | [nhaccuatui-crawler](members/thanhtrumbacang/nhaccuatui-crawler/), [nhaccuatui-crawler-v2](members/thanhtrumbacang/nhaccuatui-crawler-v2/) |
 | [@dienle25](https://github.com/dienle25) | Spotify | [spotify-crawler](members/dienle25/spotify-crawler/), [spotify-crawler-v2](members/dienle25/spotify-crawler-v2/) |
-| [@quy205](https://github.com/quy205) | Hợp Âm Chuẩn (thay cho Zing MP3) | [zingmp3-crawler](members/quy205/zingmp3-crawler/), [musicbrainz-crawler](members/quy205/musicbrainz-crawler/) |
+| [@quy205](https://github.com/quy205) | Hợp Âm Chuẩn (thay cho Zing MP3) | [hopamchuan_phuquy](members/quy205/) (crawler Hợp Âm Chuẩn), [zingmp3-crawler](members/quy205/zingmp3-crawler/), [musicbrainz-crawler](members/quy205/musicbrainz-crawler/) |
 
 Zing MP3 được thay bằng Hợp Âm Chuẩn trong crawler chung vì Zing MP3 render bằng JavaScript, HTML trả về cho Requests gần như rỗng
 (xem mục 1 trong [web-crawler/README.md](web-crawler/README.md)).
@@ -59,7 +59,7 @@ Báo cáo đầy đủ (seed URL, chiến lược BFS, luật lọc URL, thiết
 ## Cấu trúc repo
 
 ```
-Music_TMG/
+Music_SEG/
 ├── README.md                          # trang tổng quan (file này)
 ├── web-crawler/                       # crawler chung của nhóm (bản nộp cuối)
 │   ├── main.py                        # chạy chương trình
@@ -86,6 +86,7 @@ Music_TMG/
 │   ├── thanhtrumbacang/nhaccuatui-crawler-v2/
 │   ├── dienle25/spotify-crawler/
 │   ├── dienle25/spotify-crawler-v2/      # bản chỉ Spotify + lời bài hát (LRCLIB)
+│   ├── quy205/                        # crawler Hợp Âm Chuẩn (hopamchuan_phuquy), file .py ở gốc thư mục
 │   ├── quy205/zingmp3-crawler/
 │   └── quy205/musicbrainz-crawler/
 └── .github/workflows/                 # GitHub Actions: tự chạy test khi push

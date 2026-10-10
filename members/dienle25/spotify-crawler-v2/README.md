@@ -10,9 +10,9 @@ Kết quả được lưu vào `data/spotify.db`:
 
 `export_c2c.py` xuất dữ liệu sang đúng schema của đề tài nghiên cứu **C2C-VN**.
 
-> Bản này do [@dienle25](https://github.com/dienle25) tách từ [crawler chung 4 website của nhóm](https://github.com/dienle25/Music_TMG/tree/main/web-crawler) để dùng cho đề tài nghiên cứu.
-> Trên GitHub, bản này nằm ở [`members/dienle25/spotify-crawler-v2/`](https://github.com/dienle25/Music_TMG/tree/main/members/dienle25/spotify-crawler-v2).
-> Crawler chung của nhóm và [bài cá nhân đầu tiên](https://github.com/dienle25/Music_TMG/tree/main/members/dienle25/spotify-crawler) vẫn giữ nguyên.
+> Bản này do [@dienle25](https://github.com/dienle25) tách từ [crawler chung 4 website của nhóm](https://github.com/dienle25/Music_SEG/tree/main/web-crawler) để dùng cho đề tài nghiên cứu.
+> Trên GitHub, bản này nằm ở [`members/dienle25/spotify-crawler-v2/`](https://github.com/dienle25/Music_SEG/tree/main/members/dienle25/spotify-crawler-v2).
+> Crawler chung của nhóm và [bài cá nhân đầu tiên](https://github.com/dienle25/Music_SEG/tree/main/members/dienle25/spotify-crawler) vẫn giữ nguyên.
 
 ## Cấu trúc project
 
