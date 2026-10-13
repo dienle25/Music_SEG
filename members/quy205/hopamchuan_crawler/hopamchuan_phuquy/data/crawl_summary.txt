@@ -1,0 +1,6 @@
+hopamchuan_phuquy - HOPAMCHUAN CRAWLING SUMMARY
+Target valid songs    : 200
+Crawl status          : NOT RUN YET — run `python main.py` to populate this database
+Configured delay      : 1.5 seconds (minimum requirement: 1 second)
+Seeds                 : ballad, pop, slow, rock
+Removed seed          : blues (previously returned 404)
