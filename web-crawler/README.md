@@ -22,10 +22,10 @@ web-crawler/
 ├── database.py       # Task 8 – SQLite (pages, links, songs)
 ├── check_db.py       # xem nhanh dữ liệu đã crawl (gồm cả bảng songs)
 ├── run.bat           # Windows: bấm đúp để cài thư viện, crawl và xem dữ liệu
-├── ranking.py       # Score Ranking: TF-IDF + BM25
+├── ranking.py        # Score Ranking: TF-IDF + BM25
 ├── tests/
-│   └── test_crawler.py   # 31 test offline (không gửi request ra Internet)
-│   └── test_ranking.py  # test cho ranking.py
+│   ├── test_crawler.py   # 31 test offline (không gửi request ra Internet)
+│   └── test_ranking.py   # 11 test cho ranking.py
 ├── data/
 │   ├── crawler.db
 │   └── crawl_summary.txt
@@ -379,8 +379,12 @@ Số bài hát trong bảng `songs` theo domain (số bài có giá trị ở t�
 | **Task 8** – Lưu SQLite | Bảng `pages`, `links` và `songs` trong `data/crawler.db` (160 trang, 10175 link, 95 bài hát) | `database.py` |
 | **Task 9** – Crawler hoàn chỉnh, điều kiện dừng | Dừng khi lưu đủ `MAX_PAGES`, khi URL Frontier rỗng hoặc khi nhấn Ctrl+C (vẫn in thống kê) | `Crawler.run()` |
 | robots.txt | Đọc một lần cho mỗi domain, chuẩn hoá theo RFC 9309; tôn trọng `noindex` / `nofollow` | `robots.py`, `parser.read_meta_robots()` |
+| Score Ranking (TF-IDF + BM25) | Chỉ mục trong bộ nhớ từ `data/crawler.db`; điểm = 0,5 × BM25 + 0,5 × TF-IDF (cosine), mỗi điểm chuẩn hoá về 0–1; xem mục 9 | `ranking.py`, `tests/test_ranking.py` |
+| Thống kê crawl | Tự đếm trong lúc crawl: số trang, URL duy nhất, URL bị bỏ qua (theo lý do), request lỗi, số trang theo depth, theo mã HTTP, theo domain | `Crawler.print_summary()` → `data/crawl_summary.txt` |
+| README | Chủ đề, seed, cấu hình, chiến lược, luật lọc URL, database, kết quả | mục 1–7 |
+| Kiểm thử (bổ sung) | 42 test offline: 31 cho chuẩn hoá / lọc URL, frontier, robots.txt, parser, bảng songs, SQLite và dữ liệu đã nộp, 11 cho ranking; GitHub Actions chạy trên Python 3.10 và 3.13 | `tests/test_crawler.py`, `tests/test_ranking.py` |
 
-## Score Ranking (TF-IDF + BM25)
+## 9. Score Ranking (TF-IDF + BM25)
 
 `ranking.py` đọc `data/crawler.db`, lập chỉ mục trong bộ nhớ và xếp hạng trang theo truy vấn bằng **TF-IDF (cosine) kết hợp BM25**. Chỉ dùng thư viện chuẩn của Python.
 
@@ -410,6 +414,3 @@ python ranking.py "tình yêu" --source songs
 ```bash
 python -m unittest tests.test_ranking -v
 ```
-| Thống kê crawl | Tự đếm trong lúc crawl: số trang, URL duy nhất, URL bị bỏ qua (theo lý do), request lỗi, số trang theo depth, theo mã HTTP, theo domain | `Crawler.print_summary()` → `data/crawl_summary.txt` |
-| README | Chủ đề, seed, cấu hình, chiến lược, luật lọc URL, database, kết quả | mục 1–7 |
-| Kiểm thử (bổ sung) | 31 test offline cho chuẩn hoá / lọc URL, frontier, robots.txt, parser, bảng songs, SQLite và dữ liệu đã nộp; GitHub Actions chạy trên Python 3.10 và 3.13 | `tests/test_crawler.py` |
