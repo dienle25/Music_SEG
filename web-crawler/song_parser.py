@@ -332,9 +332,9 @@ def pick_title_artist(candidates, reference, artist=None):
 # LỜI BÀI HÁT
 # ---------------------------------------------------------
 
-# Hợp âm: Am, Em, F#m7, Bb, Dsus4, Gadd9, Cmaj7, Am7/G, D/F#...
+# Hợp âm: Am, Em, F#m7, Bb, Dsus4, Gadd9, Cmaj7, Am7/G, D/F#, A7#5, A7b9...
 _CHORD = (r"[A-G][#b]?(?:maj|min|dim|aug|sus|add|m)?\d{0,2}"
-          r"(?:(?:maj|sus|add)?\d{1,2})*(?:/[A-G][#b]?)?")
+          r"(?:(?:maj|sus|add)?\d{1,2})*(?:[#b]\d{1,2})*(?:/[A-G][#b]?)?")
 _BRACKET_CHORD = re.compile(r"\[\s*%s\s*\]" % _CHORD)            # [Am]
 _CHORD_ONLY = re.compile(r"^%s(?:\s+%s)*$" % (_CHORD, _CHORD))
 
