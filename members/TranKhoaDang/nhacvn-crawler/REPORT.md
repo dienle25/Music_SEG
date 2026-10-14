@@ -204,6 +204,8 @@ HTTP status:
 =======================================
 ```
 
+> Khối thống kê trên là kết quả gốc của lần crawl, nên `Songs stored` là 47. Sau đó database được làm sạch bằng `clean_db.py` (xem mục 12): bảng `songs` còn 12 dòng, các bảng `pages` (300) và `links` (29 911) không đổi.
+
 ### Bảng tổng hợp
 
 | Chỉ số | Giá trị |
@@ -216,9 +218,8 @@ HTTP status:
 | Trang trả HTTP 500 | 12 (4,0 %) |
 | Request không có phản hồi | 1 (0,3 %) |
 | URL bị robots.txt chặn | 1 |
-| Dòng trong bảng `songs` | 47 |
-| Trang bài hát thật (URL kết thúc `-so...`) | 12, cả 12 đều có ca sĩ và lời |
-| Trang danh sách bị nhận nhầm là bài hát (URL kết thúc `-gr...`) | 35 |
+| Dòng trong bảng `songs` khi crawl | 47 (gồm 12 bài hát thật và 35 trang danh sách bị nhận nhầm) |
+| Dòng trong bảng `songs` sau khi làm sạch (`clean_db.py`) | 12 bài hát thật, cả 12 đều có ca sĩ và lời |
 
 ### Phân bố theo độ sâu
 
@@ -300,7 +301,7 @@ Khi chưa loại, idf gần 0 nên điểm gần như chỉ phụ thuộc độ 
 
 3. **Lỗi HTTP 500.** 12 trang (4 %) trả lỗi 500 từ phía server; được ghi lại với `status_code = 500` và không có nội dung.
 
-4. **Dữ liệu bài hát.** Bảng `songs` có 47 dòng nhưng chỉ **12 dòng là trang bài hát thật** (URL dạng `...-soXXXX`); cả 12 đều có ca sĩ và lời. 35 dòng còn lại là trang danh sách nằm dưới `/bai-hat/` (URL dạng `...-grXXXX`, ví dụ `/bai-hat/nhac-hot-gr3m`) bị nhận nhầm là bài hát vì quy tắc chỉ kiểm tra chuỗi `/bai-hat/`. Hai cột `album` và `genre` trống ở cả 47 dòng vì nhac.vn không có thẻ `music:album`, `music:genre` như dự đoán. Cột `artist` của bài hát thật còn dính hậu tố "| NHAC.VN".
+4. **Dữ liệu bài hát.** Lần crawl ghi 47 dòng vào `songs`, nhưng chỉ 12 dòng là trang bài hát thật (URL dạng `...-soXXXX`). 35 dòng còn lại là trang danh sách nằm dưới `/bai-hat/` (URL dạng `...-grXXXX`, ví dụ `/bai-hat/nhac-hot-gr3m`) bị nhận nhầm vì quy tắc chỉ kiểm tra chuỗi `/bai-hat/`. Database đã được làm sạch bằng `clean_db.py` mà không cần crawl lại: giữ 12 bài hát thật (đều có ca sĩ và lời), bỏ hậu tố "| NHAC.VN" ở `artist`, đổi ô không có dữ liệu thành NULL theo form DB chung, và thêm ràng buộc không trùng cặp (`source_url`, `target_url`) cho bảng `links`. Hai cột `album` và `genre` là NULL ở cả 12 dòng vì nhac.vn không có thẻ `music:album`, `music:genre` như dự đoán.
 
 5. **robots.txt.** Có 1 URL bị chặn và 1 request không có phản hồi; crawler ghi nhận cả hai rồi tiếp tục.
 
@@ -311,7 +312,7 @@ Khi chưa loại, idf gần 0 nên điểm gần như chỉ phụ thuộc độ 
 | Vấn đề | Chi tiết / hướng xử lý |
 |---|---|
 | Chỉ 1 domain | `nhaccuatui.com` cần JavaScript, `chiasenhac.vn` không truy cập được. |
-| Bảng `songs` lẫn trang danh sách | Đổi quy tắc nhận diện bài hát thành URL kết thúc `-so...`; cần crawl lại để cập nhật. |
+| Quy tắc nhận diện bài hát trong `parser.py` còn lỏng | Dữ liệu hiện tại đã được làm sạch bằng `clean_db.py`; nếu crawl lại cần đổi quy tắc thành URL kết thúc `-so...`. |
 | `album`, `genre` trống | Cần tìm đúng thẻ HTML chứa thông tin này (xem "Inspect" trên một trang bài hát). |
 | Menu, chân trang lẫn vào `content` | Hiện xử lý ở bước xếp hạng (loại từ lặp); cách tốt hơn là chỉ lấy khối nội dung chính khi crawl. |
 | Xếp hạng chỉ đọc tiêu đề và nội dung | Tên nghệ sĩ nằm trong URL (ví dụ `son-tung-m-tp`) chưa được đưa vào chỉ mục nên tìm tên người chưa tốt; một số trang nghệ sĩ chỉ có tiêu đề "Nhac.vn". |
@@ -328,6 +329,7 @@ Khi chưa loại, idf gần 0 nên điểm gần như chỉ phụ thuộc độ 
 pip install -r requirements.txt
 python check_domain.py     # (tùy chọn) kiểm tra website trước khi crawl
 python main.py             # crawl và in thống kê (xóa dữ liệu cũ trong crawler.db)
+python clean_db.py         # đưa DB về form chung (12 bài hát thật, ô trống = NULL, links không trùng)
 python ranking.py --demo   # xếp hạng thử 5 truy vấn mẫu
 python ranking.py "nhạc trẻ" --top 5
 python ranking.py "nhạc trẻ" --explain
@@ -351,6 +353,7 @@ music_crawler/
 ├── config.py          # toàn bộ tham số crawl
 ├── check_domain.py    # kiểm tra robots.txt và khả năng crawl
 ├── ranking.py         # xếp hạng TF-IDF + BM25 trên dữ liệu trong database
+├── clean_db.py        # làm sạch DB về form chung (sao lưu .bak, không đưa lên git)
 ├── requirements.txt
 └── data/crawler.db    # CSDL đầu ra (không đưa lên GitHub công khai)
 ```
@@ -359,7 +362,7 @@ music_crawler/
 
 ## 16. Hướng phát triển
 
-1. Sửa quy tắc nhận diện trang bài hát (`-so...`) và tìm thẻ chứa album, thể loại để bảng `songs` đầy đủ hơn.
+1. Sửa quy tắc nhận diện trang bài hát trong `parser.py` (URL `-so...`) để lần crawl sau không cần làm sạch, và tìm thẻ chứa album, thể loại để bảng `songs` đầy đủ hơn.
 2. Chỉ lấy khối nội dung chính của trang khi crawl, bỏ menu và chân trang ngay từ đầu.
 3. Đưa chữ trong URL vào chỉ mục để tìm tên nghệ sĩ tốt hơn; gộp các trang trùng nội dung.
 4. Thử thư viện tách từ tiếng Việt chuyên dụng và so sánh kết quả với cách tách âm tiết hiện tại.
