@@ -1,0 +1,28 @@
+
+==========================================================
+hopamchuan_phuquy - HOPAMCHUAN CRAWLING SUMMARY
+==========================================================
+Topic                 : Music - HopAmChuan
+Target valid songs    : 200
+Valid songs in DB     : 200
+Stop reason           : 200 valid songs reached
+Pages fetched         : 253
+Pages saved           : 249
+Song pages seen       : 200
+Songs rejected        : 0
+URLs discovered       : 6099
+Links found           : 23041
+Links saved           : 23041
+Failed pages          : 4
+Maximum depth         : 3
+Elapsed               : 618.7 seconds
+Database              : c:\Users\COMPUTER\Downloads\hopamchuan_crawler_quy205_lyrics_pending\hopamchuan_phuquy\data\hopamchuan_phuquy.db
+
+Skipped by reason:
+  NOT_FOCUSED_PAGE        : 3093
+
+Failed URLs:
+  [404 Client Error: Not Found for url: https://hopamchuan.com/song/654/anh-chi-biet-cam-nin-nghe-tieng-em-khoc/] https://hopamchuan.com/song/654/anh-chi-biet-cam-nin-nghe-tieng-em-khoc/
+  [('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))] https://hopamchuan.com/song/67217/dua-em-vao-trong/
+  [('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))] https://hopamchuan.com/song/73186/mashup-ba-ke-con-nghe-vi-toi-con-song/
+  [('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))] https://hopamchuan.com/song/65901/can-nha-vui/
