@@ -20,6 +20,7 @@ Mỗi thành viên làm một crawler cho một website âm nhạc, sau đó nh�
 | Báo cáo: chủ đề, seed, cấu hình, BFS, luật lọc URL, database, kết quả | [`web-crawler/README.md`](web-crawler/README.md) |
 | Đối chiếu từng yêu cầu đề bài (Task 1–9) với code | [mục 8 của báo cáo](web-crawler/README.md#8-đối-chiếu-yêu-cầu-đề-bài) |
 | Database đã crawl (`pages`, `links`, `songs`) | [`web-crawler/data/crawler.db`](web-crawler/data/crawler.db) |
+| Database gộp của cả nhóm (crawler chung + database của từng thành viên) | [`web-crawler/data/music_seg_merged.db`](web-crawler/data/music_seg_merged.db), giải thích ở [`web-crawler/data/README.md`](web-crawler/data/README.md) |
 | Thống kê lần chạy cuối | [`web-crawler/data/crawl_summary.txt`](web-crawler/data/crawl_summary.txt) |
 | Kiểm thử | [`web-crawler/tests/`](web-crawler/tests/) (31 test), kết quả ở tab **Actions** |
 | Bài cá nhân của từng thành viên | [`members/`](members/) |
@@ -50,6 +51,7 @@ pip install -r requirements.txt
 python main.py        # crawl khoảng 4–5 phút, ghi vào data/crawler.db
 python check_db.py    # xem dữ liệu: pages, songs, links
 python -m unittest discover -s tests -v   # 31 test offline
+python merge_db.py    # gộp database của cả nhóm vào data/music_seg_merged.db
 ```
 
 
@@ -72,13 +74,16 @@ Music_SEG/
 │   ├── robots.py                      # robots.txt
 │   ├── database.py                    # SQLite: pages, links, songs
 │   ├── check_db.py                    # xem nhanh dữ liệu đã crawl
+│   ├── merge_db.py                    # gộp database của cả nhóm
 │   ├── run.bat                        # Windows: cài thư viện, crawl, xem dữ liệu
 │   ├── requirements.txt
 │   ├── README.md                      # báo cáo chi tiết
 │   ├── tests/test_crawler.py          # 31 test offline
 │   └── data/
-│       ├── crawler.db
-│       └── crawl_summary.txt
+│       ├── README.md                  # giải thích các file dữ liệu
+│       ├── crawler.db                 # database của crawler chung
+│       ├── crawl_summary.txt
+│       └── music_seg_merged.db        # database gộp của cả nhóm
 ├── members/                           # bài cá nhân của từng thành viên
 │   ├── README.md
 │   ├── TranKhoaDang/nhacvn-crawler/
