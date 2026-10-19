@@ -226,7 +226,7 @@ class SongParserTests(unittest.TestCase):
                          ["Lạc Trôi", "Sơn Tùng M-TP"])
 
     def test_chords_and_heading_are_removed_from_lyrics(self):
-        text = "Lời bài hát\n[Am]Đây là câu hát thử nghiệm số một\n[F]Và đây là câu hát [G]thử thứ hai"
+        text = "Lời bài hát\n[Am]Đây là câu hát thử nghiệm số một\n[F]Và đây là câu hát [G]thử thứ [A7#5]hai[A7b9]"
         self.assertEqual(clean_lyrics(text),
                          "Đây là câu hát thử nghiệm số một\nVà đây là câu hát thử thứ hai")
 
