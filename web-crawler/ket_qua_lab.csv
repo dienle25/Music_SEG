@@ -1,0 +1,11 @@
+﻿Strategy,Method,Vocabulary Size,Token Reduction (%),MeanP@5,MeanR@5
+baseline,tfidf,2989,0.0,0.72,0.1638
+baseline,bm25,2989,0.0,0.76,0.1712
+no_stopwords,tfidf,2916,17.22,0.72,0.1638
+no_stopwords,bm25,2916,17.22,0.8,0.1934
+no_stop_alnum,tfidf,2847,23.25,0.72,0.1638
+no_stop_alnum,bm25,2847,23.25,0.8,0.1934
+bpe_1000,tfidf,998,-116.54,0.28,0.0769
+bpe_1000,bm25,998,-116.54,0.28,0.0592
+bpe_8000,tfidf,7403,5.91,0.72,0.1638
+bpe_8000,bm25,7403,5.91,0.72,0.1641
