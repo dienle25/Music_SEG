@@ -1,0 +1,5 @@
+Strategy,Vocabulary size,Total tokens
+baseline,32329,828397
+no_stopwords,32033,446635
+stemmed,23280,446635
+lemmatized,26462,446635
