@@ -1,0 +1,147 @@
+{
+  "db": "music_seg_merged_preprocesing.db",
+  "relevance_rule": "relevant = every version of the song the query targets (same song, any site/artist/remix); mashups excluded",
+  "queries": [
+    {
+      "qid": "q01",
+      "type": "title",
+      "query": "Lạc Trôi",
+      "relevant_ids": [
+        534,
+        536,
+        1128,
+        1145,
+        1278,
+        1608,
+        2708,
+        2729
+      ],
+      "note": "Sơn Tùng M-TP; gồm Triple D Remix & Sky Tour 2019; 4 web"
+    },
+    {
+      "qid": "q02",
+      "type": "title",
+      "query": "Chúng Ta Không Thuộc Về Nhau",
+      "relevant_ids": [
+        159,
+        523,
+        1144,
+        1277,
+        1607,
+        2748
+      ],
+      "note": "gồm Sky Tour 2019; loại 3 mashup (2750, 2757, 2763)"
+    },
+    {
+      "qid": "q03",
+      "type": "title",
+      "query": "Thiệp Hồng Sai Tên",
+      "relevant_ids": [
+        11,
+        75,
+        117,
+        118,
+        120,
+        122,
+        123,
+        124
+      ],
+      "note": "8 bản remix/lo-fi trên NhacCuaTui, lời gần như giống nhau"
+    },
+    {
+      "qid": "q04",
+      "type": "title",
+      "query": "Có Chàng Trai Viết Lên Cây",
+      "relevant_ids": [
+        310,
+        645,
+        774,
+        1030,
+        2611,
+        2612,
+        2672
+      ],
+      "note": "Phan Mạnh Quỳnh + bản Hà Anh Tuấn (774) – cùng bài, nghệ sĩ khác"
+    },
+    {
+      "qid": "q05",
+      "type": "title",
+      "query": "Nắng Dưới Chân Mây",
+      "relevant_ids": [
+        28,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200,
+        201
+      ],
+      "note": "9 phiên bản (remix/cover), chỉ NhacCuaTui; đo khả năng gom nhiều bản"
+    },
+    {
+      "qid": "q06",
+      "type": "lyric",
+      "query": "nếu ngày mai em rời xa anh",
+      "relevant_ids": [
+        537,
+        698,
+        1130,
+        2739,
+        2744
+      ],
+      "note": "câu hát của 'Anh Sai Rồi'; bản hopamchuan (2744) lời ngắn/khác nên không chứa nguyên câu"
+    },
+    {
+      "qid": "q07",
+      "type": "lyric",
+      "query": "họ gọi thành phố này là nơi khó tồn tại",
+      "relevant_ids": [
+        175,
+        620
+      ],
+      "note": "câu mở đầu 'Hà Nội' (Obito, Shiki, VSTRA) – chỉ 2 bản (ít tài liệu liên quan)"
+    },
+    {
+      "qid": "q08",
+      "type": "lyric",
+      "query": "vầng trăng treo trên núi nghiêng nghiêng",
+      "relevant_ids": [
+        204,
+        739,
+        1759
+      ],
+      "note": "'Bắc Thang Lên Hỏi Ông Trời' (+ HaNoi Concert Version); loại mashup 149"
+    },
+    {
+      "qid": "q09",
+      "type": "no_accent",
+      "query": "lac troi",
+      "relevant_ids": [
+        534,
+        536,
+        1128,
+        1145,
+        1278,
+        1608,
+        2708,
+        2729
+      ],
+      "note": "cặp với q01 – đo tác động của việc gõ không dấu"
+    },
+    {
+      "qid": "q10",
+      "type": "no_accent",
+      "query": "em la ai tu dau buoc den noi day",
+      "relevant_ids": [
+        42,
+        683,
+        1129,
+        1146,
+        2741
+      ],
+      "note": "câu hát 'Nơi Này Có Anh' gõ không dấu; loại mashup 2757"
+    }
+  ]
+}
