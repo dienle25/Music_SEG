@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}{{ q }} - ViSongSearch{% endblock %}
+{% block head %}<meta name="robots" content="noindex">{% endblock %}
+{% block body %}
+<form action="/search"><input type="search" name="q" value="{{ q }}"><button>Tìm</button></form>
+{% if res.restored %}<p class="muted">Đã thêm dấu: <b>{{ res.restored }}</b></p>{% endif %}
+<p class="muted">{{ res.results|length }} kết quả · {{ "%.1f"|format(res.ms) }} ms · loại truy vấn: {{ res.qtype }}</p>
+{% for r in res.results %}
+<div class="result">
+  <a class="title" href="/go?query_id={{ qid }}&doc={{ r.doc_id }}&rank={{ r.rank }}">{{ r.title }}</a>
+  <div class="muted">{{ r.artist or "Không rõ tác giả" }} · {{ r.source }}</div>
+  <div>{{ r.snippet|safe }}</div>
+</div>
+{% else %}
+<p>Không tìm thấy bài nào. Thử gõ ít chữ hơn hoặc mô tả nội dung bài hát.</p>
+{% endfor %}
+{% endblock %}

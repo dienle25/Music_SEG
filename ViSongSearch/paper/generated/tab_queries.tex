@@ -1,0 +1,28 @@
+\begin{table*}[t]
+\centering
+\caption{Query sets. Lengths in syllables. \emph{Overlap}: share of the query's unmarked syllables that occur in
+the target song's lyrics, and in the lyrics of a random other song. \emph{Run}: longest run of consecutive query
+syllables copied from the lyrics. \emph{Unmarked}: share of queries typed without any diacritic. Statistics on the
+test split.}
+\label{tab:queries}
+\footnotesize
+\setlength{\tabcolsep}{4.5pt}
+\begin{tabular}{@{}llrrrrrrrr@{}}
+\toprule
+ & & \multicolumn{3}{c}{queries} & & \multicolumn{2}{c}{overlap} & & \\
+\cmidrule(lr){3-5} \cmidrule(lr){7-8}
+Type & Description & train & dev & test & Length & target & random & Run & Unmarked \\
+\midrule
+Q1 & exact fragment & 8542 & 603 & 1241 & 8.5 & 1.00 & 0.41 & 8.5 & 1\% \\
+Q2 & unmarked fragment & 8542 & 603 & 1241 & 8.5 & 0.97 & 0.40 & 8.0 & 100\% \\
+Q3 & misheard / mistyped & 8542 & 603 & 1241 & 8.5 & 0.80 & 0.34 & 4.8 & 1\% \\
+Q4 & paraphrase (LLM) & -- & 75 & 227 & 17.2 & 0.70 & 0.41 & 2.2 & 0\% \\
+Q5 & description (LLM) & -- & 75 & 227 & 27.2 & 0.72 & 0.35 & 3.4 & 0\% \\
+Q4u & Q4 typed without marks & -- & 75 & 227 & 17.2 & 0.70 & 0.41 & 2.2 & 100\% \\
+Q5u & Q5 typed without marks & -- & 75 & 227 & 27.2 & 0.72 & 0.35 & 3.4 & 100\% \\
+Q3u & Q3 typed without marks & -- & 0 & 1241 & 8.5 & 0.78 & 0.34 & 4.6 & 100\% \\
+Q4s & short paraphrase, other prompt & -- & 0 & 199 & 10.7 & 0.70 & 0.39 & 1.9 & 0\% \\
+Q5g & description from a gist & -- & 0 & 224 & 25.0 & 0.59 & 0.38 & 2.1 & 0\% \\
+\bottomrule
+\end{tabular}
+\end{table*}

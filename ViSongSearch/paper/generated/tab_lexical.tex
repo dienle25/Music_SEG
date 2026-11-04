@@ -1,0 +1,52 @@
+\begin{table*}[t]
+\centering
+\caption{Lexical retrieval on the test split (MRR@10).}
+\label{tab:lexical}
+\footnotesize
+\setlength{\tabcolsep}{3.3pt}
+\begin{tabular}{@{}l rrrrr r rrr@{}}
+\toprule
+ & \multicolumn{5}{c}{MRR@10 by query type} & & \multicolumn{3}{c}{macro average} \\
+\cmidrule(lr){2-6} \cmidrule(l){8-10}
+System & Q1 & Q2 & Q3 & Q4 & Q5 & Macro & S@1 & S@10 & R@100 \\
+ \scriptsize{queries} & \scriptsize{1241} & \scriptsize{1241} & \scriptsize{1241} & \scriptsize{227} & \scriptsize{227} & & & & \\
+\midrule
+\multicolumn{10}{l}{\textit{Diacritic-sensitive}} \\
+\quad BM25, syllables (ref.) & 0.840 & 0.057 & 0.581 & 0.325 & 0.802 & 0.521 & 0.467 & 0.642 & 0.776 \\
+\quad BM25, syllable uni+bigrams & 0.999$^{\dagger}$ & 0.135$^{\dagger}$ & 0.935$^{\dagger}$ & 0.344 & \textbf{0.934}$^{\dagger}$ & 0.670 & 0.643 & 0.728 & 0.818 \\
+\quad BM25, words (pyvi) & 0.870$^{\dagger}$ & 0.048$^{\ddagger}$ & 0.552$^{\ddagger}$ & 0.246$^{\ddagger}$ & 0.813 & 0.506 & 0.459 & 0.606 & 0.741 \\
+\quad QL Dirichlet, syllables & 0.857$^{\dagger}$ & 0.071$^{\dagger}$ & 0.694$^{\dagger}$ & \textbf{0.354} & 0.838 & 0.563 & 0.512 & 0.669 & 0.797 \\
+\quad BM25+RM3, syllables & 0.841 & 0.064$^{\dagger}$ & 0.656$^{\dagger}$ & 0.334 & 0.826 & 0.544 & 0.513 & 0.617 & 0.741 \\
+\quad BM25+RM3, syllable uni+bigrams & 0.999$^{\dagger}$ & 0.143$^{\dagger}$ & 0.943$^{\dagger}$ & 0.330 & 0.919$^{\dagger}$ & 0.667 & 0.643 & 0.716 & 0.791 \\
+\addlinespace
+\multicolumn{10}{l}{\textit{Diacritic-insensitive}} \\
+\quad BM25, unmarked syllables & 0.715$^{\ddagger}$ & 0.696$^{\dagger}$ & 0.423$^{\ddagger}$ & 0.242$^{\ddagger}$ & 0.680$^{\ddagger}$ & 0.551 & 0.488 & 0.690 & 0.876 \\
+\quad BM25, unmarked uni+bigrams & \textbf{1.000}$^{\dagger}$ & 0.992$^{\dagger}$ & 0.929$^{\dagger}$ & 0.288 & 0.898$^{\dagger}$ & 0.821 & 0.795 & 0.872 & 0.936 \\
+\quad BM25+RM3, unmarked & 0.749$^{\ddagger}$ & 0.732$^{\dagger}$ & 0.503$^{\ddagger}$ & 0.229$^{\ddagger}$ & 0.680$^{\ddagger}$ & 0.579 & 0.535 & 0.673 & 0.837 \\
+\quad BM25, char.\ 3-grams in syllables & 0.616$^{\ddagger}$ & 0.566$^{\dagger}$ & 0.270$^{\ddagger}$ & 0.157$^{\ddagger}$ & 0.443$^{\ddagger}$ & 0.410 & 0.341 & 0.564 & 0.793 \\
+\quad BM25, char.\ 4-grams across syllables & 0.955$^{\dagger}$ & 0.944$^{\dagger}$ & 0.811$^{\dagger}$ & 0.196$^{\ddagger}$ & 0.677$^{\ddagger}$ & 0.717 & 0.674 & 0.805 & 0.892 \\
+\quad BM25, char.\ 5-grams across syllables & 0.989$^{\dagger}$ & 0.985$^{\dagger}$ & 0.941$^{\dagger}$ & 0.248$^{\ddagger}$ & 0.840 & 0.801 & 0.772 & 0.860 & 0.922 \\
+\addlinespace
+\multicolumn{10}{l}{\textit{Sound-alike key}} \\
+\quad BM25, sound-alike key uni+bigrams & 0.999$^{\dagger}$ & 0.112$^{\dagger}$ & \textbf{0.968}$^{\dagger}$ & 0.336 & 0.929$^{\dagger}$ & 0.669 & 0.642 & 0.727 & 0.811 \\
+\addlinespace
+\multicolumn{10}{l}{\textit{Diacritic restoration}} \\
+\quad Restore$_{\mathrm{train}}$ + uni+bigrams & 0.995$^{\dagger}$ & 0.975$^{\dagger}$ & 0.925$^{\dagger}$ & 0.336 & 0.929$^{\dagger}$ & 0.832 & 0.806 & 0.883 & 0.943 \\
+\quad Restore$_{\mathrm{all}}$ + syllables & 0.838 & 0.817$^{\dagger}$ & 0.586 & 0.323 & 0.791 & 0.671 & 0.607 & 0.808 & 0.927 \\
+\quad Restore$_{\mathrm{all}}$ + uni+bigrams & 0.999$^{\dagger}$ & \textbf{0.996}$^{\dagger}$ & 0.933$^{\dagger}$ & 0.342 & 0.932$^{\dagger}$ & 0.840 & 0.818 & 0.886 & 0.945 \\
+\addlinespace
+\multicolumn{10}{l}{\textit{Metadata}} \\
+\quad BM25, title/artist/genre only & 0.081$^{\ddagger}$ & 0.080$^{\dagger}$ & 0.067$^{\ddagger}$ & 0.023$^{\ddagger}$ & 0.388$^{\ddagger}$ & 0.128 & 0.103 & 0.185 & 0.280 \\
+\quad BM25, lyrics + metadata & 0.999$^{\dagger}$ & 0.991$^{\dagger}$ & 0.929$^{\dagger}$ & 0.296 & 0.924$^{\dagger}$ & 0.828 & 0.804 & 0.873 & 0.939 \\
+\addlinespace
+\multicolumn{10}{l}{\textit{Lexical fusion (RRF)}} \\
+\quad RRF, equal weights & 0.746$^{\ddagger}$ & 0.742$^{\dagger}$ & 0.646$^{\dagger}$ & 0.274 & 0.830 & 0.648 & 0.525 & 0.857 & 0.935 \\
+\quad RRF, weights tuned on dev & 0.999$^{\dagger}$ & 0.995$^{\dagger}$ & 0.943$^{\dagger}$ & 0.344 & 0.930$^{\dagger}$ & \textbf{0.842} & 0.820 & 0.886 & 0.945 \\
+\quad RRF, weights per predicted type & 0.999$^{\dagger}$ & 0.995$^{\dagger}$ & 0.943$^{\dagger}$ & 0.336 & 0.930$^{\dagger}$ & 0.840 & 0.817 & 0.886 & 0.945 \\
+\quad RRF, weights per true type (oracle) & 0.999$^{\dagger}$ & 0.995$^{\dagger}$ & 0.942$^{\dagger}$ & 0.342 & 0.930$^{\dagger}$ & 0.841 & 0.819 & 0.887 & 0.945 \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\parbox{\textwidth}{\footnotesize $\dagger$/$\ddagger$: significantly better/worse than BM25 on syllables (paired randomization test, 10{,}000 permutations, Holm correction over the systems of the table within each column, $p<0.05$). Bold: best value per column, oracle rows excluded. Macro: unweighted mean over the five query types. Restore$_{\mathrm{all}}$ trains the diacritic restoration language model on every indexed song, Restore$_{\mathrm{train}}$ on training songs only.}
+\end{table*}

@@ -1,0 +1,312 @@
+# ViSongSearch: bạn tìm bài hát thế nào khi quên tên?
+
+Khảo sát này thu cách mọi người gõ tìm một bài hát khi không nhớ tên bài, cho một nghiên cứu về máy tìm kiếm bài hát tiếng Việt (môn SEG301 và TMG301, Đại học FPT). Khảo sát ẩn danh, không hỏi tên hay email, mất khoảng 5–10 phút. Câu trả lời chỉ dùng để đánh giá hệ thống tìm kiếm và có thể được công bố ở dạng ẩn danh cùng bài báo. Bạn có thể dừng bất cứ lúc nào.
+
+Cách làm: mỗi câu hỏi là một bài hát (tên và ca sĩ). Với bài bạn biết, hãy tưởng tượng bạn quên mất tên bài và gõ đúng như bạn sẽ gõ vào ô tìm kiếm: một câu lời bạn nhớ (nhớ sai cũng được), hoặc mô tả bài hát. Không gõ tên bài, không tra lời trên mạng. Bỏ trống những bài bạn không biết. Hãy trả lời ít nhất 5 bài.
+
+1. Khi tìm kiếm bằng tiếng Việt, bạn thường gõ: Có dấu đầy đủ / Không dấu / Lúc có dấu, lúc không (bắt buộc)
+2. Bạn đang làm khảo sát trên: Điện thoại / Máy tính (bắt buộc)
+
+- Phonecert (10cm, Hoàng Dũng) #S01
+- Tình Yêu Tuyệt Mệnh (3K Band) #S02
+- Yêu (7uppercuts) #S03
+- Tình Ta Hai Ngã (Aki Khoa) #S04
+- Where U at (Andree, JC Hưng) #S05
+- Sẻ Chia Khoảng Khắc (Anh Khanh, Thái Trinh) #S06
+- Tìm Em Câu Hát Dân Ca (Anh Thơ) #S07
+- Đừng ví em là biển (Anh Thơ) #S08
+- Anh ở đầu sông em cuối sông (Anh Thơ, Việt Hoàn) #S09
+- Cõi Mơ (Anh Tú) #S10
+- Giấc Mơ Không Nhòa (Anh Tú) #S11
+- Mạnh Mẽ Lên Cô Gái (Anh Tú) #S12
+- Đôi Bờ (Anh Tú, Lê Cát Trọng Lý) #S13
+- Cuộc đời xì ke (Antôn Đình Dũng) #S14
+- New Joint (Binz) #S15
+- Con Heo Đất (Bé Na) #S16
+- Em Không Tin (Bích Phương Idol) #S17
+- Cảm Giác (Bảo Thy) #S18
+- Nếu Như Ta Cách Xa (Bảo Thy, Hồ Quang Hiếu) #S19
+- Tình Yêu Diệu Kỳ (Bằng Cường, Thanh Ngọc) #S20
+- Linh Hồn Đã Mất (Bằng Kiều) #S21
+- Anh Sẽ Nhớ Mãi (Em Sẽ Nhớ Mãi) (Bằng Kiều, Nguyên Hà) #S22
+- Có Chàng Trai Tương Tư Em Như Vậy (Bệu) #S23
+- Trôi (Bụi Gió) #S24
+- Mắt Đen (Bức Tường) #S25
+- Trở Về (Bức Tường) #S26
+- Tuyệt Tình Ca Chế (Cab) #S27
+- Vợ Tương Lai (Cao Tùng Anh) #S28
+- 1 2 3 4 (Chi Dân) #S29
+- Người Nào Hay (Chi Pu) #S30
+- Hãy Lắng Nghe (Chillies) #S31
+- Giấc mơ trưa (Chuu) #S32
+- Yêu (Châu Dương) #S33
+- Em Là Món Quà Vô Giá (Châu Khải Phong) #S34
+- Tự Tin (Châu Lệ Minh) #S35
+- Vẫn Như Lúc Đầu (Cá Hồi Hoang) #S36
+- Đừng Buồn (Cá Hồi Hoang) #S37
+- Mùa Hè Quê Hương (Cẩm Ly) #S38
+- Nhớ Mẹ Lý Mồ Côi (Cẩm Ly) #S39
+- Không Bao Giờ Quên Anh (Cẩm Ly, Ngọc Trọng) #S40
+- Đánh Mất Em (DATKAA, Quang Đăng Trần) #S41
+- Mưa (Doãn Hoài Nam, Mạc Mai Sương) #S42
+- Qua Xóm Nhỏ (Duy Khánh) #S43
+- Đa Tạ (Duy Khánh) #S44
+- Nhớ Về Em - Duy Trường (Duy Trường) #S45
+- Không Phải Em Đúng Không? (Dương Hoàng Yến, Bùi Anh Tuấn) #S46
+- Cố Nhân Tình (Dế Choắt) #S47
+- Vết Thương Sỏi Đá (Elvis Phương) #S48
+- Vết Thù Trên Lưng Ngựa Hoang (Elvis Phương, Kenny Thái) #S49
+- Câu Chuyện Đầu Năm (Giao Linh, Như Quỳnh) #S50
+- Người Mình Yêu Chưa Chắc Đã Yêu Mình (Gil Lê) #S51
+- Giấc Mơ Tình (GMC) #S52
+- Khuất Lối (H-Kray) #S53
+- Anh Cứ Đi Đi (Hari Won) #S54
+- Phố Mưa (Hoàng Bách) #S55
+- La Bàn (Hoàng Dũng) #S56
+- Tám điệp khúc (Hoàng Oanh) #S57
+- See You Again (Hoàng Tôn) #S58
+- Em Không Quay Về (Hoàng Tôn, Yanbi) #S59
+- Cánh Hoa Tổn Thương (Hoàng Yến Chibi) #S60
+- Giấc Mơ Thần Tiên (Huyền Chi) #S61
+- Hạnh Phúc Thoáng Qua (huỳnh nhật long) #S62
+- Radio (Hà Anh Tuấn) #S63
+- Bàn tay mẹ (Hà Phạm Anh Thư) #S64
+- Khi Tình Yêu Phai Màu (Hòa Mi, Noo Phước Thịnh) #S65
+- Giấc Mơ Tuyệt Vời (Hương Lan, Lam Trường) #S66
+- Ngốc 2 (Hãy Để Em Quên - Let me forget) (Hương Tràm, An Du) #S67
+- Dù Sai Em Vẫn Yêu Anh (Hạnh Sino) #S68
+- Cơn Mưa Quá Khứ (Hải Băng) #S69
+- Quên Và Không Thể Quên (Hải Đăng) #S70
+- Gửi Người Yêu Cũ (Hồ Ngọc Hà) #S71
+- Hãy Mặc Em Đi (Hồ Ngọc Hà) #S72
+- Thức Tỉnh (Hồ Ngọc Hà) #S73
+- Là Ai (Hồ Vĩnh Khoa) #S74
+- Xin Mặt Trời Ngủ Yên (Hồng Nhung) #S75
+- Đóa Hoa Vô Thường (Hồng Nhung) #S76
+- Chuyện đời (JGKid) #S77
+- Ta Và Nàng (JGKid, Đen vâu) #S78
+- Chuyện Ngày Xưa Đó (Jimmy Nguyễn) #S79
+- Cuộc Tình Ở Lại (Jimmy Nguyễn) #S80
+- Tình Xưa Nghĩa Cũ 3 (Jimmy Nguyễn) #S81
+- Anh Vẫn Cứ Lo (JSOL) #S82
+- Hết MANA (JustaTee, BigDaddy) #S83
+- Anh Sống Cũng Biết Nghĩ Biết Đau (Kaisoul) #S84
+- Vô Thường (Karik, Orange) #S85
+- Người Yêu Khóc (Kelvin Khánh) #S86
+- Gửi Làn Gió (Keotaxayaxin) #S87
+- Hứa (Khang Duy) #S88
+- Trả Cho Em (Khánh Cường) #S89
+- Điều Không Thể Mất (Khánh Linh, Tân Nhàn) #S90
+- Bài ca dành cho những xác người (Khánh Ly) #S91
+- Một Lần Thoáng Có (Khánh Ly) #S92
+- Người già và em bé (Người Già Em Bé) (Khánh Ly) #S93
+- Gloomy Sunday (Chủ nhật buồn - Szomorú Vasárnap) (Khánh Ly, Billie Holiday) #S94
+- Để Anh Phía Sau Em (Khánh Phương, Tường Quân) #S95
+- Như Bến Đợi Đò (Khánh Ân, Hana Cẩm Tiên) #S96
+- Biết Nói Là Tại Sao (Khắc Việt) #S97
+- Phải Xa Nhau (Khắc Việt) #S98
+- Cấm (KindyA) #S99
+- Đi Rồi Sẽ Đến (Kt Suri) #S100
+- Cảm Ơn Em (Lam Trường) #S101
+- Lời Trái Tim Muốn Nói (Hát Về Cuộc Sống Hôm Nay Và Ngày Mai ) (Lam Trường, Elvis Phương) #S102
+- Chiếc Ô Ngăn Đôi (Lan Trinh) #S103
+- Kẻ Điên Tin Vào Tình Yêu (Lil Zpoet) #S104
+- Yêu Thật Đấy (Linh Hee) #S105
+- Em Vẫn Đợi Anh Về (Long Nhật) #S106
+- Vì yêu anh sẽ (Lou Hoàng) #S107
+- Tuổi Học Trò (Lynk Lee) #S108
+- Nếu Không Có Em - Lâm Nhật Tiến (Lâm Nhật Tiến) #S109
+- Cỏ Úa (Lâm Thúy Vân, Đan Nguyên) #S110
+- Thành Phố Không Người (Lê Bật Thành, Fer) #S111
+- Tôi Đã Lầm Tin Em (Lý Hải) #S112
+- Đến Với Giê-Xu (Lưu Chí Vỹ) #S113
+- Bụi Phấn (chế Bụi Game) (Lương Bích Hữu) #S114
+- Quên Anh Là Điều Em Không Thể (Lương Minh Trang) #S115
+- Quay Lại Từ Đầu (Lệ Quyên) #S116
+- Mushup Lời Yêu Đó- Đếm Ngày Xa Em -làm Vợ Anh Nhé (Lực Acoustic) #S117
+- Mưa Rơi Lặng Thầm (M4U Band) #S118
+- Loanh Quanh (Mademoiselle) #S119
+- Yêu một người không sai (Mai Fin) #S120
+- Kinh Hòa Bình (Mai Thiên Vân) #S121
+- Đêm Tâm Sự (Mai Thiên Vân, Quang Lê) #S122
+- Ngày Đông Có Nắng (Mai, Le) #S123
+- Hẹn lần sau (MAYDAYs) #S124
+- Em Mới Là Người Yêu Anh (MIN) #S125
+- Ghen (MIN, ERIK, Khắc Hưng) #S126
+- Lan Và Điệp Chế (Mr.dee) #S127
+- Tự Kỷ (MTV) #S128
+- Vợ Tôi (Mạnh Quỳnh) #S129
+- Vào đời (Mắt Ngọc, Quang Vinh) #S130
+- Điều Em Muốn Nói (Mờ Naive) #S131
+- Hai Mươi (Mỹ Tâm) #S132
+- Một Ngày Mùa Đông (Mỹ Tâm) #S133
+- Trái Tim Của Gió (Nam Cường, Việt My) #S134
+- Nụ Cười Em (Nam Kun) #S135
+- 100 Year Love (NamDuc) #S136
+- Hạ (Nathan Lee) #S137
+- Hôm nay anh buồn (Nguyên) #S138
+- Đôi lời tình ca (Nguyễn Hoàng Dũng) #S139
+- Khổ Vì Yêu Nàng (Nguyễn Hùng) #S140
+- Chuyện Tình Cây Lá Và Gió (Ngô Kiến Huy) #S141
+- Nỗi Đau (Da Cam) (Ngũ Cung) #S142
+- Muốn Em Là Của Riêng Mình (Ngơ ( Hay còn gọi là Long Nger), nân.) #S143
+- Mời Anh Về Thăm Quê Em (Ngọc Hân) #S144
+- Ngày đó chúng mình (Ngọc Hạ, Trần Thái Hòa) #S145
+- Hai Mươi Năm Tình Cũ (Ngọc Lan) #S146
+- Hạnh Phúc Nơi Nào (Ngọc Lan) #S147
+- Nắng Xuân (Solenzara) (Ngọc Lan, Enrico Macias) #S148
+- Chuyện Thường (Ngọt) #S149
+- Đứa Bé Mồ Côi (Nhiều Ca Sĩ, Lương Bích Hữu) #S150
+- Ngược Xuôi Con Nước (Nhã Phượng) #S151
+- Đánh Mất (Nhóm 2B) #S152
+- Gieo Mầm Tin Yêu (Nhóm Lửa Hồng) #S153
+- Cười Lên Đi Em Ơi (Như Loan) #S154
+- Cho Tôi Được Một Lần (Như Quỳnh) #S155
+- Ừ Thì Thôi (Như Quỳnh) #S156
+- Đường Xưa Lối Cũ (Như Quỳnh, Trần Mỹ Ngọc) #S157
+- Đắc Thắng (Nhất Trung) #S158
+- Anh từng cố gắng (Nhật Phong) #S159
+- Gặp Nhau Làm Ngơ (Nhật Trường) #S160
+- Những ngày xuân rực rỡ (Noo Phước Thịnh) #S161
+- Tìm Em Trong Ký Ức (Noo Phước Thịnh) #S162
+- Ước Mơ Tôi (Noo Phước Thịnh) #S163
+- Nhà Là Nơi (Noo Phước Thịnh, Văn Mai Hương) #S164
+- Cảm Ơn Em (Nông Tiến Bắc) #S165
+- Ngoại lệ của nhau (OBITO) #S166
+- Khi Phải Quên Đi (Phan Mạnh Quỳnh) #S167
+- Người Yêu Cũ (Phan Mạnh Quỳnh) #S168
+- Chiều Đồng Quê (Phi Nhung) #S169
+- Đò Tình Lỡ Chuyến (Phi Nhung) #S170
+- Hạnh Phúc Vỡ Tan (Phong Đạt) #S171
+- Yêu Trộm (My Love) (Phúc Bồ) #S172
+- Xuân Miền Nam (Phương Hồng Quế, Khánh Ly) #S173
+- Thật Lòng Xin Lỗi Em (Phạm Khánh Hưng) #S174
+- Gửi Em Của Quá Khứ (#GECQK) (Phạm Quỳnh Anh) #S175
+- Xin Chào Việt Nam (Bonjour Vietnam, Hello Vietnam) (Phạm Quỳnh Anh, Jin Ju) #S176
+- Nợ - Phạm Trưởng (Phạm Trưởng) #S177
+- Yêu Không Dám Nói (Phạm Trưởng) #S178
+- Khắc Khoải (Quang Dũng) #S179
+- Vết lăn trầm (Quang Dũng) #S180
+- Bóng Chiều Tà (Quang Dũng, Khánh Ly) #S181
+- Định Mệnh - Quang Hà (Quang Hà) #S182
+- Giai Điệu Không Quên (Quang Linh) #S183
+- Mưa Trên Phố Huế (Quang Linh) #S184
+- Thương Về Miền Trung (Quang Lê) #S185
+- Về Quê Ngoại (Quang Lê, Ngọc Ngữ) #S186
+- Gửi Những Người Phụ Nữ Tôi Yêu (Quang Vinh, Nhiều Ca Sĩ) #S187
+- Hẹn Ước Xin Khuất Lời (Quốc Thiên) #S188
+- Kẻ Say Tình (Quốc Thiên) #S189
+- Đại Ngư (Reii) #S190
+- Bạn (Rhy) #S191
+- Em và gió (Rhy) #S192
+- Tôi Yêu Chuyên Hạ Long (Rica) #S193
+- Ly - Sol (Sol) #S194
+- Câu Chuyện Nhỏ - Soobin (Soobin) #S195
+- Phía Sau Một Cô Gái (Soobin Hoàng Sơn) #S196
+- Em Của Ngày Hôm Qua (Sơn Tùng M-TP) #S197
+- Em cứ bước nếu vui (Sơn Tùng M-TP) #S198
+- Chúng Ta Sau Này (T.R.I) #S199
+- 2+3=5 (T.R.I, Cammie) #S200
+- Trái Tim Nhân Mã (Thanh Duy) #S201
+- Những ngày mưa (Thanh Hà, Nguyên Hà) #S202
+- Tình Yêu Của Tôi (Thanh Thảo) #S203
+- Áo Em Chưa Mặc Một Lần (Thanh Thảo, Quốc Đại) #S204
+- Chiều tàn (Thanh Tuyền) #S205
+- Hồi Tưởng (Thanh Tuyền) #S206
+- Căn Nhà Dĩ Vãng (Thanh Tâm, Chế Linh) #S207
+- Ánh Đèn Phố (The Cassette) #S208
+- Anh Sợ Mất Em (The Men) #S209
+- Hiện Tại Và Quá Khứ (The Men) #S210
+- Ngày Mai Người Ta Lấy Chồng (Thành Đạt) #S211
+- Là (Thái Vũ) #S212
+- Chỉ Là Thoáng Qua (Thùy Chi) #S213
+- Giấc Mơ Trưa (Thùy Chi) #S214
+- Mưa (Thùy Chi, M4U Band) #S215
+- Tìm Một Nửa Hóa Ra Lại Chưa (Thương Võ) #S216
+- Đôi Bờ (Thảo Vân, Tấn Sơn) #S217
+- Quay (Thế Bảo, CAM) #S218
+- Đoạn cuối cho cuộc tình (无言的结局) (Thế Sơn, Hương Thủy) #S219
+- Why are u so cute? (demo) (Thịnh Suy) #S220
+- Chợt Là Nỗi Đau (Thủy Tiên) #S221
+- Nhật Ký (Thủy Tiên) #S222
+- Kết Thúc Chẳng Đẹp Như Bắt Đầu (Tiên Fami, Đoàn Minh Quân) #S223
+- Đâu Cần Một Bài Ca Tình Yêu (Tiên Tiên, Trang) #S224
+- Chocolate (Trang Pháp) #S225
+- Đã Muộn Rồi (Trang Tạ) #S226
+- Nhật Ký (Triệu Hoàng) #S227
+- Chỉ Sợ (Trung Quân Idol) #S228
+- Phượt (Trung Quân Idol) #S229
+- Thay Lòng (Truzg, Nal) #S230
+- Hát Nữa Đi Em (Trường Vũ) #S231
+- Hoa Bằng Lăng (Nữ Nhi Theo Cơn Gió - 追风的女儿) (Trường Vũ, Jimmy Nguyễn) #S232
+- Anh Tiền Tuyến, Em Hậu Phương (Trường Vũ, Như Quỳnh) #S233
+- Nguyệt Cầm (Trần Thái Hòa) #S234
+- Đợi Một Lời Chia Tay (Trịnh Thiên Ân) #S235
+- Thiếu Một Người (Trịnh Thăng Bình) #S236
+- Trong Cha (Trịnh Tý Quang) #S237
+- Mưa Trong Lòng (Trịnh Đình Quang) #S238
+- Tình Hoàng Hôn (Tuấn Hưng) #S239
+- Sao Không Cho Nhau (Tuấn Hưng, Khắc Việt) #S240
+- Dư Âm (Tuấn Ngọc, Lệ Quyên) #S241
+- Lời Nói Tháng 6 (Tân Trần) #S242
+- Nước Mắt Em Lau Bằng Tình Yêu Mới (Chị Đẹp Đạp Gió 2024) (Tóc Tiên, Châu Tuyết Vân) #S243
+- Gửi Gió Cho Mây Ngàn Bay (Tùng Dương, Tuấn Ngọc) #S244
+- Lỡ Yêu Mất Rồi (Tùng Maru, Han SaRa) #S245
+- Có Chút Ngọt Ngào (Tăng Quỳnh My) #S246
+- Trường Sơn Đông Trường Sơn Tây (Tạ Quang Thắng, Thùy Chi) #S247
+- Ơn Chúa Lòng Ghi Sâu ( Give Thanks) (Tố Hà, Janella Salvador) #S248
+- Thời Thanh Niên Sôi Nổi (Tốp Ca Nam Nhạc Viện Hà Nội) #S249
+- Đếm sao (Tốp ca thiếu nhi) #S250
+- Quốc ca Việt Nam (Tiến Quân Ca) (Tốp Ca, Kim Anh) #S251
+- Sài Gòn (Uyenkulele) #S252
+- Mượn (Uyên Linh) #S253
+- Nhất Tiếu Khuynh Thành (Lời Việt) (V Tiểu Thiên, Uông Tô Lang) #S254
+- Sài Gòn Sài Gòn (V.Music) #S255
+- Huyền Thoại Rượu Và Bia (Various Artists) #S256
+- Cảm Ơn Em (Viruss) #S257
+- Duyên Phận (chế) (Việt Johan) #S258
+- Mưa Nhạt Nhòa (Vy Oanh) #S259
+- Trả Hết Cho Người (Vân Quang Long) #S260
+- Xin Một Lần Được Yêu (Vân Quang Long) #S261
+- Đêm Màu Hồng (Vân Quang Long) #S262
+- Vượt Lên Chính Mình (Võ Hạ Trâm) #S263
+- Giấc Mơ Thức Tỉnh (Văn Mai Hương) #S264
+- Thời Thanh Xuân Sẽ Qua (Văn Mai Hương, Phạm Hồng Phước) #S265
+- Còn lại gì? (Vũ) #S266
+- Hỏi Thăm (How Are You?) (Vũ Cát Tường) #S267
+- Ngày Này, Người Con Gái Này (Vũ Cát Tường) #S268
+- Yêu Xa (Vũ Cát Tường) #S269
+- Chẳng Ai Hiểu Về Tình Yêu (Vũ Duy Khánh) #S270
+- Tình Yêu Như Bóng Mây (Vũ Khanh, Khánh Ly) #S271
+- Phản Bội Chính Mình (Vương Anh Tú) #S272
+- Cho Em (Wanbi Tuấn Anh, Thùy Chi) #S273
+- Emmmmm (Wowy) #S274
+- Bông hồng tặng cô (Xuân Mai, Thanh Thảo) #S275
+- Mùa Đông Đã Qua - Y Garia (Y Garia) #S276
+- Ít Nhưng Dài Lâu (Yan Nguyễn) #S277
+- Rồi Em Sẽ Về (Yanbi) #S278
+- Anh Không Dám Nói Yêu Em (Yuki Huy Nam) #S279
+- Kết Duyên (YuniBoo, Goctoi Mixer) #S280
+- Quay Lưng (Yến Lê) #S281
+- Việt Nam Trong Tôi Là (Yến Lê) #S282
+- Mạnh Mẽ Lên Cô Gái (Ái Phương) #S283
+- Tìm Tòi (Ân Ngờ) #S284
+- Hãy Quên Anh (Đan Nguyên) #S285
+- Dòng Sông Xưa (Đan Trường) #S286
+- Túp Lều Lý Tưởng (Đan Trường, Thanh Thảo) #S287
+- Babie (Đinh Hương) #S288
+- Hà Nội. Hanoi (Đinh Mạnh Ninh) #S289
+- Mùa Yêu Đầu (Đinh Mạnh Ninh, Thu Phương) #S290
+- Sài Gòn Mùa Vắng Anh (Đinh Uyên) #S291
+- Góc Khuất (Đàm Vĩnh Hưng) #S292
+- Là Tất Cả (Đá Số Tới) #S293
+- Một Lời Cho Anh (Đăng Khôi) #S294
+- Ngàn năm tương phùng (Butterfly) (Đăng Khôi) #S295
+- Vì Điều Gì Vậy (Đặng Tuấn Phương) #S296
+- Những ngày mưa (Đặng Vĩnh Thịnh, BMZ) #S297
+- Tìm Lại Con Đường (Đỗ Thành Nam) #S298
+- Thoáng Mây Bay - Đức Huy (Đức Huy) #S299
+- Anh Đã Sai -Ưng Đại Vệ (Ưng Đại Vệ) #S300
+
+Mỗi bài là câu hỏi trả lời ngắn, không bắt buộc, gợi ý: Gõ như khi tìm kiếm: lời bạn nhớ hoặc mô tả bài. Không gõ tên bài. Gõ có dấu hay không dấu tùy thói quen của bạn. Bỏ trống nếu không biết bài.
+Thứ tự câu hỏi được xáo trộn cho từng người (Settings → Presentation → Shuffle question order).

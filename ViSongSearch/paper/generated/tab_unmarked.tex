@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\caption{Paraphrases (Q4) and descriptions (Q5) as written, with marks, and typed without marks (Q4u, Q5u):
+the same queries with every mark removed. MRR@10 on the test split. $\ddagger$/$\dagger$: the unmarked
+version is significantly worse/better for that system (paired randomization test, Holm correction within
+each column, $p<0.05$).}
+\label{tab:unmarked}
+\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+System & Q4 & Q4u & Q5 & Q5u \\
+\midrule
+BM25, syllables & 0.325 & 0.012$^{\ddagger}$ & 0.802 & 0.062$^{\ddagger}$ \\
+BM25, syllable uni+bigrams & 0.344 & 0.027$^{\ddagger}$ & 0.934 & 0.097$^{\ddagger}$ \\
+QL Dirichlet, syllables & 0.354 & 0.018$^{\ddagger}$ & 0.838 & 0.063$^{\ddagger}$ \\
+BM25, unmarked uni+bigrams & 0.288 & 0.288 & 0.898 & 0.898 \\
+Restore$_{\mathrm{train}}$ + uni+bigrams & 0.336 & 0.280$^{\ddagger}$ & 0.929 & 0.888$^{\ddagger}$ \\
+Restore$_{\mathrm{all}}$ + uni+bigrams & 0.342 & 0.294$^{\ddagger}$ & 0.932 & 0.911 \\
+BM25, lyrics + metadata & 0.296 & 0.296 & 0.924 & 0.924 \\
+RRF, weights per predicted type & 0.336 & 0.299$^{\ddagger}$ & 0.930 & 0.910 \\
+\bottomrule
+\end{tabular}
+\end{table}

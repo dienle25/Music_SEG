@@ -1,0 +1,24 @@
+\begin{table*}[t]
+\centering
+\caption{MRR@10 on the test split when the index keeps a random share of the 6213 clusters (the target
+cluster is always kept; mean over 5 random draws). Rankings are those of the full index restricted to the
+kept songs; the hybrid is fused again from the restricted lists.}
+\label{tab:catalogue}
+\scriptsize
+\setlength{\tabcolsep}{3.2pt}
+\begin{tabular}{@{}l rrr rrr rrr rrr@{}}
+\toprule
+ & \multicolumn{3}{c}{Q1} & \multicolumn{3}{c}{Q4} & \multicolumn{3}{c}{Q5} & \multicolumn{3}{c}{Macro} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+Share kept & 25\% & 50\% & 100\% & 25\% & 50\% & 100\% & 25\% & 50\% & 100\% & 25\% & 50\% & 100\% \\
+\midrule
+BM25, syllables & 0.912 & 0.877 & 0.840 & 0.440 & 0.383 & 0.325 & 0.868 & 0.834 & 0.802 & 0.604 & 0.561 & 0.521 \\
+BM25, unmarked bigrams & 1.000 & 1.000 & 1.000 & 0.399 & 0.347 & 0.288 & 0.934 & 0.918 & 0.898 & 0.857 & 0.841 & 0.821 \\
+Restore + bigrams & 1.000 & 0.999 & 0.999 & 0.459 & 0.401 & 0.342 & 0.956 & 0.945 & 0.932 & 0.876 & 0.859 & 0.840 \\
+Lexical RRF & 1.000 & 0.999 & 0.999 & 0.459 & 0.399 & 0.344 & 0.954 & 0.944 & 0.930 & 0.877 & 0.859 & 0.842 \\
+mE5-base, restored & 0.788 & 0.750 & 0.711 & 0.707 & 0.653 & 0.597 & 0.756 & 0.704 & 0.642 & 0.729 & 0.684 & 0.634 \\
+NA-FT (seed 1), restored & 0.879 & 0.850 & 0.819 & 0.639 & 0.588 & 0.536 & 0.652 & 0.602 & 0.544 & 0.758 & 0.719 & 0.675 \\
+Selected hybrid & 1.000 & 0.999 & 0.999 & 0.567 & 0.515 & 0.458 & 0.955 & 0.944 & 0.930 & 0.898 & 0.883 & 0.865 \\
+\bottomrule
+\end{tabular}
+\end{table*}

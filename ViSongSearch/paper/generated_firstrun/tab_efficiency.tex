@@ -1,0 +1,25 @@
+\begin{table}[t]
+\centering
+\caption{Cost on four CPU cores without a GPU. Index: encoding the 79,328
+passages (dense) or building the inverted index (lexical), and the size of the passage vectors. Query: encoding one
+query; search: exact search for one query (ms). mE5-small and NA-FT mE5-small share one architecture; their difference
+shows the variation between timing runs.}
+\label{tab:efficiency}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}l r r r r r@{}}
+\toprule
+ & Passages/s & Index & MB & Query (ms) & Search (ms) \\
+\midrule
+mE5-small & 83 & 16 min & 122 & 6 & 5 \\
+NA-FT mE5-small & 99 & 13 min & 122 & 5 & 5 \\
+mE5-base & 28 & 47 min & 244 & 15 & 9 \\
+bkai bi-encoder & 29 & 45 min & 244 & 14 & 8 \\
+\midrule
+BM25, syllable uni+bigrams & -- & 3 s & -- & -- & 0.3 \\
+BM25, unmarked uni+bigrams & -- & 4 s & -- & -- & 0.4 \\
+Diacritic restoration & -- & -- & -- & 0.9 & -- \\
+bge-reranker-v2-m3, top 20 & -- & -- & -- & -- & 4,600 \\
+\bottomrule
+\end{tabular}
+\end{table}

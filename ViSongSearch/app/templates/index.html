@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block body %}
+<form action="/search"><input type="search" name="q" placeholder="Gõ đoạn lời bạn nhớ, có dấu hay không dấu đều được" autofocus><button>Tìm</button></form>
+<p class="muted">Đang có {{ n_songs }} bài hát. Thử: <a href="/search?q=o+sau+bo+vai+la+nhung+sau+lo">o sau bo vai la nhung sau lo</a></p>
+{% if top %}<div class="card"><b>Được tìm nhiều</b><br>{% for q, c in top %}<a href="/search?q={{ q|urlencode }}">{{ q }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</div>{% endif %}
+{% endblock %}

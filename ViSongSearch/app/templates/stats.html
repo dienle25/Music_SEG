@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Thống kê - ViSongSearch{% endblock %}
+{% block body %}
+<h2>Thống kê truy vấn</h2>
+<table>
+<tr><td>Số truy vấn</td><td>{{ n }}</td></tr>
+<tr><td>Số phiên</td><td>{{ sessions }}</td></tr>
+<tr><td>Độ trễ trung bình</td><td>{{ "%.1f"|format(ms) }} ms</td></tr>
+<tr><td>Truy vấn không có kết quả</td><td>{{ zero }}</td></tr>
+<tr><td>Truy vấn có click</td><td>{{ clicked }}</td></tr>
+<tr><td>CTR@1 (trong các truy vấn có click)</td><td>{{ "%.3f"|format(ctr1) }}</td></tr>
+<tr><td>MRR theo click</td><td>{{ "%.3f"|format(mrr_click) }}</td></tr>
+<tr><td>Thời gian nạp index</td><td>{{ "%.1f"|format(load_s) }} s</td></tr>
+</table>
+<h3>Theo loại truy vấn dự đoán</h3>
+<table>{% for t, c in by_type %}<tr><td>{{ t }}</td><td>{{ c }}</td></tr>{% endfor %}</table>
+<h3>Từ khoá được tìm nhiều</h3>
+<table>{% for q, c in top %}<tr><td>{{ q }}</td><td>{{ c }}</td></tr>{% endfor %}</table>
+<h3>Truy vấn không có kết quả</h3>
+<table>{% for q, c in zero_q %}<tr><td>{{ q }}</td><td>{{ c }}</td></tr>{% endfor %}</table>
+{% endblock %}

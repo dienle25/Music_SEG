@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\caption{Confusion matrix of the query-type classifier (logistic regression) on the test queries. Rows: true type;
+columns: predicted type. Accuracy 89.4\%
+(Naive Bayes: 74.6\%). Q4u and Q5u are Q4 and Q5 typed without marks.}
+\label{tab:qtype}
+\small
+\begin{tabular}{@{}lrrrrrrrr@{}}
+\toprule
+ & \multicolumn{7}{c}{predicted} & \\
+\cmidrule(lr){2-8}
+true & Q1 & Q2 & Q3 & Q4 & Q5 & Q4u & Q5u & recall \\
+\midrule
+Q1 & 1208 & 10 & 14 & 9 & 0 & 0 & 0 & 97\% \\
+Q2 & 7 & 1224 & 0 & 0 & 0 & 10 & 0 & 99\% \\
+Q3 & 224 & 9 & 1006 & 2 & 0 & 0 & 0 & 81\% \\
+Q4 & 83 & 0 & 1 & 124 & 19 & 0 & 0 & 55\% \\
+Q5 & 0 & 0 & 0 & 4 & 223 & 0 & 0 & 98\% \\
+Q4u & 0 & 70 & 0 & 0 & 0 & 133 & 24 & 59\% \\
+Q5u & 0 & 0 & 0 & 0 & 0 & 3 & 224 & 99\% \\
+\bottomrule
+\end{tabular}
+\end{table}
