@@ -1,0 +1,24 @@
+\begin{table*}[t]
+\centering
+\caption{Planned comparisons on the test split: change in MRR@10 from system A to system B (B $-$ A), per query
+type and at 50\% noise. $^{*}$: $p<0.05$, two-sided paired randomization test with 10{,}000 permutations, Holm
+correction over the 8 comparisons within each column. Systems with three seeds enter with their mean per
+query. Macro: change of the macro average, not tested. Reranking was run on 40 sampled queries per type.}
+\label{tab:planned}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}l rrrrr r r@{}}
+\toprule
+Comparison (A $\rightarrow$ B) & Q1 & Q2 & Q3 & Q4 & Q5 & N50 & Macro \\
+\midrule
+mE5-base: queries as typed $\rightarrow$ restored & 0.000 & \ensuremath{+}0.667$^{*}$ & \ensuremath{+}0.001 & \ensuremath{-}0.001 & \ensuremath{+}0.001 & \ensuremath{+}0.008 & \ensuremath{+}0.133 \\
+mE5-small, restored: zero-shot $\rightarrow$ NA-FT & \ensuremath{+}0.088$^{*}$ & \ensuremath{+}0.091$^{*}$ & \ensuremath{+}0.147$^{*}$ & \ensuremath{+}0.080$^{*}$ & \ensuremath{-}0.043 & \ensuremath{+}0.140$^{*}$ & \ensuremath{+}0.073 \\
+NA-FT (seed 1) $\rightarrow$ without noise & \ensuremath{-}0.035$^{*}$ & \ensuremath{-}0.085$^{*}$ & \ensuremath{-}0.125$^{*}$ & \ensuremath{+}0.012 & \ensuremath{+}0.059$^{*}$ & \ensuremath{-}0.172$^{*}$ & \ensuremath{-}0.035 \\
+NA-FT (seed 1) $\rightarrow$ random negatives & \ensuremath{+}0.004 & \ensuremath{-}0.003 & \ensuremath{+}0.005 & \ensuremath{+}0.011 & \ensuremath{-}0.004 & \ensuremath{+}0.008 & \ensuremath{+}0.002 \\
+Lexical fusion $\rightarrow$ hybrid & 0.000 & 0.000 & 0.000 & \ensuremath{+}0.114$^{*}$ & 0.000 & 0.000 & \ensuremath{+}0.023 \\
+Hybrid: predicted $\rightarrow$ true query type & 0.000 & 0.000 & 0.000 & \ensuremath{+}0.067$^{*}$ & 0.000 & 0.000 & \ensuremath{+}0.013 \\
+Hybrid: NA-FT mE5-small $\rightarrow$ mE5-base & \ensuremath{-}0.002 & \ensuremath{-}0.001 & 0.000 & \ensuremath{+}0.038$^{*}$ & \ensuremath{-}0.002 & 0.000 & \ensuremath{+}0.006 \\
+Hybrid $\rightarrow$ cross-encoder reranking & \ensuremath{-}0.042 & \ensuremath{-}0.025 & \ensuremath{-}0.032 & \ensuremath{+}0.104$^{*}$ & \ensuremath{-}0.080 & -- & \ensuremath{-}0.015 \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,26 @@
+\begin{table*}[t]
+\centering
+\caption{Test-only variants against the queries they vary, on the same songs (MRR@10): noisy fragments typed
+without marks (Q3u, 1241 pairs), paraphrases written by a second prompt that asks for a short, loose
+recollection (Q4s, 199 pairs), and descriptions written from a gist of the lyrics by a writer that
+saw neither the lyrics nor the title or artist (Q5g, 224 pairs). $\ddagger$/$\dagger$: the variant
+is significantly harder/easier for that system (paired randomization test, Holm correction within each column,
+$p<0.05$).}
+\label{tab:variants}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}l rr rr rr@{}}
+\toprule
+System & Q3 & Q3u & Q4 & Q4s & Q5 & Q5g \\
+\midrule
+BM25, syllables & 0.581 & 0.043$^{\ddagger}$ & 0.300 & 0.186$^{\ddagger}$ & 0.805 & 0.200$^{\ddagger}$ \\
+BM25, unmarked uni+bigrams & 0.929 & 0.908$^{\ddagger}$ & 0.270 & 0.155$^{\ddagger}$ & 0.900 & 0.210$^{\ddagger}$ \\
+BM25, char.\ 5-grams across syllables & 0.941 & 0.933$^{\ddagger}$ & 0.231 & 0.118$^{\ddagger}$ & 0.842 & 0.190$^{\ddagger}$ \\
+Restore + uni+bigrams & 0.933 & 0.896$^{\ddagger}$ & 0.319 & 0.200$^{\ddagger}$ & 0.933 & 0.243$^{\ddagger}$ \\
+BM25, metadata only & 0.067 & 0.065$^{\ddagger}$ & 0.022 & 0.043 & 0.387 & 0.050$^{\ddagger}$ \\
+Lexical RRF & 0.943 & 0.894$^{\ddagger}$ & 0.322 & 0.194$^{\ddagger}$ & 0.931 & 0.239$^{\ddagger}$ \\
+NA-FT mE5-small, restored & 0.628 & 0.566$^{\ddagger}$ & 0.525 & 0.344$^{\ddagger}$ & 0.615 & 0.137$^{\ddagger}$ \\
+Selected hybrid & 0.943 & 0.894$^{\ddagger}$ & 0.518 & 0.195$^{\ddagger}$ & 0.929 & 0.242$^{\ddagger}$ \\
+\bottomrule
+\end{tabular}
+\end{table*}

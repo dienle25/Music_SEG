@@ -1,0 +1,24 @@
+\begin{table}[t]
+\centering
+\caption{MRR@10 on the noise sweep: the same 1241 test fragments with a growing share of
+corrupted syllables, under the hand-set channel and (last column) the channel estimated from real transcriptions
+(Section~\ref{sec:validity}). NA-FT: mean over three seeds.}
+\label{tab:noise}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrrrrrr@{}}
+\toprule
+ & \multicolumn{6}{c}{hand-set channel} & \multicolumn{1}{c}{est.} \\
+\cmidrule(lr){2-7} \cmidrule(l){8-8}
+System & 0\% & 10\% & 20\% & 30\% & 40\% & 50\% & 50\% \\
+\midrule
+BM25, syllables & 0.840 & 0.712 & 0.657 & 0.518 & 0.429 & 0.298 & 0.308 \\
+BM25, char 3-grams & 0.616 & 0.396 & 0.307 & 0.218 & 0.151 & 0.118 & 0.111 \\
+BM25, unmarked uni+bigrams & 1.000 & 0.975 & 0.974 & 0.891 & 0.846 & 0.711 & 0.728 \\
+Restore + uni+bigrams & 0.999 & 0.981 & 0.975 & 0.896 & 0.858 & 0.709 & 0.712 \\
+Dense mE5-base on restored queries & 0.711 & 0.627 & 0.574 & 0.475 & 0.376 & 0.281 & 0.296 \\
+NA-FT mE5-small on restored queries & 0.806 & 0.750 & 0.711 & 0.630 & 0.543 & 0.429 & 0.437 \\
+Hybrid, weights per predicted type & 0.999 & 0.981 & 0.977 & 0.902 & 0.875 & 0.749 & 0.742 \\
+\bottomrule
+\end{tabular}
+\end{table}

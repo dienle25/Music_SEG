@@ -1,0 +1,54 @@
+\begin{table*}[t]
+\centering
+\caption{Dense, fine-tuned, hybrid and reranked retrieval on the test split (MRR@10). Every choice of model or weights was made on the dev split.}
+\label{tab:neural}
+\footnotesize
+\setlength{\tabcolsep}{3.3pt}
+\begin{tabular}{@{}l rrrrr r rrr@{}}
+\toprule
+ & \multicolumn{5}{c}{MRR@10 by query type} & & \multicolumn{3}{c}{macro average} \\
+\cmidrule(lr){2-6} \cmidrule(l){8-10}
+System & Q1 & Q2 & Q3 & Q4 & Q5 & Macro & S@1 & S@10 & R@100 \\
+ \scriptsize{queries} & \scriptsize{1241} & \scriptsize{1241} & \scriptsize{1241} & \scriptsize{227} & \scriptsize{227} & & & & \\
+\midrule
+\multicolumn{10}{l}{\textit{Reference}} \\
+\quad RRF, weights tuned on dev & 0.999 & 0.995 & 0.943 & 0.344 & 0.930 & 0.842 & 0.820 & 0.886 & 0.945 \\
+\addlinespace
+\multicolumn{10}{l}{\textit{Dense, zero-shot (MaxP over 4-line passages)}} \\
+\quad mE5-small & \multicolumn{9}{c}{\pending{not run yet}} \\
+\quad \quad on restored queries & \multicolumn{9}{c}{\pending{not run yet}} \\
+\quad mE5-base & \multicolumn{9}{c}{\pending{not run yet}} \\
+\quad \quad on restored queries & \multicolumn{9}{c}{\pending{not run yet}} \\
+\quad Vietnamese\_Embedding & \multicolumn{9}{c}{\pending{not run yet}} \\
+\quad \quad on restored queries & \multicolumn{9}{c}{\pending{not run yet}} \\
+\quad BGE-M3 & \multicolumn{9}{c}{\pending{not run yet}} \\
+\quad \quad on restored queries & \multicolumn{9}{c}{\pending{not run yet}} \\
+\quad bkai bi-encoder & \multicolumn{9}{c}{\pending{not run yet}} \\
+\quad \quad on restored queries & \multicolumn{9}{c}{\pending{not run yet}} \\
+\addlinespace
+\multicolumn{10}{l}{\textit{Noise-aware fine-tuning (NA-FT)}} \\
+\quad NA-FT mE5-base (3 seeds) & 0.778$^{\ddagger}$ & 0.088$^{\ddagger}$ & 0.646$^{\ddagger}$ & \textbf{0.702}$^{\dagger}$ & 0.639$^{\ddagger}$ & 0.571 & 0.516 & 0.691 & 0.818 \\
+\quad \quad on restored queries (3 seeds) & 0.776$^{\ddagger}$ & 0.764$^{\ddagger}$ & 0.644$^{\ddagger}$ & 0.697$^{\dagger}$ & 0.646$^{\ddagger}$ & 0.705 & 0.646 & 0.831 & 0.937 \\
+\quad NA-FT mE5-small (3 seeds) & 0.782$^{\ddagger}$ & 0.121$^{\ddagger}$ & 0.628$^{\ddagger}$ & 0.551$^{\dagger}$ & 0.623$^{\ddagger}$ & 0.541 & 0.480 & 0.668 & 0.813 \\
+\quad \quad on restored queries (3 seeds) & 0.779$^{\ddagger}$ & 0.768$^{\ddagger}$ & 0.628$^{\ddagger}$ & 0.540$^{\dagger}$ & 0.618$^{\ddagger}$ & 0.667 & 0.600 & 0.803 & 0.925 \\
+\quad \quad without noise (seed 1) & 0.795$^{\ddagger}$ & 0.027$^{\ddagger}$ & 0.541$^{\ddagger}$ & 0.674$^{\dagger}$ & 0.700$^{\ddagger}$ & 0.547 & 0.493 & 0.658 & 0.760 \\
+\quad \quad without hard negatives (seed 1) & 0.782$^{\ddagger}$ & 0.092$^{\ddagger}$ & 0.658$^{\ddagger}$ & 0.686$^{\dagger}$ & 0.672$^{\ddagger}$ & 0.578 & 0.524 & 0.699 & 0.827 \\
+\quad \quad without noise (seed 1) & 0.792$^{\ddagger}$ & 0.056$^{\ddagger}$ & 0.568$^{\ddagger}$ & 0.542$^{\dagger}$ & 0.640$^{\ddagger}$ & 0.520 & 0.462 & 0.639 & 0.763 \\
+\quad \quad without hard negatives (seed 1) & 0.779$^{\ddagger}$ & 0.130$^{\ddagger}$ & 0.635$^{\ddagger}$ & 0.551$^{\dagger}$ & 0.614$^{\ddagger}$ & 0.542 & 0.479 & 0.671 & 0.816 \\
+\addlinespace
+\multicolumn{10}{l}{\textit{Hybrid: lexical lists + NA-FT mE5-base (seed 3), restored queries}} \\
+\quad RRF, equal weights & 0.859$^{\ddagger}$ & 0.862$^{\ddagger}$ & 0.790$^{\ddagger}$ & 0.434$^{\dagger}$ & 0.906 & 0.770 & 0.689 & 0.904 & 0.978 \\
+\quad RRF, weights tuned on dev & \textbf{0.999} & \textbf{0.995} & \textbf{0.943} & 0.344 & \textbf{0.930} & 0.842 & 0.820 & 0.886 & 0.945 \\
+\quad RRF, weights per predicted type & 0.998 & \textbf{0.995} & \textbf{0.943} & 0.532$^{\dagger}$ & 0.928 & \textbf{0.879} & 0.851 & 0.923 & 0.965 \\
+\quad RRF, weights per true type (oracle) & 0.999 & 0.995 & 0.943 & 0.674$^{\dagger}$ & 0.930 & 0.908 & 0.877 & 0.959 & 0.987 \\
+\addlinespace
+\multicolumn{10}{l}{\textit{Cross-encoder reranking of the top 20 of the selected hybrid}} \\
+\quad first stage, same queries & 0.993 & 0.996 & 0.949 & 0.532$^{\dagger}$ & 0.928 & 0.880 & 0.852 & 0.924 & 0.964 \\
+\quad bge-reranker-v2-m3 & 0.971$^{\ddagger}$ & 0.977$^{\ddagger}$ & 0.957 & 0.682$^{\dagger}$ & 0.895 & 0.896 & 0.870 & 0.931 & 0.964 \\
+\quad Vietnamese\_Reranker & 0.945$^{\ddagger}$ & 0.943$^{\ddagger}$ & 0.914 & 0.650$^{\dagger}$ & 0.789$^{\ddagger}$ & 0.848 & 0.796 & 0.931 & 0.964 \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\parbox{\textwidth}{\footnotesize $\dagger$/$\ddagger$: significantly better/worse than the reference lexical system (RRF, weights tuned on dev; paired randomization test, Holm correction within each column, $p<0.05$). Bold: best value per column among runs over every query, oracle rows excluded. NA-FT rows average the per-query scores of the seeds before testing. Reranking rows are evaluated on the queries that were reranked.}
+\end{table*}

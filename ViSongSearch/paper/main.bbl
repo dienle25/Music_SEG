@@ -1,0 +1,382 @@
+\begin{thebibliography}{54}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Abdul-Jaleel et~al.(2004)Abdul-Jaleel, Allan, Croft, Diaz, Larkey, Li,
+  Smucker, and Wade]{abduljaleel2004umass}
+Nasreen Abdul-Jaleel, James Allan, W.~Bruce Croft, Fernando Diaz, Leah Larkey,
+  Xiaoyan Li, Mark~D. Smucker, and Courtney Wade.
+\newblock {UMass} at {TREC} 2004: Novelty and {HARD}.
+\newblock In \emph{Proceedings of the Thirteenth Text REtrieval Conference
+  (TREC 2004)}, 2004.
+
+\bibitem[{AITeamVN}(2025)]{aiteamvn2025embedding}
+{AITeamVN}.
+\newblock {Vietnamese\_Embedding} and {Vietnamese\_Reranker}.
+\newblock Hugging Face model cards, \url{https://huggingface.co/AITeamVN},
+  2025.
+
+\bibitem[Alaofi et~al.(2023)Alaofi, Gallagher, Sanderson, Scholer, and
+  Thomas]{alaofi2023variants}
+Marwah Alaofi, Luke Gallagher, Mark Sanderson, Falk Scholer, and Paul Thomas.
+\newblock Can generative {LLMs} create query variants for test collections?
+  {An} exploratory study.
+\newblock In \emph{Proceedings of the 46th International ACM SIGIR Conference
+  on Research and Development in Information Retrieval}, 2023.
+
+\bibitem[Arabzadeh et~al.(2021)Arabzadeh, Yan, and Clarke]{arabzadeh2021dense}
+Negar Arabzadeh, Xinyi Yan, and Charles L.~A. Clarke.
+\newblock Predicting efficiency/effectiveness trade-offs for dense vs. sparse
+  retrieval strategy selection.
+\newblock In \emph{Proceedings of the 30th ACM International Conference on
+  Information and Knowledge Management}, pages 2862--2866, 2021.
+
+\bibitem[Arguello et~al.(2021)Arguello, Ferguson, Fine, Mitra, Zamani, and
+  Diaz]{arguello2021tot}
+Jaime Arguello, Adam Ferguson, Emery Fine, Bhaskar Mitra, Hamed Zamani, and
+  Fernando Diaz.
+\newblock Tip of the tongue known-item retrieval: A case study in movie
+  identification.
+\newblock In \emph{Proceedings of the 2021 Conference on Human Information
+  Interaction and Retrieval (CHIIR)}, 2021.
+
+\bibitem[Arguello et~al.(2023)Arguello, Ferguson, Fine, Mitra, Zamani, and
+  Diaz]{arguello2023trectot}
+Jaime Arguello, Adam Ferguson, Emery Fine, Bhaskar Mitra, Hamed Zamani, and
+  Fernando Diaz.
+\newblock Overview of the {TREC} 2023 tip-of-the-tongue track.
+\newblock In \emph{The Thirty-Second Text REtrieval Conference (TREC 2023)},
+  2023.
+
+\bibitem[Azzopardi et~al.(2007)Azzopardi, de~Rijke, and
+  Balog]{azzopardi2007simulated}
+Leif Azzopardi, Maarten de~Rijke, and Krisztian Balog.
+\newblock Building simulated queries for known-item topics: An analysis using
+  six {European} languages.
+\newblock In \emph{Proceedings of the 30th Annual International ACM SIGIR
+  Conference on Research and Development in Information Retrieval}, 2007.
+
+\bibitem[Bhargav et~al.(2022)Bhargav, Sidiropoulos, and
+  Kanoulas]{bhargav2022tot}
+Samarth Bhargav, Georgios Sidiropoulos, and Evangelos Kanoulas.
+\newblock `it's on the tip of my tongue': A new dataset for known-item
+  retrieval.
+\newblock In \emph{Proceedings of the Fifteenth ACM International Conference on
+  Web Search and Data Mining (WSDM)}, 2022.
+\newblock \doi{10.1145/3488560.3498421}.
+
+\bibitem[Bhargav et~al.(2023)Bhargav, Schuth, and Hauff]{bhargav2023music}
+Samarth Bhargav, Anne Schuth, and Claudia Hauff.
+\newblock When the music stops: Tip-of-the-tongue retrieval for music.
+\newblock In \emph{Proceedings of the 46th International ACM SIGIR Conference
+  on Research and Development in Information Retrieval}, 2023.
+
+\bibitem[{BKAI Foundation Models}(2023)]{bkai2023biencoder}
+{BKAI Foundation Models}.
+\newblock vietnamese-bi-encoder.
+\newblock Hugging Face model card,
+  \url{https://huggingface.co/bkai-foundation-models/vietnamese-bi-encoder},
+  2023.
+
+\bibitem[Bonifacio et~al.(2022)Bonifacio, Abonizio, Fadaee, and
+  Nogueira]{bonifacio2022inpars}
+Luiz Bonifacio, Hugo Abonizio, Marzieh Fadaee, and Rodrigo Nogueira.
+\newblock {InPars}: Unsupervised dataset generation for information retrieval.
+\newblock In \emph{Proceedings of the 45th International ACM SIGIR Conference
+  on Research and Development in Information Retrieval}, 2022.
+\newblock \doi{10.1145/3477495.3531863}.
+
+\bibitem[Broder(1997)]{broder1997resemblance}
+Andrei~Z. Broder.
+\newblock On the resemblance and containment of documents.
+\newblock In \emph{Proceedings of Compression and Complexity of SEQUENCES
+  1997}, pages 21--29, 1997.
+
+\bibitem[Bruch et~al.(2023)Bruch, Gai, and Ingber]{bruch2023fusion}
+Sebastian Bruch, Siyu Gai, and Amir Ingber.
+\newblock An analysis of fusion functions for hybrid retrieval.
+\newblock \emph{ACM Transactions on Information Systems}, 42\penalty0 (1),
+  2023.
+
+\bibitem[Chen et~al.(2024)Chen, Xiao, Zhang, Luo, Lian, and Liu]{chen2024bgem3}
+Jianlv Chen, Shitao Xiao, Peitian Zhang, Kun Luo, Defu Lian, and Zheng Liu.
+\newblock {M3-Embedding}: Multi-linguality, multi-functionality,
+  multi-granularity text embeddings through self-knowledge distillation.
+\newblock In \emph{Findings of the Association for Computational Linguistics:
+  ACL 2024}, 2024.
+
+\bibitem[Chen and Goodman(1999)]{chen1999smoothing}
+Stanley~F. Chen and Joshua Goodman.
+\newblock An empirical study of smoothing techniques for language modeling.
+\newblock \emph{Computer Speech \& Language}, 13\penalty0 (4):\penalty0
+  359--394, 1999.
+
+\bibitem[Cormack et~al.(2009)Cormack, Clarke, and B{\"u}ttcher]{cormack2009rrf}
+Gordon~V. Cormack, Charles L.~A. Clarke, and Stefan B{\"u}ttcher.
+\newblock Reciprocal rank fusion outperforms {Condorcet} and individual rank
+  learning methods.
+\newblock In \emph{Proceedings of the 32nd International ACM SIGIR Conference
+  on Research and Development in Information Retrieval}, pages 758--759, 2009.
+
+\bibitem[Dai and Callan(2019)]{dai2019maxp}
+Zhuyun Dai and Jamie Callan.
+\newblock Deeper text understanding for {IR} with contextual neural language
+  modeling.
+\newblock In \emph{Proceedings of the 42nd International ACM SIGIR Conference
+  on Research and Development in Information Retrieval}, pages 985--988, 2019.
+
+\bibitem[Dang et~al.(2025)Dang, Nguyen, and Pham]{dang2025viranker}
+Phuong-Nam Dang, Kieu-Linh Nguyen, and Thanh-Hieu Pham.
+\newblock {ViRanker}: A {BGE-M3} \& blockwise parallel transformer
+  cross-encoder for {Vietnamese} reranking.
+\newblock arXiv:2509.09131, 2025.
+
+\bibitem[Dang and Nguyen(2020)]{dang2020tdp}
+Trung Duc~Anh Dang and Thi Thu~Trang Nguyen.
+\newblock {TDP} -- a hybrid diacritic restoration with transformer decoder.
+\newblock In \emph{Proceedings of the 34th Pacific Asia Conference on Language,
+  Information and Computation (PACLIC)}, pages 76--83, Hanoi, Vietnam, 2020.
+
+\bibitem[Henderson et~al.(2017)Henderson, Al-Rfou, Strope, Sung, Luk{\'a}cs,
+  Guo, Kumar, Miklos, and Kurzweil]{henderson2017smartreply}
+Matthew Henderson, Rami Al-Rfou, Brian Strope, Yun-Hsuan Sung, L{\'a}szl{\'o}
+  Luk{\'a}cs, Ruiqi Guo, Sanjiv Kumar, Balint Miklos, and Ray Kurzweil.
+\newblock Efficient natural language response suggestion for smart reply.
+\newblock arXiv:1705.00652, 2017.
+
+\bibitem[Hirjee and Brown(2010)]{hirjee2010misheard}
+Hussein Hirjee and Daniel~G. Brown.
+\newblock Solving misheard lyric search queries using a probabilistic model of
+  speech sounds.
+\newblock In \emph{Proceedings of the 11th International Society for Music
+  Information Retrieval Conference (ISMIR)}, 2010.
+
+\bibitem[Holm(1979)]{holm1979}
+Sture Holm.
+\newblock A simple sequentially rejective multiple test procedure.
+\newblock \emph{Scandinavian Journal of Statistics}, 6\penalty0 (2):\penalty0
+  65--70, 1979.
+
+\bibitem[Hoàng(2004)]{hoang2004phuongngu}
+Thị~Châu Hoàng.
+\newblock \emph{Phương ngữ học tiếng Việt [{Vietnamese}
+  Dialectology]}.
+\newblock NXB Đại học Quốc gia Hà Nội, Hanoi, 2004.
+
+\bibitem[Kang and Kim(2003)]{kang2003querytype}
+In-Ho Kang and GilChang Kim.
+\newblock Query type classification for web document retrieval.
+\newblock In \emph{Proceedings of the 26th Annual International ACM SIGIR
+  Conference on Research and Development in Information Retrieval}, pages
+  64--71, 2003.
+
+\bibitem[Karpukhin et~al.(2020)Karpukhin, Oguz, Min, Lewis, Wu, Edunov, Chen,
+  and Yih]{karpukhin2020dpr}
+Vladimir Karpukhin, Barlas Oguz, Sewon Min, Patrick Lewis, Ledell Wu, Sergey
+  Edunov, Danqi Chen, and Wen-tau Yih.
+\newblock Dense passage retrieval for open-domain question answering.
+\newblock In \emph{Proceedings of the 2020 Conference on Empirical Methods in
+  Natural Language Processing (EMNLP)}, pages 6769--6781, 2020.
+
+\bibitem[Kirby(2011)]{kirby2011hanoi}
+James Kirby.
+\newblock Vietnamese ({Hanoi} {Vietnamese}).
+\newblock \emph{Journal of the International Phonetic Association}, 41\penalty0
+  (3):\penalty0 381--392, 2011.
+\newblock \doi{10.1017/S0025100311000181}.
+
+\bibitem[Kneser and Ney(1995)]{kneser1995kn}
+Reinhard Kneser and Hermann Ney.
+\newblock Improved backing-off for m-gram language modeling.
+\newblock In \emph{Proceedings of the IEEE International Conference on
+  Acoustics, Speech, and Signal Processing (ICASSP)}, pages 181--184, 1995.
+
+\bibitem[Lavrenko and Croft(2001)]{lavrenko2001relevance}
+Victor Lavrenko and W.~Bruce Croft.
+\newblock Relevance-based language models.
+\newblock In \emph{Proceedings of the 24th Annual International ACM SIGIR
+  Conference on Research and Development in Information Retrieval}, pages
+  120--127, 2001.
+
+\bibitem[Lee et~al.(2019)Lee, Chang, and Toutanova]{lee2019ict}
+Kenton Lee, Ming-Wei Chang, and Kristina Toutanova.
+\newblock Latent retrieval for weakly supervised open domain question
+  answering.
+\newblock In \emph{Proceedings of the 57th Annual Meeting of the Association
+  for Computational Linguistics (ACL)}, pages 6086--6096, 2019.
+
+\bibitem[Nguyen and Nguyen(2020)]{nguyen2020phobert}
+Dat~Quoc Nguyen and Anh~Tuan Nguyen.
+\newblock {PhoBERT}: Pre-trained language models for {Vietnamese}.
+\newblock In \emph{Findings of the Association for Computational Linguistics:
+  EMNLP 2020}, pages 1037--1042, 2020.
+
+\bibitem[Nguyen et~al.(2025)Nguyen, Cheng, and Soh]{nguyen2025vietlyrics}
+Quoc~Anh Nguyen, Bernard Cheng, and Kelvin Soh.
+\newblock {VietLyrics}: A large-scale dataset and models for {Vietnamese}
+  automatic lyrics transcription.
+\newblock arXiv:2510.22295, 2025.
+
+\bibitem[Nguyen et~al.(2024{\natexlab{a}})Nguyen, Le,
+  et~al.]{nguyen2024vilexnorm}
+Thanh-Nhi Nguyen, Thanh-Phong Le, et~al.
+\newblock {ViLexNorm}: A lexical normalization corpus for {Vietnamese} social
+  media text.
+\newblock In \emph{Proceedings of the 18th Conference of the European Chapter
+  of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  2024{\natexlab{a}}.
+
+\bibitem[Nguyen et~al.(2024{\natexlab{b}})Nguyen, Tran, Nguyen, and
+  Dinh]{nguyen2024vcs}
+Vinh Nguyen, Nam Tran, Long Nguyen, and Dien Dinh.
+\newblock Advancing {Vietnamese} information retrieval with learning objective
+  and benchmark.
+\newblock In \emph{Proceedings of the 38th Pacific Asia Conference on Language,
+  Information and Computation (PACLIC)}, pages 46--56, Tokyo, Japan,
+  2024{\natexlab{b}}.
+
+\bibitem[Nogueira and Cho(2019)]{nogueira2019monobert}
+Rodrigo Nogueira and Kyunghyun Cho.
+\newblock Passage re-ranking with {BERT}.
+\newblock arXiv:1901.04085, 2019.
+
+\bibitem[Ogilvie and Callan(2003)]{ogilvie2003known}
+Paul Ogilvie and Jamie Callan.
+\newblock Combining document representations for known-item search.
+\newblock In \emph{Proceedings of the 26th Annual International ACM SIGIR
+  Conference on Research and Development in Information Retrieval}, pages
+  143--150, 2003.
+
+\bibitem[Penha et~al.(2022)Penha, C{\^a}mara, and Hauff]{penha2022variation}
+Gustavo Penha, Arthur C{\^a}mara, and Claudia Hauff.
+\newblock Evaluating the robustness of retrieval pipelines with query variation
+  generators.
+\newblock In \emph{Advances in Information Retrieval: 44th European Conference
+  on IR Research (ECIR 2022)}. Springer, 2022.
+
+\bibitem[Pham et~al.(2025)Pham, Luu, Vo, Nguyen, and Hoang]{pham2025vnmteb}
+Loc Pham, Tung Luu, Thu Vo, Minh Nguyen, and Viet Hoang.
+\newblock {VN-MTEB}: {Vietnamese} massive text embedding benchmark.
+\newblock arXiv:2507.21500, 2025.
+
+\bibitem[Pham et~al.(2017)Pham, Pham, and Le-Hong]{pham2017diacritic}
+Thai-Hoang Pham, Xuan-Khoai Pham, and Phuong Le-Hong.
+\newblock On the use of machine translation-based approaches for {Vietnamese}
+  diacritic restoration.
+\newblock arXiv:1709.07104, 2017.
+
+\bibitem[Rahmani et~al.(2024)Rahmani, Craswell, Yilmaz, Mitra, and
+  Campos]{rahmani2024synthetic}
+Hossein~A. Rahmani, Nick Craswell, Emine Yilmaz, Bhaskar Mitra, and Daniel
+  Campos.
+\newblock Synthetic test collections for retrieval evaluation.
+\newblock In \emph{Proceedings of the 47th International ACM SIGIR Conference
+  on Research and Development in Information Retrieval}, 2024.
+
+\bibitem[Reimers and Gurevych(2019)]{reimers2019sbert}
+Nils Reimers and Iryna Gurevych.
+\newblock {Sentence-BERT}: Sentence embeddings using {Siamese} {BERT}-networks.
+\newblock In \emph{Proceedings of the 2019 Conference on Empirical Methods in
+  Natural Language Processing and the 9th International Joint Conference on
+  Natural Language Processing (EMNLP-IJCNLP)}, pages 3982--3992, 2019.
+
+\bibitem[Ring and Uitdenbogerd(2009)]{ring2009lucy}
+Nicholas Ring and Alexandra~L. Uitdenbogerd.
+\newblock Finding `{Lucy} in disguise': The misheard lyric matching problem.
+\newblock In \emph{Information Retrieval Technology: 5th Asia Information
+  Retrieval Symposium, AIRS 2009}, pages 157--167. Springer, 2009.
+\newblock \doi{10.1007/978-3-642-04769-5_14}.
+
+\bibitem[Robertson and Zaragoza(2009)]{robertson2009bm25}
+Stephen Robertson and Hugo Zaragoza.
+\newblock The probabilistic relevance framework: {BM25} and beyond.
+\newblock \emph{Foundations and Trends in Information Retrieval}, 3\penalty0
+  (4):\penalty0 333--389, 2009.
+
+\bibitem[Robertson et~al.(2004)Robertson, Zaragoza, and
+  Taylor]{robertson2004bm25f}
+Stephen Robertson, Hugo Zaragoza, and Michael Taylor.
+\newblock Simple {BM25} extension to multiple weighted fields.
+\newblock In \emph{Proceedings of the Thirteenth ACM International Conference
+  on Information and Knowledge Management (CIKM)}, pages 42--49, 2004.
+
+\bibitem[Sakai(2006)]{sakai2006bootstrap}
+Tetsuya Sakai.
+\newblock Evaluating evaluation metrics based on the bootstrap.
+\newblock In \emph{Proceedings of the 29th Annual International ACM SIGIR
+  Conference on Research and Development in Information Retrieval}, pages
+  525--532, 2006.
+\newblock \doi{10.1145/1148170.1148261}.
+
+\bibitem[Sidiropoulos and Kanoulas(2022)]{sidiropoulos2022misspellings}
+Georgios Sidiropoulos and Evangelos Kanoulas.
+\newblock Analysing the robustness of dual encoders for dense retrieval against
+  misspellings.
+\newblock In \emph{Proceedings of the 45th International ACM SIGIR Conference
+  on Research and Development in Information Retrieval}, 2022.
+
+\bibitem[Smucker et~al.(2007)Smucker, Allan, and
+  Carterette]{smucker2007significance}
+Mark~D. Smucker, James Allan, and Ben Carterette.
+\newblock A comparison of statistical significance tests for information
+  retrieval evaluation.
+\newblock In \emph{Proceedings of the Sixteenth ACM Conference on Information
+  and Knowledge Management (CIKM)}, pages 623--632, 2007.
+
+\bibitem[Tran(2018)]{pyvi}
+Viet~Trung Tran.
+\newblock pyvi: {Python} {Vietnamese} core {NLP} toolkit.
+\newblock \url{https://github.com/trungtv/pyvi}, 2018.
+
+\bibitem[Voorhees(2000)]{voorhees2000variations}
+Ellen~M. Voorhees.
+\newblock Variations in relevance judgments and the measurement of retrieval
+  effectiveness.
+\newblock \emph{Information Processing \& Management}, 36\penalty0
+  (5):\penalty0 697--716, 2000.
+
+\bibitem[Vu et~al.(2018)Vu, Nguyen, Nguyen, Dras, and Johnson]{vu2018vncorenlp}
+Thanh Vu, Dat~Quoc Nguyen, Dai~Quoc Nguyen, Mark Dras, and Mark Johnson.
+\newblock {VnCoreNLP}: A {Vietnamese} natural language processing toolkit.
+\newblock In \emph{Proceedings of the 2018 Conference of the North American
+  Chapter of the Association for Computational Linguistics: Demonstrations},
+  pages 56--60, 2018.
+
+\bibitem[Wang et~al.(2024)Wang, Yang, Huang, Yang, Majumder, and
+  Wei]{wang2024me5}
+Liang Wang, Nan Yang, Xiaolong Huang, Linjun Yang, Rangan Majumder, and Furu
+  Wei.
+\newblock Multilingual {E5} text embeddings: A technical report.
+\newblock arXiv:2402.05672, 2024.
+
+\bibitem[Xu et~al.(2009)Xu, Naito, Kato, and Kawai]{xu2009lyric}
+Xin Xu, Masaki Naito, Tsuneo Kato, and Hisashi Kawai.
+\newblock Robust and fast lyric search based on phonetic confusion matrix.
+\newblock In \emph{Proceedings of the 10th International Society for Music
+  Information Retrieval Conference (ISMIR)}, pages 417--422, 2009.
+
+\bibitem[Zhai and Lafferty(2001)]{zhai2001smoothing}
+Chengxiang Zhai and John Lafferty.
+\newblock A study of smoothing methods for language models applied to ad hoc
+  information retrieval.
+\newblock In \emph{Proceedings of the 24th Annual International ACM SIGIR
+  Conference on Research and Development in Information Retrieval}, pages
+  334--342, 2001.
+
+\bibitem[Zhuang and Zuccon(2021)]{zhuang2021typos}
+Shengyao Zhuang and Guido Zuccon.
+\newblock Dealing with typos for {BERT}-based passage retrieval and ranking.
+\newblock In \emph{Proceedings of the 2021 Conference on Empirical Methods in
+  Natural Language Processing (EMNLP)}, 2021.
+
+\bibitem[Zhuang and Zuccon(2022)]{zhuang2022characterbert}
+Shengyao Zhuang and Guido Zuccon.
+\newblock {CharacterBERT} and self-teaching for improving the robustness of
+  dense retrievers on queries with typos.
+\newblock In \emph{Proceedings of the 45th International ACM SIGIR Conference
+  on Research and Development in Information Retrieval}, 2022.
+
+\end{thebibliography}

@@ -1,0 +1,30 @@
+\begin{table*}[t]
+\centering
+\caption{MRR@10 on the noise sweep: the same 1241 test fragments with a growing share of
+corrupted syllables, under the hand-set channel (N), the channel sampled from the variation observed between
+transcriptions (W) and the hand-set operations re-weighted by the observed shares (E, 50\% only;
+Section~\ref{sec:validity}). Columns give the nominal rate; the realised share of changed syllables is in the
+last row. NA-FT: mean over three seeds.}
+\label{tab:noise}
+\footnotesize
+\setlength{\tabcolsep}{3.4pt}
+\begin{tabular}{@{}lrrrrrrrrrrrr@{}}
+\toprule
+ & & \multicolumn{5}{c}{hand-set channel (N)} & \multicolumn{5}{c}{observed channel (W)} & \multicolumn{1}{c}{E} \\
+\cmidrule(lr){3-7} \cmidrule(lr){8-12}
+System & 0\% & 10\% & 20\% & 30\% & 40\% & 50\% & 10\% & 20\% & 30\% & 40\% & 50\% & 50\% \\
+\midrule
+BM25, syllables & 0.840 & 0.712 & 0.657 & 0.518 & 0.429 & 0.298 & 0.688 & 0.634 & 0.481 & 0.386 & 0.261 & 0.315 \\
+BM25, unmarked uni+bigrams & 1.000 & 0.975 & 0.974 & 0.891 & 0.846 & 0.711 & 0.974 & 0.973 & 0.907 & 0.877 & 0.732 & 0.728 \\
+BM25, char.\ 3-grams in syllables & 0.616 & 0.396 & 0.307 & 0.218 & 0.151 & 0.118 & 0.459 & 0.394 & 0.283 & 0.218 & 0.155 & 0.113 \\
+BM25, char.\ 5-grams across syllables & 0.989 & 0.965 & 0.968 & 0.916 & 0.907 & 0.844 & 0.942 & 0.930 & 0.856 & 0.829 & 0.673 & 0.857 \\
+BM25, sound-alike key & 0.999 & 0.988 & 0.987 & 0.943 & 0.931 & 0.867 & 0.979 & 0.974 & 0.887 & 0.832 & 0.633 & 0.825 \\
+Restore + uni+bigrams & 0.999 & 0.981 & 0.975 & 0.896 & 0.858 & 0.709 & 0.977 & 0.974 & 0.893 & 0.824 & 0.634 & 0.713 \\
+Lexical RRF & 0.999 & 0.981 & 0.977 & 0.902 & 0.875 & 0.749 & 0.978 & 0.978 & 0.903 & 0.847 & 0.668 & 0.748 \\
+NA-FT mE5-small, restored & 0.779 & 0.715 & 0.677 & 0.591 & 0.522 & 0.407 & 0.684 & 0.637 & 0.499 & 0.416 & 0.282 & 0.414 \\
+Selected hybrid & 0.998 & 0.981 & 0.977 & 0.902 & 0.875 & 0.749 & 0.978 & 0.977 & 0.902 & 0.847 & 0.668 & 0.748 \\
+\midrule
+realised (\%) & 0 & 13 & 19 & 31 & 40 & 50 & 13 & 19 & 31 & 40 & 50 & 50 \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}{{ s.title }}{% if s.artist %} - {{ s.artist }}{% endif %} | ViSongSearch{% endblock %}
+{% block head %}
+<meta name="description" content="{{ description }}">
+<link rel="canonical" href="{{ s.url }}">
+<script type="application/ld+json">{{ jsonld|safe }}</script>
+{% endblock %}
+{% block body %}
+<h1>{{ s.title }}</h1>
+<p class="muted">{{ s.artist or "Không rõ tác giả" }}{% if s.extra.singers %} · Ca sĩ: {{ s.extra.singers }}{% endif %}{% if s.genre %} · {{ s.genre }}{% endif %}</p>
+<div class="card">{% for l in excerpt %}{{ l }}<br>{% endfor %}…</div>
+<p>Xem đầy đủ lời và hợp âm tại nguồn: <a href="{{ s.url }}" rel="nofollow">{{ s.source }}</a></p>
+{% endblock %}
