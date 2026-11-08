@@ -14,11 +14,12 @@ import argparse
 import json
 import os
 import random
+import sqlite3
 import sys
 from collections import Counter
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
-from visong.corpus import Song, load_sqlite_songs                      # noqa: E402
+from visong.corpus import Song, make_doc_id                      # noqa: E402
 from visong.evaluate import by_type, per_query, summarize   # noqa: E402
 from visong.noise import corrupt                     # noqa: E402
 from visong.queries import AmbiguityChecker, generate_rule_queries    # noqa: E402
@@ -55,13 +56,27 @@ def make_search(songs):
     return search
 
 
+def read_db(path):
+    """Đọc bảng songs của file .db (mở thẳng bằng đường dẫn, chạy được trên Windows)."""
+    con = sqlite3.connect(path)
+    seen = {}
+    for url, title, artist, lyrics in con.execute("select url, title, artist, lyrics from songs"):
+        if url and lyrics and url not in seen:
+            seen[url] = Song(make_doc_id(url), url, "", (title or "").strip(), (artist or "").strip(), "", lyrics)
+    con.close()
+    return list(seen.values())
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--songs", help="file bài hát: .jsonl (doc_id, title, lyrics) hoặc .db/.sqlite có bảng songs")
     ap.add_argument("--n", type=int, default=2000, help="số bài lấy từ file")
     a = ap.parse_args()
+    if a.songs and not os.path.isfile(a.songs):
+        sys.exit(f"Không tìm thấy file: {os.path.abspath(a.songs)}\n"
+                 "Hãy kiểm tra tên file (gõ 'dir *.db' để xem) hoặc dùng đường dẫn đầy đủ trong dấu ngoặc kép.")
     if a.songs and a.songs.endswith((".db", ".sqlite")):
-        songs = [s for s in load_sqlite_songs([a.songs]) if len(s.lyrics.split()) >= 20]
+        songs = [s for s in read_db(a.songs) if len(s.lyrics.split()) >= 20]
         songs = random.Random(0).sample(songs, min(a.n, len(songs)))
     elif a.songs:
         songs = []
