@@ -2,6 +2,7 @@
 
     python scripts/demo_nguoi2.py                               # 5 bài mẫu có sẵn, chạy ngay
     python scripts/demo_nguoi2.py --songs data/hac.jsonl --n 2000   # bài thật, nếu có file dữ liệu
+    python scripts/demo_nguoi2.py --songs music_seg_merged_preprocesing.db   # file .db của nhóm (bảng songs)
 
 Dùng vài bài hát ngắn tự viết ở dưới (không phải lời bài thật) để:
   1. sinh truy vấn Q1 (đúng lời), Q2 (không dấu), Q3 (nghe nhầm / gõ sai) bằng visong/queries.py + noise.py
@@ -17,10 +18,10 @@ import sys
 from collections import Counter
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
-from visong.corpus import Song                       # noqa: E402
+from visong.corpus import Song, load_sqlite_songs                      # noqa: E402
 from visong.evaluate import by_type, per_query, summarize   # noqa: E402
 from visong.noise import corrupt                     # noqa: E402
-from visong.queries import generate_rule_queries     # noqa: E402
+from visong.queries import AmbiguityChecker, generate_rule_queries    # noqa: E402
 from visong.text import clean, remove_diacritics     # noqa: E402
 
 SONGS = [
@@ -56,10 +57,13 @@ def make_search(songs):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--songs", help="file jsonl bài hát (doc_id, title, lyrics), ví dụ data/hac.jsonl")
+    ap.add_argument("--songs", help="file bài hát: .jsonl (doc_id, title, lyrics) hoặc .db/.sqlite có bảng songs")
     ap.add_argument("--n", type=int, default=2000, help="số bài lấy từ file")
     a = ap.parse_args()
-    if a.songs:
+    if a.songs and a.songs.endswith((".db", ".sqlite")):
+        songs = [s for s in load_sqlite_songs([a.songs]) if len(s.lyrics.split()) >= 20]
+        songs = random.Random(0).sample(songs, min(a.n, len(songs)))
+    elif a.songs:
         songs = []
         for line in open(a.songs, encoding="utf-8"):
             d = json.loads(line)
@@ -70,12 +74,16 @@ def main():
         songs = [Song(doc_id=i, url="", source="demo", title=t, lyrics=l) for i, t, l in SONGS]
     search = make_search(songs)
     title = {s.doc_id: s.title for s in songs}
-    cluster_of = {s.doc_id: s.doc_id for s in songs}
+    # Một bài có thể có nhiều bản (nhiều trang, nhiều ca sĩ): gom theo tên bài không dấu, nên tìm ra
+    # bản nào của đúng bài cũng tính là đúng. (Dự án thật gom bằng MinHash trong visong/dedup.py.)
+    cluster_of = {s.doc_id: remove_diacritics(clean(s.title)) or s.doc_id for s in songs}
     split = {s.doc_id: "test" for s in songs}
 
     print("== 1. Sinh truy vấn Q1, Q2, Q3 ==")
+    print(f"  dùng {len(songs)} bài, {len(set(cluster_of.values()))} bài khác nhau")
     queries = generate_rule_queries(songs, cluster_of, {"test": {"Q1": 1 if a.songs else 2, "Q2": 1 if a.songs else 2, "Q3": 1 if a.songs else 2}},
-                                    seed=13, split_of_doc=split)
+                                    seed=13, split_of_doc=split,
+                                    checker=AmbiguityChecker(songs, cluster_of))   # bỏ đoạn lời trùng bài khác
     for q in queries[:9]:
         print(f"  {q['type']}  {q['text']:<45} -> bài đúng: {title[q['doc_id']]}")
     print(f"  ... tổng {len(queries)} truy vấn")
