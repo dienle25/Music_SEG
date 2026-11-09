@@ -1,0 +1,1208 @@
+{"type": "Q4", "text": "bao nhiêu ngày đêm anh cứ chờ mong em ở phương trời xa tít mây", "split": "test"}
+{"type": "Q4", "text": "lớn lên rồi mà đã lâu lắm con không nói lời thương mẹ", "split": "test"}
+{"type": "Q5", "text": "bài của phạm hồng phước về người con lớn lên quên quan tâm mẹ hồi nhỏ mẹ mua áo quần đồ chơi cho con", "split": "test"}
+{"type": "Q4", "text": "nghĩ lại thời đó lòng thấy thèm khát quay lại quê nhà buồn tiếc những năm tháng cũ", "split": "dev"}
+{"type": "Q5", "text": "bài hát nhớ nhà nhớ căn gác nhỏ với những bữa cơm gia đình ngày xưa giọng nữ lưu thiên hương", "split": "dev"}
+{"type": "Q4", "text": "chiều mưa đôi mình nắm tay nhau môi em run run vì lạnh", "split": "test"}
+{"type": "Q5", "text": "bài nhạc của minh vương về những chiều mưa trên phố hai người yêu nhau đi dưới mưa thấy ấm lòng", "split": "test"}
+{"type": "Q4", "text": "người ở xa ngoài biển khơi ơi xin về nhanh với em", "split": "test"}
+{"type": "Q5", "text": "bài hát quê hương kiểu câu lý trên ruộng đồng cô gái mong người đi xa về thăm con đò dòng sông nhạc nhật ngân", "split": "test"}
+{"type": "Q4", "text": "xin giữ lại tình yêu khi còn nhớ những năm tháng hôn nhau trong nước mắt", "split": "dev"}
+{"type": "Q5", "text": "bài rap buồn của dương 565 về anh ngồi một mình trong căn phòng đầy kỷ niệm nhớ người yêu đã đi", "split": "dev"}
+{"type": "Q5", "text": "bài hát kể chuyện cổ tích mẹ ru hồi bé nàng công chúa vô tư hát cùng mưa rồi tan biến như bọt nước", "split": "dev"}
+{"type": "Q5", "text": "bài của bảo chấn mùa đông tới lá vàng rơi anh nhận ra đã mất em có mưa phùn", "split": "test"}
+{"type": "Q4", "text": "em ơi còn chăng chút hồn nhiên phút giây khờ dại ngày nào", "split": "dev"}
+{"type": "Q5", "text": "bài nhạc phim mẹ chồng giọng buồn kêu em về đi khi đời em như hoa đã úa tàn", "split": "dev"}
+{"type": "Q4", "text": "anh lang thang theo những cơn mưa không biết đi đâu chỉ tin vào ngày mai", "split": "test"}
+{"type": "Q5", "text": "bài cũ của sơn tùng thời đầu anh ôm hết kỷ niệm hỏi em có quay về không xin hãy yêu anh", "split": "test"}
+{"type": "Q4", "text": "nhìn lên bầu trời giang hai tay gào thét xin trả lại tuổi thơ ngây", "split": "test"}
+{"type": "Q5", "text": "bài hát của nguyễn hải phong u ám toàn máu và nỗi đau cứ lặp lại câu cho tôi ai cho tôi", "split": "test"}
+{"type": "Q4", "text": "chỗ lạnh lẽo có tiếng ai khóc rụt rè tôi đã quen nắng gió mọi nẻo đường", "split": "test"}
+{"type": "Q5", "text": "bài nhạc buồn về người vô gia cư co ro trong đêm lạnh xin một đêm không lạnh lùng xin nơi đây là nhà nguyễn hải phong", "split": "test"}
+{"type": "Q4", "text": "có ai thì thầm sát bên tôi tôi duỗi người trong không gian im ắng", "split": "dev"}
+{"type": "Q5", "text": "bài hát vui vui kể chuyện nửa đêm hai giờ sáng sợ trong nhà có ma áo trắng sau tấm gương", "split": "dev"}
+{"type": "Q4", "text": "em còn xinh còn trẻ nhưng chẳng phải của anh", "split": "dev"}
+{"type": "Q5", "text": "bài rap của đen vâu ví anh như con cáo còn em như chùm nho lòng anh như kho xăng", "split": "dev"}
+{"type": "Q4", "text": "em yêu ơi hãy nghe lại khúc hát ngày xưa nỗi nhớ anh mang theo", "split": "test"}
+{"type": "Q5", "text": "bài hát chàng trai gửi lời nhắn nhớ em qua radio nhớ ngày hai đứa hẹn ước hồ hoài anh", "split": "test"}
+{"type": "Q4", "text": "đời mình chỉ sống có một lần em đừng nghĩ ngợi nhiều làm gì", "split": "test"}
+{"type": "Q5", "text": "bài của thịnh suy lúc men còn trong hơi thở rủ người yêu lại gần hôn hứa cho em cả mặt trời", "split": "test"}
+{"type": "Q4", "text": "trái tim nghe thấy lúc em tới nỗi cô đơn lâu nay dừng lại", "split": "test"}
+{"type": "Q5", "text": "bài hát gặp cô gái dưới ánh đèn đêm điệp khúc tiếng anh nói cô ấy muốn yêu và tôi cũng vậy", "split": "test"}
+{"type": "Q4", "text": "tình cảm cho chàng trai đó vẫn chưa nhạt sao cô gái lại", "split": "test"}
+{"type": "Q5", "text": "bài hát vui về chuyện tình tay ba một cộng một bằng hai nhưng thêm ai thì bằng mấy", "split": "test"}
+{"type": "Q4", "text": "tình yêu tới lúc mình lỡ ngủ say khi nắng ở cạnh bên", "split": "test"}
+{"type": "Q5", "text": "bài của virus mùa thu lá rơi chàng trai nhớ em cả trong mơ dặn đừng cười với ai khác", "split": "test"}
+{"type": "Q4", "text": "con ngựa hoang giẫm nát cánh đồng cỏ xanh mướt tận chân trời", "split": "test"}
+{"type": "Q5", "text": "bài nhạc xưa của phạm duy về con ngựa hoang lưng đầy vết roi được tình yêu chữa lành", "split": "test"}
+{"type": "Q4", "text": "anh chỉ mong được về thấy em cười lúc vắng em", "split": "test"}
+{"type": "Q5", "text": "bài của da lab nhẹ nhàng anh đi xa về nhà với vợ cà phê đắng chiều mưa đèn xanh đèn đỏ tim anh nhấp nháy", "split": "test"}
+{"type": "Q4", "text": "ở đâu đó có tiếng ai vừa la to vừa nói khẽ", "split": "test"}
+{"type": "Q5", "text": "bài indie của vũ hỏi nhìn vào trái tim nhìn xuân tàn phai thì anh còn gì", "split": "test"}
+{"type": "Q4", "text": "đêm noel tiếng chuông nhà thờ ngân vang mang theo tình thương dưới trời sao", "split": "test"}
+{"type": "Q5", "text": "bài giáng sinh lời việt của jingle bells mừng chúa ra đời hoà bình cho muôn người", "split": "test"}
+{"type": "Q4", "text": "một cuộc tình mới thật diệu kỳ sâu đậm như hai đứa mình đã có", "split": "test"}
+{"type": "Q5", "text": "bài hỏi người yêu cũ giờ sống vui hay buồn có tình mới chưa có đứng nhìn cầu vồng sau mưa nhớ anh không", "split": "test"}
+{"type": "Q4", "text": "giọng hát núi rừng tây nguyên vang vọng từ xa xưa đôi mắt in trong cốc cà phê", "split": "test"}
+{"type": "Q5", "text": "bài hát về tây nguyên hương cà phê bay theo làn khói và mái tóc ánh mắt em xanh như mùa xuân nhạc nguyễn cường", "split": "test"}
+{"type": "Q4", "text": "sáng sớm dịu dàng đi ngang tặng một nụ cười nắng chen nhau giữa vườn hoa", "split": "test"}
+{"type": "Q5", "text": "bài vui tươi của sơn tùng về lần đầu rung động ánh mắt đôi môi làm anh say bối rối không biết có phải đang yêu", "split": "test"}
+{"type": "Q4", "text": "cho dù sau này em có đi xa thật xa", "split": "test"}
+{"type": "Q5", "text": "bài ballad của anh khang đêm khuya đèn mờ sương anh muốn nói bao điều với em đang ngủ say mơ được ôm em", "split": "test"}
+{"type": "Q4", "text": "chim sa cá lặn ngóng một tin rồi lại chờ hai tin", "split": "test"}
+{"type": "Q5", "text": "bài dân ca quan họ bắc ninh cô gái đợi người yêu nơi xa xôi trăng treo suốt canh thâu sương rơi", "split": "test"}
+{"type": "Q4", "text": "đợi lúc chiều tối buông xuống em có nhận ra không", "split": "test"}
+{"type": "Q5", "text": "bài của thịnh suy về một ngày ở sài gòn mùi cà phê phố đông xe cộ mà chẳng kịp tìm thấy nhau", "split": "test"}
+{"type": "Q4", "text": "đi xa để rồi quay về nhà", "split": "test"}
+{"type": "Q5", "text": "bài tết của tiên cookie về năm khó khăn đường về quê xa ga tàu chen chúc hết vé không biết nên về hay ở", "split": "test"}
+{"type": "Q5", "text": "bài hát chàng trai đứng chờ bên ô cửa mong nắng lên nhớ người yêu ở tận bên kia biển lớn", "split": "test"}
+{"type": "Q4", "text": "tâm hồn trong trẻo như áng mây bay chơi với trăng và gió rồi ca hát dưới mưa tự do", "split": "dev"}
+{"type": "Q4", "text": "tim đau nhói mà trong lòng vẫn lặng lẽ bảo rằng yêu hoài không thôi", "split": "test"}
+{"type": "Q4", "text": "nhớ đôi môi dịu dàng lúc em đang ngủ ngon", "split": "test"}
+{"type": "Q4", "text": "anh thay đổi rồi không còn tự chủ được nữa vì em làm anh thành người lạnh lùng không lối thoát", "split": "dev"}
+{"type": "Q5", "text": "bài rap tức giận của sơn tùng với deepink anh cố kìm nén cơn giận đồng hồ tích tắc trái tim bị tổn thương", "split": "dev"}
+{"type": "Q4", "text": "không còn buồn nhớ bóng hình người xưa nữa bức tranh tình yêu cũng nhạt màu rồi", "split": "test"}
+{"type": "Q5", "text": "bài ballad anh khang hát về việc đã quên được người yêu cũ ngày em đi đã lâu giờ anh hết yêu em rồi", "split": "test"}
+{"type": "Q4", "text": "càng ngắm em lại càng thương em mãi mãi những phút giây êm ả ngày trước giờ đã bị lãng quên", "split": "test"}
+{"type": "Q4", "text": "anh xin lỗi phải hoãn chuyện đi chơi phố đã hẹn vì cả tuần nay đi đâu cũng gặp mưa", "split": "dev"}
+{"type": "Q5", "text": "bài hát của orange về cặp đôi cuối tuần định đi xem phim shopping mà trời mưa hoài nên ở nhà ôm nhau", "split": "dev"}
+{"type": "Q4", "text": "nhắn nhủ nhớ ăn sáng ăn tối rồi chúc em mỗi đêm ngủ thật ngon", "split": "dev"}
+{"type": "Q5", "text": "bài vicky nhung về cô gái ế cô đơn ngồi đợi tin nhắn rủ đi ăn tối xem phim thấy người ta yêu nhau mà mình tay trắng", "split": "dev"}
+{"type": "Q4", "text": "ngắm sóng biển xô mãi thương thân mình đắng cay", "split": "test"}
+{"type": "Q5", "text": "bài hát buồn của jimmii nguyễn chiều bơ vơ trên bãi cát dài người yêu mới hôm qua nay đã lạnh lùng", "split": "test"}
+{"type": "Q4", "text": "vắng em những ngày mưa anh một mình đi về con đường thật xa kỷ niệm vẫn còn y nguyên như hôm qua", "split": "dev"}
+{"type": "Q5", "text": "bài cũ của sơn tùng ánh bình minh không còn nơi đây anh vùi mình trong đêm đen không tìm thấy lối ra", "split": "dev"}
+{"type": "Q4", "text": "em ở lại với anh tối nay đi vì đường về còn xa lại mưa ướt", "split": "test"}
+{"type": "Q5", "text": "bài thịnh suy hát live đôi tình nhân đêm mưa anh xin em ở lại vì mưa làm khó câu tạm biệt", "split": "test"}
+{"type": "Q4", "text": "no problem with us unless you want one cause nothing happened at all", "split": "dev"}
+{"type": "Q5", "text": "bài hát cô gái xây nhà tù giam người yêu trong tim mình yêu nhau mà chỉ toàn nhắn tin có đoạn tiếng anh", "split": "dev"}
+{"type": "Q4", "text": "anh lo đến lúc hai đứa chẳng còn để ý và thấu hiểu nhau rồi phải xa nhau", "split": "test"}
+{"type": "Q4", "text": "cả gia đình làm người mẫu đi trên giường còn mẹ ngồi xa xem", "split": "test"}
+{"type": "Q5", "text": "bài vui về gia đình của nguyễn hải phong bố vào bếp với con mẹ nêm đồ ăn bố đàn mẹ hát có đoạn la la la", "split": "test"}
+{"type": "Q4", "text": "em không còn khóc để tiếc nuối những dư âm nữa vì mỗi ngày em một lớn", "split": "test"}
+{"type": "Q5", "text": "bài hát của hương tràm về cô gái chia tay mà vẫn thấy bóng người yêu lời anh nói ướt cả không gian", "split": "test"}
+{"type": "Q4", "text": "ế vui vẻ chẳng sai nhưng nhiều đêm thấy dài cần ai đó xoa đầu ôm vai", "split": "test"}
+{"type": "Q5", "text": "bài vicky nhung về người độc thân bao mùa xuân một mình thấy người ta bên nhau ngoài đường tự nhiên muốn có người yêu", "split": "test"}
+{"type": "Q5", "text": "bài nhạc tết vui về xin vía may mắn làm ăn ế cả năm chị học tài thi phận huỳnh hiền năng", "split": "test"}
+{"type": "Q4", "text": "ngày chia tay chẳng ai biết trước cuộc tình vỡ tan bất ngờ", "split": "dev"}
+{"type": "Q5", "text": "bài hát buồn về chuyện tình tưởng sẽ mãi mãi đến khi già trái tim cô đơn thét gào nguyễn công thành", "split": "dev"}
+{"type": "Q4", "text": "tụi mình vẫn như xưa dù sau này con cháu đông đầy nhà", "split": "test"}
+{"type": "Q5", "text": "bài hát nhóm bạn gửi cô dâu là bạn thân sắp lấy chồng lạ ghê cô dâu khoác váy cưới lấp lánh", "split": "test"}
+{"type": "Q4", "text": "một kiếp thương nhau vẫn còn tương tư một làn sương vẫn vương vấn nghìn mùa thu", "split": "test"}
+{"type": "Q5", "text": "bài của thái đinh về thành phố vắng em dây đàn không còn ngân nắng hờ hững đường về thờ ơ", "split": "test"}
+{"type": "Q4", "text": "chẳng để ý ai nhà lầu hay đi xe đạp xe máy sáng ra thức dậy là mê làm việc", "split": "dev"}
+{"type": "Q5", "text": "bài chúc mừng sinh nhật kiểu mới sôi động của vicky nhung hát vang một bài mới thay bài cũ đã quá xưa", "split": "dev"}
+{"type": "Q4", "text": "đợi người nào đó tới cạnh anh lắng nghe nỗi lòng anh", "split": "dev"}
+{"type": "Q4", "text": "chỉ vô tình thấy em mà mang về bao nỗi đau gào thét", "split": "dev"}
+{"type": "Q5", "text": "bài indie của vũ đêm buồn mang tên em chiều nghe gió đung đưa xin gió đừng hát nữa", "split": "dev"}
+{"type": "Q4", "text": "cả đời tôi chỉ đợi một người tới vuốt ve và nắm lấy tay tôi", "split": "dev"}
+{"type": "Q5", "text": "bài vicky nhung về người thao thức một mình chờ tin nhắn trôi hoài trôi hoài mà người vẫn lạnh lùng", "split": "dev"}
+{"type": "Q4", "text": "năm tháng qua xin đổi lấy ngày đêm bên người thương", "split": "dev"}
+{"type": "Q5", "text": "bài cổ phong của hà nhi về đường chỉ tay thiên thời vô thường múa kiếm lượm hoa bay", "split": "dev"}
+{"type": "Q4", "text": "thấy anh vui bên người khác thì em đành buông tay cho anh ra đi", "split": "test"}
+{"type": "Q5", "text": "bài của hari won về cô gái thấy người yêu trong tay người khác yêu ai thì dù dưới mưa vẫn thấy ấm", "split": "test"}
+{"type": "Q4", "text": "trên đời này yêu nhau thì phải cùng một lòng", "split": "dev"}
+{"type": "Q5", "text": "bài hương ly hát cô gái chết lặng như sét đánh khi anh nói lời chia tay để theo tình mới", "split": "dev"}
+{"type": "Q4", "text": "giữ nước mắt khóc cho những ngày còn bên nhau hẹn kiếp sau sẽ gặp lại", "split": "test"}
+{"type": "Q5", "text": "bài song ca tăng phúc với trương thảo nhi chiều mưa con đường chung đôi giờ chia hai vẫn yêu mà phải xa", "split": "test"}
+{"type": "Q4", "text": "buổi chiều ngày ấy nắng nhạt dấu chân mòn dẫn lối bóng đôi ta giờ đã chia lìa", "split": "dev"}
+{"type": "Q5", "text": "bài bolero buồn về người con gái đợi chờ tiễn người yêu đi trong chiều đông lạnh đêm mưa mơ gặp anh", "split": "dev"}
+{"type": "Q4", "text": "suốt cuộc đời thơm mùi hương rực rỡ như mặt trời", "split": "test"}
+{"type": "Q4", "text": "tránh đi cho lẹ kẻo chết bất ngờ", "split": "test"}
+{"type": "Q5", "text": "bài rap của obito với shiki kể chuyện đời giang hồ trong xóm gọi anh để tránh án tiếng canh sòng bên đường", "split": "test"}
+{"type": "Q4", "text": "lòng anh không có phương hướng nên con quạ đen đáp lại", "split": "test"}
+{"type": "Q4", "text": "trong lòng mang nỗi nhớ chẳng yên nên anh như phát điên muốn biến mất khỏi đời", "split": "test"}
+{"type": "Q5", "text": "bài rap buồn nàng hứa ở bên cạnh nhưng góc tối vẫn bủa vây anh cố thay đổi mà không tìm thấy lối ra", "split": "test"}
+{"type": "Q4", "text": "chợt thức dậy khi nghe chuông reo và nụ cười trên môi tan biến mất", "split": "test"}
+{"type": "Q5", "text": "bài trong anh trai say hi có erik đức phúc chàng trai làm thơ cho cô gái đôi mắt nhung huyền lẻ bóng một mình", "split": "test"}
+{"type": "Q5", "text": "bài hát nữ nhẹ nhàng cứ lặp chữ có chút bối rối khi chạm tay vỡ tan khi chạm môi em yêu chỉ một mùa", "split": "test"}
+{"type": "Q5", "text": "bài nhạc xưa của lam phương mùa thu quê nhà buồn người đi xa khóc vì phải sống nơi đất khách", "split": "test"}
+{"type": "Q5", "text": "bài trung quân idol chàng trai bỗng nhận ra đã yêu khẳng định tình cảm của mình là thật lòng chứ chẳng đùa", "split": "test"}
+{"type": "Q4", "text": "bà chị phải thi lại năm nay nên đi xin chút may đỗ tốt nghiệp", "split": "test"}
+{"type": "Q5", "text": "bài nhạc phim về chàng trai cô đơn lâu năm ngày dài lặng lẽ trôi rồi cô gái xuất hiện sưởi ấm như ánh mặt trời", "split": "dev"}
+{"type": "Q4", "text": "ngoài đời rộng lớn bao la mà trong tim anh chỉ có mình em", "split": "test"}
+{"type": "Q5", "text": "bài soobin hát lúc anh đi em chẳng nói gì chỉ đứng im anh xin em đừng im lặng vì như thế đau lắm", "split": "test"}
+{"type": "Q5", "text": "bài song ca denis đặng juky san ngọt ngào chàng trai vô tình thương cô gái nâng niu giấc mơ chúc hạnh phúc cả đời", "split": "test"}
+{"type": "Q5", "text": "bài rap tình yêu đêm đông giá lạnh chàng trai say men dắt tay người yêu dạo phố muốn giây phút kéo dài mãi", "split": "test"}
+{"type": "Q4", "text": "anh với em giống như viên thuốc ngủ bảo em đừng uống nhiều", "split": "test"}
+{"type": "Q4", "text": "nhiều kỷ niệm quá nên chuyện vui buồn chẳng thể trôi qua", "split": "test"}
+{"type": "Q4", "text": "lúc em phát hiện anh bắt cá hai tay thì biết trách ai đây", "split": "test"}
+{"type": "Q5", "text": "bài trong em xinh say hi có phương mỹ chi phương ly cô gái chê anh như diễn tuồng đa tình nói dối thề thốt", "split": "test"}
+{"type": "Q4", "text": "xin giữ hình bóng người mãi về sau để còn cùng nhau uống rượu giải sầu", "split": "test"}
+{"type": "Q5", "text": "bài cổ phong của thiên đình mượn gió đêm say tình si hồ đồ nguyện làm gió xua muộn phiền uống rượu cùng người", "split": "test"}
+{"type": "Q4", "text": "bây giờ anh biết làm thế nào để con tim hết nhớ em", "split": "test"}
+{"type": "Q5", "text": "bài rap buồn anh hỏi em có cần một bờ vai mới không đừng coi anh là thằng ngốc lời hứa lâu dài là bao lâu", "split": "test"}
+{"type": "Q4", "text": "cuộc tình vỡ để lại toàn chua xót anh đi mà không nói lời từ biệt", "split": "test"}
+{"type": "Q5", "text": "bài ngân ngân cover cô gái vẫn thương anh mãi dù anh rời xa theo người khác tình chia làm hai ngả", "split": "test"}
+{"type": "Q4", "text": "nhìn anh cảm nhận và drill làm bài hit thật sự anh đang deal", "split": "dev"}
+{"type": "Q5", "text": "bài rap của richie d icy ở rap việt kêu ông cháu tỉnh giấc đi vì đây không phải mơ bước lên sân khấu", "split": "dev"}
+{"type": "Q4", "text": "rồi anh để vuột mất dịp được đi cùng em suốt đời", "split": "test"}
+{"type": "Q5", "text": "bài thiên đình về cô gái nói hai đứa không hợp ngay từ đầu anh xem nhẹ chuyện gắn bó nên mất em vào lễ đường người khác", "split": "test"}
+{"type": "Q4", "text": "nụ cười duyên dáng sáng bừng làm tôi rối bời", "split": "test"}
+{"type": "Q5", "text": "bài nhạc phim của nguyễn hùng cô bé tóc ngắn da trắng chàng thanh niên da nâu vui tính chưa có tình đầu", "split": "test"}
+{"type": "Q4", "text": "em đừng nghĩ mình cô đơn giữa đời vì phía sau luôn có anh dõi theo", "split": "dev"}
+{"type": "Q5", "text": "bài anh quân idol dỗ người yêu đang khóc mắt sưng lên rồi nín đi anh luôn ở bên cạnh em", "split": "dev"}
+{"type": "Q4", "text": "em hiểu là chẳng thể quay lại nữa anh nói cho em nghe đi", "split": "test"}
+{"type": "Q5", "text": "bài song ca grey d với min anh viết trăm ngàn lời tình ca leo lên trời hái sao cho em baby xích lại gần đây", "split": "test"}
+{"type": "Q4", "text": "những nhớ thương ngày qua cứ dần phai lạc lối hai trái tim không còn chung nhịp đập", "split": "dev"}
+{"type": "Q4", "text": "khó khăn lắm mới gặp nhau nay phải rời em anh thấy sợ", "split": "dev"}
+{"type": "Q5", "text": "bài buồn của nguyễn thành đạt anh sai rồi em cứ mặc anh người khác đang đợi em anh như người đưa đò qua sông", "split": "dev"}
+{"type": "Q4", "text": "chưa từng lùi bước bao giờ mặt trời soi đường cho em qua đoạn tối tăm", "split": "test"}
+{"type": "Q5", "text": "bài truyền động lực của văn mai hương bao đêm không ngủ được muốn bỏ cuộc bị từ chối nhiều nhưng vẫn tin sẽ thành công", "split": "test"}
+{"type": "Q4", "text": "đôi môi chậm rãi trôi nhẹ thôi rồi mình đã yêu thật", "split": "test"}
+{"type": "Q5", "text": "bài juky san yêu từ ánh nhìn đầu tiên cuộc đời vốn là đường thẳng mà gặp anh lại rẽ ngang", "split": "test"}
+{"type": "Q4", "text": "từ tối hôm qua chẳng có tin nhắn nào không biết em đã ngủ hay còn thức", "split": "test"}
+{"type": "Q5", "text": "bài của erik và min hai giờ sáng gọi người yêu không bắt máy nghĩ em đang ở bên người khác nên nổi máu ghen", "split": "test"}
+{"type": "Q4", "text": "nếu cho là nhận thì sao có yêu một phía vì đau nhiều quá nên không dám yêu ai nữa", "split": "test"}
+{"type": "Q5", "text": "bài anh quân idol người yêu thật lòng thì nhận đau khổ còn người giả dối lại vui nặng tình chỉ khổ mình", "split": "test"}
+{"type": "Q4", "text": "trong lòng tôi vẫn còn đôi mắt bờ môi như lúc bên em khi nói lời chia tay", "split": "test"}
+{"type": "Q5", "text": "bài hát buồn về dòng người vẫn trôi chuyện tình đôi ta chia hai năm tháng bên nhau giờ không còn anh vẫn ở đây", "split": "test"}
+{"type": "Q4", "text": "anh viết thêm nhiều bài hát yêu để rút ngắn quãng đường về với em", "split": "dev"}
+{"type": "Q5", "text": "bài về yêu xa đêm nào anh cũng đếm còn bao ngày nữa thì hết xa nhau em công việc chưa xong buồn cứ kể anh nghe", "split": "dev"}
+{"type": "Q4", "text": "khi con tim người kia hết yêu thì thôi mình chia tay đi em", "split": "dev"}
+{"type": "Q5", "text": "bài hát buồn mưa lạnh hỏi em về chưa có ai đón chưa ngày 26 tháng 6 mình bên nhau được 4 năm", "split": "dev"}
+{"type": "Q4", "text": "nghe máy đi em có nghe tiếng anh qua điện thoại không anh còn mấy câu muốn hỏi", "split": "test"}
+{"type": "Q5", "text": "bài trong series 3107 của w n với erik và nâu anh đứng một mình dưới trời xanh chờ em mong đôi ta đừng xa cách", "split": "test"}
+{"type": "Q4", "text": "em bày ra bao lâu nay một cách lén lút coi anh là con rối", "split": "test"}
+{"type": "Q5", "text": "bài remix về anh bị người yêu phản bội dựng màn kịch anh đóng vai chính mà không biết yêu hết lòng hết dạ", "split": "test"}
+{"type": "Q4", "text": "chiều hôm đó ở hiên nhà vắng hai đứa đã hôn nhau", "split": "test"}
+{"type": "Q5", "text": "bài trong em xinh say hi có phương ly và orange trời mưa cuốn trôi lời hứa khoé mi ướt thì cứ đổ lỗi cho mưa", "split": "test"}
+{"type": "Q4", "text": "gió ơi gió tới chưa anh trông ngóng cả chiều tối dù nắng hay mưa", "split": "dev"}
+{"type": "Q5", "text": "bài của wren evans anh viết thư tình bằng mực xanh mà không dám đưa nên nhờ gió mang đi sao em chẳng nhìn anh", "split": "dev"}
+{"type": "Q4", "text": "em vẫn cố chấp dù nỗi đau cứ đeo bám mãi", "split": "test"}
+{"type": "Q5", "text": "bài remix ngân ngân thấy anh vui là em mãn nguyện đi khắp nhân gian thấy hoang tàn vì thiếu anh thương anh vô điều kiện", "split": "test"}
+{"type": "Q4", "text": "em biết điều dại dột nhất là trao trái tim mình", "split": "test"}
+{"type": "Q5", "text": "bài rap trong anh trai say hi có b ray karik anh cất hết vào tiềm thức mới yêu ai cũng tham vọng thức dậy với ác mộng", "split": "test"}
+{"type": "Q4", "text": "giá như em ở thêm chút nữa để ngày chia tay tôi nhẹ nhàng gật đầu", "split": "test"}
+{"type": "Q5", "text": "bài của maydays trời gom mây em nghiêng đầu nấp dưới tán lá mưa ngâu trước hiên nhà từ khi có em bên cạnh", "split": "test"}
+{"type": "Q4", "text": "hiến dâng tuổi trẻ cho đất nước được tự do với con vậy là đẹp nhất rồi", "split": "test"}
+{"type": "Q5", "text": "bài nhạc phim mưa đỏ về người lính tuổi đôi mươi em đưa tôi qua sông cánh đồng lúa trổ bông bầu trời rực hồng", "split": "test"}
+{"type": "Q4", "text": "đợi lớn lên anh qua xin cưới em nhưng thời gian qua anh đi xa", "split": "dev"}
+{"type": "Q5", "text": "bài ngân ngân về chuyện tình thuở nhỏ bên đồi sim anh hứa sau này cưới em làm dâu rồi lên thành phố quên em", "split": "dev"}
+{"type": "Q5", "text": "bài rap của low g em chỉ tìm anh khi buồn còn lúc vui thì bận anh như liều thuốc giúp em ngủ ngon", "split": "test"}
+{"type": "Q5", "text": "bài của maydays nói về những người mình lỡ quên theo thời gian và những người không nỡ quên chờ nhau mấy năm trời", "split": "test"}
+{"type": "Q5", "text": "bài sơn tùng ra năm 2018 chàng trai bị người yêu dối trá rồi quay lưng bỏ đi chỉ còn một mình trong đêm mưa", "split": "dev"}
+{"type": "Q4", "text": "đôi mắt em năm nào biến đâu rồi em đâu còn như trước", "split": "test"}
+{"type": "Q5", "text": "bài hit đời đầu của sơn tùng chàng trai không tin người yêu đã thay đổi sau chia tay mong cô ấy quay lại như xưa", "split": "test"}
+{"type": "Q4", "text": "chỉ thoáng qua giống giấc ngủ buổi trưa mà sao chẳng thể quên", "split": "dev"}
+{"type": "Q5", "text": "bài em xinh say hi nhóm bích phương lyhan hoàng duyên xin thời gian ngừng trôi giữ mãi khoảnh khắc nhìn nhau cười", "split": "dev"}
+{"type": "Q4", "text": "xoa dịu cõi lòng mình rồi ngày tháng cứ thế trôi", "split": "dev"}
+{"type": "Q5", "text": "bài nhạc phim cảm ơn người đã thức cùng tôi kể chuyện con cáo nhỏ cô đơn trong rừng đem lòng yêu một bông hoa bên kia đồi", "split": "dev"}
+{"type": "Q4", "text": "không có từ nào diễn tả được cảm giác em bây giờ em rối quá sợ vội vàng", "split": "test"}
+{"type": "Q5", "text": "bài của vstra với tyronee cô gái lỡ thích anh rồi nhưng ngại không dám nói chỉ muốn hôn lên mắt anh không yêu ai khác", "split": "test"}
+{"type": "Q4", "text": "đốt cháy hết mình cho đất nước khoác lên màu áo đỏ mồ hôi rơi trên sân bóng", "split": "test"}
+{"type": "Q5", "text": "bài cổ vũ đội tuyển bóng đá của sơn tùng hô vang việt nam sút tung lưới khung thành dù thắng hay bại vẫn tự hào", "split": "test"}
+{"type": "Q4", "text": "duyên phận đôi mình hay chỉ là cơn mưa thoáng qua", "split": "test"}
+{"type": "Q5", "text": "bài dân gian đương đại của bích phương juky san lamoon trong em xinh say hi cô gái xin trời cao cho mối nhân duyên trọn đời có tiếng hơ hờ", "split": "test"}
+{"type": "Q4", "text": "vết tích ấy ám cả đời người rồi thời gian cuốn đôi ta đi", "split": "dev"}
+{"type": "Q4", "text": "cùng nhau cảm ơn mỗi ngày vì ta vẫn còn sống trên đời", "split": "test"}
+{"type": "Q5", "text": "bài của 14 casper và bon nghiêm anh từng tiêu cực đơn côi không mở lòng vì quá nhiều gian dối sau cơn mưa là nắng chỉ có em tin anh", "split": "test"}
+{"type": "Q4", "text": "có thể nào trao yêu thương thay cho lời nói không tình yêu vô tình vậy đó", "split": "dev"}
+{"type": "Q5", "text": "bài say hi của wren evans ivan captain boy anh muốn nói hết mà lời kẹt ở môi lặng thinh nhìn em mà em chẳng thấy", "split": "dev"}
+{"type": "Q4", "text": "yêu em anh đau biết bao sao mình chẳng có duyên phận", "split": "test"}
+{"type": "Q5", "text": "bài của thiên đình tình tay ba một người đau thì tốt cho ba người anh xin làm lữ khách rời đi", "split": "test"}
+{"type": "Q4", "text": "rồi chẳng còn thấy em đợi đôi mắt buồn mà vẫn nghe em cười", "split": "dev"}
+{"type": "Q5", "text": "bài của obito ngồi trên xe đi ngang con phố cũ mưa rơi bên thềm vết thương trong em là do anh", "split": "dev"}
+{"type": "Q4", "text": "hôn nhau say đắm như là lần đầu tiên", "split": "dev"}
+{"type": "Q5", "text": "bài tình yêu của nguyễn trung đức ngàn vì sao trên trời chứng giám cho tình yêu lên ngôi gặp em là trời đất đảo điên", "split": "dev"}
+{"type": "Q4", "text": "đến cuối chỉ biết ôm buồn mà câm lặng không thể nào quên người ấy", "split": "test"}
+{"type": "Q5", "text": "bài buồn của quang đăng trần anh lang thang chốn cũ hối hận vì không cố gắng bên người yêu giờ nhìn cô ấy hạnh phúc bên ai", "split": "test"}
+{"type": "Q4", "text": "tình đâu phải giấc mơ đêm nào cũng mong kiếm ai biết quý mình khó lắm", "split": "test"}
+{"type": "Q5", "text": "bài của anh quân người yêu nói dối trong lòng em có quá nhiều người anh mỏi mệt muốn dừng lại cho đi bao nhiêu chưa chắc nhận lại bấy nhiêu", "split": "test"}
+{"type": "Q4", "text": "anh vẫn luôn ở đây đợi em trả lời lời yêu", "split": "test"}
+{"type": "Q5", "text": "bài của wren evans với itsnk trong say hi tình đơn phương với cô gái yêu kiều anh muốn em quan tâm đừng để mình bơ vơ", "split": "test"}
+{"type": "Q4", "text": "tình cảm của em chỉ thoáng qua thôi bảo yêu anh cho vui vậy mà", "split": "test"}
+{"type": "Q5", "text": "bài của anh quân anh thấy vết son của em trên áo hỏi em còn thương không thì nói ra đi để anh biết", "split": "test"}
+{"type": "Q4", "text": "hai con tim đan vào nhau chưa từng biết đau thì ra bình yên là vậy", "split": "dev"}
+{"type": "Q5", "text": "bài của dương domic ước có nơi thời gian ngừng lại mặt trời không lặn hai trái tim đan vào nhau không đau yên bình", "split": "dev"}
+{"type": "Q4", "text": "cần mấy kiếp người mới được yêu em có lẽ duyên mình đành chấp nhận", "split": "test"}
+{"type": "Q5", "text": "bài anh trai say hi của vũ cát tường karik negav ngô kiến huy ánh sáng tắt đi mọi cố gắng thành vô nghĩa anh đến quá sớm nên mất em", "split": "test"}
+{"type": "Q4", "text": "nhiều khi muốn con tim quên em mà sao chẳng nói nên lời", "split": "test"}
+{"type": "Q5", "text": "bài của dương domic với lou hoàng bên nhau lâu mà không phải yêu em rực rỡ như nắng còn anh chỉ một màu tối đừng cho hy vọng nếu không thương", "split": "test"}
+{"type": "Q4", "text": "thấy em cười ngượng một cái là anh yêu ra sân ngồi ngắm sao trời", "split": "test"}
+{"type": "Q5", "text": "bài rap của low g về chàng trai si mê crush viết nghìn lá thư thấy em đi chơi với thằng khác thì ghen insta nghìn like chỉ chờ một người xem", "split": "test"}
+{"type": "Q4", "text": "giờ đã muộn để hỏi chuyện hôm nay đúng hay sai chắc em mong hai đứa chia tay", "split": "test"}
+{"type": "Q5", "text": "bài của đặng vĩnh thịnh và bmz đôi mình sai nhịp bước nên đứng song song chẳng còn lựa chọn nào ngoài buông tay chia tay", "split": "test"}
+{"type": "Q4", "text": "baby ơi là ai người nào anh chẳng thể để vuột mất", "split": "test"}
+{"type": "Q5", "text": "bài anh trai say hi của b ray negav vương bình gill cô fan tên bích họ phan đứng dưới sân khấu đôi mắt sáng hơn cả lightstick", "split": "test"}
+{"type": "Q4", "text": "nhân tình thế thái thay đổi bởi lời cay đắng hơn thua nhau ở chữ nhân lưu lại đời sau", "split": "dev"}
+{"type": "Q5", "text": "bài về nhân tình thế thái của par sg và hngle người đời đổi trắng thay đen tiền là giấy mà chia đôi nghĩa tình cuối đời ai cũng về với đất", "split": "dev"}
+{"type": "Q4", "text": "đừng chia đôi mình ra đừng để ta kết thúc ở đây", "split": "dev"}
+{"type": "Q5", "text": "bài say hi có dương domic anh xin ông trời đừng chia cắt hai ta bật công tắc tình yêu lên khi mặt trăng khuất dần", "split": "dev"}
+{"type": "Q4", "text": "cô nàng nghĩ mình là người đặc biệt bị tao đuổi khỏi bữa tiệc", "split": "test"}
+{"type": "Q5", "text": "bài rap trộn tiếng anh của richie d icy khoe siêu xe rari không cần chìa khóa tiền nhiều hay ít cũng đặt lên bàn", "split": "test"}
+{"type": "Q4", "text": "vẫn chẳng ai thay được em đợi anh trở lại đã bao nhiêu ngày", "split": "test"}
+{"type": "Q5", "text": "bài song ca của b ray và amee trong anh trai say hi cô gái đợi người yêu trở về tìm anh trong những cơn say anh hứa không quên lời thề", "split": "test"}
+{"type": "Q4", "text": "baby sao em thơm vậy nhỉ cho anh hít một cái", "split": "test"}
+{"type": "Q5", "text": "bài say hi của congb buitruonglinh codynamvo em đi qua ai cũng ngoái nhìn giữa ngàn hoa anh chỉ nhớ mùi hương của em thơm thế nhỉ", "split": "test"}
+{"type": "Q4", "text": "chẳng kiêu căng chẳng sống ảo đi lên bằng thực lực", "split": "test"}
+{"type": "Q5", "text": "bài hát tập thể của soobin kay trần tuấn hưng bằng kiều tự long khoe thần thái anh kay đẹp trai không bao giờ sai", "split": "test"}
+{"type": "Q4", "text": "chẳng biết ai sẽ ở cạnh đâu ai hay tôi vẫn mãi chờ mong", "split": "dev"}
+{"type": "Q5", "text": "bài của maydays nước mắt em lăn dài vì nhiều tổn thương anh đã chìm trong đôi mắt em em xứng đáng được hạnh phúc", "split": "dev"}
+{"type": "Q4", "text": "khi người anh yêu đã rời xa mang đi trái tim anh không nói một lời", "split": "test"}
+{"type": "Q5", "text": "bài của min hai giờ sáng ngồi bên nhau ở ngã tư đường cô gái thầm yêu người bạn vừa chia tay mà anh không nhận ra", "split": "test"}
+{"type": "Q4", "text": "ra đường thấy bọn nó vẫn còn mộng mơ", "split": "test"}
+{"type": "Q5", "text": "bài rap của richie d icy với obito tobie and richie chia tay cô gái nơi thành đô ngồi xe bốn bánh vi vu cùng anh em", "split": "test"}
+{"type": "Q4", "text": "lòng anh rối như tơ giá như ngày ấy anh mạnh dạn tỏ tình", "split": "test"}
+{"type": "Q5", "text": "bài của phan mạnh quỳnh nhận thiệp mời đám cưới người yêu cũ ở quê cô dâu áo trắng cầm hoa lỗi tại anh ngày xưa không dám nói", "split": "test"}
+{"type": "Q5", "text": "bài hoàng dũng hát lại trong anh trai vượt ngàn chông gai chàng nhạc sĩ chia tay cô gái từng là cảm hứng của mình tình mong manh để lại vết hằn", "split": "dev"}
+{"type": "Q4", "text": "ước cho làng quê giàu mạnh tươi đẹp mùi lúa thơm nhẹ ngoài cánh đồng", "split": "test"}
+{"type": "Q5", "text": "bài hát thanh niên tình nguyện mùa hè xanh áo xanh về xóm làng cẩm ly hát", "split": "test"}
+{"type": "Q4", "text": "bao đêm thức trắng mong được ở cạnh em mà giờ chỉ còn lại nỗi nhớ", "split": "test"}
+{"type": "Q5", "text": "người yêu ra đi từ mùa đông năm ấy anh lặng lẽ hát khúc ca xưa nhớ nụ cười em", "split": "test"}
+{"type": "Q4", "text": "chỉ mình em hiểu được cảm giác ấy anh hứa đừng thương ai khác ngoài em nhé", "split": "test"}
+{"type": "Q5", "text": "cô gái thầm thương anh chàng vừa bị người yêu làm khóc đứng từ xa giả vờ quay đi để giấu nước mắt", "split": "test"}
+{"type": "Q4", "text": "hãy quý những điều nhỏ bé quanh mình khi đã thương nhau thì tin tưởng mà đi cùng nhau", "split": "test"}
+{"type": "Q5", "text": "song ca tống gia vỹ và tăng bảo thy về hạnh phúc ở ngay trong tim yêu là phải vị tha bao dung không gian dối", "split": "test"}
+{"type": "Q4", "text": "nỗi buồn rơi xuống lòng trống trải để anh được nhớ em thêm một lần cuối", "split": "dev"}
+{"type": "Q5", "text": "chàng trai hỏi han người yêu cũ sau nhiều năm xa nhau người mới có thương em thật lòng không có ai dắt tay em qua những ngày đông lạnh", "split": "dev"}
+{"type": "Q4", "text": "xé vụn nỗi sầu ra từng lời một chẳng ai hiểu vì sao biển lại đổi thay", "split": "dev"}
+{"type": "Q4", "text": "sao lúc say không gọi cho anh lại để những giọt mưa tí tách rơi vào đời anh", "split": "dev"}
+{"type": "Q5", "text": "anh thấy em vẫn mang đôi giày đã vỡ đi hẹn hò với kỷ niệm hai người lén quan tâm nhau dù biết thế này không tiện", "split": "dev"}
+{"type": "Q4", "text": "lời hẹn ước sẽ về với nhau khi công thành danh toại mà sao lòng đau mơ giàu sang để giờ cô đơn ôm nỗi buồn", "split": "test"}
+{"type": "Q5", "text": "bài nhạc trẻ kể chuyện vị tướng xa người yêu từ thuở nghèo nắm cả giang sơn mà khi gặp lại thì nàng đã có con với người khác", "split": "test"}
+{"type": "Q4", "text": "cứ từ từ một chút cũng được anh yêu em nhiều lắm yêu em thật lòng", "split": "test"}
+{"type": "Q5", "text": "cô gái mặc vest vẫn đẹp như thiên thần quanh anh nhiều loài hoa nhưng anh chỉ tưới cho một bông hoa babi", "split": "test"}
+{"type": "Q4", "text": "ở sài gòn hoa lệ kiếm đâu ra người chịu làm mọi thứ vì em anh hỏi em tìm đâu ra", "split": "test"}
+{"type": "Q5", "text": "freaky và chúc hỷ kể chuyện cô gái quê được tía cho lên thành phố rồi có người mới đem tình cũ đi cầm", "split": "test"}
+{"type": "Q4", "text": "những tháng ngày hồn nhiên chẳng phải bận tâm ở mái trường quốc học", "split": "test"}
+{"type": "Q5", "text": "nhã thi và xám band hát về ngôi trường cũ ở huế chớm thu nhớ một cái tên sân trường vắng lặng chỉ còn tiếng chim", "split": "test"}
+{"type": "Q4", "text": "giấc mơ đẹp ta cùng đi trên đường dài nhớ lắm những đêm nằm lắng nghe mưa rơi nhớ thuở trước", "split": "dev"}
+{"type": "Q5", "text": "đan trường song ca cùng mỹ tâm nhớ hai đứa trẻ ngày xưa chơi đuổi bắt dưới mưa giờ hát lên một bài ca không tên", "split": "dev"}
+{"type": "Q4", "text": "trải qua bao ghềnh thác dòng nước rồi sẽ trôi về nơi nao đã là con người thì phải sống ngay thẳng", "split": "test"}
+{"type": "Q5", "text": "bài nhạc phim về nhân quả đời người như dòng sông đổ ra biển đừng gieo oán sầu sống nhân đức thì sau này không ai trách", "split": "test"}
+{"type": "Q4", "text": "anh mến em từ hồi mẹ mới về làm dâu bên cha chòm sao vua sáu ngôi ở xa tít", "split": "dev"}
+{"type": "Q5", "text": "bài hát theo điệu dân ca của phạm duy đếm tên các vì sao sao tua chín cái sao khuê xen tiếng ối a thương em từ ngày còn được mẹ bồng", "split": "dev"}
+{"type": "Q4", "text": "mấy khi mình được hạnh phúc bên nhau rồi sẽ thôi nhớ thôi khóc khi chờ đợi", "split": "dev"}
+{"type": "Q5", "text": "bài indie buồn về chàng trai mất ngủ mỗi đêm vì nỗi đau lê chân khắp phòng tim vỡ đôi thức trắng chờ bình minh", "split": "dev"}
+{"type": "Q4", "text": "kệ những ánh nhìn dò xét của người lạ anh vẫn siết tay em chẳng rời", "split": "dev"}
+{"type": "Q5", "text": "đôi tình nhân khiêu vũ giữa đám đông dưới ánh đèn pha lê mặc kệ thế giới ngăn cản đẹp như một bức tranh", "split": "dev"}
+{"type": "Q4", "text": "anh không cho phép mình vui nếu mai này thiếu em và cũng cấm em nói thương anh khi đang ở trong vòng tay người ta", "split": "test"}
+{"type": "Q5", "text": "bài rap của kindya về người đàn ông bị bạn mình cướp mất người yêu cam chịu làm kẻ thứ ba có lúc trầm cảm vì cú sốc", "split": "test"}
+{"type": "Q4", "text": "ờ thì chắc là anh vẫn cho rằng vì anh mong được thấy em thêm nữa", "split": "test"}
+{"type": "Q5", "text": "low g rap kể chuyện gặp cô gái chán nản ở bữa tiệc ồn ào hai đứa bỏ bạn bè ra khỏi quán bar thì trời đổ mưa", "split": "test"}
+{"type": "Q4", "text": "đeo ba lô lên mà chạy thật xa tới chốn không còn âu lo để thôi thương nhớ suốt bao năm tháng", "split": "test"}
+{"type": "Q5", "text": "cô gái nhớ những chuyến đi cùng người yêu cũ trong ngày mưa dưới ánh đèn đường giờ chỉ muốn ngắm phố thức dậy mỗi sáng", "split": "test"}
+{"type": "Q4", "text": "chẳng bao giờ chịu khuất phục hay quỳ gối vì trong người tôi chảy dòng máu con rồng cháu tiên có người còn người đã nằm xuống nhưng tình anh em sống chết không rời", "split": "test"}
+{"type": "Q5", "text": "ưng hoàng phúc hát về tình huynh đệ giang hồ sống không oán than không toan tính thiệt hơn cúi đầu thì không một lòng với anh em", "split": "test"}
+{"type": "Q4", "text": "độ trở về chẳng thiết đè tem nữa câu kinh vẫn còn đọng lại muôn chữ", "split": "test"}
+{"type": "Q5", "text": "bài chế vui của độ mixi nhại theo độ ta không độ nàng tiếng mõ phũ phàng trả lại người chiếc áo ba lỗ", "split": "test"}
+{"type": "Q4", "text": "đôi khi chỉ vì lỡ lời không cố ý đôi khi lại nhẫn tâm cố ý làm tổn thương", "split": "dev"}
+{"type": "Q5", "text": "bài thánh ca xin chúa gìn giữ ngọn lửa yêu thương và niềm tin trong tim giữa hoài nghi đố kỵ thù hận", "split": "dev"}
+{"type": "Q4", "text": "giờ đây người đã rời làng xưa nhìn về qua màn sương mờ", "split": "test"}
+{"type": "Q5", "text": "nhạc quê hương của thanh trang chiều tàn cành liễu rủ bên sông mùi lúa thơm đêm trăng sáng hai người dạo bên nhau mãi chẳng hết lời", "split": "test"}
+{"type": "Q4", "text": "thuyền buồm nâu chở lời hẹn ước câu hò vọng lại lưu luyến con sông quê xứ nghệ", "split": "test"}
+{"type": "Q5", "text": "song ca thanh tài thanh quý về núi hồng lĩnh soi bóng dòng sông xứ nghệ đò dọc đò ngang câu ví giặm ân tình", "split": "test"}
+{"type": "Q4", "text": "mình sai thì mình nhận có ai mà đúng mãi được trong lòng đau nhưng ngày mai sẽ khác", "split": "dev"}
+{"type": "Q5", "text": "nam nhân hát về việc sống chậm lại nhìn sâu vào lòng mình thua ai cũng chẳng lo thương bản thân nhiều hơn hôm qua", "split": "dev"}
+{"type": "Q4", "text": "cùng nhau dốc lòng lo cho ngày sau dù mưa hay nắng vẫn chăm chỉ ngoài đồng lúa ruộng khoai", "split": "test"}
+{"type": "Q4", "text": "dù buồn em vẫn giấu anh và giả vờ vui vẻ thà cô đơn chứ em vẫn chỉ thương mỗi anh", "split": "test"}
+{"type": "Q5", "text": "cô gái chờ câu trả lời của người yêu dù ai cũng bảo anh đã có người khác vì thương nên nhắm mắt cho qua mọi lừa dối", "split": "test"}
+{"type": "Q4", "text": "yêu rồi thì chẳng còn phân biệt được phải trái em thờ ơ lạnh nhạt nên chẳng để ý anh cảm thấy thế nào", "split": "test"}
+{"type": "Q5", "text": "thanh ngọc song ca với chí thiện chàng trai cố chấp nhắm mắt chấp nhận mọi lý do người yêu nghĩ ra rồi một mình ôm kỷ niệm", "split": "test"}
+{"type": "Q4", "text": "nước mưa chảy trên hàng mi em ướt sũng run rẩy vì lạnh đưa tay lên gọi", "split": "test"}
+{"type": "Q5", "text": "đêm gió lạnh sương phủ mờ con phố người con gái vội vàng ra đi mà nơi này vẫn còn vang tiếng em gọi tên anh", "split": "test"}
+{"type": "Q4", "text": "khắp năm châu ai cũng vui mừng đúng như lời phật đã báo trước", "split": "test"}
+{"type": "Q5", "text": "bài hát phật giáo của chùa ba vàng mừng ngày sinh của sơ tổ trúc lâm vị vua xuất gia hoằng dương phật pháp", "split": "test"}
+{"type": "Q4", "text": "nhưng thế vẫn còn tốt hơn là chẳng bao giờ có hãy cố mà quên hết những nỗi đau", "split": "dev"}
+{"type": "Q5", "text": "phan đinh tùng hát về hai vì sao bỗng sáng lên trên thế gian người yêu ra đi không một lời ngồi ngắm sao trời mong tình em vẫn như xưa", "split": "dev"}
+{"type": "Q4", "text": "cuộc tình giờ đã phai tàn nhưng lòng còn nhớ những phút giây đong đầy yêu thương", "split": "dev"}
+{"type": "Q5", "text": "nhạc ngoại lời việt bóng đêm về trăng tàn người ra đi không quay lại tay trong tay môi trong môi giờ chỉ còn trong nỗi nhớ", "split": "dev"}
+{"type": "Q4", "text": "hãy giữ trọn tình nghĩa cho nhau thuở mới quen nào ngờ đến hôm nay", "split": "dev"}
+{"type": "Q5", "text": "elvis phương hát lời người đàn ông bảo người yêu lau nước mắt chỉ một đêm nữa thôi rồi chia xa mãi mãi dìu nhau bước nốt đoạn đường tình", "split": "dev"}
+{"type": "Q4", "text": "sao tới giờ này mình mới gặp được nhau yêu khi đã trễ mà lòng vẫn còn trẻ trung", "split": "dev"}
+{"type": "Q5", "text": "bài trữ tình về chuyện yêu khi tuổi đã xế chiều gặp em khi mùa yêu vừa chín hai bàn tay tìm về với nhau yêu như thuở ban đầu", "split": "dev"}
+{"type": "Q5", "text": "thành đạt và đông thiên đức hát chuyện tình dang dở cô gái trách anh cứ rộng lòng với người cũ gió ơi đừng chờ ngoài cửa nữa người đã muốn đi thì níu cũng vô ích", "split": "dev"}
+{"type": "Q5", "text": "bài trữ tình nhớ quê của người tha phương nhớ con đò dòng sông và vầng trăng của người xưa lối làng bờ đê cuộc sống nghèo mà tình như bài thơ", "split": "test"}
+{"type": "Q4", "text": "muốn giang rộng vòng tay ôm sài gòn thật chặt vào lòng mà yêu say đắm", "split": "test"}
+{"type": "Q5", "text": "bài hát về tình yêu thành phố đường đông người xe nhộn nhịp thức dậy cũng yêu nhắm mắt cũng yêu đi xa thì nhớ muốn quay về", "split": "test"}
+{"type": "Q4", "text": "thôi thì chỉ mong hóa thành làn gió đưa con diều bay về tận cuối trời xa", "split": "dev"}
+{"type": "Q5", "text": "bài trữ tình mai anh hát con thuyền tan nát cánh buồm rách bươm bờ vai gầy là bến bình yên chỉ mong một lần được yêu", "split": "dev"}
+{"type": "Q4", "text": "chú cá nhỏ vui đùa bơi lội mà quên mất dòng suối nơi mình sinh ra có ai vui hôm nay mà quên chuyện hôm qua", "split": "test"}
+{"type": "Q5", "text": "lời người cha gửi đứa con mười năm sau kể về tuổi trẻ sống hết mình có lúc khóc lúc cười", "split": "test"}
+{"type": "Q4", "text": "chẳng còn gì nữa thì tiếc làm chi cho thêm nhớ anh cứ đợi em hoài trong giấc mơ", "split": "dev"}
+{"type": "Q5", "text": "lam trường hát từ ngày em xa anh thấy sầu trong mắt tình như khói mây bay về chốn xa xăm dù em cách xa anh vẫn chẳng quên", "split": "dev"}
+{"type": "Q4", "text": "mang tiếng cười tỏa khắp bầu trời năm cũ qua rồi bỏ hết những chuyện ồn ào chẳng đáng bận lòng mà cất đi", "split": "test"}
+{"type": "Q5", "text": "bài nhạc tết của simonc với lê vũ xuân về trẻ con nô đùa mặc áo mới mọi người nhanh chóng về đoàn viên với gia đình", "split": "test"}
+{"type": "Q4", "text": "đêm nào mình cũng nằm im trong tấm chăn ấm lắng nghe giọng em hát được anh mở trên đài", "split": "test"}
+{"type": "Q5", "text": "keisha hát lời cô gái chưa dám nói yêu nên phát hành bài nhạc tặng anh mong anh nghe trên radio khi băng qua ngã tư lúc đèn chuyển xanh", "split": "test"}
+{"type": "Q4", "text": "vẫn chưa sáng tác được gì vì còn mải đi dạo siêu thị toàn tivi", "split": "test"}
+{"type": "Q5", "text": "bài vui của đức trí về anh nhạc sĩ chưa sáng tác nổi vì còn bận lo cơm áo gạo tiền muốn hát thì giọng lại phô", "split": "test"}
+{"type": "Q4", "text": "dù tóc đã bạc trắng chẳng có phép màu nào em vẫn mãi mong anh trở về bên em", "split": "dev"}
+{"type": "Q5", "text": "chàng trai cả đời vất vả đi tìm người con gái ở xa nghìn trùng dù tóc bạc vẫn chờ ngày gặp lại", "split": "dev"}
+{"type": "Q4", "text": "bao điều tội lỗi tan vỡ đã được tình yêu của ngài thay thế chúa đến lau khô dòng lệ", "split": "dev"}
+{"type": "Q5", "text": "bài thánh ca về người phụ nữ lầm lỡ bị đám đông đòi ném đá nhưng chúa không lên án mà cứu thoát cây sậy dập chẳng bẻ gãy", "split": "dev"}
+{"type": "Q4", "text": "dưới những tán lá nơi làn gió nhẹ đung đưa lá rơi lững lờ", "split": "test"}
+{"type": "Q5", "text": "bài của 502 ocean thu sang đông tới anh vẫn đứng đợi người yêu ở chỗ có chim hót và nắng ấm", "split": "test"}
+{"type": "Q4", "text": "buổi chiều nơi sân ga vắng vẻ khi đông về hàng cây lạnh và lòng anh cũng giá buốt", "split": "dev"}
+{"type": "Q5", "text": "phạm hoài nam hát lời việt cho giai điệu nước ngoài chiều sân ga lá thu rơi tiễn em đi đứng lặng nhìn bóng con tàu khuất xa", "split": "dev"}
+{"type": "Q4", "text": "anh ấm áp thân thiện chẳng keo kiệt cũng không ham chơi lâu chỉ cần em gật đầu rồi cho anh xin thông tin", "split": "dev"}
+{"type": "Q4", "text": "em ơi xin chớ ra đi mãi kẻo phố nhỏ chìm trong mưa sầu lạnh lẽo", "split": "test"}
+{"type": "Q5", "text": "bài trữ tình về mưa lũ ở quảng nam nước sông dâng cao tràn bến đá phá chợ chiều anh dìu em lội nước về hà lam", "split": "test"}
+{"type": "Q4", "text": "hai đứa mình to nhỏ vài câu hay là đang hờn dỗi nhau rồi", "split": "dev"}
+{"type": "Q5", "text": "cô gái trách người yêu bỗng dưng ngoảnh mặt làm ngơ có phải anh quen người khác giàu sang kỷ niệm đêm nào khó quên", "split": "dev"}
+{"type": "Q4", "text": "đi kiếm lại tình yêu năm xưa dù mùa đông đã về lạnh giá như được sưởi ấm bên mình", "split": "dev"}
+{"type": "Q5", "text": "bài indie tự sáng tác chàng trai lang thang trên phố vắng giữa gió mưa đông sang nhắc người cũ nhớ mang áo ấm nơi ấy giờ chẳng còn chúng ta", "split": "dev"}
+{"type": "Q4", "text": "gió cứ thổi dạt dào từ khi rời quê nhà lòng nhớ thương cha và mẹ già", "split": "test"}
+{"type": "Q5", "text": "bài trữ tình nhớ quê chiều tím trên đường đê lũy tre nghiêng bên mái nhà nghèo đò neo bến cũ mẹ ru bên khói lam chiều", "split": "test"}
+{"type": "Q4", "text": "thế nên mình đành để lại nơi này thôi bạn hỡi", "split": "test"}
+{"type": "Q5", "text": "bài hát chia tay bạn thân cuối cấp mới ngày nào còn ngập ngừng tới lớp mà giờ đã xa ước có phép màu đưa ta về những ngày rong chơi trên sân trường", "split": "test"}
+{"type": "Q4", "text": "những kỷ niệm ùa về như đánh lừa trái tim ánh trăng bị ai chia đôi nước mắt làm nhòe hàng mi", "split": "dev"}
+{"type": "Q5", "text": "bài nhạc trẻ dee trần viết và hát ngỡ yêu thật lòng là trọn vẹn nhưng rồi bắt gặp em hạnh phúc cùng người khác tình yêu như trò chơi", "split": "dev"}
+{"type": "Q4", "text": "vậy mà lòng em cứ bồn chồn lo lắng vì một ai đó khác", "split": "dev"}
+{"type": "Q5", "text": "thu thủy hát khi tình đã cạn thì đừng níu kéo dặn lòng mạnh mẽ quay lưng đi không để anh thấy mình đã khóc", "split": "dev"}
+{"type": "Q4", "text": "em cứ nuối tiếc mãi một mối tình không thể quay lại rồi bừng tỉnh hiểu ra mình không thể chìm đắm trong mê muội yếu mềm", "split": "dev"}
+{"type": "Q5", "text": "jenny hải ngọc kết hợp rap cô gái xin người yêu hết thương thì nói thẳng một lời đừng quẩn quanh trong những cuộc vui yêu đương be honest", "split": "dev"}
+{"type": "Q5", "text": "chàng trai tán cô gái đẹp như thiên thần trong tranh vẽ hỏi nàng có cần một chàng gấu biết sưởi ấm dẫn đường về nhà không", "split": "dev"}
+{"type": "Q4", "text": "hãy trả cho anh những phút yên bình của cuộc đời trăng lẩn sau mây sầu tình yêu bay đi theo gió", "split": "test"}
+{"type": "Q5", "text": "huy vạc hát cầm bông hoa muốn trao mà người yêu chẳng còn ở đây phố đèn lung linh mà nước mắt rơi cuốn phim buồn đã hạ màn", "split": "test"}
+{"type": "Q4", "text": "các cô theo anh chắc xếp hàng dài cả phố tài cua gái vô đối nên đám bạn đặt biệt danh quái vật tình trường", "split": "test"}
+{"type": "Q5", "text": "kaydee và phúc pin kể chuyện chàng trai mới chuyển đến làm quen cô bé nhà bên nhỏ nhắn hiền như nàng tấm nhà có vườn hoa và chú cún tên misa", "split": "test"}
+{"type": "Q4", "text": "cứ gieo hạt giống niềm tin và tình thương thì sẽ thu hoạch được hạnh phúc vì con người biết yêu thương và sẻ chia cho nhau", "split": "test"}
+{"type": "Q5", "text": "bài hát công giáo về người dãi nắng dầm mưa đi gieo hạt hạt sinh ba chục sáu chục có hạt trổ một trăm nào ta đi gieo niềm tin", "split": "test"}
+{"type": "Q4", "text": "mong được thấy em tựa đóa hoa nơi rừng sâu và ta như chú ong say đắm tìm đến", "split": "test"}
+{"type": "Q5", "text": "ngọc lan hát lời việt cho bài solenzara của enrico macias người hỡi hãy quay lại nhìn mùa xuân đang mỉm cười mình yêu nhau đi", "split": "test"}
+{"type": "Q4", "text": "chú thỏ với bạn rùa thân thiết như hai anh em một sáng nọ rùa ôm cặp tới lớp", "split": "dev"}
+{"type": "Q5", "text": "bài hát thiếu nhi kể chuyện rùa đi chậm mà thẳng bước tới trường còn thỏ ham chơi hái hoa nên chuông reo vào lớp vẫn chưa kịp đến bị thầy la", "split": "dev"}
+{"type": "Q4", "text": "chắp cánh cho ta bước tới những miền xa phía chân trời đã rực sáng", "split": "test"}
+{"type": "Q5", "text": "lê dung hát ca ngợi tổ quốc việt nam non sông vinh quang ngàn đời lời bác hồ thiêng liêng vọng về đón chào bình minh ngày mới", "split": "test"}
+{"type": "Q4", "text": "người đã rời xa để lại bao chua xót lòng quạnh hiu nuối tiếc cuộc tình cũ", "split": "test"}
+{"type": "Q5", "text": "bài rumba tự sáng tác tình đẹp như mơ vụt bay qua lời thề sắt son nhạt dần theo thời gian cuộc tình tan vì gian dối", "split": "test"}
+{"type": "Q4", "text": "mong lời ca anh hát được thuộc về người con gái ấy kỷ niệm anh giữ chỉ của riêng nàng hạnh phúc ở ngay tầm tay xin thêm một ngày bên nhau", "split": "test"}
+{"type": "Q5", "text": "hà anh tuấn hát bản ballad của hoàng dũng người lặng lẽ giữa dòng đời vô định rồi em đến đánh thức giấc mơ yêu em như cánh rừng chờ lá non", "split": "test"}
+{"type": "Q4", "text": "biết rõ chẳng có kết thúc tốt đẹp nào vậy mà em vẫn cứ lao đầu vào", "split": "test"}
+{"type": "Q5", "text": "cô gái chìm trong nỗi đau vì buông tay để mất một người nước mắt tuôn mỗi đêm dài mong anh quay lại xem trái tim đã vỡ", "split": "test"}
+{"type": "Q4", "text": "nỗi buồn hiu hắt mênh mang làm trái tim xao xuyến", "split": "dev"}
+{"type": "Q5", "text": "bài trữ tình về mùa thu nắng vàng đầu ngõ ngắm vầng trăng suông tay vân vê lá chiều mưa nôn nao chờ gặp lại người đã đi xa", "split": "dev"}
+{"type": "Q4", "text": "những chuyện tưởng chừng như truyện cổ tích chào nhé tôi vẫn ổn màn sương che khuất mắt ai", "split": "test"}
+{"type": "Q5", "text": "hooligan hát về người tỉnh dậy giữa đêm không thấy em bật radio nghe tim vỡ chiếc quần jeans ám mùi thuốc lá uống cạn ly rượu gin", "split": "test"}
+{"type": "Q4", "text": "đất nước sẽ mãi khắc ghi tên người chiến sĩ bao nhiêu người cùng chung sức vì quê hương", "split": "test"}
+{"type": "Q5", "text": "bài hát về lũ lụt miền trung xóm làng ngập trắng vợ mất chồng con gọi cha răng không về các chiến sĩ hy sinh khi cứu dân giữa thời bình", "split": "test"}
+{"type": "Q4", "text": "anh chẳng muốn hai đứa trở thành người dưng anh muốn mọi thứ vẫn như những ngày trước", "split": "test"}
+{"type": "Q5", "text": "dương nhất linh và la nhật tiến hát chàng trai đã cố níu giữ từng hạnh phúc từng kỷ niệm nhưng chưa đủ vững để giữ em cuối cùng người đau lại là anh", "split": "test"}
+{"type": "Q4", "text": "anh cất tiếng kêu tên em giữa làn gió liệu gió có thấu lòng anh kêu em giữa màn đêm chỉ thêm chua xót", "split": "test"}
+{"type": "Q5", "text": "hùng nguyên hát đêm lạnh phố khuya im lìm ánh đèn vàng lẻ loi bước chân lạc giữa trời sương mong em trở lại mà gió đã đưa em đi xa", "split": "test"}
+{"type": "Q4", "text": "anh chơi đàn còn em cất tiếng hát nắng đậu trên tóc anh giơ tay lên che nỗi buồn hóa thành hoa khi thời gian trôi đi đã lâu", "split": "test"}
+{"type": "Q5", "text": "thịnh suy và mgt hát nhẹ nhàng xen tiếng anh gió khẽ lướt qua mang theo hương tóc em thả trôi lo âu ngày mai trời lại lên nên đừng lo", "split": "test"}
+{"type": "Q4", "text": "buồn và đau biết bao khi làm con trai chưa nên người thời nay yêu đâu chỉ bằng lời hứa", "split": "test"}
+{"type": "Q5", "text": "bùi vĩnh phúc hát chàng trai trắng tay nhìn người thương lên xe hoa ngày cưới hai họ vui mừng còn anh lạc bước tìm kỷ niệm", "split": "test"}
+{"type": "Q4", "text": "cùng nhau vun đắp cuộc đời tươi như hoa đầu năm rồi người ra đi tựa cánh chim bay giữa chiều hoang vắng", "split": "test"}
+{"type": "Q5", "text": "nhạc vàng kể chuyện người em gái tóc ngang vai cài hoa tím trên áo xanh yêu anh lính mặc áo màu lá rừng cùng mơ ngày thanh bình", "split": "test"}
+{"type": "Q4", "text": "thanh xuân trôi qua mái tóc đã bạc như mây trắng nhưng một đời son sắt xin trao trọn", "split": "test"}
+{"type": "Q5", "text": "bài trữ tình về số phận người con gái như cánh hoa tả tơi trong mưa gió đêm khuya đèn hiu hắt khóc nhớ cố nhân trọn kiếp vẫn yêu", "split": "test"}
+{"type": "Q4", "text": "kẻ nào mang chúng đến nơi này ngày tận thế là khi trên đời chỉ sót lại một người", "split": "test"}
+{"type": "Q5", "text": "bài rock về đại dịch corona tin báo vài người nhiễm rồi lây nhanh ai cũng sợ đồng loại bao mạng người ra đi ngày đêm giữ gìn lá phổi", "split": "test"}
+{"type": "Q4", "text": "do em khờ dại nên vội tin rằng ở cạnh anh mọi thứ đều êm đềm giờ tình yêu chỉ như tấm gương vỡ đã hàn lại", "split": "test"}
+{"type": "Q5", "text": "bảo my hát tưởng yêu nhau tới mai sau nhưng rồi chia tay đẫm nước mắt anh nỡ lừa dối yêu thêm người khác em sẽ xóa hết ký ức về hai đứa", "split": "test"}
+{"type": "Q4", "text": "tiếng bass dồn dập bên tai con tim tôi đã nhận ra mình có lỗi", "split": "test"}
+{"type": "Q5", "text": "minh tốc và lam hát nhạc jazz nhảy múa một mình nhâm nhi ly rượu cay cô gái vội xóa vết tình xưa trên môi bước chân swing theo từng câu hát", "split": "test"}
+{"type": "Q4", "text": "đi tìm hơi ấm từ đôi bàn tay em vội lướt ngón tay trên phím đàn", "split": "test"}
+{"type": "Q5", "text": "bài indie nhẹ nhàng trời xanh mây ngả nghiêng cuối trời anh ngồi một mình nghe lá cây xào xạc gọi nắng gọi gió mong tình yêu trở lại", "split": "test"}
+{"type": "Q4", "text": "lúc hai ta vẫn còn cạnh nhau vậy mà phải đến lúc anh để mất em", "split": "test"}
+{"type": "Q5", "text": "tuấn hưng song ca với khắc việt trách người yêu không thật lòng khi còn bên nhau đến lúc mất nhau mới nói yêu nắm tay một lần trước khi xa", "split": "test"}
+{"type": "Q4", "text": "thôi thì em giữ kín một mình nhưng đôi lúc lòng chẳng vui đêm về em say rồi cất tiếng hát", "split": "test"}
+{"type": "Q5", "text": "mỹ tâm hát nhạc hàn lời việt về cô gái giấu kín chuyện riêng tư chẳng dám kể ai nghe giấu mà lòng vẫn vui", "split": "test"}
+{"type": "Q4", "text": "gió ơi cớ sao lại đến cướp đi mối tình mà cả đời ta nâng niu", "split": "test"}
+{"type": "Q5", "text": "chuyện tình chàng là cái cây giữa rừng sâu còn nàng là chiếc lá mỏng manh trên cành cây mơ mùa xuân nở hoa cùng lá thì gió kéo đến", "split": "test"}
+{"type": "Q4", "text": "dù anh thương nhiều đến mấy thì chắc em cũng chẳng bận tâm bởi em chỉ xem anh như bạn bè đi cạnh anh chỉ một thời gian", "split": "test"}
+{"type": "Q5", "text": "bài rap việt của lemon climb và ccmk chàng trai chở cô gái đi trên những con đường xanh mơ đến cú phanh gấp nhưng nàng chỉ xem anh như bạn", "split": "test"}
+{"type": "Q4", "text": "giữa cuộc đời đầy sóng gió vây quanh giữa đêm tối mịt mù chẳng thấy đường đi", "split": "test"}
+{"type": "Q5", "text": "bài thánh ca cầu xin chúa giữa bệnh tật u ám khắp nơi tim quặn thắt hồn sắp chết đuối thì chúa cầm tay kéo lên", "split": "test"}
+{"type": "Q4", "text": "những làn điệu dân ca em thường hay hát miếng trầu này là trầu tính trầu tình", "split": "test"}
+{"type": "Q5", "text": "bài hát về quê hà nam phủ lý câu hát mời trầu duyên dáng anh qua chợ bầu mua cau về bến phù vân nghe lại làn điệu quê", "split": "test"}
+{"type": "Q4", "text": "chỉ cần để ý tới nhau một chút thì sẽ không cách xa có được niềm hạnh phúc đó thì đi đâu cũng là tuổi trẻ", "split": "test"}
+{"type": "Q5", "text": "tình yêu tuổi trẻ đẹp biết mấy anh luôn kề bên mơ chung mái nhà nhưng tình đẹp đến đâu theo năm tháng cũng phai một người vun vén một người thấy thiếu", "split": "test"}
+{"type": "Q4", "text": "ngợi khen đấng ngự đến nhân danh thiên chúa hỡi israel hãy hân hoan", "split": "test"}
+{"type": "Q5", "text": "bài thánh ca lễ lá vua khiêm nhu cỡi lừa vào thành dân chúng trải áo dọn đường giơ cành lá tung hô con vua đa vít", "split": "test"}
+{"type": "Q4", "text": "chẳng biết tình em sẽ trôi dạt nơi nao khi em đã chai sạn với nỗi đau rồi đến lúc anh cũng rời bỏ như hai ta chưa từng gặp", "split": "test"}
+{"type": "Q5", "text": "thanh hà song ca với phạm anh duy tình cờ quen nhau khi cô đơn nhưng em đã có người và anh vẫn còn vết thương cũ cô đơn khiến ngỡ là yêu", "split": "test"}
+{"type": "Q4", "text": "chỉ mong được chìm mãi trong giấc ngủ trong vòng tay ấm áp trọn vẹn của người", "split": "test"}
+{"type": "Q5", "text": "chàng trai lúc chia tay xin em đừng để lệ tràn mi hãy ôm anh như ngày nào nói sao cho hết lời yêu mong người yêu đừng thay lòng", "split": "test"}
+{"type": "Q4", "text": "dân ăn chơi thời nay đấy người ơi không có tiền mà chơi đẹp thì nhiều vô số", "split": "test"}
+{"type": "Q5", "text": "châu việt cường hát giàu mà keo kiệt thì thiếu gì còn nghèo nhưng sống bao dung tử tế chơi không tính toán mới là người chơi có chất", "split": "test"}
+{"type": "Q4", "text": "mai này rồi em sẽ nhận ra cả đời anh lúc nào cũng mong có em bên cạnh", "split": "test"}
+{"type": "Q5", "text": "tình cảm giấu kín âm thầm trong tim đêm khuya ngắm ngôi sao sáng chỉ muốn nhìn em khẽ hát tên em mong em hiểu", "split": "test"}
+{"type": "Q4", "text": "cuộc sống đâu như giấc mộng cổ tích cô nữ sinh áo trắng giờ đã theo người khác", "split": "test"}
+{"type": "Q5", "text": "jimmy nguyễn hát chàng trai thầm thương cô hàng xóm tóc xõa mềm trên vai nhà gần mà chưa nói với nhau câu nào chỉ dám lén nhìn", "split": "test"}
+{"type": "Q4", "text": "tại anh khờ dại quá nên chẳng thấy được em từng thương anh nhiều đến mức nào", "split": "test"}
+{"type": "Q5", "text": "chàng trai yêu thầm cô bạn thân nhưng không dám nói vì sợ mất tình bạn đến khi em nói đã yêu người khác thì đành lặng lẽ bước đi", "split": "test"}
+{"type": "Q4", "text": "vì sao hai ta lại bắt đầu liệu mình có bên nhau lâu dài", "split": "test"}
+{"type": "Q5", "text": "bài r b về đôi trẻ tự hỏi sau nụ hôn thì là gì của nhau anh coi là trò chơi còn em thì trao cả cuộc đời", "split": "test"}
+{"type": "Q5", "text": "lê bảo bình hát một mình uống rượu nhớ người trong đêm mưa ướt phố ngày xưa đón đưa giờ em chọn tình nơi phồn hoa anh vẫn thủy chung như dòng sông", "split": "test"}
+{"type": "Q4", "text": "ở cạnh nhau hai mươi phút có đáng là bao chỉ cần đêm nay ở bên anh nơi phồn hoa chẳng ai tìm tới", "split": "test"}
+{"type": "Q5", "text": "trọng hiếu hát lời tán tỉnh táo bạo nhìn thẳng vào mắt nhau chẳng cần ai biết sao em vẫn còn độc thân chỉ cần nhắn số cho anh", "split": "test"}
+{"type": "Q4", "text": "qua đêm nay mình chia tay nhé em tình yêu trong anh đã chẳng còn nữa rồi", "split": "test"}
+{"type": "Q5", "text": "lời chàng trai xin người yêu buông tay vì đã hết thương đừng dày vò nhau nữa hãy đi tìm một người mang lại hạnh phúc cho em", "split": "test"}
+{"type": "Q4", "text": "lần đầu vấp ngã đau là hôm đi chân không đi tìm đôi giày lạc mất khi em khóc cũng là khi ta giấu nỗi đau vào tim", "split": "test"}
+{"type": "Q5", "text": "uyên pím hát bài indie về tuổi hai mươi mắc kẹt ôm đàn trên cao nguyên đá nhìn vào gương thấy một đứa ngốc vẫn tin đời giản đơn", "split": "test"}
+{"type": "Q4", "text": "chỉ muốn khoanh tay ngoảnh mặt đi chẳng thiết gì ngồi đếm từng nếp nhăn trên trán", "split": "test"}
+{"type": "Q5", "text": "người đàn ông đảo điên vì nàng đẹp tựa nữ hoàng bí ẩn bị chê là si tình khờ dại yêu chỉ thêm ê chề khổ thân", "split": "test"}
+{"type": "Q4", "text": "em có ngại không nếu anh hôm anh để vụt mất giấc mơ về người", "split": "test"}
+{"type": "Q4", "text": "ta khóc cho những năm tháng quây quần bên nhau khóc vì nhớ tuổi thơ và người mẹ thân yêu", "split": "test"}
+{"type": "Q5", "text": "phạm hoài nam hát lời việt của quốc bảo cho bài million years ago của adele thuở bé hồn nhiên trong trẻo muốn cất cánh bay thì tim gần như chết", "split": "test"}
+{"type": "Q4", "text": "chỉ làm vết thương thêm chồng chất câu hỏi xưa xem ai đúng ai sai", "split": "test"}
+{"type": "Q5", "text": "mọi nỗi đau đến đều có lý do ngày tháng phai nhạt chẳng còn gì để hiểu nhau nếu sau này không gặp lại thì xin hãy vui", "split": "test"}
+{"type": "Q4", "text": "thế mà giờ đây em đã đi xa mãi số phận đã lấy đi hình bóng em", "split": "test"}
+{"type": "Q5", "text": "người đàn ông say men đắng cay vì người yêu đi mất mới ngày nào say đắm bên nhau mà nay hai lối tim tan thành khói mây", "split": "test"}
+{"type": "Q4", "text": "đời ai biết trước được điều gì anh thương em thật lòng chứ không đóng kịch chuyện mình chẳng giống bài thơ dang dở không thành mộng", "split": "test"}
+{"type": "Q5", "text": "the cassette hát lâu rồi mới lại sánh bước bên nhau trên lối cũ nắm tay em dưới ánh đèn trong mưa lời yêu giữ từ lâu chưa nói", "split": "test"}
+{"type": "Q4", "text": "em đừng nghĩ anh là cái mỏ vàng muốn đào lúc nào cũng được mơ đi", "split": "dev"}
+{"type": "Q5", "text": "bài chế hài của quân keyboard chàng trai chia tay rồi đòi lại hết quà đã tặng từ cái thau giặt đồ đến tiền ăn chè hồi sinh viên", "split": "dev"}
+{"type": "Q4", "text": "chén này là máu chúa giê su đổ ra ngài bị đóng đinh trên cây thập giá nơi ngọn đồi", "split": "dev"}
+{"type": "Q5", "text": "thánh ca tin lành lúc dự tiệc thánh cầm miếng bánh uống chén nhớ chúa chịu chết vì tội lỗi chúng ta xin ngài thương xót tha thứ", "split": "dev"}
+{"type": "Q4", "text": "cùng nhau dựng xây đất nước mong sao có đêm được ngước nhìn bầu trời", "split": "test"}
+{"type": "Q5", "text": "bài của lam phương mai thiên vân hát cô gái chiều xuân nhớ người yêu đi lính nơi sa trường tiễn anh lúc hoa đào rơi", "split": "test"}
+{"type": "Q4", "text": "con đường tới lớp thật là vui có cánh đồng lúa thơm thương lắm cây cầu tre nhỏ", "split": "test"}
+{"type": "Q5", "text": "bài hát thiếu nhi tốp ca về đường tới lớp mỗi sáng có suối reo hàng cây cầu vồng và bạn bè gọi nhau đi học", "split": "test"}
+{"type": "Q4", "text": "từng là mảnh ghép còn thiếu của nhau giờ xa cách lời hẹn xưa như cơn gió thoảng sau cơn mưa", "split": "dev"}
+{"type": "Q5", "text": "min min và lemese song ca chuyện đôi tình nhân đã chia tay lâu sáng nào thức dậy cũng nhớ hơi ấm người cũ giờ chỉ gặp lại nhau trong mơ", "split": "dev"}
+{"type": "Q4", "text": "hạnh phúc ở tận đâu xa em lặng lẽ kiếm tìm trong những cơn mơ êm ả", "split": "test"}
+{"type": "Q5", "text": "bài wanbi tuấn anh hát chung với thùy chi cô gái cô đơn trong đêm mưa quạnh hiu vẫn mong một ngày mai nắng ấm và một tình yêu bình yên", "split": "test"}
+{"type": "Q4", "text": "anh có đợi được không có nhận ra rằng con tim em đã lạc mất ở đâu rồi", "split": "dev"}
+{"type": "Q5", "text": "w n với an an và vani cô gái ngày nào cũng nghĩ về chàng trai mình thầm thích ôm anh trong mơ rồi tỉnh giấc mong mai này thành đôi", "split": "dev"}
+{"type": "Q4", "text": "làm sao mà nói ra được chỉ mong đêm này kéo dài mãi", "split": "test"}
+{"type": "Q5", "text": "bài của nhóm em xinh say hi ba cô gái hát về lúc tay đan tay bên người yêu tim đập rộn ràng mong anh đừng đổi thay", "split": "test"}
+{"type": "Q4", "text": "cứ xoá hết mọi thứ đi ngày sau vẫn đang đợi em ở đằng trước", "split": "test"}
+{"type": "Q5", "text": "bùi trường linh hát cho cô gái đã yêu hết lòng mà chỉ nhận về tổn thương khóc bao đêm vì những lời xin lỗi rồi nắng sẽ lên thôi", "split": "test"}
+{"type": "Q4", "text": "chiều tà rồi mà cô ấy vẫn chăm chỉ làm việc nơi nông trường lá cây xào xạc sớm tối vất vả ở vùng đất xa xôi", "split": "test"}
+{"type": "Q5", "text": "bài nhạc trữ tình đài trang hát về nữ công nhân trẻ ở nông trường cao su miền đông ngày ngày ghép mắt cây con áo xanh má rám nắng", "split": "test"}
+{"type": "Q4", "text": "em đổi thay như cây rụng lá tình yêu rời xa ở bên nhau chỉ còn toàn muộn phiền biết dựa vào ai", "split": "dev"}
+{"type": "Q5", "text": "bài ballad về chàng trai đi tìm người yêu cũ trên con phố quen mong thời gian làm lành vết thương mà tim vẫn còn vương", "split": "dev"}
+{"type": "Q4", "text": "chạm được tới thế giới mà em đã từng mơ em chẳng hề nghi ngại hay hối tiếc gì", "split": "test"}
+{"type": "Q5", "text": "cô gái nằm cạnh người thương đang ngủ say thấy đó là tất cả những gì mình có nguyện nắm chặt tay anh không rời", "split": "test"}
+{"type": "Q4", "text": "người bỏ đi chẳng suy nghĩ gì để nước mắt anh rơi giờ ngờ vực làm chi khi em đã chẳng quay lại", "split": "test"}
+{"type": "Q5", "text": "bài hát kể chuyện người yêu bỏ đi khiến mùa đông thêm lạnh anh lang thang một mình như cánh én lạc loài chỉ còn nỗi nhớ", "split": "test"}
+{"type": "Q4", "text": "tôi chẳng ngại vắng người hay vắng tiếng vui cái cười đã thành thói quen và là tên tôi nhớ mãi", "split": "test"}
+{"type": "Q5", "text": "bài indie có mì tôm bò khô và radio một người đi dạo phố gặp lại bạn cũ đã khác xưa chẳng trách ai đúng ai sai", "split": "test"}
+{"type": "Q4", "text": "anh đâu phải người sắt iron man trong phim marvel đâu", "split": "test"}
+{"type": "Q5", "text": "nhạc phim thần tượng tuổi 300 của tùng maru và han sara cô gái say nắng chàng trai đi ngang qua chẳng rõ từ bao giờ hai người đã ở trong thế giới của nhau", "split": "test"}
+{"type": "Q4", "text": "băng qua núi đèo biển cả theo đuổi ước mơ đời như xe cúp té rồi lại đứng dậy", "split": "test"}
+{"type": "Q5", "text": "bài rap của cai và cloudzy về tuổi trẻ cống hiến thanh xuân cho anh em trong team chạy chiếc xe số cũ rong ruổi đuổi theo đam mê", "split": "test"}
+{"type": "Q4", "text": "nơi nắng sớm gọi tên mình nhẹ nhàng chẳng cần đến bản tình ca nào", "split": "test"}
+{"type": "Q5", "text": "tình yêu như phố cũ ghé chơi mùa hè như cơn gió mát cuốn đi muộn phiền sống vô tư một bài indie nhẹ nhàng của hai cô gái", "split": "test"}
+{"type": "Q4", "text": "chúa chịu chết thay con vì quá yêu thương đội vòng gai trên cây thập giá", "split": "test"}
+{"type": "Q5", "text": "bài thánh ca pha phạm hát người từng chối từ chúa và lang thang trong đêm tìm bến bình yên được chúa yêu thương cứu rỗi và lau khô nước mắt", "split": "test"}
+{"type": "Q4", "text": "tết đến rồi mọi người chúc nhau năm mới rực rỡ và cùng ca hát đón xuân", "split": "test"}
+{"type": "Q5", "text": "bài nhạc xuân vui tươi phố phường rợp cờ hoa trẻ con chân sáo chim hót trên đường lên non ánh nắng chan hòa khắp nơi", "split": "test"}
+{"type": "Q4", "text": "anh rất mê lúc được em vòng tay ôm từ đằng sau", "split": "test"}
+{"type": "Q5", "text": "chàng trai sáng thức dậy nhận tin nhắn gọi oppa dậy đi hạnh phúc muốn nắm tay người yêu đi vòng quanh thế giới", "split": "test"}
+{"type": "Q4", "text": "trên tivi đang chiếu chương trình nhạc yêu cầu có bài hát hồi hai đứa còn yêu", "split": "test"}
+{"type": "Q5", "text": "mất ngủ lúc hai ba giờ sáng ngồi trên ghế sô pha xem lại bộ phim buồn và nhớ những lần chạy xe dưới mưa trên cao tốc với người cũ", "split": "test"}
+{"type": "Q4", "text": "từ ngày ra đi chẳng còn được gặp em nước phèn làm vàng cả chiếc quần", "split": "test"}
+{"type": "Q5", "text": "duy quang hát nhạc phạm duy về người lính giữa rừng tràm mùa nước nổi đạn nổ trong nòng súng ướt nhớ dáng em gầy như cây tràm", "split": "test"}
+{"type": "Q4", "text": "anh cứ buông tay cho em đi đừng giận hờn dù rời xa em vẫn thương anh hoài", "split": "test"}
+{"type": "Q5", "text": "hồ ngọc hà hát lời cô gái xin người yêu buông tha để mình sống hoang phí thương anh nhiều mà người ấy chẳng hay em đã khóc rất nhiều", "split": "test"}
+{"type": "Q4", "text": "cô ấy đẹp như mơ làm mây mù tan biến hey girl anh như mất trí", "split": "test"}
+{"type": "Q5", "text": "bài r b của nhóm monstar chàng trai say mê cô gái trong bữa tiệc mời em ly vodka rồi để lời rap nói hộ hết những điều muốn nói", "split": "test"}
+{"type": "Q4", "text": "ai cũng sững sờ khi thủ đô bừng sáng lấp lánh lúc lên đèn ôi hà nội", "split": "test"}
+{"type": "Q5", "text": "bài hát về một ngày ở thủ đô sáng sớm cụ già nhớ thời đôi mươi bên hồ gươm bác lao công tan ca người ngồi ăn ở góc phố", "split": "test"}
+{"type": "Q4", "text": "anh chỉ biết sống mà ngóng trông mãi còn em thì chẳng quay lại nữa", "split": "test"}
+{"type": "Q5", "text": "chàng trai níu giữ mà người yêu vẫn buông tay đi theo người khác quên cả câu chia ly quá khứ chỉ còn băng giá", "split": "test"}
+{"type": "Q4", "text": "một mình trong góc quán mờ tối nhớ về đêm ấy bên em chẳng nói lời từ biệt mà lặng lẽ ra đi", "split": "test"}
+{"type": "Q5", "text": "vũ cát tường hát về chàng trai uống whisky đá mỗi đêm trong quán nghe nhạc chillout nghe bài của green day mà cay mắt vì người yêu cũ", "split": "test"}
+{"type": "Q4", "text": "xin cho con được nghe lời dịu dàng an ủi con dâng chúa bao sầu muộn và nhung nhớ", "split": "test"}
+{"type": "Q5", "text": "thánh ca dâng lễ dâng lên chúa rượu nho và bánh trắng cùng mồ hôi ngày nắng mưa ngoài đồng xin mưa thuận gió hòa trên đường đời", "split": "test"}
+{"type": "Q4", "text": "dẫu năm tháng trôi qua mình vẫn mong ở cạnh nhau như thuở ban đầu miễn là hai đứa có nhau", "split": "test"}
+{"type": "Q5", "text": "vũ cát tường hát về lần đầu gặp em do duyên trời sắp đặt rồi cùng xây tổ ấm đời có trôi ngược thì vẫn tin hai người chung bước", "split": "test"}
+{"type": "Q4", "text": "rồi sau mọi chuyện em cứ an lòng anh sẽ quay về em hãy cất giữ trái tim này trong ngực đừng trao ai", "split": "test"}
+{"type": "Q5", "text": "rhyder hát cho người yêu khi phải tạm xa nhau dặn em đừng khóc đừng nghĩ tiêu cực chẳng phải chấm hết hẹn một ngày gặp lại nơi chỉ có hạnh phúc", "split": "test"}
+{"type": "Q4", "text": "người con gái tài sắc mà long đong người hùng buồn trong truyện kiều ngòi bút tài hoa dệt nên câu hát", "split": "dev"}
+{"type": "Q5", "text": "bài trữ tình đinh thành lê hát về quê hương hà tĩnh núi hồng lĩnh chùa hương tích đất thơ của nguyễn du và truyện kiều", "split": "dev"}
+{"type": "Q4", "text": "anh hãy bảo rằng anh cũng có cảm giác giống hệt như em", "split": "test"}
+{"type": "Q5", "text": "cô gái thầm yêu người bạn thân ai cũng nhận ra trừ anh hai người vẫn nhìn nhau như bạn em chỉ mong anh nói ra trước nhạc phim bảo thy hát", "split": "test"}
+{"type": "Q4", "text": "yêu thì ai cũng có lúc giận dỗi như bữa nay miễn là đừng dao động một hôm vắng em anh có thấy vui", "split": "test"}
+{"type": "Q5", "text": "song ca nam nữ về hai người ước giá như quen nhau từ trước ai cũng mang tổn thương riêng hỏi nhau một ngày không gặp có buồn không", "split": "test"}
+{"type": "Q4", "text": "mơ được tới hà giang làm bạn với gió sương ngâm thơ cho cỏ cây nghe khèn ở chợ tình nơi trai gái hẹn hò", "split": "test"}
+{"type": "Q5", "text": "bài hát về vùng núi cực bắc ăn thắng cố uống rượu ngô thơm cưỡi ngựa đón người yêu qua cổng trời trên cao", "split": "test"}
+{"type": "Q4", "text": "nhà vua tơ lòng vương vấn nhớ nhung suốt ngày suốt đêm", "split": "dev"}
+{"type": "Q5", "text": "cần vinh và lee ken hát chuyện vị vua nước nam đem lòng thương cô gái thường dân đi ngang bỏ bê chính sự vì nụ cười duyên dáng", "split": "dev"}
+{"type": "Q4", "text": "chia tay mấy bận rồi cứ níu nhau lại để rồi khổ giờ anh giả vờ lạnh nhạt làm kẻ xấu cho em đi", "split": "test"}
+{"type": "Q5", "text": "bài nhạc trẻ về đôi tình nhân chia tay rồi mà sáng nay cô gái lại nhắn em rất nhớ anh chàng trai khuyên đừng quay về kẻo lại ê chề", "split": "test"}
+{"type": "Q4", "text": "buổi chiều năm đó cơn gió dẫn tôi trở lại vùng đất thân thương nghe ai hát ru", "split": "test"}
+{"type": "Q5", "text": "bài hát trần nghĩa về chuyến trở lại vùng quê có đồi thông xanh già suối mát và màn sương điệp khúc la là la lá rung động", "split": "test"}
+{"type": "Q4", "text": "làm con tim rung lên say đắm vì đã thương quá sâu đậm", "split": "test"}
+{"type": "Q5", "text": "bài nhạc hoa lời việt bản nữ cô gái được hỏi có yêu sâu đậm không và trả lời rằng ánh trăng sẽ thay lời trái tim", "split": "test"}
+{"type": "Q4", "text": "tưởng yêu nhau trọn đời nên không cần hờn giận rồi giông gió cuộc đời làm con thuyền tình trôi mất", "split": "dev"}
+{"type": "Q4", "text": "thấy dáng hình em đi ngang chốn đây để lại nỗi thương nhớ anh giữ mãi về sau", "split": "test"}
+{"type": "Q5", "text": "chàng trai thầm đi theo cô gái khắp nơi xem story của em mỗi đêm thấy mình như đứa nhóc tập viết thơ tặng em", "split": "test"}
+{"type": "Q4", "text": "trái tim hãy thôi rung động vì lòng tôi cũng nhớ anh những ngày cũ giờ ở đâu", "split": "dev"}
+{"type": "Q5", "text": "bài mei hát cô gái chỉ chờ người yêu cũ bảo còn thương là sẽ chạy thật nhanh đến ôm anh mùa đông tìm lại ngày hôm qua ở từng góc phố", "split": "dev"}
+{"type": "Q4", "text": "trao em bàn tay để mình dắt nhau vượt qua gian khó cùng chìm đắm theo giai điệu của tình yêu", "split": "test"}
+{"type": "Q5", "text": "chàng trai thấy cô gái bước tới mang theo nắng ấm hứa chỉ yêu một người chung mái nhà đến lúc già đứng mãi ngóng trông", "split": "test"}
+{"type": "Q4", "text": "cả khu phải phong toả cho an toàn nghe vậy lòng thấy lo lắng quá", "split": "test"}
+{"type": "Q5", "text": "bài hát thời covid của bùi công nam sáng nào lên mạng cũng thấy thêm ca bệnh kêu gọi mọi người ở yên trong nhà và uống vitamin c tăng đề kháng", "split": "test"}
+{"type": "Q4", "text": "em lãng quên cuộc tình xưa pháo cưới rơi đầy nơi bầu trời ta từng mơ", "split": "dev"}
+{"type": "Q5", "text": "người con trai đứng nhìn người yêu cũ lên xe về nhà chồng xót xa vì nàng quên hết lời hứa chuyện tình như cõi biển dâu", "split": "dev"}
+{"type": "Q4", "text": "con đâu dám nhận mình là người gặt lúa chỉ xin được thương yêu chọn ruộng đồng còn xanh", "split": "test"}
+{"type": "Q5", "text": "bài thánh ca thiếu nhi thánh thể người phụ trách đoàn hỏi chúa mình là ai thương tuổi thơ ngây lắm khi hóa trẻ con nhảy múa với các em", "split": "test"}
+{"type": "Q4", "text": "đi khắp mọi miền anh vẫn nhớ hà tĩnh quê em mảnh đất nghĩa tình sâu nặng", "split": "test"}
+{"type": "Q5", "text": "bài quê hương về miền đất có dòng sông la và biển thiên cầm nghe câu dân ca lại nhớ người con gái quen ngày ấy", "split": "test"}
+{"type": "Q4", "text": "này cô bé đáng yêu tình yêu đã đến với mọi người lời ca hoà nhịp và nụ hôn đầu còn vấn vương", "split": "test"}
+{"type": "Q5", "text": "bài nhạc xuân vui của nhóm mây trắng chiều xuân về mừng cô bé thêm một tuổi ánh mắt nụ cười hát la la la đón mùa xuân tuyệt vời", "split": "test"}
+{"type": "Q4", "text": "anh nhặt lại những mảnh vụn của danh phận đã mất một câu chúc mừng em là trăm ngàn lần đớn đau", "split": "test"}
+{"type": "Q5", "text": "chàng trai nhìn người cũ hạnh phúc bên người trăm năm dằn vặt bao năm chẳng thể quên lòng rối như tơ tằm mà vẫn phải chúc phúc", "split": "test"}
+{"type": "Q4", "text": "bao đêm khóc mãi mang nặng nỗi đau trên đôi vai chỉ vì lỡ thương lầm một cô gái", "split": "test"}
+{"type": "Q5", "text": "chàng trai hy sinh cả tương lai cho người yêu mà bị bỏ rơi tình yêu đâu phải trò chơi để trêu đùa tưởng bến đợi hóa ra chỉ là trạm nghỉ", "split": "test"}
+{"type": "Q4", "text": "bây giờ em ở cạnh người ta có hạnh phúc không đã lâu lắm hai đứa chẳng nói chuyện", "split": "test"}
+{"type": "Q5", "text": "bài ballad của sean về người đàn ông bị bạn đời buông tay sau bao năm đêm đêm nhìn thời gian trôi nhớ kỷ niệm hỏi làm thế nào giữ được người mình yêu", "split": "test"}
+{"type": "Q4", "text": "chiều mưa ở huế không biết người nào đã quên người nào giọt mưa cứ rơi mãi làm lòng buồn thêm", "split": "test"}
+{"type": "Q5", "text": "nhạc xưa nhớ thuở quen nhau dưới chân chùa thiên mụ qua chợ đông ba lá me bay sông hương đầy nước mà người biền biệt", "split": "test"}
+{"type": "Q4", "text": "chuyện tình mình từng êm như làn gió nhẹ anh dầm mưa gió bao đêm tìm đến em mà nay em đã quên", "split": "test"}
+{"type": "Q5", "text": "bài nhạc trẻ buồn của hạo thiên tình đôi ta giờ chia hai hướng không sắc không hương anh nén chua cay một mình lặng im", "split": "test"}
+{"type": "Q4", "text": "lịch sử chẳng bao giờ nhạt phai mà mình vẫn nhìn tới mai sau đất nước hiên ngang ba miền một lòng", "split": "test"}
+{"type": "Q5", "text": "bài hát yêu nước về đất nước ngàn năm chống giặc máu xương cha ông giữ độc lập người mẹ có con hy sinh nay bắc nam liền một dải", "split": "test"}
+{"type": "Q4", "text": "từ ấy em hoá thành bông hoa hồng buổi sớm nở bung lúc chiều tà chờ cơn gió vô thường", "split": "test"}
+{"type": "Q4", "text": "con gà mà dám bắt cả chim diều cá chết rét còn nuốt rắn", "split": "test"}
+{"type": "Q5", "text": "bản rock phối lại bài hát xẩm của nghệ nhân hà thị cầu kể chuyện ngược đời như chuột cắn cổ mèo châu chấu đuổi đá gà ốc cắn cổ vịt", "split": "test"}
+{"type": "Q4", "text": "của cải với tiếng tăm rốt cuộc cũng chỉ là giấc mơ hão bạn có hay không", "split": "test"}
+{"type": "Q5", "text": "bài chế lời theo giai điệu just give me a reason của pink kể chuyện vợ chồng giàu có đưa nhau ra tòa tiền nhiều mà tình nghĩa bao năm cũng hết", "split": "test"}
+{"type": "Q4", "text": "cảm nhận tình thương nơi trái tim anh ngày mai mình đã cách xa", "split": "test"}
+{"type": "Q5", "text": "chàng trai sắp đi xứ người người yêu nép vào ngực khóc ướt áo đến khi xa rồi mới biết mình yêu cô ấy thật lòng", "split": "test"}
+{"type": "Q4", "text": "lời hứa mùa hè chỉ hai đứa mình hay buổi chiều tà còn có nhau mà nay anh đã vội bỏ đi", "split": "test"}
+{"type": "Q5", "text": "jang mi hát nhạc hoa lời việt cô gái tự hỏi người tặng mình đóa hoa có còn vấn vương mong chờ đến mùa hè để được bên anh lần nữa", "split": "test"}
+{"type": "Q5", "text": "ngọc lan hát nhạc trần thiện thanh cô gái thề bỏ những cuộc tình lả lơi thôi không gặp lại để khỏi tiếc thương giấu mối tình vào dĩ vãng", "split": "dev"}
+{"type": "Q5", "text": "hồng nhung hát nhạc trịnh đi tìm người con gái trên non ngàn như tìm một đóa hoa đẹp nhất nụ cười mong manh tìm trong sương hồng chiều bạc mệnh", "split": "test"}
+{"type": "Q4", "text": "cho anh hay em còn thương anh hay không từ lúc không có anh đã ai thương em thật chưa", "split": "test"}
+{"type": "Q5", "text": "chàng trai ước đời mình là một bộ phim để quay lại sửa sai muốn đóng vai phản diện đeo mặt nạ cho cô gái nếm nỗi đau anh từng chịu", "split": "test"}
+{"type": "Q4", "text": "cứ ngồi yên đợi một người tử tế cho mình tựa vai lấy cánh tay làm gối để ngủ say tới sáng", "split": "test"}
+{"type": "Q5", "text": "bài nhạc trẻ của eira và joke d kể đủ kiểu người đi tìm tình yêu người mò kim đáy bể cô gái lên chùa xin quẻ cầu duyên anh ba mươi tuổi bị mẹ đuổi khỏi nhà", "split": "test"}
+{"type": "Q4", "text": "màu đôi mắt rực rỡ biết bao một ánh nhìn cô quạnh", "split": "test"}
+{"type": "Q5", "text": "bài nhạc trữ tình của nam vĩnh và thùy dương về người đàn bà khóc rừng cây run run phát sáng mùa xuân chẳng cướp đi gì chỉ thêm nếp tuổi", "split": "test"}
+{"type": "Q4", "text": "mang đến sự ấm êm yên bình và niềm hy vọng em lặng lẽ ôm anh từ phía sau mà chẳng nói gì", "split": "dev"}
+{"type": "Q5", "text": "chàng trai nhớ ngày cô gái đến mang cả thế giới cho anh giờ em quay lưng bước đi chẳng bận tâm anh giấu nước mắt trong lòng nhìn em rời xa", "split": "dev"}
+{"type": "Q4", "text": "đi làm kẻ cướp thì rốt cuộc chỉ vào tù tính cộng tính trừ rồi tính nhân", "split": "test"}
+{"type": "Q5", "text": "bài chế của quốc trí về anh chàng vì yêu mà sa vào ma túy đi giật đồ lấy tiền chích hút rồi bị bắt vào khám chí hòa người yêu quay mặt bỏ đi", "split": "test"}
+{"type": "Q4", "text": "bao nhiêu năm tháng cuộc đời cứ thờ ơ ngắm thời gian ngày qua ngày lặng thầm trôi đi", "split": "test"}
+{"type": "Q5", "text": "bài trữ tình về buổi sáng mùa xuân nắng ban mai lung linh sương đọng bên thềm chim hót trên cành đời như dòng sông trôi mãi", "split": "test"}
+{"type": "Q4", "text": "dù ở xa hay ở gần cứ nghe tiếng hát là mọi người kéo tới hòa cùng đám đông say mê hát vang", "split": "test"}
+{"type": "Q5", "text": "bản lời việt của bài asereje do las ketchup hát gốc cô gái say sưa nhảy theo chàng trai vừa đàn vừa hát điệp khúc y la bai la", "split": "test"}
+{"type": "Q4", "text": "rồi trách anh khùng quá chỉ biết ôm em mãi thôi em có phải máy ảnh không", "split": "test"}
+{"type": "Q5", "text": "bài indie của tờ chàng trai muốn ngồi nghe lofi cùng em chở em dạo phố không cần xe sh hay đồ gucci lời hát chen tiếng anh", "split": "test"}
+{"type": "Q4", "text": "ngắm em xem ở em có mái ấm anh hằng mong có em cuộc đời hóa thơ chỉ mong một mình anh xứng với em", "split": "test"}
+{"type": "Q5", "text": "nhạc trẻ của onlyc chàng trai hỏi cô gái điều gì khiến em vui mơ giàu sang hay yêu từ phút đầu chỉ chơi qua đường hay yêu lâu dài em như kim cương còn anh lái ferrari", "split": "test"}
+{"type": "Q4", "text": "anh đành để em đi mang theo mọi thứ còn lại mình anh với bản thân", "split": "dev"}
+{"type": "Q5", "text": "bản ballad về chàng trai buồn chẳng cần lý do nếu ký ức quay về sẽ để nỗi nhớ trôi qua như cơn gió quen không níu kéo cũng không xua đi", "split": "dev"}
+{"type": "Q4", "text": "cuộc đời thay đổi tình yêu sao chua xót quá người thương bây giờ mờ mịt như mây khói", "split": "test"}
+{"type": "Q5", "text": "bài nhạc trẻ buồn về đêm xưa hai người sánh vai dưới ngàn vì sao giờ cô gái gian dối bỏ đi vui bước bên người khác chàng trai ở lại chìm trong nhớ thương", "split": "test"}
+{"type": "Q4", "text": "nghe thấy tiếng chân em quay lại sao có em trong cuộc đời rồi mà", "split": "test"}
+{"type": "Q5", "text": "chàng trai mỏi mệt ngồi bên con phố phủ rêu bao năm vẫn nhớ người yêu đã ra đi lạnh lùng một mình giữa căn phòng đầy kỷ niệm mặn nồng", "split": "test"}
+{"type": "Q4", "text": "lạy chúa nhân từ ở chốn này con gọi tên ngài chúa của yêu thương xin lắng tai nghe con khẩn xin", "split": "test"}
+{"type": "Q5", "text": "bài thánh ca tin lành của abraham pham ministry xin chúa giàu ơn chậm giận và thứ tha dìu con bước đi trong công chính đừng để con lạc lối tối tăm", "split": "test"}
+{"type": "Q4", "text": "tiếng hát thân thuộc vẫn còn đó dù cuộc đời mưa nắng thay đổi", "split": "test"}
+{"type": "Q5", "text": "nhạc trữ tình về người ca sĩ trải bao nắng mưa màu áo phai theo năm tháng mà khán giả vẫn say mê nghiệp hát buồn vui góp cho đời còn phận mình chẳng vơi", "split": "test"}
+{"type": "Q4", "text": "từ khi còn bỡ ngỡ xa lạ cho tới lúc dựng nên mái nhà", "split": "test"}
+{"type": "Q5", "text": "nhạc folk của thành luke về đôi vợ chồng quen nhau gần ba mươi năm giờ đã năm mươi ba tuổi vẫn nắm tay nhau con cái lớn khôn đi lập nghiệp", "split": "test"}
+{"type": "Q4", "text": "anh dang tay ôm em thật chặt thật lâu như những ngày đầu tiên chẳng bao giờ phai", "split": "test"}
+{"type": "Q5", "text": "bài nhạc trẻ của phúc trường hai người đi bên nhau mà lạnh lùng chẳng nói lời nào không tin tình mình đến lúc phai tàn hứa ngày mai luôn có anh bên em", "split": "test"}
+{"type": "Q4", "text": "chẳng cần biết ngày mai anh còn hay mất cứ giữ lấy hôm nay khi em nằm trong tay anh", "split": "test"}
+{"type": "Q5", "text": "chàng trai mong người yêu nói ra nỗi đau thay vì ôm một mình cứ ôm anh thật nhiều đêm nay vì sắp phải đi xa không còn ai lau nước mắt cho em", "split": "test"}
+{"type": "Q4", "text": "dẫn người bước vào nước thiên đàng xin các thánh tử đạo trên cõi cao", "split": "test"}
+{"type": "Q5", "text": "thánh ca tiễn biệt người qua đời xin các thiên thần và thánh tử đạo dẫn đường về thánh đô nương thân trong vòng tay áp bra ham nghỉ yên trong chúa", "split": "test"}
+{"type": "Q4", "text": "yêu nhau rồi chia tay đâu dễ bảo quên mà quên liền xóa sạch từng khoảnh khắc những năm tháng đôi ta có bao kỷ niệm", "split": "test"}
+{"type": "Q5", "text": "chàng trai cho đi rất nhiều mà nhận lại tay trắng người yêu vội buông tay không một lý do dù vẫn còn yêu tự trách mình quá ngu ngơ", "split": "test"}
+{"type": "Q4", "text": "căn nhà xưa đã đổi sang chủ mới gia đình ly tán cùng vận mệnh đất nước", "split": "test"}
+{"type": "Q5", "text": "bài hát của hoàng kao về cuộc đời nhạc sĩ trúc phương sau 75 vượt biên ba lần đều bị bắt về nhà mất gia đình ly tán cuối đời phải nhờ bạn bè cho bữa cơm", "split": "test"}
+{"type": "Q4u", "text": "bao nhieu ngay dem anh cu cho mong em o phuong troi xa tit may", "split": "test"}
+{"type": "Q4u", "text": "lon len roi ma da lau lam con khong noi loi thuong me", "split": "test"}
+{"type": "Q5u", "text": "bai cua pham hong phuoc ve nguoi con lon len quen quan tam me hoi nho me mua ao quan do choi cho con", "split": "test"}
+{"type": "Q4u", "text": "nghi lai thoi do long thay them khat quay lai que nha buon tiec nhung nam thang cu", "split": "dev"}
+{"type": "Q5u", "text": "bai hat nho nha nho can gac nho voi nhung bua com gia dinh ngay xua giong nu luu thien huong", "split": "dev"}
+{"type": "Q4u", "text": "chieu mua doi minh nam tay nhau moi em run run vi lanh", "split": "test"}
+{"type": "Q5u", "text": "bai nhac cua minh vuong ve nhung chieu mua tren pho hai nguoi yeu nhau di duoi mua thay am long", "split": "test"}
+{"type": "Q4u", "text": "nguoi o xa ngoai bien khoi oi xin ve nhanh voi em", "split": "test"}
+{"type": "Q5u", "text": "bai hat que huong kieu cau ly tren ruong dong co gai mong nguoi di xa ve tham con do dong song nhac nhat ngan", "split": "test"}
+{"type": "Q4u", "text": "xin giu lai tinh yeu khi con nho nhung nam thang hon nhau trong nuoc mat", "split": "dev"}
+{"type": "Q5u", "text": "bai rap buon cua duong 565 ve anh ngoi mot minh trong can phong day ky niem nho nguoi yeu da di", "split": "dev"}
+{"type": "Q5u", "text": "bai hat ke chuyen co tich me ru hoi be nang cong chua vo tu hat cung mua roi tan bien nhu bot nuoc", "split": "dev"}
+{"type": "Q5u", "text": "bai cua bao chan mua dong toi la vang roi anh nhan ra da mat em co mua phun", "split": "test"}
+{"type": "Q4u", "text": "em oi con chang chut hon nhien phut giay kho dai ngay nao", "split": "dev"}
+{"type": "Q5u", "text": "bai nhac phim me chong giong buon keu em ve di khi doi em nhu hoa da ua tan", "split": "dev"}
+{"type": "Q4u", "text": "anh lang thang theo nhung con mua khong biet di dau chi tin vao ngay mai", "split": "test"}
+{"type": "Q5u", "text": "bai cu cua son tung thoi dau anh om het ky niem hoi em co quay ve khong xin hay yeu anh", "split": "test"}
+{"type": "Q4u", "text": "nhin len bau troi giang hai tay gao thet xin tra lai tuoi tho ngay", "split": "test"}
+{"type": "Q5u", "text": "bai hat cua nguyen hai phong u am toan mau va noi dau cu lap lai cau cho toi ai cho toi", "split": "test"}
+{"type": "Q4u", "text": "cho lanh leo co tieng ai khoc rut re toi da quen nang gio moi neo duong", "split": "test"}
+{"type": "Q5u", "text": "bai nhac buon ve nguoi vo gia cu co ro trong dem lanh xin mot dem khong lanh lung xin noi day la nha nguyen hai phong", "split": "test"}
+{"type": "Q4u", "text": "co ai thi tham sat ben toi toi duoi nguoi trong khong gian im ang", "split": "dev"}
+{"type": "Q5u", "text": "bai hat vui vui ke chuyen nua dem hai gio sang so trong nha co ma ao trang sau tam guong", "split": "dev"}
+{"type": "Q4u", "text": "em con xinh con tre nhung chang phai cua anh", "split": "dev"}
+{"type": "Q5u", "text": "bai rap cua den vau vi anh nhu con cao con em nhu chum nho long anh nhu kho xang", "split": "dev"}
+{"type": "Q4u", "text": "em yeu oi hay nghe lai khuc hat ngay xua noi nho anh mang theo", "split": "test"}
+{"type": "Q5u", "text": "bai hat chang trai gui loi nhan nho em qua radio nho ngay hai dua hen uoc ho hoai anh", "split": "test"}
+{"type": "Q4u", "text": "doi minh chi song co mot lan em dung nghi ngoi nhieu lam gi", "split": "test"}
+{"type": "Q5u", "text": "bai cua thinh suy luc men con trong hoi tho ru nguoi yeu lai gan hon hua cho em ca mat troi", "split": "test"}
+{"type": "Q4u", "text": "trai tim nghe thay luc em toi noi co don lau nay dung lai", "split": "test"}
+{"type": "Q5u", "text": "bai hat gap co gai duoi anh den dem diep khuc tieng anh noi co ay muon yeu va toi cung vay", "split": "test"}
+{"type": "Q4u", "text": "tinh cam cho chang trai do van chua nhat sao co gai lai", "split": "test"}
+{"type": "Q5u", "text": "bai hat vui ve chuyen tinh tay ba mot cong mot bang hai nhung them ai thi bang may", "split": "test"}
+{"type": "Q4u", "text": "tinh yeu toi luc minh lo ngu say khi nang o canh ben", "split": "test"}
+{"type": "Q5u", "text": "bai cua virus mua thu la roi chang trai nho em ca trong mo dan dung cuoi voi ai khac", "split": "test"}
+{"type": "Q4u", "text": "con ngua hoang giam nat canh dong co xanh muot tan chan troi", "split": "test"}
+{"type": "Q5u", "text": "bai nhac xua cua pham duy ve con ngua hoang lung day vet roi duoc tinh yeu chua lanh", "split": "test"}
+{"type": "Q4u", "text": "anh chi mong duoc ve thay em cuoi luc vang em", "split": "test"}
+{"type": "Q5u", "text": "bai cua da lab nhe nhang anh di xa ve nha voi vo ca phe dang chieu mua den xanh den do tim anh nhap nhay", "split": "test"}
+{"type": "Q4u", "text": "o dau do co tieng ai vua la to vua noi khe", "split": "test"}
+{"type": "Q5u", "text": "bai indie cua vu hoi nhin vao trai tim nhin xuan tan phai thi anh con gi", "split": "test"}
+{"type": "Q4u", "text": "dem noel tieng chuong nha tho ngan vang mang theo tinh thuong duoi troi sao", "split": "test"}
+{"type": "Q5u", "text": "bai giang sinh loi viet cua jingle bells mung chua ra doi hoa binh cho muon nguoi", "split": "test"}
+{"type": "Q4u", "text": "mot cuoc tinh moi that dieu ky sau dam nhu hai dua minh da co", "split": "test"}
+{"type": "Q5u", "text": "bai hoi nguoi yeu cu gio song vui hay buon co tinh moi chua co dung nhin cau vong sau mua nho anh khong", "split": "test"}
+{"type": "Q4u", "text": "giong hat nui rung tay nguyen vang vong tu xa xua doi mat in trong coc ca phe", "split": "test"}
+{"type": "Q5u", "text": "bai hat ve tay nguyen huong ca phe bay theo lan khoi va mai toc anh mat em xanh nhu mua xuan nhac nguyen cuong", "split": "test"}
+{"type": "Q4u", "text": "sang som diu dang di ngang tang mot nu cuoi nang chen nhau giua vuon hoa", "split": "test"}
+{"type": "Q5u", "text": "bai vui tuoi cua son tung ve lan dau rung dong anh mat doi moi lam anh say boi roi khong biet co phai dang yeu", "split": "test"}
+{"type": "Q4u", "text": "cho du sau nay em co di xa that xa", "split": "test"}
+{"type": "Q5u", "text": "bai ballad cua anh khang dem khuya den mo suong anh muon noi bao dieu voi em dang ngu say mo duoc om em", "split": "test"}
+{"type": "Q4u", "text": "chim sa ca lan ngong mot tin roi lai cho hai tin", "split": "test"}
+{"type": "Q5u", "text": "bai dan ca quan ho bac ninh co gai doi nguoi yeu noi xa xoi trang treo suot canh thau suong roi", "split": "test"}
+{"type": "Q4u", "text": "doi luc chieu toi buong xuong em co nhan ra khong", "split": "test"}
+{"type": "Q5u", "text": "bai cua thinh suy ve mot ngay o sai gon mui ca phe pho dong xe co ma chang kip tim thay nhau", "split": "test"}
+{"type": "Q4u", "text": "di xa de roi quay ve nha", "split": "test"}
+{"type": "Q5u", "text": "bai tet cua tien cookie ve nam kho khan duong ve que xa ga tau chen chuc het ve khong biet nen ve hay o", "split": "test"}
+{"type": "Q5u", "text": "bai hat chang trai dung cho ben o cua mong nang len nho nguoi yeu o tan ben kia bien lon", "split": "test"}
+{"type": "Q4u", "text": "tam hon trong treo nhu ang may bay choi voi trang va gio roi ca hat duoi mua tu do", "split": "dev"}
+{"type": "Q4u", "text": "tim dau nhoi ma trong long van lang le bao rang yeu hoai khong thoi", "split": "test"}
+{"type": "Q4u", "text": "nho doi moi diu dang luc em dang ngu ngon", "split": "test"}
+{"type": "Q4u", "text": "anh thay doi roi khong con tu chu duoc nua vi em lam anh thanh nguoi lanh lung khong loi thoat", "split": "dev"}
+{"type": "Q5u", "text": "bai rap tuc gian cua son tung voi deepink anh co kim nen con gian dong ho tich tac trai tim bi ton thuong", "split": "dev"}
+{"type": "Q4u", "text": "khong con buon nho bong hinh nguoi xua nua buc tranh tinh yeu cung nhat mau roi", "split": "test"}
+{"type": "Q5u", "text": "bai ballad anh khang hat ve viec da quen duoc nguoi yeu cu ngay em di da lau gio anh het yeu em roi", "split": "test"}
+{"type": "Q4u", "text": "cang ngam em lai cang thuong em mai mai nhung phut giay em a ngay truoc gio da bi lang quen", "split": "test"}
+{"type": "Q4u", "text": "anh xin loi phai hoan chuyen di choi pho da hen vi ca tuan nay di dau cung gap mua", "split": "dev"}
+{"type": "Q5u", "text": "bai hat cua orange ve cap doi cuoi tuan dinh di xem phim shopping ma troi mua hoai nen o nha om nhau", "split": "dev"}
+{"type": "Q4u", "text": "nhan nhu nho an sang an toi roi chuc em moi dem ngu that ngon", "split": "dev"}
+{"type": "Q5u", "text": "bai vicky nhung ve co gai e co don ngoi doi tin nhan ru di an toi xem phim thay nguoi ta yeu nhau ma minh tay trang", "split": "dev"}
+{"type": "Q4u", "text": "ngam song bien xo mai thuong than minh dang cay", "split": "test"}
+{"type": "Q5u", "text": "bai hat buon cua jimmii nguyen chieu bo vo tren bai cat dai nguoi yeu moi hom qua nay da lanh lung", "split": "test"}
+{"type": "Q4u", "text": "vang em nhung ngay mua anh mot minh di ve con duong that xa ky niem van con y nguyen nhu hom qua", "split": "dev"}
+{"type": "Q5u", "text": "bai cu cua son tung anh binh minh khong con noi day anh vui minh trong dem den khong tim thay loi ra", "split": "dev"}
+{"type": "Q4u", "text": "em o lai voi anh toi nay di vi duong ve con xa lai mua uot", "split": "test"}
+{"type": "Q5u", "text": "bai thinh suy hat live doi tinh nhan dem mua anh xin em o lai vi mua lam kho cau tam biet", "split": "test"}
+{"type": "Q4u", "text": "no problem with us unless you want one cause nothing happened at all", "split": "dev"}
+{"type": "Q5u", "text": "bai hat co gai xay nha tu giam nguoi yeu trong tim minh yeu nhau ma chi toan nhan tin co doan tieng anh", "split": "dev"}
+{"type": "Q4u", "text": "anh lo den luc hai dua chang con de y va thau hieu nhau roi phai xa nhau", "split": "test"}
+{"type": "Q4u", "text": "ca gia dinh lam nguoi mau di tren giuong con me ngoi xa xem", "split": "test"}
+{"type": "Q5u", "text": "bai vui ve gia dinh cua nguyen hai phong bo vao bep voi con me nem do an bo dan me hat co doan la la la", "split": "test"}
+{"type": "Q4u", "text": "em khong con khoc de tiec nuoi nhung du am nua vi moi ngay em mot lon", "split": "test"}
+{"type": "Q5u", "text": "bai hat cua huong tram ve co gai chia tay ma van thay bong nguoi yeu loi anh noi uot ca khong gian", "split": "test"}
+{"type": "Q4u", "text": "e vui ve chang sai nhung nhieu dem thay dai can ai do xoa dau om vai", "split": "test"}
+{"type": "Q5u", "text": "bai vicky nhung ve nguoi doc than bao mua xuan mot minh thay nguoi ta ben nhau ngoai duong tu nhien muon co nguoi yeu", "split": "test"}
+{"type": "Q5u", "text": "bai nhac tet vui ve xin via may man lam an e ca nam chi hoc tai thi phan huynh hien nang", "split": "test"}
+{"type": "Q4u", "text": "ngay chia tay chang ai biet truoc cuoc tinh vo tan bat ngo", "split": "dev"}
+{"type": "Q5u", "text": "bai hat buon ve chuyen tinh tuong se mai mai den khi gia trai tim co don thet gao nguyen cong thanh", "split": "dev"}
+{"type": "Q4u", "text": "tui minh van nhu xua du sau nay con chau dong day nha", "split": "test"}
+{"type": "Q5u", "text": "bai hat nhom ban gui co dau la ban than sap lay chong la ghe co dau khoac vay cuoi lap lanh", "split": "test"}
+{"type": "Q4u", "text": "mot kiep thuong nhau van con tuong tu mot lan suong van vuong van nghin mua thu", "split": "test"}
+{"type": "Q5u", "text": "bai cua thai dinh ve thanh pho vang em day dan khong con ngan nang ho hung duong ve tho o", "split": "test"}
+{"type": "Q4u", "text": "chang de y ai nha lau hay di xe dap xe may sang ra thuc day la me lam viec", "split": "dev"}
+{"type": "Q5u", "text": "bai chuc mung sinh nhat kieu moi soi dong cua vicky nhung hat vang mot bai moi thay bai cu da qua xua", "split": "dev"}
+{"type": "Q4u", "text": "doi nguoi nao do toi canh anh lang nghe noi long anh", "split": "dev"}
+{"type": "Q4u", "text": "chi vo tinh thay em ma mang ve bao noi dau gao thet", "split": "dev"}
+{"type": "Q5u", "text": "bai indie cua vu dem buon mang ten em chieu nghe gio dung dua xin gio dung hat nua", "split": "dev"}
+{"type": "Q4u", "text": "ca doi toi chi doi mot nguoi toi vuot ve va nam lay tay toi", "split": "dev"}
+{"type": "Q5u", "text": "bai vicky nhung ve nguoi thao thuc mot minh cho tin nhan troi hoai troi hoai ma nguoi van lanh lung", "split": "dev"}
+{"type": "Q4u", "text": "nam thang qua xin doi lay ngay dem ben nguoi thuong", "split": "dev"}
+{"type": "Q5u", "text": "bai co phong cua ha nhi ve duong chi tay thien thoi vo thuong mua kiem luom hoa bay", "split": "dev"}
+{"type": "Q4u", "text": "thay anh vui ben nguoi khac thi em danh buong tay cho anh ra di", "split": "test"}
+{"type": "Q5u", "text": "bai cua hari won ve co gai thay nguoi yeu trong tay nguoi khac yeu ai thi du duoi mua van thay am", "split": "test"}
+{"type": "Q4u", "text": "tren doi nay yeu nhau thi phai cung mot long", "split": "dev"}
+{"type": "Q5u", "text": "bai huong ly hat co gai chet lang nhu set danh khi anh noi loi chia tay de theo tinh moi", "split": "dev"}
+{"type": "Q4u", "text": "giu nuoc mat khoc cho nhung ngay con ben nhau hen kiep sau se gap lai", "split": "test"}
+{"type": "Q5u", "text": "bai song ca tang phuc voi truong thao nhi chieu mua con duong chung doi gio chia hai van yeu ma phai xa", "split": "test"}
+{"type": "Q4u", "text": "buoi chieu ngay ay nang nhat dau chan mon dan loi bong doi ta gio da chia lia", "split": "dev"}
+{"type": "Q5u", "text": "bai bolero buon ve nguoi con gai doi cho tien nguoi yeu di trong chieu dong lanh dem mua mo gap anh", "split": "dev"}
+{"type": "Q4u", "text": "suot cuoc doi thom mui huong ruc ro nhu mat troi", "split": "test"}
+{"type": "Q4u", "text": "tranh di cho le keo chet bat ngo", "split": "test"}
+{"type": "Q5u", "text": "bai rap cua obito voi shiki ke chuyen doi giang ho trong xom goi anh de tranh an tieng canh song ben duong", "split": "test"}
+{"type": "Q4u", "text": "long anh khong co phuong huong nen con qua den dap lai", "split": "test"}
+{"type": "Q4u", "text": "trong long mang noi nho chang yen nen anh nhu phat dien muon bien mat khoi doi", "split": "test"}
+{"type": "Q5u", "text": "bai rap buon nang hua o ben canh nhung goc toi van bua vay anh co thay doi ma khong tim thay loi ra", "split": "test"}
+{"type": "Q4u", "text": "chot thuc day khi nghe chuong reo va nu cuoi tren moi tan bien mat", "split": "test"}
+{"type": "Q5u", "text": "bai trong anh trai say hi co erik duc phuc chang trai lam tho cho co gai doi mat nhung huyen le bong mot minh", "split": "test"}
+{"type": "Q5u", "text": "bai hat nu nhe nhang cu lap chu co chut boi roi khi cham tay vo tan khi cham moi em yeu chi mot mua", "split": "test"}
+{"type": "Q5u", "text": "bai nhac xua cua lam phuong mua thu que nha buon nguoi di xa khoc vi phai song noi dat khach", "split": "test"}
+{"type": "Q5u", "text": "bai trung quan idol chang trai bong nhan ra da yeu khang dinh tinh cam cua minh la that long chu chang dua", "split": "test"}
+{"type": "Q4u", "text": "ba chi phai thi lai nam nay nen di xin chut may do tot nghiep", "split": "test"}
+{"type": "Q5u", "text": "bai nhac phim ve chang trai co don lau nam ngay dai lang le troi roi co gai xuat hien suoi am nhu anh mat troi", "split": "dev"}
+{"type": "Q4u", "text": "ngoai doi rong lon bao la ma trong tim anh chi co minh em", "split": "test"}
+{"type": "Q5u", "text": "bai soobin hat luc anh di em chang noi gi chi dung im anh xin em dung im lang vi nhu the dau lam", "split": "test"}
+{"type": "Q5u", "text": "bai song ca denis dang juky san ngot ngao chang trai vo tinh thuong co gai nang niu giac mo chuc hanh phuc ca doi", "split": "test"}
+{"type": "Q5u", "text": "bai rap tinh yeu dem dong gia lanh chang trai say men dat tay nguoi yeu dao pho muon giay phut keo dai mai", "split": "test"}
+{"type": "Q4u", "text": "anh voi em giong nhu vien thuoc ngu bao em dung uong nhieu", "split": "test"}
+{"type": "Q4u", "text": "nhieu ky niem qua nen chuyen vui buon chang the troi qua", "split": "test"}
+{"type": "Q4u", "text": "luc em phat hien anh bat ca hai tay thi biet trach ai day", "split": "test"}
+{"type": "Q5u", "text": "bai trong em xinh say hi co phuong my chi phuong ly co gai che anh nhu dien tuong da tinh noi doi the thot", "split": "test"}
+{"type": "Q4u", "text": "xin giu hinh bong nguoi mai ve sau de con cung nhau uong ruou giai sau", "split": "test"}
+{"type": "Q5u", "text": "bai co phong cua thien dinh muon gio dem say tinh si ho do nguyen lam gio xua muon phien uong ruou cung nguoi", "split": "test"}
+{"type": "Q4u", "text": "bay gio anh biet lam the nao de con tim het nho em", "split": "test"}
+{"type": "Q5u", "text": "bai rap buon anh hoi em co can mot bo vai moi khong dung coi anh la thang ngoc loi hua lau dai la bao lau", "split": "test"}
+{"type": "Q4u", "text": "cuoc tinh vo de lai toan chua xot anh di ma khong noi loi tu biet", "split": "test"}
+{"type": "Q5u", "text": "bai ngan ngan cover co gai van thuong anh mai du anh roi xa theo nguoi khac tinh chia lam hai nga", "split": "test"}
+{"type": "Q4u", "text": "nhin anh cam nhan va drill lam bai hit that su anh dang deal", "split": "dev"}
+{"type": "Q5u", "text": "bai rap cua richie d icy o rap viet keu ong chau tinh giac di vi day khong phai mo buoc len san khau", "split": "dev"}
+{"type": "Q4u", "text": "roi anh de vuot mat dip duoc di cung em suot doi", "split": "test"}
+{"type": "Q5u", "text": "bai thien dinh ve co gai noi hai dua khong hop ngay tu dau anh xem nhe chuyen gan bo nen mat em vao le duong nguoi khac", "split": "test"}
+{"type": "Q4u", "text": "nu cuoi duyen dang sang bung lam toi roi boi", "split": "test"}
+{"type": "Q5u", "text": "bai nhac phim cua nguyen hung co be toc ngan da trang chang thanh nien da nau vui tinh chua co tinh dau", "split": "test"}
+{"type": "Q4u", "text": "em dung nghi minh co don giua doi vi phia sau luon co anh doi theo", "split": "dev"}
+{"type": "Q5u", "text": "bai anh quan idol do nguoi yeu dang khoc mat sung len roi nin di anh luon o ben canh em", "split": "dev"}
+{"type": "Q4u", "text": "em hieu la chang the quay lai nua anh noi cho em nghe di", "split": "test"}
+{"type": "Q5u", "text": "bai song ca grey d voi min anh viet tram ngan loi tinh ca leo len troi hai sao cho em baby xich lai gan day", "split": "test"}
+{"type": "Q4u", "text": "nhung nho thuong ngay qua cu dan phai lac loi hai trai tim khong con chung nhip dap", "split": "dev"}
+{"type": "Q4u", "text": "kho khan lam moi gap nhau nay phai roi em anh thay so", "split": "dev"}
+{"type": "Q5u", "text": "bai buon cua nguyen thanh dat anh sai roi em cu mac anh nguoi khac dang doi em anh nhu nguoi dua do qua song", "split": "dev"}
+{"type": "Q4u", "text": "chua tung lui buoc bao gio mat troi soi duong cho em qua doan toi tam", "split": "test"}
+{"type": "Q5u", "text": "bai truyen dong luc cua van mai huong bao dem khong ngu duoc muon bo cuoc bi tu choi nhieu nhung van tin se thanh cong", "split": "test"}
+{"type": "Q4u", "text": "doi moi cham rai troi nhe thoi roi minh da yeu that", "split": "test"}
+{"type": "Q5u", "text": "bai juky san yeu tu anh nhin dau tien cuoc doi von la duong thang ma gap anh lai re ngang", "split": "test"}
+{"type": "Q4u", "text": "tu toi hom qua chang co tin nhan nao khong biet em da ngu hay con thuc", "split": "test"}
+{"type": "Q5u", "text": "bai cua erik va min hai gio sang goi nguoi yeu khong bat may nghi em dang o ben nguoi khac nen noi mau ghen", "split": "test"}
+{"type": "Q4u", "text": "neu cho la nhan thi sao co yeu mot phia vi dau nhieu qua nen khong dam yeu ai nua", "split": "test"}
+{"type": "Q5u", "text": "bai anh quan idol nguoi yeu that long thi nhan dau kho con nguoi gia doi lai vui nang tinh chi kho minh", "split": "test"}
+{"type": "Q4u", "text": "trong long toi van con doi mat bo moi nhu luc ben em khi noi loi chia tay", "split": "test"}
+{"type": "Q5u", "text": "bai hat buon ve dong nguoi van troi chuyen tinh doi ta chia hai nam thang ben nhau gio khong con anh van o day", "split": "test"}
+{"type": "Q4u", "text": "anh viet them nhieu bai hat yeu de rut ngan quang duong ve voi em", "split": "dev"}
+{"type": "Q5u", "text": "bai ve yeu xa dem nao anh cung dem con bao ngay nua thi het xa nhau em cong viec chua xong buon cu ke anh nghe", "split": "dev"}
+{"type": "Q4u", "text": "khi con tim nguoi kia het yeu thi thoi minh chia tay di em", "split": "dev"}
+{"type": "Q5u", "text": "bai hat buon mua lanh hoi em ve chua co ai don chua ngay 26 thang 6 minh ben nhau duoc 4 nam", "split": "dev"}
+{"type": "Q4u", "text": "nghe may di em co nghe tieng anh qua dien thoai khong anh con may cau muon hoi", "split": "test"}
+{"type": "Q5u", "text": "bai trong series 3107 cua w n voi erik va nau anh dung mot minh duoi troi xanh cho em mong doi ta dung xa cach", "split": "test"}
+{"type": "Q4u", "text": "em bay ra bao lau nay mot cach len lut coi anh la con roi", "split": "test"}
+{"type": "Q5u", "text": "bai remix ve anh bi nguoi yeu phan boi dung man kich anh dong vai chinh ma khong biet yeu het long het da", "split": "test"}
+{"type": "Q4u", "text": "chieu hom do o hien nha vang hai dua da hon nhau", "split": "test"}
+{"type": "Q5u", "text": "bai trong em xinh say hi co phuong ly va orange troi mua cuon troi loi hua khoe mi uot thi cu do loi cho mua", "split": "test"}
+{"type": "Q4u", "text": "gio oi gio toi chua anh trong ngong ca chieu toi du nang hay mua", "split": "dev"}
+{"type": "Q5u", "text": "bai cua wren evans anh viet thu tinh bang muc xanh ma khong dam dua nen nho gio mang di sao em chang nhin anh", "split": "dev"}
+{"type": "Q4u", "text": "em van co chap du noi dau cu deo bam mai", "split": "test"}
+{"type": "Q5u", "text": "bai remix ngan ngan thay anh vui la em man nguyen di khap nhan gian thay hoang tan vi thieu anh thuong anh vo dieu kien", "split": "test"}
+{"type": "Q4u", "text": "em biet dieu dai dot nhat la trao trai tim minh", "split": "test"}
+{"type": "Q5u", "text": "bai rap trong anh trai say hi co b ray karik anh cat het vao tiem thuc moi yeu ai cung tham vong thuc day voi ac mong", "split": "test"}
+{"type": "Q4u", "text": "gia nhu em o them chut nua de ngay chia tay toi nhe nhang gat dau", "split": "test"}
+{"type": "Q5u", "text": "bai cua maydays troi gom may em nghieng dau nap duoi tan la mua ngau truoc hien nha tu khi co em ben canh", "split": "test"}
+{"type": "Q4u", "text": "hien dang tuoi tre cho dat nuoc duoc tu do voi con vay la dep nhat roi", "split": "test"}
+{"type": "Q5u", "text": "bai nhac phim mua do ve nguoi linh tuoi doi muoi em dua toi qua song canh dong lua tro bong bau troi ruc hong", "split": "test"}
+{"type": "Q4u", "text": "doi lon len anh qua xin cuoi em nhung thoi gian qua anh di xa", "split": "dev"}
+{"type": "Q5u", "text": "bai ngan ngan ve chuyen tinh thuo nho ben doi sim anh hua sau nay cuoi em lam dau roi len thanh pho quen em", "split": "dev"}
+{"type": "Q5u", "text": "bai rap cua low g em chi tim anh khi buon con luc vui thi ban anh nhu lieu thuoc giup em ngu ngon", "split": "test"}
+{"type": "Q5u", "text": "bai cua maydays noi ve nhung nguoi minh lo quen theo thoi gian va nhung nguoi khong no quen cho nhau may nam troi", "split": "test"}
+{"type": "Q5u", "text": "bai son tung ra nam 2018 chang trai bi nguoi yeu doi tra roi quay lung bo di chi con mot minh trong dem mua", "split": "dev"}
+{"type": "Q4u", "text": "doi mat em nam nao bien dau roi em dau con nhu truoc", "split": "test"}
+{"type": "Q5u", "text": "bai hit doi dau cua son tung chang trai khong tin nguoi yeu da thay doi sau chia tay mong co ay quay lai nhu xua", "split": "test"}
+{"type": "Q4u", "text": "chi thoang qua giong giac ngu buoi trua ma sao chang the quen", "split": "dev"}
+{"type": "Q5u", "text": "bai em xinh say hi nhom bich phuong lyhan hoang duyen xin thoi gian ngung troi giu mai khoanh khac nhin nhau cuoi", "split": "dev"}
+{"type": "Q4u", "text": "xoa diu coi long minh roi ngay thang cu the troi", "split": "dev"}
+{"type": "Q5u", "text": "bai nhac phim cam on nguoi da thuc cung toi ke chuyen con cao nho co don trong rung dem long yeu mot bong hoa ben kia doi", "split": "dev"}
+{"type": "Q4u", "text": "khong co tu nao dien ta duoc cam giac em bay gio em roi qua so voi vang", "split": "test"}
+{"type": "Q5u", "text": "bai cua vstra voi tyronee co gai lo thich anh roi nhung ngai khong dam noi chi muon hon len mat anh khong yeu ai khac", "split": "test"}
+{"type": "Q4u", "text": "dot chay het minh cho dat nuoc khoac len mau ao do mo hoi roi tren san bong", "split": "test"}
+{"type": "Q5u", "text": "bai co vu doi tuyen bong da cua son tung ho vang viet nam sut tung luoi khung thanh du thang hay bai van tu hao", "split": "test"}
+{"type": "Q4u", "text": "duyen phan doi minh hay chi la con mua thoang qua", "split": "test"}
+{"type": "Q5u", "text": "bai dan gian duong dai cua bich phuong juky san lamoon trong em xinh say hi co gai xin troi cao cho moi nhan duyen tron doi co tieng ho ho", "split": "test"}
+{"type": "Q4u", "text": "vet tich ay am ca doi nguoi roi thoi gian cuon doi ta di", "split": "dev"}
+{"type": "Q4u", "text": "cung nhau cam on moi ngay vi ta van con song tren doi", "split": "test"}
+{"type": "Q5u", "text": "bai cua 14 casper va bon nghiem anh tung tieu cuc don coi khong mo long vi qua nhieu gian doi sau con mua la nang chi co em tin anh", "split": "test"}
+{"type": "Q4u", "text": "co the nao trao yeu thuong thay cho loi noi khong tinh yeu vo tinh vay do", "split": "dev"}
+{"type": "Q5u", "text": "bai say hi cua wren evans ivan captain boy anh muon noi het ma loi ket o moi lang thinh nhin em ma em chang thay", "split": "dev"}
+{"type": "Q4u", "text": "yeu em anh dau biet bao sao minh chang co duyen phan", "split": "test"}
+{"type": "Q5u", "text": "bai cua thien dinh tinh tay ba mot nguoi dau thi tot cho ba nguoi anh xin lam lu khach roi di", "split": "test"}
+{"type": "Q4u", "text": "roi chang con thay em doi doi mat buon ma van nghe em cuoi", "split": "dev"}
+{"type": "Q5u", "text": "bai cua obito ngoi tren xe di ngang con pho cu mua roi ben them vet thuong trong em la do anh", "split": "dev"}
+{"type": "Q4u", "text": "hon nhau say dam nhu la lan dau tien", "split": "dev"}
+{"type": "Q5u", "text": "bai tinh yeu cua nguyen trung duc ngan vi sao tren troi chung giam cho tinh yeu len ngoi gap em la troi dat dao dien", "split": "dev"}
+{"type": "Q4u", "text": "den cuoi chi biet om buon ma cam lang khong the nao quen nguoi ay", "split": "test"}
+{"type": "Q5u", "text": "bai buon cua quang dang tran anh lang thang chon cu hoi han vi khong co gang ben nguoi yeu gio nhin co ay hanh phuc ben ai", "split": "test"}
+{"type": "Q4u", "text": "tinh dau phai giac mo dem nao cung mong kiem ai biet quy minh kho lam", "split": "test"}
+{"type": "Q5u", "text": "bai cua anh quan nguoi yeu noi doi trong long em co qua nhieu nguoi anh moi met muon dung lai cho di bao nhieu chua chac nhan lai bay nhieu", "split": "test"}
+{"type": "Q4u", "text": "anh van luon o day doi em tra loi loi yeu", "split": "test"}
+{"type": "Q5u", "text": "bai cua wren evans voi itsnk trong say hi tinh don phuong voi co gai yeu kieu anh muon em quan tam dung de minh bo vo", "split": "test"}
+{"type": "Q4u", "text": "tinh cam cua em chi thoang qua thoi bao yeu anh cho vui vay ma", "split": "test"}
+{"type": "Q5u", "text": "bai cua anh quan anh thay vet son cua em tren ao hoi em con thuong khong thi noi ra di de anh biet", "split": "test"}
+{"type": "Q4u", "text": "hai con tim dan vao nhau chua tung biet dau thi ra binh yen la vay", "split": "dev"}
+{"type": "Q5u", "text": "bai cua duong domic uoc co noi thoi gian ngung lai mat troi khong lan hai trai tim dan vao nhau khong dau yen binh", "split": "dev"}
+{"type": "Q4u", "text": "can may kiep nguoi moi duoc yeu em co le duyen minh danh chap nhan", "split": "test"}
+{"type": "Q5u", "text": "bai anh trai say hi cua vu cat tuong karik negav ngo kien huy anh sang tat di moi co gang thanh vo nghia anh den qua som nen mat em", "split": "test"}
+{"type": "Q4u", "text": "nhieu khi muon con tim quen em ma sao chang noi nen loi", "split": "test"}
+{"type": "Q5u", "text": "bai cua duong domic voi lou hoang ben nhau lau ma khong phai yeu em ruc ro nhu nang con anh chi mot mau toi dung cho hy vong neu khong thuong", "split": "test"}
+{"type": "Q4u", "text": "thay em cuoi nguong mot cai la anh yeu ra san ngoi ngam sao troi", "split": "test"}
+{"type": "Q5u", "text": "bai rap cua low g ve chang trai si me crush viet nghin la thu thay em di choi voi thang khac thi ghen insta nghin like chi cho mot nguoi xem", "split": "test"}
+{"type": "Q4u", "text": "gio da muon de hoi chuyen hom nay dung hay sai chac em mong hai dua chia tay", "split": "test"}
+{"type": "Q5u", "text": "bai cua dang vinh thinh va bmz doi minh sai nhip buoc nen dung song song chang con lua chon nao ngoai buong tay chia tay", "split": "test"}
+{"type": "Q4u", "text": "baby oi la ai nguoi nao anh chang the de vuot mat", "split": "test"}
+{"type": "Q5u", "text": "bai anh trai say hi cua b ray negav vuong binh gill co fan ten bich ho phan dung duoi san khau doi mat sang hon ca lightstick", "split": "test"}
+{"type": "Q4u", "text": "nhan tinh the thai thay doi boi loi cay dang hon thua nhau o chu nhan luu lai doi sau", "split": "dev"}
+{"type": "Q5u", "text": "bai ve nhan tinh the thai cua par sg va hngle nguoi doi doi trang thay den tien la giay ma chia doi nghia tinh cuoi doi ai cung ve voi dat", "split": "dev"}
+{"type": "Q4u", "text": "dung chia doi minh ra dung de ta ket thuc o day", "split": "dev"}
+{"type": "Q5u", "text": "bai say hi co duong domic anh xin ong troi dung chia cat hai ta bat cong tac tinh yeu len khi mat trang khuat dan", "split": "dev"}
+{"type": "Q4u", "text": "co nang nghi minh la nguoi dac biet bi tao duoi khoi bua tiec", "split": "test"}
+{"type": "Q5u", "text": "bai rap tron tieng anh cua richie d icy khoe sieu xe rari khong can chia khoa tien nhieu hay it cung dat len ban", "split": "test"}
+{"type": "Q4u", "text": "van chang ai thay duoc em doi anh tro lai da bao nhieu ngay", "split": "test"}
+{"type": "Q5u", "text": "bai song ca cua b ray va amee trong anh trai say hi co gai doi nguoi yeu tro ve tim anh trong nhung con say anh hua khong quen loi the", "split": "test"}
+{"type": "Q4u", "text": "baby sao em thom vay nhi cho anh hit mot cai", "split": "test"}
+{"type": "Q5u", "text": "bai say hi cua congb buitruonglinh codynamvo em di qua ai cung ngoai nhin giua ngan hoa anh chi nho mui huong cua em thom the nhi", "split": "test"}
+{"type": "Q4u", "text": "chang kieu cang chang song ao di len bang thuc luc", "split": "test"}
+{"type": "Q5u", "text": "bai hat tap the cua soobin kay tran tuan hung bang kieu tu long khoe than thai anh kay dep trai khong bao gio sai", "split": "test"}
+{"type": "Q4u", "text": "chang biet ai se o canh dau ai hay toi van mai cho mong", "split": "dev"}
+{"type": "Q5u", "text": "bai cua maydays nuoc mat em lan dai vi nhieu ton thuong anh da chim trong doi mat em em xung dang duoc hanh phuc", "split": "dev"}
+{"type": "Q4u", "text": "khi nguoi anh yeu da roi xa mang di trai tim anh khong noi mot loi", "split": "test"}
+{"type": "Q5u", "text": "bai cua min hai gio sang ngoi ben nhau o nga tu duong co gai tham yeu nguoi ban vua chia tay ma anh khong nhan ra", "split": "test"}
+{"type": "Q4u", "text": "ra duong thay bon no van con mong mo", "split": "test"}
+{"type": "Q5u", "text": "bai rap cua richie d icy voi obito tobie and richie chia tay co gai noi thanh do ngoi xe bon banh vi vu cung anh em", "split": "test"}
+{"type": "Q4u", "text": "long anh roi nhu to gia nhu ngay ay anh manh dan to tinh", "split": "test"}
+{"type": "Q5u", "text": "bai cua phan manh quynh nhan thiep moi dam cuoi nguoi yeu cu o que co dau ao trang cam hoa loi tai anh ngay xua khong dam noi", "split": "test"}
+{"type": "Q5u", "text": "bai hoang dung hat lai trong anh trai vuot ngan chong gai chang nhac si chia tay co gai tung la cam hung cua minh tinh mong manh de lai vet han", "split": "dev"}
+{"type": "Q4u", "text": "uoc cho lang que giau manh tuoi dep mui lua thom nhe ngoai canh dong", "split": "test"}
+{"type": "Q5u", "text": "bai hat thanh nien tinh nguyen mua he xanh ao xanh ve xom lang cam ly hat", "split": "test"}
+{"type": "Q4u", "text": "bao dem thuc trang mong duoc o canh em ma gio chi con lai noi nho", "split": "test"}
+{"type": "Q5u", "text": "nguoi yeu ra di tu mua dong nam ay anh lang le hat khuc ca xua nho nu cuoi em", "split": "test"}
+{"type": "Q4u", "text": "chi minh em hieu duoc cam giac ay anh hua dung thuong ai khac ngoai em nhe", "split": "test"}
+{"type": "Q5u", "text": "co gai tham thuong anh chang vua bi nguoi yeu lam khoc dung tu xa gia vo quay di de giau nuoc mat", "split": "test"}
+{"type": "Q4u", "text": "hay quy nhung dieu nho be quanh minh khi da thuong nhau thi tin tuong ma di cung nhau", "split": "test"}
+{"type": "Q5u", "text": "song ca tong gia vy va tang bao thy ve hanh phuc o ngay trong tim yeu la phai vi tha bao dung khong gian doi", "split": "test"}
+{"type": "Q4u", "text": "noi buon roi xuong long trong trai de anh duoc nho em them mot lan cuoi", "split": "dev"}
+{"type": "Q5u", "text": "chang trai hoi han nguoi yeu cu sau nhieu nam xa nhau nguoi moi co thuong em that long khong co ai dat tay em qua nhung ngay dong lanh", "split": "dev"}
+{"type": "Q4u", "text": "xe vun noi sau ra tung loi mot chang ai hieu vi sao bien lai doi thay", "split": "dev"}
+{"type": "Q4u", "text": "sao luc say khong goi cho anh lai de nhung giot mua ti tach roi vao doi anh", "split": "dev"}
+{"type": "Q5u", "text": "anh thay em van mang doi giay da vo di hen ho voi ky niem hai nguoi len quan tam nhau du biet the nay khong tien", "split": "dev"}
+{"type": "Q4u", "text": "loi hen uoc se ve voi nhau khi cong thanh danh toai ma sao long dau mo giau sang de gio co don om noi buon", "split": "test"}
+{"type": "Q5u", "text": "bai nhac tre ke chuyen vi tuong xa nguoi yeu tu thuo ngheo nam ca giang son ma khi gap lai thi nang da co con voi nguoi khac", "split": "test"}
+{"type": "Q4u", "text": "cu tu tu mot chut cung duoc anh yeu em nhieu lam yeu em that long", "split": "test"}
+{"type": "Q5u", "text": "co gai mac vest van dep nhu thien than quanh anh nhieu loai hoa nhung anh chi tuoi cho mot bong hoa babi", "split": "test"}
+{"type": "Q4u", "text": "o sai gon hoa le kiem dau ra nguoi chiu lam moi thu vi em anh hoi em tim dau ra", "split": "test"}
+{"type": "Q5u", "text": "freaky va chuc hy ke chuyen co gai que duoc tia cho len thanh pho roi co nguoi moi dem tinh cu di cam", "split": "test"}
+{"type": "Q4u", "text": "nhung thang ngay hon nhien chang phai ban tam o mai truong quoc hoc", "split": "test"}
+{"type": "Q5u", "text": "nha thi va xam band hat ve ngoi truong cu o hue chom thu nho mot cai ten san truong vang lang chi con tieng chim", "split": "test"}
+{"type": "Q4u", "text": "giac mo dep ta cung di tren duong dai nho lam nhung dem nam lang nghe mua roi nho thuo truoc", "split": "dev"}
+{"type": "Q5u", "text": "dan truong song ca cung my tam nho hai dua tre ngay xua choi duoi bat duoi mua gio hat len mot bai ca khong ten", "split": "dev"}
+{"type": "Q4u", "text": "trai qua bao ghenh thac dong nuoc roi se troi ve noi nao da la con nguoi thi phai song ngay thang", "split": "test"}
+{"type": "Q5u", "text": "bai nhac phim ve nhan qua doi nguoi nhu dong song do ra bien dung gieo oan sau song nhan duc thi sau nay khong ai trach", "split": "test"}
+{"type": "Q4u", "text": "anh men em tu hoi me moi ve lam dau ben cha chom sao vua sau ngoi o xa tit", "split": "dev"}
+{"type": "Q5u", "text": "bai hat theo dieu dan ca cua pham duy dem ten cac vi sao sao tua chin cai sao khue xen tieng oi a thuong em tu ngay con duoc me bong", "split": "dev"}
+{"type": "Q4u", "text": "may khi minh duoc hanh phuc ben nhau roi se thoi nho thoi khoc khi cho doi", "split": "dev"}
+{"type": "Q5u", "text": "bai indie buon ve chang trai mat ngu moi dem vi noi dau le chan khap phong tim vo doi thuc trang cho binh minh", "split": "dev"}
+{"type": "Q4u", "text": "ke nhung anh nhin do xet cua nguoi la anh van siet tay em chang roi", "split": "dev"}
+{"type": "Q5u", "text": "doi tinh nhan khieu vu giua dam dong duoi anh den pha le mac ke the gioi ngan can dep nhu mot buc tranh", "split": "dev"}
+{"type": "Q4u", "text": "anh khong cho phep minh vui neu mai nay thieu em va cung cam em noi thuong anh khi dang o trong vong tay nguoi ta", "split": "test"}
+{"type": "Q5u", "text": "bai rap cua kindya ve nguoi dan ong bi ban minh cuop mat nguoi yeu cam chiu lam ke thu ba co luc tram cam vi cu soc", "split": "test"}
+{"type": "Q4u", "text": "o thi chac la anh van cho rang vi anh mong duoc thay em them nua", "split": "test"}
+{"type": "Q5u", "text": "low g rap ke chuyen gap co gai chan nan o bua tiec on ao hai dua bo ban be ra khoi quan bar thi troi do mua", "split": "test"}
+{"type": "Q4u", "text": "deo ba lo len ma chay that xa toi chon khong con au lo de thoi thuong nho suot bao nam thang", "split": "test"}
+{"type": "Q5u", "text": "co gai nho nhung chuyen di cung nguoi yeu cu trong ngay mua duoi anh den duong gio chi muon ngam pho thuc day moi sang", "split": "test"}
+{"type": "Q4u", "text": "chang bao gio chiu khuat phuc hay quy goi vi trong nguoi toi chay dong mau con rong chau tien co nguoi con nguoi da nam xuong nhung tinh anh em song chet khong roi", "split": "test"}
+{"type": "Q5u", "text": "ung hoang phuc hat ve tinh huynh de giang ho song khong oan than khong toan tinh thiet hon cui dau thi khong mot long voi anh em", "split": "test"}
+{"type": "Q4u", "text": "do tro ve chang thiet de tem nua cau kinh van con dong lai muon chu", "split": "test"}
+{"type": "Q5u", "text": "bai che vui cua do mixi nhai theo do ta khong do nang tieng mo phu phang tra lai nguoi chiec ao ba lo", "split": "test"}
+{"type": "Q4u", "text": "doi khi chi vi lo loi khong co y doi khi lai nhan tam co y lam ton thuong", "split": "dev"}
+{"type": "Q5u", "text": "bai thanh ca xin chua gin giu ngon lua yeu thuong va niem tin trong tim giua hoai nghi do ky thu han", "split": "dev"}
+{"type": "Q4u", "text": "gio day nguoi da roi lang xua nhin ve qua man suong mo", "split": "test"}
+{"type": "Q5u", "text": "nhac que huong cua thanh trang chieu tan canh lieu ru ben song mui lua thom dem trang sang hai nguoi dao ben nhau mai chang het loi", "split": "test"}
+{"type": "Q4u", "text": "thuyen buom nau cho loi hen uoc cau ho vong lai luu luyen con song que xu nghe", "split": "test"}
+{"type": "Q5u", "text": "song ca thanh tai thanh quy ve nui hong linh soi bong dong song xu nghe do doc do ngang cau vi giam an tinh", "split": "test"}
+{"type": "Q4u", "text": "minh sai thi minh nhan co ai ma dung mai duoc trong long dau nhung ngay mai se khac", "split": "dev"}
+{"type": "Q5u", "text": "nam nhan hat ve viec song cham lai nhin sau vao long minh thua ai cung chang lo thuong ban than nhieu hon hom qua", "split": "dev"}
+{"type": "Q4u", "text": "cung nhau doc long lo cho ngay sau du mua hay nang van cham chi ngoai dong lua ruong khoai", "split": "test"}
+{"type": "Q4u", "text": "du buon em van giau anh va gia vo vui ve tha co don chu em van chi thuong moi anh", "split": "test"}
+{"type": "Q5u", "text": "co gai cho cau tra loi cua nguoi yeu du ai cung bao anh da co nguoi khac vi thuong nen nham mat cho qua moi lua doi", "split": "test"}
+{"type": "Q4u", "text": "yeu roi thi chang con phan biet duoc phai trai em tho o lanh nhat nen chang de y anh cam thay the nao", "split": "test"}
+{"type": "Q5u", "text": "thanh ngoc song ca voi chi thien chang trai co chap nham mat chap nhan moi ly do nguoi yeu nghi ra roi mot minh om ky niem", "split": "test"}
+{"type": "Q4u", "text": "nuoc mua chay tren hang mi em uot sung run ray vi lanh dua tay len goi", "split": "test"}
+{"type": "Q5u", "text": "dem gio lanh suong phu mo con pho nguoi con gai voi vang ra di ma noi nay van con vang tieng em goi ten anh", "split": "test"}
+{"type": "Q4u", "text": "khap nam chau ai cung vui mung dung nhu loi phat da bao truoc", "split": "test"}
+{"type": "Q5u", "text": "bai hat phat giao cua chua ba vang mung ngay sinh cua so to truc lam vi vua xuat gia hoang duong phat phap", "split": "test"}
+{"type": "Q4u", "text": "nhung the van con tot hon la chang bao gio co hay co ma quen het nhung noi dau", "split": "dev"}
+{"type": "Q5u", "text": "phan dinh tung hat ve hai vi sao bong sang len tren the gian nguoi yeu ra di khong mot loi ngoi ngam sao troi mong tinh em van nhu xua", "split": "dev"}
+{"type": "Q4u", "text": "cuoc tinh gio da phai tan nhung long con nho nhung phut giay dong day yeu thuong", "split": "dev"}
+{"type": "Q5u", "text": "nhac ngoai loi viet bong dem ve trang tan nguoi ra di khong quay lai tay trong tay moi trong moi gio chi con trong noi nho", "split": "dev"}
+{"type": "Q4u", "text": "hay giu tron tinh nghia cho nhau thuo moi quen nao ngo den hom nay", "split": "dev"}
+{"type": "Q5u", "text": "elvis phuong hat loi nguoi dan ong bao nguoi yeu lau nuoc mat chi mot dem nua thoi roi chia xa mai mai diu nhau buoc not doan duong tinh", "split": "dev"}
+{"type": "Q4u", "text": "sao toi gio nay minh moi gap duoc nhau yeu khi da tre ma long van con tre trung", "split": "dev"}
+{"type": "Q5u", "text": "bai tru tinh ve chuyen yeu khi tuoi da xe chieu gap em khi mua yeu vua chin hai ban tay tim ve voi nhau yeu nhu thuo ban dau", "split": "dev"}
+{"type": "Q5u", "text": "thanh dat va dong thien duc hat chuyen tinh dang do co gai trach anh cu rong long voi nguoi cu gio oi dung cho ngoai cua nua nguoi da muon di thi niu cung vo ich", "split": "dev"}
+{"type": "Q5u", "text": "bai tru tinh nho que cua nguoi tha phuong nho con do dong song va vang trang cua nguoi xua loi lang bo de cuoc song ngheo ma tinh nhu bai tho", "split": "test"}
+{"type": "Q4u", "text": "muon giang rong vong tay om sai gon that chat vao long ma yeu say dam", "split": "test"}
+{"type": "Q5u", "text": "bai hat ve tinh yeu thanh pho duong dong nguoi xe nhon nhip thuc day cung yeu nham mat cung yeu di xa thi nho muon quay ve", "split": "test"}
+{"type": "Q4u", "text": "thoi thi chi mong hoa thanh lan gio dua con dieu bay ve tan cuoi troi xa", "split": "dev"}
+{"type": "Q5u", "text": "bai tru tinh mai anh hat con thuyen tan nat canh buom rach buom bo vai gay la ben binh yen chi mong mot lan duoc yeu", "split": "dev"}
+{"type": "Q4u", "text": "chu ca nho vui dua boi loi ma quen mat dong suoi noi minh sinh ra co ai vui hom nay ma quen chuyen hom qua", "split": "test"}
+{"type": "Q5u", "text": "loi nguoi cha gui dua con muoi nam sau ke ve tuoi tre song het minh co luc khoc luc cuoi", "split": "test"}
+{"type": "Q4u", "text": "chang con gi nua thi tiec lam chi cho them nho anh cu doi em hoai trong giac mo", "split": "dev"}
+{"type": "Q5u", "text": "lam truong hat tu ngay em xa anh thay sau trong mat tinh nhu khoi may bay ve chon xa xam du em cach xa anh van chang quen", "split": "dev"}
+{"type": "Q4u", "text": "mang tieng cuoi toa khap bau troi nam cu qua roi bo het nhung chuyen on ao chang dang ban long ma cat di", "split": "test"}
+{"type": "Q5u", "text": "bai nhac tet cua simonc voi le vu xuan ve tre con no dua mac ao moi moi nguoi nhanh chong ve doan vien voi gia dinh", "split": "test"}
+{"type": "Q4u", "text": "dem nao minh cung nam im trong tam chan am lang nghe giong em hat duoc anh mo tren dai", "split": "test"}
+{"type": "Q5u", "text": "keisha hat loi co gai chua dam noi yeu nen phat hanh bai nhac tang anh mong anh nghe tren radio khi bang qua nga tu luc den chuyen xanh", "split": "test"}
+{"type": "Q4u", "text": "van chua sang tac duoc gi vi con mai di dao sieu thi toan tivi", "split": "test"}
+{"type": "Q5u", "text": "bai vui cua duc tri ve anh nhac si chua sang tac noi vi con ban lo com ao gao tien muon hat thi giong lai pho", "split": "test"}
+{"type": "Q4u", "text": "du toc da bac trang chang co phep mau nao em van mai mong anh tro ve ben em", "split": "dev"}
+{"type": "Q5u", "text": "chang trai ca doi vat va di tim nguoi con gai o xa nghin trung du toc bac van cho ngay gap lai", "split": "dev"}
+{"type": "Q4u", "text": "bao dieu toi loi tan vo da duoc tinh yeu cua ngai thay the chua den lau kho dong le", "split": "dev"}
+{"type": "Q5u", "text": "bai thanh ca ve nguoi phu nu lam lo bi dam dong doi nem da nhung chua khong len an ma cuu thoat cay say dap chang be gay", "split": "dev"}
+{"type": "Q4u", "text": "duoi nhung tan la noi lan gio nhe dung dua la roi lung lo", "split": "test"}
+{"type": "Q5u", "text": "bai cua 502 ocean thu sang dong toi anh van dung doi nguoi yeu o cho co chim hot va nang am", "split": "test"}
+{"type": "Q4u", "text": "buoi chieu noi san ga vang ve khi dong ve hang cay lanh va long anh cung gia buot", "split": "dev"}
+{"type": "Q5u", "text": "pham hoai nam hat loi viet cho giai dieu nuoc ngoai chieu san ga la thu roi tien em di dung lang nhin bong con tau khuat xa", "split": "dev"}
+{"type": "Q4u", "text": "anh am ap than thien chang keo kiet cung khong ham choi lau chi can em gat dau roi cho anh xin thong tin", "split": "dev"}
+{"type": "Q4u", "text": "em oi xin cho ra di mai keo pho nho chim trong mua sau lanh leo", "split": "test"}
+{"type": "Q5u", "text": "bai tru tinh ve mua lu o quang nam nuoc song dang cao tran ben da pha cho chieu anh diu em loi nuoc ve ha lam", "split": "test"}
+{"type": "Q4u", "text": "hai dua minh to nho vai cau hay la dang hon doi nhau roi", "split": "dev"}
+{"type": "Q5u", "text": "co gai trach nguoi yeu bong dung ngoanh mat lam ngo co phai anh quen nguoi khac giau sang ky niem dem nao kho quen", "split": "dev"}
+{"type": "Q4u", "text": "di kiem lai tinh yeu nam xua du mua dong da ve lanh gia nhu duoc suoi am ben minh", "split": "dev"}
+{"type": "Q5u", "text": "bai indie tu sang tac chang trai lang thang tren pho vang giua gio mua dong sang nhac nguoi cu nho mang ao am noi ay gio chang con chung ta", "split": "dev"}
+{"type": "Q4u", "text": "gio cu thoi dat dao tu khi roi que nha long nho thuong cha va me gia", "split": "test"}
+{"type": "Q5u", "text": "bai tru tinh nho que chieu tim tren duong de luy tre nghieng ben mai nha ngheo do neo ben cu me ru ben khoi lam chieu", "split": "test"}
+{"type": "Q4u", "text": "the nen minh danh de lai noi nay thoi ban hoi", "split": "test"}
+{"type": "Q5u", "text": "bai hat chia tay ban than cuoi cap moi ngay nao con ngap ngung toi lop ma gio da xa uoc co phep mau dua ta ve nhung ngay rong choi tren san truong", "split": "test"}
+{"type": "Q4u", "text": "nhung ky niem ua ve nhu danh lua trai tim anh trang bi ai chia doi nuoc mat lam nhoe hang mi", "split": "dev"}
+{"type": "Q5u", "text": "bai nhac tre dee tran viet va hat ngo yeu that long la tron ven nhung roi bat gap em hanh phuc cung nguoi khac tinh yeu nhu tro choi", "split": "dev"}
+{"type": "Q4u", "text": "vay ma long em cu bon chon lo lang vi mot ai do khac", "split": "dev"}
+{"type": "Q5u", "text": "thu thuy hat khi tinh da can thi dung niu keo dan long manh me quay lung di khong de anh thay minh da khoc", "split": "dev"}
+{"type": "Q4u", "text": "em cu nuoi tiec mai mot moi tinh khong the quay lai roi bung tinh hieu ra minh khong the chim dam trong me muoi yeu mem", "split": "dev"}
+{"type": "Q5u", "text": "jenny hai ngoc ket hop rap co gai xin nguoi yeu het thuong thi noi thang mot loi dung quan quanh trong nhung cuoc vui yeu duong be honest", "split": "dev"}
+{"type": "Q5u", "text": "chang trai tan co gai dep nhu thien than trong tranh ve hoi nang co can mot chang gau biet suoi am dan duong ve nha khong", "split": "dev"}
+{"type": "Q4u", "text": "hay tra cho anh nhung phut yen binh cua cuoc doi trang lan sau may sau tinh yeu bay di theo gio", "split": "test"}
+{"type": "Q5u", "text": "huy vac hat cam bong hoa muon trao ma nguoi yeu chang con o day pho den lung linh ma nuoc mat roi cuon phim buon da ha man", "split": "test"}
+{"type": "Q4u", "text": "cac co theo anh chac xep hang dai ca pho tai cua gai vo doi nen dam ban dat biet danh quai vat tinh truong", "split": "test"}
+{"type": "Q5u", "text": "kaydee va phuc pin ke chuyen chang trai moi chuyen den lam quen co be nha ben nho nhan hien nhu nang tam nha co vuon hoa va chu cun ten misa", "split": "test"}
+{"type": "Q4u", "text": "cu gieo hat giong niem tin va tinh thuong thi se thu hoach duoc hanh phuc vi con nguoi biet yeu thuong va se chia cho nhau", "split": "test"}
+{"type": "Q5u", "text": "bai hat cong giao ve nguoi dai nang dam mua di gieo hat hat sinh ba chuc sau chuc co hat tro mot tram nao ta di gieo niem tin", "split": "test"}
+{"type": "Q4u", "text": "mong duoc thay em tua doa hoa noi rung sau va ta nhu chu ong say dam tim den", "split": "test"}
+{"type": "Q5u", "text": "ngoc lan hat loi viet cho bai solenzara cua enrico macias nguoi hoi hay quay lai nhin mua xuan dang mim cuoi minh yeu nhau di", "split": "test"}
+{"type": "Q4u", "text": "chu tho voi ban rua than thiet nhu hai anh em mot sang no rua om cap toi lop", "split": "dev"}
+{"type": "Q5u", "text": "bai hat thieu nhi ke chuyen rua di cham ma thang buoc toi truong con tho ham choi hai hoa nen chuong reo vao lop van chua kip den bi thay la", "split": "dev"}
+{"type": "Q4u", "text": "chap canh cho ta buoc toi nhung mien xa phia chan troi da ruc sang", "split": "test"}
+{"type": "Q5u", "text": "le dung hat ca ngoi to quoc viet nam non song vinh quang ngan doi loi bac ho thieng lieng vong ve don chao binh minh ngay moi", "split": "test"}
+{"type": "Q4u", "text": "nguoi da roi xa de lai bao chua xot long quanh hiu nuoi tiec cuoc tinh cu", "split": "test"}
+{"type": "Q5u", "text": "bai rumba tu sang tac tinh dep nhu mo vut bay qua loi the sat son nhat dan theo thoi gian cuoc tinh tan vi gian doi", "split": "test"}
+{"type": "Q4u", "text": "mong loi ca anh hat duoc thuoc ve nguoi con gai ay ky niem anh giu chi cua rieng nang hanh phuc o ngay tam tay xin them mot ngay ben nhau", "split": "test"}
+{"type": "Q5u", "text": "ha anh tuan hat ban ballad cua hoang dung nguoi lang le giua dong doi vo dinh roi em den danh thuc giac mo yeu em nhu canh rung cho la non", "split": "test"}
+{"type": "Q4u", "text": "biet ro chang co ket thuc tot dep nao vay ma em van cu lao dau vao", "split": "test"}
+{"type": "Q5u", "text": "co gai chim trong noi dau vi buong tay de mat mot nguoi nuoc mat tuon moi dem dai mong anh quay lai xem trai tim da vo", "split": "test"}
+{"type": "Q4u", "text": "noi buon hiu hat menh mang lam trai tim xao xuyen", "split": "dev"}
+{"type": "Q5u", "text": "bai tru tinh ve mua thu nang vang dau ngo ngam vang trang suong tay van ve la chieu mua non nao cho gap lai nguoi da di xa", "split": "dev"}
+{"type": "Q4u", "text": "nhung chuyen tuong chung nhu truyen co tich chao nhe toi van on man suong che khuat mat ai", "split": "test"}
+{"type": "Q5u", "text": "hooligan hat ve nguoi tinh day giua dem khong thay em bat radio nghe tim vo chiec quan jeans am mui thuoc la uong can ly ruou gin", "split": "test"}
+{"type": "Q4u", "text": "dat nuoc se mai khac ghi ten nguoi chien si bao nhieu nguoi cung chung suc vi que huong", "split": "test"}
+{"type": "Q5u", "text": "bai hat ve lu lut mien trung xom lang ngap trang vo mat chong con goi cha rang khong ve cac chien si hy sinh khi cuu dan giua thoi binh", "split": "test"}
+{"type": "Q4u", "text": "anh chang muon hai dua tro thanh nguoi dung anh muon moi thu van nhu nhung ngay truoc", "split": "test"}
+{"type": "Q5u", "text": "duong nhat linh va la nhat tien hat chang trai da co niu giu tung hanh phuc tung ky niem nhung chua du vung de giu em cuoi cung nguoi dau lai la anh", "split": "test"}
+{"type": "Q4u", "text": "anh cat tieng keu ten em giua lan gio lieu gio co thau long anh keu em giua man dem chi them chua xot", "split": "test"}
+{"type": "Q5u", "text": "hung nguyen hat dem lanh pho khuya im lim anh den vang le loi buoc chan lac giua troi suong mong em tro lai ma gio da dua em di xa", "split": "test"}
+{"type": "Q4u", "text": "anh choi dan con em cat tieng hat nang dau tren toc anh gio tay len che noi buon hoa thanh hoa khi thoi gian troi di da lau", "split": "test"}
+{"type": "Q5u", "text": "thinh suy va mgt hat nhe nhang xen tieng anh gio khe luot qua mang theo huong toc em tha troi lo au ngay mai troi lai len nen dung lo", "split": "test"}
+{"type": "Q4u", "text": "buon va dau biet bao khi lam con trai chua nen nguoi thoi nay yeu dau chi bang loi hua", "split": "test"}
+{"type": "Q5u", "text": "bui vinh phuc hat chang trai trang tay nhin nguoi thuong len xe hoa ngay cuoi hai ho vui mung con anh lac buoc tim ky niem", "split": "test"}
+{"type": "Q4u", "text": "cung nhau vun dap cuoc doi tuoi nhu hoa dau nam roi nguoi ra di tua canh chim bay giua chieu hoang vang", "split": "test"}
+{"type": "Q5u", "text": "nhac vang ke chuyen nguoi em gai toc ngang vai cai hoa tim tren ao xanh yeu anh linh mac ao mau la rung cung mo ngay thanh binh", "split": "test"}
+{"type": "Q4u", "text": "thanh xuan troi qua mai toc da bac nhu may trang nhung mot doi son sat xin trao tron", "split": "test"}
+{"type": "Q5u", "text": "bai tru tinh ve so phan nguoi con gai nhu canh hoa ta toi trong mua gio dem khuya den hiu hat khoc nho co nhan tron kiep van yeu", "split": "test"}
+{"type": "Q4u", "text": "ke nao mang chung den noi nay ngay tan the la khi tren doi chi sot lai mot nguoi", "split": "test"}
+{"type": "Q5u", "text": "bai rock ve dai dich corona tin bao vai nguoi nhiem roi lay nhanh ai cung so dong loai bao mang nguoi ra di ngay dem giu gin la phoi", "split": "test"}
+{"type": "Q4u", "text": "do em kho dai nen voi tin rang o canh anh moi thu deu em dem gio tinh yeu chi nhu tam guong vo da han lai", "split": "test"}
+{"type": "Q5u", "text": "bao my hat tuong yeu nhau toi mai sau nhung roi chia tay dam nuoc mat anh no lua doi yeu them nguoi khac em se xoa het ky uc ve hai dua", "split": "test"}
+{"type": "Q4u", "text": "tieng bass don dap ben tai con tim toi da nhan ra minh co loi", "split": "test"}
+{"type": "Q5u", "text": "minh toc va lam hat nhac jazz nhay mua mot minh nham nhi ly ruou cay co gai voi xoa vet tinh xua tren moi buoc chan swing theo tung cau hat", "split": "test"}
+{"type": "Q4u", "text": "di tim hoi am tu doi ban tay em voi luot ngon tay tren phim dan", "split": "test"}
+{"type": "Q5u", "text": "bai indie nhe nhang troi xanh may nga nghieng cuoi troi anh ngoi mot minh nghe la cay xao xac goi nang goi gio mong tinh yeu tro lai", "split": "test"}
+{"type": "Q4u", "text": "luc hai ta van con canh nhau vay ma phai den luc anh de mat em", "split": "test"}
+{"type": "Q5u", "text": "tuan hung song ca voi khac viet trach nguoi yeu khong that long khi con ben nhau den luc mat nhau moi noi yeu nam tay mot lan truoc khi xa", "split": "test"}
+{"type": "Q4u", "text": "thoi thi em giu kin mot minh nhung doi luc long chang vui dem ve em say roi cat tieng hat", "split": "test"}
+{"type": "Q5u", "text": "my tam hat nhac han loi viet ve co gai giau kin chuyen rieng tu chang dam ke ai nghe giau ma long van vui", "split": "test"}
+{"type": "Q4u", "text": "gio oi co sao lai den cuop di moi tinh ma ca doi ta nang niu", "split": "test"}
+{"type": "Q5u", "text": "chuyen tinh chang la cai cay giua rung sau con nang la chiec la mong manh tren canh cay mo mua xuan no hoa cung la thi gio keo den", "split": "test"}
+{"type": "Q4u", "text": "du anh thuong nhieu den may thi chac em cung chang ban tam boi em chi xem anh nhu ban be di canh anh chi mot thoi gian", "split": "test"}
+{"type": "Q5u", "text": "bai rap viet cua lemon climb va ccmk chang trai cho co gai di tren nhung con duong xanh mo den cu phanh gap nhung nang chi xem anh nhu ban", "split": "test"}
+{"type": "Q4u", "text": "giua cuoc doi day song gio vay quanh giua dem toi mit mu chang thay duong di", "split": "test"}
+{"type": "Q5u", "text": "bai thanh ca cau xin chua giua benh tat u am khap noi tim quan that hon sap chet duoi thi chua cam tay keo len", "split": "test"}
+{"type": "Q4u", "text": "nhung lan dieu dan ca em thuong hay hat mieng trau nay la trau tinh trau tinh", "split": "test"}
+{"type": "Q5u", "text": "bai hat ve que ha nam phu ly cau hat moi trau duyen dang anh qua cho bau mua cau ve ben phu van nghe lai lan dieu que", "split": "test"}
+{"type": "Q4u", "text": "chi can de y toi nhau mot chut thi se khong cach xa co duoc niem hanh phuc do thi di dau cung la tuoi tre", "split": "test"}
+{"type": "Q5u", "text": "tinh yeu tuoi tre dep biet may anh luon ke ben mo chung mai nha nhung tinh dep den dau theo nam thang cung phai mot nguoi vun ven mot nguoi thay thieu", "split": "test"}
+{"type": "Q4u", "text": "ngoi khen dang ngu den nhan danh thien chua hoi israel hay han hoan", "split": "test"}
+{"type": "Q5u", "text": "bai thanh ca le la vua khiem nhu coi lua vao thanh dan chung trai ao don duong gio canh la tung ho con vua da vit", "split": "test"}
+{"type": "Q4u", "text": "chang biet tinh em se troi dat noi nao khi em da chai san voi noi dau roi den luc anh cung roi bo nhu hai ta chua tung gap", "split": "test"}
+{"type": "Q5u", "text": "thanh ha song ca voi pham anh duy tinh co quen nhau khi co don nhung em da co nguoi va anh van con vet thuong cu co don khien ngo la yeu", "split": "test"}
+{"type": "Q4u", "text": "chi mong duoc chim mai trong giac ngu trong vong tay am ap tron ven cua nguoi", "split": "test"}
+{"type": "Q5u", "text": "chang trai luc chia tay xin em dung de le tran mi hay om anh nhu ngay nao noi sao cho het loi yeu mong nguoi yeu dung thay long", "split": "test"}
+{"type": "Q4u", "text": "dan an choi thoi nay day nguoi oi khong co tien ma choi dep thi nhieu vo so", "split": "test"}
+{"type": "Q5u", "text": "chau viet cuong hat giau ma keo kiet thi thieu gi con ngheo nhung song bao dung tu te choi khong tinh toan moi la nguoi choi co chat", "split": "test"}
+{"type": "Q4u", "text": "mai nay roi em se nhan ra ca doi anh luc nao cung mong co em ben canh", "split": "test"}
+{"type": "Q5u", "text": "tinh cam giau kin am tham trong tim dem khuya ngam ngoi sao sang chi muon nhin em khe hat ten em mong em hieu", "split": "test"}
+{"type": "Q4u", "text": "cuoc song dau nhu giac mong co tich co nu sinh ao trang gio da theo nguoi khac", "split": "test"}
+{"type": "Q5u", "text": "jimmy nguyen hat chang trai tham thuong co hang xom toc xoa mem tren vai nha gan ma chua noi voi nhau cau nao chi dam len nhin", "split": "test"}
+{"type": "Q4u", "text": "tai anh kho dai qua nen chang thay duoc em tung thuong anh nhieu den muc nao", "split": "test"}
+{"type": "Q5u", "text": "chang trai yeu tham co ban than nhung khong dam noi vi so mat tinh ban den khi em noi da yeu nguoi khac thi danh lang le buoc di", "split": "test"}
+{"type": "Q4u", "text": "vi sao hai ta lai bat dau lieu minh co ben nhau lau dai", "split": "test"}
+{"type": "Q5u", "text": "bai r b ve doi tre tu hoi sau nu hon thi la gi cua nhau anh coi la tro choi con em thi trao ca cuoc doi", "split": "test"}
+{"type": "Q5u", "text": "le bao binh hat mot minh uong ruou nho nguoi trong dem mua uot pho ngay xua don dua gio em chon tinh noi phon hoa anh van thuy chung nhu dong song", "split": "test"}
+{"type": "Q4u", "text": "o canh nhau hai muoi phut co dang la bao chi can dem nay o ben anh noi phon hoa chang ai tim toi", "split": "test"}
+{"type": "Q5u", "text": "trong hieu hat loi tan tinh tao bao nhin thang vao mat nhau chang can ai biet sao em van con doc than chi can nhan so cho anh", "split": "test"}
+{"type": "Q4u", "text": "qua dem nay minh chia tay nhe em tinh yeu trong anh da chang con nua roi", "split": "test"}
+{"type": "Q5u", "text": "loi chang trai xin nguoi yeu buong tay vi da het thuong dung day vo nhau nua hay di tim mot nguoi mang lai hanh phuc cho em", "split": "test"}
+{"type": "Q4u", "text": "lan dau vap nga dau la hom di chan khong di tim doi giay lac mat khi em khoc cung la khi ta giau noi dau vao tim", "split": "test"}
+{"type": "Q5u", "text": "uyen pim hat bai indie ve tuoi hai muoi mac ket om dan tren cao nguyen da nhin vao guong thay mot dua ngoc van tin doi gian don", "split": "test"}
+{"type": "Q4u", "text": "chi muon khoanh tay ngoanh mat di chang thiet gi ngoi dem tung nep nhan tren tran", "split": "test"}
+{"type": "Q5u", "text": "nguoi dan ong dao dien vi nang dep tua nu hoang bi an bi che la si tinh kho dai yeu chi them e che kho than", "split": "test"}
+{"type": "Q4u", "text": "em co ngai khong neu anh hom anh de vut mat giac mo ve nguoi", "split": "test"}
+{"type": "Q4u", "text": "ta khoc cho nhung nam thang quay quan ben nhau khoc vi nho tuoi tho va nguoi me than yeu", "split": "test"}
+{"type": "Q5u", "text": "pham hoai nam hat loi viet cua quoc bao cho bai million years ago cua adele thuo be hon nhien trong treo muon cat canh bay thi tim gan nhu chet", "split": "test"}
+{"type": "Q4u", "text": "chi lam vet thuong them chong chat cau hoi xua xem ai dung ai sai", "split": "test"}
+{"type": "Q5u", "text": "moi noi dau den deu co ly do ngay thang phai nhat chang con gi de hieu nhau neu sau nay khong gap lai thi xin hay vui", "split": "test"}
+{"type": "Q4u", "text": "the ma gio day em da di xa mai so phan da lay di hinh bong em", "split": "test"}
+{"type": "Q5u", "text": "nguoi dan ong say men dang cay vi nguoi yeu di mat moi ngay nao say dam ben nhau ma nay hai loi tim tan thanh khoi may", "split": "test"}
+{"type": "Q4u", "text": "doi ai biet truoc duoc dieu gi anh thuong em that long chu khong dong kich chuyen minh chang giong bai tho dang do khong thanh mong", "split": "test"}
+{"type": "Q5u", "text": "the cassette hat lau roi moi lai sanh buoc ben nhau tren loi cu nam tay em duoi anh den trong mua loi yeu giu tu lau chua noi", "split": "test"}
+{"type": "Q4u", "text": "em dung nghi anh la cai mo vang muon dao luc nao cung duoc mo di", "split": "dev"}
+{"type": "Q5u", "text": "bai che hai cua quan keyboard chang trai chia tay roi doi lai het qua da tang tu cai thau giat do den tien an che hoi sinh vien", "split": "dev"}
+{"type": "Q4u", "text": "chen nay la mau chua gie su do ra ngai bi dong dinh tren cay thap gia noi ngon doi", "split": "dev"}
+{"type": "Q5u", "text": "thanh ca tin lanh luc du tiec thanh cam mieng banh uong chen nho chua chiu chet vi toi loi chung ta xin ngai thuong xot tha thu", "split": "dev"}
+{"type": "Q4u", "text": "cung nhau dung xay dat nuoc mong sao co dem duoc nguoc nhin bau troi", "split": "test"}
+{"type": "Q5u", "text": "bai cua lam phuong mai thien van hat co gai chieu xuan nho nguoi yeu di linh noi sa truong tien anh luc hoa dao roi", "split": "test"}
+{"type": "Q4u", "text": "con duong toi lop that la vui co canh dong lua thom thuong lam cay cau tre nho", "split": "test"}
+{"type": "Q5u", "text": "bai hat thieu nhi top ca ve duong toi lop moi sang co suoi reo hang cay cau vong va ban be goi nhau di hoc", "split": "test"}
+{"type": "Q4u", "text": "tung la manh ghep con thieu cua nhau gio xa cach loi hen xua nhu con gio thoang sau con mua", "split": "dev"}
+{"type": "Q5u", "text": "min min va lemese song ca chuyen doi tinh nhan da chia tay lau sang nao thuc day cung nho hoi am nguoi cu gio chi gap lai nhau trong mo", "split": "dev"}
+{"type": "Q4u", "text": "hanh phuc o tan dau xa em lang le kiem tim trong nhung con mo em a", "split": "test"}
+{"type": "Q5u", "text": "bai wanbi tuan anh hat chung voi thuy chi co gai co don trong dem mua quanh hiu van mong mot ngay mai nang am va mot tinh yeu binh yen", "split": "test"}
+{"type": "Q4u", "text": "anh co doi duoc khong co nhan ra rang con tim em da lac mat o dau roi", "split": "dev"}
+{"type": "Q5u", "text": "w n voi an an va vani co gai ngay nao cung nghi ve chang trai minh tham thich om anh trong mo roi tinh giac mong mai nay thanh doi", "split": "dev"}
+{"type": "Q4u", "text": "lam sao ma noi ra duoc chi mong dem nay keo dai mai", "split": "test"}
+{"type": "Q5u", "text": "bai cua nhom em xinh say hi ba co gai hat ve luc tay dan tay ben nguoi yeu tim dap ron rang mong anh dung doi thay", "split": "test"}
+{"type": "Q4u", "text": "cu xoa het moi thu di ngay sau van dang doi em o dang truoc", "split": "test"}
+{"type": "Q5u", "text": "bui truong linh hat cho co gai da yeu het long ma chi nhan ve ton thuong khoc bao dem vi nhung loi xin loi roi nang se len thoi", "split": "test"}
+{"type": "Q4u", "text": "chieu ta roi ma co ay van cham chi lam viec noi nong truong la cay xao xac som toi vat va o vung dat xa xoi", "split": "test"}
+{"type": "Q5u", "text": "bai nhac tru tinh dai trang hat ve nu cong nhan tre o nong truong cao su mien dong ngay ngay ghep mat cay con ao xanh ma ram nang", "split": "test"}
+{"type": "Q4u", "text": "em doi thay nhu cay rung la tinh yeu roi xa o ben nhau chi con toan muon phien biet dua vao ai", "split": "dev"}
+{"type": "Q5u", "text": "bai ballad ve chang trai di tim nguoi yeu cu tren con pho quen mong thoi gian lam lanh vet thuong ma tim van con vuong", "split": "dev"}
+{"type": "Q4u", "text": "cham duoc toi the gioi ma em da tung mo em chang he nghi ngai hay hoi tiec gi", "split": "test"}
+{"type": "Q5u", "text": "co gai nam canh nguoi thuong dang ngu say thay do la tat ca nhung gi minh co nguyen nam chat tay anh khong roi", "split": "test"}
+{"type": "Q4u", "text": "nguoi bo di chang suy nghi gi de nuoc mat anh roi gio ngo vuc lam chi khi em da chang quay lai", "split": "test"}
+{"type": "Q5u", "text": "bai hat ke chuyen nguoi yeu bo di khien mua dong them lanh anh lang thang mot minh nhu canh en lac loai chi con noi nho", "split": "test"}
+{"type": "Q4u", "text": "toi chang ngai vang nguoi hay vang tieng vui cai cuoi da thanh thoi quen va la ten toi nho mai", "split": "test"}
+{"type": "Q5u", "text": "bai indie co mi tom bo kho va radio mot nguoi di dao pho gap lai ban cu da khac xua chang trach ai dung ai sai", "split": "test"}
+{"type": "Q4u", "text": "anh dau phai nguoi sat iron man trong phim marvel dau", "split": "test"}
+{"type": "Q5u", "text": "nhac phim than tuong tuoi 300 cua tung maru va han sara co gai say nang chang trai di ngang qua chang ro tu bao gio hai nguoi da o trong the gioi cua nhau", "split": "test"}
+{"type": "Q4u", "text": "bang qua nui deo bien ca theo duoi uoc mo doi nhu xe cup te roi lai dung day", "split": "test"}
+{"type": "Q5u", "text": "bai rap cua cai va cloudzy ve tuoi tre cong hien thanh xuan cho anh em trong team chay chiec xe so cu rong ruoi duoi theo dam me", "split": "test"}
+{"type": "Q4u", "text": "noi nang som goi ten minh nhe nhang chang can den ban tinh ca nao", "split": "test"}
+{"type": "Q5u", "text": "tinh yeu nhu pho cu ghe choi mua he nhu con gio mat cuon di muon phien song vo tu mot bai indie nhe nhang cua hai co gai", "split": "test"}
+{"type": "Q4u", "text": "chua chiu chet thay con vi qua yeu thuong doi vong gai tren cay thap gia", "split": "test"}
+{"type": "Q5u", "text": "bai thanh ca pha pham hat nguoi tung choi tu chua va lang thang trong dem tim ben binh yen duoc chua yeu thuong cuu roi va lau kho nuoc mat", "split": "test"}
+{"type": "Q4u", "text": "tet den roi moi nguoi chuc nhau nam moi ruc ro va cung ca hat don xuan", "split": "test"}
+{"type": "Q5u", "text": "bai nhac xuan vui tuoi pho phuong rop co hoa tre con chan sao chim hot tren duong len non anh nang chan hoa khap noi", "split": "test"}
+{"type": "Q4u", "text": "anh rat me luc duoc em vong tay om tu dang sau", "split": "test"}
+{"type": "Q5u", "text": "chang trai sang thuc day nhan tin nhan goi oppa day di hanh phuc muon nam tay nguoi yeu di vong quanh the gioi", "split": "test"}
+{"type": "Q4u", "text": "tren tivi dang chieu chuong trinh nhac yeu cau co bai hat hoi hai dua con yeu", "split": "test"}
+{"type": "Q5u", "text": "mat ngu luc hai ba gio sang ngoi tren ghe so pha xem lai bo phim buon va nho nhung lan chay xe duoi mua tren cao toc voi nguoi cu", "split": "test"}
+{"type": "Q4u", "text": "tu ngay ra di chang con duoc gap em nuoc phen lam vang ca chiec quan", "split": "test"}
+{"type": "Q5u", "text": "duy quang hat nhac pham duy ve nguoi linh giua rung tram mua nuoc noi dan no trong nong sung uot nho dang em gay nhu cay tram", "split": "test"}
+{"type": "Q4u", "text": "anh cu buong tay cho em di dung gian hon du roi xa em van thuong anh hoai", "split": "test"}
+{"type": "Q5u", "text": "ho ngoc ha hat loi co gai xin nguoi yeu buong tha de minh song hoang phi thuong anh nhieu ma nguoi ay chang hay em da khoc rat nhieu", "split": "test"}
+{"type": "Q4u", "text": "co ay dep nhu mo lam may mu tan bien hey girl anh nhu mat tri", "split": "test"}
+{"type": "Q5u", "text": "bai r b cua nhom monstar chang trai say me co gai trong bua tiec moi em ly vodka roi de loi rap noi ho het nhung dieu muon noi", "split": "test"}
+{"type": "Q4u", "text": "ai cung sung so khi thu do bung sang lap lanh luc len den oi ha noi", "split": "test"}
+{"type": "Q5u", "text": "bai hat ve mot ngay o thu do sang som cu gia nho thoi doi muoi ben ho guom bac lao cong tan ca nguoi ngoi an o goc pho", "split": "test"}
+{"type": "Q4u", "text": "anh chi biet song ma ngong trong mai con em thi chang quay lai nua", "split": "test"}
+{"type": "Q5u", "text": "chang trai niu giu ma nguoi yeu van buong tay di theo nguoi khac quen ca cau chia ly qua khu chi con bang gia", "split": "test"}
+{"type": "Q4u", "text": "mot minh trong goc quan mo toi nho ve dem ay ben em chang noi loi tu biet ma lang le ra di", "split": "test"}
+{"type": "Q5u", "text": "vu cat tuong hat ve chang trai uong whisky da moi dem trong quan nghe nhac chillout nghe bai cua green day ma cay mat vi nguoi yeu cu", "split": "test"}
+{"type": "Q4u", "text": "xin cho con duoc nghe loi diu dang an ui con dang chua bao sau muon va nhung nho", "split": "test"}
+{"type": "Q5u", "text": "thanh ca dang le dang len chua ruou nho va banh trang cung mo hoi ngay nang mua ngoai dong xin mua thuan gio hoa tren duong doi", "split": "test"}
+{"type": "Q4u", "text": "dau nam thang troi qua minh van mong o canh nhau nhu thuo ban dau mien la hai dua co nhau", "split": "test"}
+{"type": "Q5u", "text": "vu cat tuong hat ve lan dau gap em do duyen troi sap dat roi cung xay to am doi co troi nguoc thi van tin hai nguoi chung buoc", "split": "test"}
+{"type": "Q4u", "text": "roi sau moi chuyen em cu an long anh se quay ve em hay cat giu trai tim nay trong nguc dung trao ai", "split": "test"}
+{"type": "Q5u", "text": "rhyder hat cho nguoi yeu khi phai tam xa nhau dan em dung khoc dung nghi tieu cuc chang phai cham het hen mot ngay gap lai noi chi co hanh phuc", "split": "test"}
+{"type": "Q4u", "text": "nguoi con gai tai sac ma long dong nguoi hung buon trong truyen kieu ngoi but tai hoa det nen cau hat", "split": "dev"}
+{"type": "Q5u", "text": "bai tru tinh dinh thanh le hat ve que huong ha tinh nui hong linh chua huong tich dat tho cua nguyen du va truyen kieu", "split": "dev"}
+{"type": "Q4u", "text": "anh hay bao rang anh cung co cam giac giong het nhu em", "split": "test"}
+{"type": "Q5u", "text": "co gai tham yeu nguoi ban than ai cung nhan ra tru anh hai nguoi van nhin nhau nhu ban em chi mong anh noi ra truoc nhac phim bao thy hat", "split": "test"}
+{"type": "Q4u", "text": "yeu thi ai cung co luc gian doi nhu bua nay mien la dung dao dong mot hom vang em anh co thay vui", "split": "test"}
+{"type": "Q5u", "text": "song ca nam nu ve hai nguoi uoc gia nhu quen nhau tu truoc ai cung mang ton thuong rieng hoi nhau mot ngay khong gap co buon khong", "split": "test"}
+{"type": "Q4u", "text": "mo duoc toi ha giang lam ban voi gio suong ngam tho cho co cay nghe khen o cho tinh noi trai gai hen ho", "split": "test"}
+{"type": "Q5u", "text": "bai hat ve vung nui cuc bac an thang co uong ruou ngo thom cuoi ngua don nguoi yeu qua cong troi tren cao", "split": "test"}
+{"type": "Q4u", "text": "nha vua to long vuong van nho nhung suot ngay suot dem", "split": "dev"}
+{"type": "Q5u", "text": "can vinh va lee ken hat chuyen vi vua nuoc nam dem long thuong co gai thuong dan di ngang bo be chinh su vi nu cuoi duyen dang", "split": "dev"}
+{"type": "Q4u", "text": "chia tay may ban roi cu niu nhau lai de roi kho gio anh gia vo lanh nhat lam ke xau cho em di", "split": "test"}
+{"type": "Q5u", "text": "bai nhac tre ve doi tinh nhan chia tay roi ma sang nay co gai lai nhan em rat nho anh chang trai khuyen dung quay ve keo lai e che", "split": "test"}
+{"type": "Q4u", "text": "buoi chieu nam do con gio dan toi tro lai vung dat than thuong nghe ai hat ru", "split": "test"}
+{"type": "Q5u", "text": "bai hat tran nghia ve chuyen tro lai vung que co doi thong xanh gia suoi mat va man suong diep khuc la la la la rung dong", "split": "test"}
+{"type": "Q4u", "text": "lam con tim rung len say dam vi da thuong qua sau dam", "split": "test"}
+{"type": "Q5u", "text": "bai nhac hoa loi viet ban nu co gai duoc hoi co yeu sau dam khong va tra loi rang anh trang se thay loi trai tim", "split": "test"}
+{"type": "Q4u", "text": "tuong yeu nhau tron doi nen khong can hon gian roi giong gio cuoc doi lam con thuyen tinh troi mat", "split": "dev"}
+{"type": "Q4u", "text": "thay dang hinh em di ngang chon day de lai noi thuong nho anh giu mai ve sau", "split": "test"}
+{"type": "Q5u", "text": "chang trai tham di theo co gai khap noi xem story cua em moi dem thay minh nhu dua nhoc tap viet tho tang em", "split": "test"}
+{"type": "Q4u", "text": "trai tim hay thoi rung dong vi long toi cung nho anh nhung ngay cu gio o dau", "split": "dev"}
+{"type": "Q5u", "text": "bai mei hat co gai chi cho nguoi yeu cu bao con thuong la se chay that nhanh den om anh mua dong tim lai ngay hom qua o tung goc pho", "split": "dev"}
+{"type": "Q4u", "text": "trao em ban tay de minh dat nhau vuot qua gian kho cung chim dam theo giai dieu cua tinh yeu", "split": "test"}
+{"type": "Q5u", "text": "chang trai thay co gai buoc toi mang theo nang am hua chi yeu mot nguoi chung mai nha den luc gia dung mai ngong trong", "split": "test"}
+{"type": "Q4u", "text": "ca khu phai phong toa cho an toan nghe vay long thay lo lang qua", "split": "test"}
+{"type": "Q5u", "text": "bai hat thoi covid cua bui cong nam sang nao len mang cung thay them ca benh keu goi moi nguoi o yen trong nha va uong vitamin c tang de khang", "split": "test"}
+{"type": "Q4u", "text": "em lang quen cuoc tinh xua phao cuoi roi day noi bau troi ta tung mo", "split": "dev"}
+{"type": "Q5u", "text": "nguoi con trai dung nhin nguoi yeu cu len xe ve nha chong xot xa vi nang quen het loi hua chuyen tinh nhu coi bien dau", "split": "dev"}
+{"type": "Q4u", "text": "con dau dam nhan minh la nguoi gat lua chi xin duoc thuong yeu chon ruong dong con xanh", "split": "test"}
+{"type": "Q5u", "text": "bai thanh ca thieu nhi thanh the nguoi phu trach doan hoi chua minh la ai thuong tuoi tho ngay lam khi hoa tre con nhay mua voi cac em", "split": "test"}
+{"type": "Q4u", "text": "di khap moi mien anh van nho ha tinh que em manh dat nghia tinh sau nang", "split": "test"}
+{"type": "Q5u", "text": "bai que huong ve mien dat co dong song la va bien thien cam nghe cau dan ca lai nho nguoi con gai quen ngay ay", "split": "test"}
+{"type": "Q4u", "text": "nay co be dang yeu tinh yeu da den voi moi nguoi loi ca hoa nhip va nu hon dau con van vuong", "split": "test"}
+{"type": "Q5u", "text": "bai nhac xuan vui cua nhom may trang chieu xuan ve mung co be them mot tuoi anh mat nu cuoi hat la la la don mua xuan tuyet voi", "split": "test"}
+{"type": "Q4u", "text": "anh nhat lai nhung manh vun cua danh phan da mat mot cau chuc mung em la tram ngan lan don dau", "split": "test"}
+{"type": "Q5u", "text": "chang trai nhin nguoi cu hanh phuc ben nguoi tram nam dan vat bao nam chang the quen long roi nhu to tam ma van phai chuc phuc", "split": "test"}
+{"type": "Q4u", "text": "bao dem khoc mai mang nang noi dau tren doi vai chi vi lo thuong lam mot co gai", "split": "test"}
+{"type": "Q5u", "text": "chang trai hy sinh ca tuong lai cho nguoi yeu ma bi bo roi tinh yeu dau phai tro choi de treu dua tuong ben doi hoa ra chi la tram nghi", "split": "test"}
+{"type": "Q4u", "text": "bay gio em o canh nguoi ta co hanh phuc khong da lau lam hai dua chang noi chuyen", "split": "test"}
+{"type": "Q5u", "text": "bai ballad cua sean ve nguoi dan ong bi ban doi buong tay sau bao nam dem dem nhin thoi gian troi nho ky niem hoi lam the nao giu duoc nguoi minh yeu", "split": "test"}
+{"type": "Q4u", "text": "chieu mua o hue khong biet nguoi nao da quen nguoi nao giot mua cu roi mai lam long buon them", "split": "test"}
+{"type": "Q5u", "text": "nhac xua nho thuo quen nhau duoi chan chua thien mu qua cho dong ba la me bay song huong day nuoc ma nguoi bien biet", "split": "test"}
+{"type": "Q4u", "text": "chuyen tinh minh tung em nhu lan gio nhe anh dam mua gio bao dem tim den em ma nay em da quen", "split": "test"}
+{"type": "Q5u", "text": "bai nhac tre buon cua hao thien tinh doi ta gio chia hai huong khong sac khong huong anh nen chua cay mot minh lang im", "split": "test"}
+{"type": "Q4u", "text": "lich su chang bao gio nhat phai ma minh van nhin toi mai sau dat nuoc hien ngang ba mien mot long", "split": "test"}
+{"type": "Q5u", "text": "bai hat yeu nuoc ve dat nuoc ngan nam chong giac mau xuong cha ong giu doc lap nguoi me co con hy sinh nay bac nam lien mot dai", "split": "test"}
+{"type": "Q4u", "text": "tu ay em hoa thanh bong hoa hong buoi som no bung luc chieu ta cho con gio vo thuong", "split": "test"}
+{"type": "Q4u", "text": "con ga ma dam bat ca chim dieu ca chet ret con nuot ran", "split": "test"}
+{"type": "Q5u", "text": "ban rock phoi lai bai hat xam cua nghe nhan ha thi cau ke chuyen nguoc doi nhu chuot can co meo chau chau duoi da ga oc can co vit", "split": "test"}
+{"type": "Q4u", "text": "cua cai voi tieng tam rot cuoc cung chi la giac mo hao ban co hay khong", "split": "test"}
+{"type": "Q5u", "text": "bai che loi theo giai dieu just give me a reason cua pink ke chuyen vo chong giau co dua nhau ra toa tien nhieu ma tinh nghia bao nam cung het", "split": "test"}
+{"type": "Q4u", "text": "cam nhan tinh thuong noi trai tim anh ngay mai minh da cach xa", "split": "test"}
+{"type": "Q5u", "text": "chang trai sap di xu nguoi nguoi yeu nep vao nguc khoc uot ao den khi xa roi moi biet minh yeu co ay that long", "split": "test"}
+{"type": "Q4u", "text": "loi hua mua he chi hai dua minh hay buoi chieu ta con co nhau ma nay anh da voi bo di", "split": "test"}
+{"type": "Q5u", "text": "jang mi hat nhac hoa loi viet co gai tu hoi nguoi tang minh doa hoa co con van vuong mong cho den mua he de duoc ben anh lan nua", "split": "test"}
+{"type": "Q5u", "text": "ngoc lan hat nhac tran thien thanh co gai the bo nhung cuoc tinh la loi thoi khong gap lai de khoi tiec thuong giau moi tinh vao di vang", "split": "dev"}
+{"type": "Q5u", "text": "hong nhung hat nhac trinh di tim nguoi con gai tren non ngan nhu tim mot doa hoa dep nhat nu cuoi mong manh tim trong suong hong chieu bac menh", "split": "test"}
+{"type": "Q4u", "text": "cho anh hay em con thuong anh hay khong tu luc khong co anh da ai thuong em that chua", "split": "test"}
+{"type": "Q5u", "text": "chang trai uoc doi minh la mot bo phim de quay lai sua sai muon dong vai phan dien deo mat na cho co gai nem noi dau anh tung chiu", "split": "test"}
+{"type": "Q4u", "text": "cu ngoi yen doi mot nguoi tu te cho minh tua vai lay canh tay lam goi de ngu say toi sang", "split": "test"}
+{"type": "Q5u", "text": "bai nhac tre cua eira va joke d ke du kieu nguoi di tim tinh yeu nguoi mo kim day be co gai len chua xin que cau duyen anh ba muoi tuoi bi me duoi khoi nha", "split": "test"}
+{"type": "Q4u", "text": "mau doi mat ruc ro biet bao mot anh nhin co quanh", "split": "test"}
+{"type": "Q5u", "text": "bai nhac tru tinh cua nam vinh va thuy duong ve nguoi dan ba khoc rung cay run run phat sang mua xuan chang cuop di gi chi them nep tuoi", "split": "test"}
+{"type": "Q4u", "text": "mang den su am em yen binh va niem hy vong em lang le om anh tu phia sau ma chang noi gi", "split": "dev"}
+{"type": "Q5u", "text": "chang trai nho ngay co gai den mang ca the gioi cho anh gio em quay lung buoc di chang ban tam anh giau nuoc mat trong long nhin em roi xa", "split": "dev"}
+{"type": "Q4u", "text": "di lam ke cuop thi rot cuoc chi vao tu tinh cong tinh tru roi tinh nhan", "split": "test"}
+{"type": "Q5u", "text": "bai che cua quoc tri ve anh chang vi yeu ma sa vao ma tuy di giat do lay tien chich hut roi bi bat vao kham chi hoa nguoi yeu quay mat bo di", "split": "test"}
+{"type": "Q4u", "text": "bao nhieu nam thang cuoc doi cu tho o ngam thoi gian ngay qua ngay lang tham troi di", "split": "test"}
+{"type": "Q5u", "text": "bai tru tinh ve buoi sang mua xuan nang ban mai lung linh suong dong ben them chim hot tren canh doi nhu dong song troi mai", "split": "test"}
+{"type": "Q4u", "text": "du o xa hay o gan cu nghe tieng hat la moi nguoi keo toi hoa cung dam dong say me hat vang", "split": "test"}
+{"type": "Q5u", "text": "ban loi viet cua bai asereje do las ketchup hat goc co gai say sua nhay theo chang trai vua dan vua hat diep khuc y la bai la", "split": "test"}
+{"type": "Q4u", "text": "roi trach anh khung qua chi biet om em mai thoi em co phai may anh khong", "split": "test"}
+{"type": "Q5u", "text": "bai indie cua to chang trai muon ngoi nghe lofi cung em cho em dao pho khong can xe sh hay do gucci loi hat chen tieng anh", "split": "test"}
+{"type": "Q4u", "text": "ngam em xem o em co mai am anh hang mong co em cuoc doi hoa tho chi mong mot minh anh xung voi em", "split": "test"}
+{"type": "Q5u", "text": "nhac tre cua onlyc chang trai hoi co gai dieu gi khien em vui mo giau sang hay yeu tu phut dau chi choi qua duong hay yeu lau dai em nhu kim cuong con anh lai ferrari", "split": "test"}
+{"type": "Q4u", "text": "anh danh de em di mang theo moi thu con lai minh anh voi ban than", "split": "dev"}
+{"type": "Q5u", "text": "ban ballad ve chang trai buon chang can ly do neu ky uc quay ve se de noi nho troi qua nhu con gio quen khong niu keo cung khong xua di", "split": "dev"}
+{"type": "Q4u", "text": "cuoc doi thay doi tinh yeu sao chua xot qua nguoi thuong bay gio mo mit nhu may khoi", "split": "test"}
+{"type": "Q5u", "text": "bai nhac tre buon ve dem xua hai nguoi sanh vai duoi ngan vi sao gio co gai gian doi bo di vui buoc ben nguoi khac chang trai o lai chim trong nho thuong", "split": "test"}
+{"type": "Q4u", "text": "nghe thay tieng chan em quay lai sao co em trong cuoc doi roi ma", "split": "test"}
+{"type": "Q5u", "text": "chang trai moi met ngoi ben con pho phu reu bao nam van nho nguoi yeu da ra di lanh lung mot minh giua can phong day ky niem man nong", "split": "test"}
+{"type": "Q4u", "text": "lay chua nhan tu o chon nay con goi ten ngai chua cua yeu thuong xin lang tai nghe con khan xin", "split": "test"}
+{"type": "Q5u", "text": "bai thanh ca tin lanh cua abraham pham ministry xin chua giau on cham gian va thu tha diu con buoc di trong cong chinh dung de con lac loi toi tam", "split": "test"}
+{"type": "Q4u", "text": "tieng hat than thuoc van con do du cuoc doi mua nang thay doi", "split": "test"}
+{"type": "Q5u", "text": "nhac tru tinh ve nguoi ca si trai bao nang mua mau ao phai theo nam thang ma khan gia van say me nghiep hat buon vui gop cho doi con phan minh chang voi", "split": "test"}
+{"type": "Q4u", "text": "tu khi con bo ngo xa la cho toi luc dung nen mai nha", "split": "test"}
+{"type": "Q5u", "text": "nhac folk cua thanh luke ve doi vo chong quen nhau gan ba muoi nam gio da nam muoi ba tuoi van nam tay nhau con cai lon khon di lap nghiep", "split": "test"}
+{"type": "Q4u", "text": "anh dang tay om em that chat that lau nhu nhung ngay dau tien chang bao gio phai", "split": "test"}
+{"type": "Q5u", "text": "bai nhac tre cua phuc truong hai nguoi di ben nhau ma lanh lung chang noi loi nao khong tin tinh minh den luc phai tan hua ngay mai luon co anh ben em", "split": "test"}
+{"type": "Q4u", "text": "chang can biet ngay mai anh con hay mat cu giu lay hom nay khi em nam trong tay anh", "split": "test"}
+{"type": "Q5u", "text": "chang trai mong nguoi yeu noi ra noi dau thay vi om mot minh cu om anh that nhieu dem nay vi sap phai di xa khong con ai lau nuoc mat cho em", "split": "test"}
+{"type": "Q4u", "text": "dan nguoi buoc vao nuoc thien dang xin cac thanh tu dao tren coi cao", "split": "test"}
+{"type": "Q5u", "text": "thanh ca tien biet nguoi qua doi xin cac thien than va thanh tu dao dan duong ve thanh do nuong than trong vong tay ap bra ham nghi yen trong chua", "split": "test"}
+{"type": "Q4u", "text": "yeu nhau roi chia tay dau de bao quen ma quen lien xoa sach tung khoanh khac nhung nam thang doi ta co bao ky niem", "split": "test"}
+{"type": "Q5u", "text": "chang trai cho di rat nhieu ma nhan lai tay trang nguoi yeu voi buong tay khong mot ly do du van con yeu tu trach minh qua ngu ngo", "split": "test"}
+{"type": "Q4u", "text": "can nha xua da doi sang chu moi gia dinh ly tan cung van menh dat nuoc", "split": "test"}
+{"type": "Q5u", "text": "bai hat cua hoang kao ve cuoc doi nhac si truc phuong sau 75 vuot bien ba lan deu bi bat ve nha mat gia dinh ly tan cuoi doi phai nho ban be cho bua com", "split": "test"}

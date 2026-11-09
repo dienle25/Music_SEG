@@ -1,0 +1,11 @@
+ViSongSearch web demo
+
+Giao diện trang tìm kiếm chỉnh từ typesense/showcase-songs-search
+  https://github.com/typesense/showcase-songs-search
+  Copyright Typesense, Inc. Apache License 2.0 (static/vendor/LICENSE-showcase-songs-search.txt)
+  Đã thay đổi: bỏ Typesense adapter, jQuery, Google Analytics; searchClient gọi API của demo;
+  thêm bộ lọc, bảng giải thích, giao diện tiếng Việt, màu và phông chữ cho tiếng Việt.
+
+Thư viện đi kèm (static/vendor):
+  InstantSearch.js 4.75.7, Copyright Algolia, MIT License (LICENSE-instantsearch.txt)
+  Bootstrap 5.3.3, Copyright The Bootstrap Authors, MIT License (LICENSE-bootstrap.txt)

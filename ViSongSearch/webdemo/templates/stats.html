@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block title %}Thống kê, PageRank và SEO | ViSongSearch{% endblock %}
+{% block body %}
+{% macro n(x) %}{{ "{:,}".format(x).replace(",", ".") }}{% endmacro %}
+<div class="container mt-4 mb-5">
+  <h1 class="font-serif h2">Thống kê, PageRank và SEO</h1>
+  <p class="hero-sub small">Số liệu ghi trên máy bạn khi dùng demo (nhật ký truy vấn, lượt nhấp), cộng với đồ thị liên kết đã thu thập trong file .db.</p>
+
+  <h2 class="h4 section-title" id="log">Nhật ký truy vấn và lượt nhấp <small>SEG 6, SEG 9</small></h2>
+  <div class="row g-3 mb-3">
+    <div class="col-6 col-md-2"><div class="kpi"><div class="v">{{ an.queries }}</div><div class="l">truy vấn sau làm sạch ({{ an.raw_queries }} thô)</div></div></div>
+    <div class="col-6 col-md-2"><div class="kpi"><div class="v">{{ an.sessions }}</div><div class="l">phiên</div></div></div>
+    <div class="col-6 col-md-2"><div class="kpi"><div class="v">{{ an.clicks }}</div><div class="l">lượt nhấp</div></div></div>
+    <div class="col-6 col-md-2"><div class="kpi"><div class="v">{{ (100 * an.abandon) | round | int }}%</div><div class="l">truy vấn không nhấp</div></div></div>
+    <div class="col-6 col-md-2"><div class="kpi"><div class="v">{{ "%.3f" | format(an.click_mrr) }}</div><div class="l">MRR theo lượt nhấp đầu</div></div></div>
+    <div class="col-6 col-md-2"><div class="kpi"><div class="v">{{ an.p50_ms | round | int }} ms</div><div class="l">thời gian trung vị (p95 {{ an.p95_ms | round | int }} ms)</div></div></div>
+  </div>
+  <p class="small text-muted">Làm sạch nhật ký: khi người dùng gõ dần ("em", "em ơi", "em ơi lên phố"), các truy vấn là tiền tố của truy vấn kế tiếp
+    trong vòng 8 giây được bỏ, chỉ giữ truy vấn cuối.</p>
+  <div class="row">
+    <div class="col-lg-6">
+      <h3 class="h6">Tỉ lệ nhấp (CTR) theo vị trí kết quả</h3>
+      {{ bar_chart(an.ctr | map(attribute="rank") | list, an.ctr | map(attribute="ctr") | list, 520, 210, "{:.2f}", "vị trí", "CTR", "CTR theo vị trí") }}
+      <details class="small"><summary>Xem bảng số</summary>
+        <table class="table table-sm data mt-1"><thead><tr><th>Vị trí</th>{% for r in an.ctr %}<th class="num">{{ r.rank }}</th>{% endfor %}</tr></thead>
+        <tbody><tr><td>Lượt nhấp</td>{% for r in an.ctr %}<td class="num">{{ r.clicks }}</td>{% endfor %}</tr>
+        <tr><td>CTR</td>{% for r in an.ctr %}<td class="num">{{ "%.2f" | format(r.ctr) }}</td>{% endfor %}</tr></tbody></table>
+      </details>
+    </div>
+    <div class="col-lg-3">
+      <h3 class="h6">Truy vấn hay gặp</h3>
+      {% for q, c in an.top %}<div class="small"><a href="/?q={{ q | urlencode }}">{{ q }}</a> <span class="text-muted">×{{ c }}</span></div>{% else %}<div class="small text-muted">Chưa có. Hãy thử vài truy vấn ở trang tìm kiếm.</div>{% endfor %}
+      {% if an.types %}<div class="small mt-2 text-muted">Theo loại: {% for t, c in an.types.items() %}{{ t }} {{ c }}{% if not loop.last %}, {% endif %}{% endfor %}</div>{% endif %}
+    </div>
+    <div class="col-lg-3">
+      <h3 class="h6">Truy vấn không có kết quả</h3>
+      {% for q, c in an.zero %}<div class="small">{{ q }} <span class="text-muted">×{{ c }}</span></div>{% else %}<div class="small text-muted">Không có.</div>{% endfor %}
+    </div>
+  </div>
+
+  <h2 class="h4 section-title" id="interleave">So sánh xen kẽ (interleaving) <small>SEG 9</small></h2>
+  <p class="small mb-1">Chọn mô hình "So sánh xen kẽ" ở trang tìm kiếm: kết quả của ViSongSearch (A) và BM25 (B) được trộn kiểu team-draft,
+    bên nào được nhấp nhiều hơn trong một truy vấn thì thắng truy vấn đó.</p>
+  <div class="small">{% if wins %}{% for k, v in wins.items() %}<span class="badge badge-soft">{{ {"A": "ViSongSearch thắng", "B": "BM25 thắng", "hòa": "hòa", "không nhấp": "không nhấp"}.get(k, k) }}: {{ v }}</span> {% endfor %}
+    {% else %}<span class="text-muted">Chưa có truy vấn nào ở chế độ xen kẽ.</span>{% endif %}
+    <a class="ms-2" href="/?q={{ examples.Q1 | urlencode }}&m=interleave">Thử ngay</a></div>
+
+  <h2 class="h4 section-title" id="pagerank">Đồ thị liên kết và PageRank <small>SEG 4, HITS ở SEG 10</small></h2>
+  <div class="row g-3 mb-2">
+    <div class="col-6 col-md-3"><div class="kpi"><div class="v">{{ n(gstats.pages) }}</div><div class="l">trang</div></div></div>
+    <div class="col-6 col-md-3"><div class="kpi"><div class="v">{{ n(gstats.edges) }}</div><div class="l">liên kết</div></div></div>
+    <div class="col-6 col-md-3"><div class="kpi"><div class="v">{{ n(gstats.dangling) }}</div><div class="l">trang cụt (không liên kết ra)</div></div></div>
+    <div class="col-6 col-md-3"><div class="kpi"><div class="v">{{ gstats.iterations }}</div><div class="l">vòng lặp đến khi hội tụ</div></div></div>
+  </div>
+  <div class="row">
+    <div class="col-lg-5">
+      {{ line_chart(conv | map(attribute=0) | list, [("log10 thay đổi", conv | map(attribute=1) | list)], 460, 220, None, None,
+                    "{}", "{:.1f}", "vòng lặp", "log10 tổng thay đổi", "Hội tụ của PageRank") }}
+      <p class="small text-muted">Lặp lũy thừa với hệ số tắt dần 0,85; điểm của trang cụt được chia đều cho mọi trang.</p>
+    </div>
+    <div class="col-lg-7">
+      <table class="table table-sm data"><thead><tr><th>Trang có PageRank cao nhất</th><th class="num">PageRank</th><th class="num">vào</th><th class="num">ra</th></tr></thead><tbody>
+      {% for p in top_pr %}<tr><td><a href="{{ p.url }}" target="_blank" rel="noopener nofollow">{{ p.title[:60] }}</a></td><td class="num">{{ "%.5f" | format(p.pagerank) }}</td><td class="num">{{ p["in"] }}</td><td class="num">{{ p.out }}</td></tr>{% endfor %}
+      </tbody></table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6"><h3 class="h6">Authority cao (HITS)</h3>
+      {% for p in top_auth %}<div class="small">{{ p.title[:60] }} <span class="text-muted">{{ "%.3f" | format(p.authority) }}</span></div>{% endfor %}</div>
+    <div class="col-md-6"><h3 class="h6">Hub cao (HITS)</h3>
+      {% for p in top_hub %}<div class="small">{{ p.title[:60] }} <span class="text-muted">{{ "%.3f" | format(p.hub) }}</span></div>{% endfor %}</div>
+  </div>
+
+  <h2 class="h4 section-title" id="community">Cộng đồng ca sĩ hợp tác <small>lan truyền nhãn trên đồ thị song ca; SEG 11</small></h2>
+  <p class="small text-muted">{{ comms.n_artists }} ca sĩ có song ca, {{ comms.n_edges }} cặp hợp tác.</p>
+  <div class="row">
+    {% for g in comms.communities[:8] %}
+    <div class="col-md-6 col-lg-3 mb-2"><div class="panel h-100 small"><b>Nhóm {{ loop.index }}</b> ({{ g | length }} ca sĩ)<div>{{ g[:8] | join(", ") }}{% if g | length > 8 %}…{% endif %}</div></div></div>
+    {% endfor %}
+  </div>
+
+  <h2 class="h4 section-title" id="relations">Quan hệ trích từ siêu dữ liệu <small>bộ ba (chủ thể, quan hệ, đối tượng); TMG 14</small></h2>
+  <div class="small">{% for r, c in rel.items() %}<span class="badge badge-soft">{{ r }}: {{ n(c) }}</span> {% endfor %}</div>
+
+  <h2 class="h4 section-title" id="seo">Chấm SEO {{ audits | length }} trang bài hát ngẫu nhiên <small>SEG 8</small></h2>
+  <div class="row">
+    <div class="col-lg-6">
+      <table class="table table-sm data"><thead><tr><th>Tiêu chí</th><th class="num">Số trang đạt</th></tr></thead><tbody>
+      {% for name, v in checks.items() %}<tr><td>{{ name }}</td><td class="num">{{ v[0] }}/{{ v[1] }}</td></tr>{% endfor %}
+      </tbody></table>
+    </div>
+    <div class="col-lg-6">
+      <table class="table table-sm data"><thead><tr><th>Trang</th><th class="num">Điểm</th></tr></thead><tbody>
+      {% for s, a in audits[:12] %}<tr><td><a href="/bai-hat/{{ s.doc_id }}-{{ slug(s.title) }}#seo">{{ s.title }}</a></td><td class="num">{{ a.score }}</td></tr>{% endfor %}
+      </tbody></table>
+    </div>
+  </div>
+  <p class="small text-muted">Trang bài hát có title, meta description, một thẻ H1, URL dạng slug, canonical, Open Graph, JSON-LD schema.org;
+    máy chủ có <a href="/sitemap.xml">sitemap.xml</a> và <a href="/robots.txt">robots.txt</a>. Tiêu chí "liên kết trỏ vào" lấy từ đồ thị liên kết thật.</p>
+
+  <h2 class="h4 section-title" id="build">Các bước dựng bộ máy tìm kiếm <small>kiến trúc máy tìm kiếm; SEG 2</small></h2>
+  <table class="table table-sm data"><thead><tr><th>Bước</th><th class="num">Giây</th></tr></thead><tbody>
+  {% for k, v in timing.items() %}<tr><td>{{ k }}</td><td class="num">{{ v }}</td></tr>{% endfor %}
+  </tbody></table>
+  <p class="small text-muted">Dựng lúc {{ eng.built_at }} trong {{ eng.build_seconds }} giây; các lần sau nạp lại từ bộ nhớ đệm.
+    Chỉ mục có vị trí: {{ n(comp.terms) }} từ, {{ n(comp.postings) }} mục, nén v-byte {{ comp.ratio_vbyte }}×.</p>
+</div>
+{% endblock %}

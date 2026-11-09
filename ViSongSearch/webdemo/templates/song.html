@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% block title %}{{ page_title }}{% endblock %}
+{% block meta %}
+<meta name="description" content="{{ desc }}">
+<link rel="canonical" href="{{ url }}">
+<meta property="og:type" content="music.song">
+<meta property="og:site_name" content="ViSongSearch">
+<meta property="og:title" content="{{ page_title }}">
+<meta property="og:description" content="{{ desc }}">
+<meta property="og:url" content="{{ url }}">
+<meta property="og:locale" content="vi_VN">
+<script type="application/ld+json">{{ jsonld | safe }}</script>
+{% endblock %}
+{% block body %}
+{% set mood_cls = "mood-vui" if mood.label == "vui" else ("mood-buon" if mood.label == "buồn" else "mood-tt") %}
+<div class="container mt-3 mb-5">
+  <nav aria-label="breadcrumb" class="small">
+    <ol class="breadcrumb mb-2">
+      <li class="breadcrumb-item"><a href="/">Tìm kiếm</a></li>
+      {% for a in artists[:1] %}<li class="breadcrumb-item"><a href="/?q={{ a | urlencode }}">{{ a }}</a></li>{% endfor %}
+      <li class="breadcrumb-item active" aria-current="page">{{ s.title }}</li>
+    </ol>
+  </nav>
+  <div class="row">
+    <div class="col-lg-7">
+      <h1 class="font-serif mb-1">{{ s.title }}</h1>
+      <div class="mb-2">Trình bày:
+        {% for a in artists %}<a href="/?q={{ a | urlencode }}" class="clickable-search-term">{{ a }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+        {% if s.extra.get("album") and s.extra.get("album") not in ("None", "") %} · Album: {{ s.extra.album }}{% endif %}
+      </div>
+      <div class="mb-3">
+        <span class="badge {{ mood_cls }}">tâm trạng: {{ mood.label }}</span>
+        {% if topic %}<span class="badge badge-soft">chủ đề: {{ topic }}</span>{% endif %}
+        {% for t in time_tags[:3] %}<span class="badge badge-soft">{{ t }}</span>{% endfor %}
+        <span class="badge badge-soft">nguồn: {{ s.source }}</span>
+      </div>
+      <h2 class="h6 text-muted mb-1">Trích {{ excerpt|length }} / {{ n_lines }} dòng lời</h2>
+      <div class="lyrics-excerpt mb-2">{{ excerpt | join("\n") }}</div>
+      <div class="small mb-4">Lời đầy đủ ở <a href="{{ s.url }}" target="_blank" rel="noopener nofollow">
+        <img src="/static/img/generic_song_link_icon.svg" alt="Liên kết trang gốc" height="12"> trang gốc ({{ s.source }})</a>.
+        Demo chỉ hiện một đoạn để tôn trọng bản quyền lời bài hát.</div>
+
+      {% if not light %}
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="panel h-100">
+            <h6>Cảm xúc của lời <span class="course tmg">TMG 17</span><span class="course tmg">TMG 03</span></h6>
+            <div class="small">Từ điển cảm xúc (có xử lý phủ định, từ nhấn mạnh): điểm <b>{{ mood.score }}</b> → <b>{{ mood.label }}</b>,
+              {{ mood.lines_with_hits }}/{{ mood.lines }} dòng có từ cảm xúc.</div>
+            {% if mood.top_pos %}<div class="small">Từ tích cực: {{ mood.top_pos | join(", ") }}</div>{% endif %}
+            {% if mood.top_neg %}<div class="small">Từ tiêu cực: {{ mood.top_neg | join(", ") }}</div>{% endif %}
+            {% if mood.connotation %}<div class="small">Hàm ý (connotation): {% for w, c in mood.connotation.items() %}{{ w }} ×{{ c }}{% if not loop.last %}, {% endif %}{% endfor %}</div>{% endif %}
+            {% if emotion %}
+            <div class="small mt-2">Cảm xúc chi tiết (số từ khớp):</div>
+            {% set emax = emotion.values() | max %}
+            {% for e, c in emotion.items() %}
+            <div class="small"><span class="d-inline-block" style="width:5.5em">{{ e }}</span><span class="pbar" style="width:{{ (110 * c / emax) | round | int }}px"></span>{{ c }}</div>
+            {% endfor %}
+            {% endif %}
+            {% if nb %}
+            <div class="small mt-2">Naive Bayes (học từ nhãn yếu) đoán từng dòng:
+              {% for c, p in nb.items() %}{{ (100 * p) | round | int }}% dòng {{ c }}{% if not loop.last %}, {% endif %}{% endfor %}</div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="panel h-100">
+            <h6>Thời gian trong lời <span class="course tmg">TMG 15</span></h6>
+            {% if timeline.order %}
+            <div class="small">Mạch thời gian: <b>{{ timeline.order | join(" → ") }}</b></div>
+            {% for t, ex in timeline.examples.items() if ex %}
+            <div class="small text-muted">{{ t }}: “{{ ex[0] }}”</div>
+            {% endfor %}
+            {% else %}<div class="small text-muted">Không thấy dấu hiệu thì (đã, sẽ, đang, từng…).</div>{% endif %}
+            {% if timeline.timex %}
+            <div class="small mt-2">Biểu thức thời gian (kiểu TIMEX3):</div>
+            <div class="small">{% for x in timeline.timex[:8] %}<span class="badge badge-soft">{{ x.type }}: {{ x.text }}{% if x.count > 1 %} ×{{ x.count }}{% endif %}</span> {% endfor %}</div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="panel h-100">
+            <h6>Thực thể, quan hệ, sự kiện <span class="course tmg">TMG 14</span></h6>
+            {% if entities %}<div class="small">Thực thể: {% for e in entities %}<span class="badge badge-soft">{{ e.type }}: {{ e.text }}</span> {% endfor %}</div>{% endif %}
+            {% if relations %}
+            <div class="small mt-1">Quan hệ theo mẫu:</div>
+            {% for r in relations[:5] %}<div class="small mono">({{ r.subject }}, {{ r.relation }}, {{ r.object }})</div>{% endfor %}
+            {% endif %}
+            {% if events.counts %}
+            <div class="small mt-1">Sự kiện: {% for t, c in events.counts.items() %}{{ t }} ×{{ c }}{% if not loop.last %}, {% endif %}{% endfor %}</div>
+            {% for e in events.examples[:3] %}<div class="small text-muted">{{ e.type }} “{{ e.trigger }}”{% if e.agent %}, ai: {{ e.agent }}{% endif %}{% if e.place %}, ở: {{ e.place }}{% endif %}{% if e.time %}, khi: {{ e.time }}{% endif %}{% if e.negated %} (phủ định){% endif %}</div>{% endfor %}
+            {% endif %}
+            {% if not entities and not relations and not events.counts %}<div class="small text-muted">Không trích được gì từ bài này.</div>{% endif %}
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="panel h-100">
+            <h6>Từ khóa và chủ đề <span class="course">SEG 7</span><span class="course tmg">TMG 06</span></h6>
+            <div class="small">Từ khóa tf-idf: {{ keywords | join(", ") }}</div>
+            <div class="small mt-1">Chủ đề (k-means trên vector LSA): <b>{{ topic }}</b></div>
+            <div class="small mt-1">Thẻ tự gán: {% for t in auto_tags %}<a class="badge badge-soft" href="/the?t={{ t | urlencode }}">{{ t }}</a> {% endfor %}</div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+
+    <div class="col-lg-5 mt-4 mt-lg-0">
+      {% if not light %}
+      <div class="panel mb-3">
+        <h6>Bài tương tự <span class="course">SEG 7</span><span class="course tmg">TMG 05</span></h6>
+        <div class="small text-muted mb-1">Cosine trên vector LSA (khác cụm bản trùng)</div>
+        {% for x, sc in similar %}
+        <div class="small"><a href="/bai-hat/{{ x.doc_id }}-{{ slug(x.title) }}">{{ x.title }}</a> · {{ x.artist }} <span class="text-muted">({{ sc }})</span></div>
+        {% endfor %}
+      </div>
+      <div class="panel mb-3">
+        <h6>Người nghe bài này cũng mở <span class="course">SEG 11</span></h6>
+        {% if coclick %}
+        {% for x, c in coclick %}<div class="small"><a href="/bai-hat/{{ x.doc_id }}-{{ slug(x.title) }}">{{ x.title }}</a> · {{ x.artist }} <span class="text-muted">({{ c }} phiên)</span></div>{% endfor %}
+        {% else %}<div class="small text-muted">Chưa có đủ lượt nhấp. Lọc cộng tác dùng nhật ký nhấp chuột: bài được mở cùng phiên với bài này.</div>{% endif %}
+      </div>
+      {% if versions %}
+      <div class="panel mb-3">
+        <h6>Các bản khác của bài <span class="course">SEG 3</span></h6>
+        <div class="small text-muted mb-1">Gom bằng MinHash LSH trên 5-gram âm tiết, Jaccard ≥ 0,5</div>
+        {% for x in versions %}<div class="small"><a href="/bai-hat/{{ x.doc_id }}-{{ slug(x.title) }}">{{ x.title }}</a> · {{ x.artist }} · {{ x.source }}</div>{% endfor %}
+      </div>
+      {% endif %}
+      <div class="panel mb-3" id="the">
+        <h6>Thẻ của người dùng <span class="course">SEG 11</span></h6>
+        <div class="mb-2">{% for t, c in tags %}<a class="badge badge-soft" href="/the?t={{ t | urlencode }}">{{ t }} ×{{ c }}</a> {% else %}<span class="small text-muted">Chưa có thẻ nào.</span>{% endfor %}</div>
+        <form method="post" action="/api/tag" class="d-flex gap-2">
+          <input type="hidden" name="doc_id" value="{{ d }}">
+          <input name="tag" class="form-control form-control-sm" maxlength="30" placeholder="Thêm thẻ, ví dụ: chia tay" aria-label="Thẻ mới" required>
+          <button class="btn btn-primary btn-sm text-nowrap" type="submit">Gắn thẻ</button>
+        </form>
+      </div>
+      <div class="panel mb-3">
+        <h6>Liên kết <span class="course">SEG 4</span></h6>
+        <div class="small">{{ inlinks }} trang trỏ vào; PageRank top {{ [1, 100 - pagerank_pct] | max }}% trong {{ summary().pages }} trang đã thu thập.</div>
+      </div>
+      {% endif %}
+      <!--SEO_AUDIT-->
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{
+  "_mo_ta": "Từ vựng cho văn phạm truy vấn (TMG 11-13) và từ dừng (SEG 4.3). Mỗi nhóm là một ký hiệu tiền kết thúc (preterminal).",
+  "V_REQ": ["tìm", "tìm giúp", "tìm cho tôi", "kiếm", "cho tôi nghe", "mở", "phát", "nghe", "cho mình", "tìm giùm", "giúp tôi tìm", "tôi muốn nghe", "muốn nghe", "mình muốn tìm", "tôi muốn tìm", "tìm lại"],
+  "N_SONG": ["bài hát", "bài", "ca khúc", "nhạc", "bản nhạc", "bài nhạc", "bản", "track", "bài ca", "bài đó", "bài này", "bài kia", "cái bài"],
+  "N_SINGER": ["ca sĩ", "nhạc sĩ", "rapper", "nhóm", "ban nhạc"],
+  "P_BY": ["của", "do", "bởi", "mà"],
+  "V_SING": ["hát", "trình bày", "thể hiện", "sáng tác", "viết", "cover", "rap"],
+  "P_HAS": ["có câu", "có lời", "có đoạn", "lời là", "có câu hát", "có lời là", "có đoạn là", "lời bài hát", "lời có", "câu hát", "có chữ", "có câu là"],
+  "P_ABOUT": ["về", "nói về", "kể về", "viết về", "hát về", "chủ đề", "chủ đề về"],
+  "P_IN": ["vào", "trong", "mỗi", "lúc", "khi", "ngày"],
+  "ADV": ["rất", "hơi", "khá", "thật", "quá", "cực", "siêu"],
+  "WH": ["gì", "nào", "nào đó", "gì đó", "tên gì", "là gì"],
+  "HEDGE": ["hình như", "hình như là", "nhớ mang máng", "mang máng", "tôi nhớ", "mình nhớ", "tôi nhớ là", "mình nhớ là", "nhớ là", "có vẻ", "chắc là", "đại khái", "tôi nghĩ", "mình nghĩ"],
+  "MOOD": {"buồn": "buồn", "sầu": "buồn", "tâm trạng": "buồn", "da diết": "buồn", "thất tình": "buồn", "chia tay": "buồn", "vui": "vui", "vui vẻ": "vui", "sôi động": "vui", "tươi vui": "vui", "hạnh phúc": "vui", "quẩy": "vui", "bắt tai": "vui", "nhẹ nhàng": "trung tính", "lãng mạn": "vui", "ngọt ngào": "vui", "chill": "trung tính", "thư giãn": "trung tính"},
+  "STOP": ["và", "là", "của", "có", "cho", "một", "những", "các", "thì", "mà", "này", "đó", "ở", "với", "như", "được", "đã", "sẽ", "đang", "rồi", "cũng", "lại", "nữa", "vẫn", "còn", "ơi", "à", "ừ", "nhé", "nhỉ", "đi", "ra", "vào", "lên", "xuống", "ta", "anh", "em", "tôi", "mình", "người", "ai", "gì", "sao", "nào", "khi", "bao", "đâu", "thế", "vậy", "rằng", "nhưng", "nếu", "vì", "nên", "để", "từ", "trong", "ngoài", "trên", "dưới", "bên", "theo", "về", "tới", "đến", "hay", "hoặc", "chỉ", "cả", "mỗi", "từng", "thật", "rất", "quá", "lắm", "không", "chẳng", "khi", "lúc", "này", "kia", "ấy", "đây", "nhau", "biết", "phải", "làm", "thể", "nhiều", "hết", "oh", "yeah", "baby", "la", "uh", "ah", "ooh", "hey", "na", "yeah", "i", "you", "the", "my", "me", "and", "to", "it", "a", "is", "in", "of"]
+}

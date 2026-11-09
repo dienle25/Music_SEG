@@ -1,0 +1,14 @@
+{
+  "_mo_ta": "Từ điển hàm ý (TMG 17 Connotation Lexicon): từ có nghĩa đen trung tính nhưng thường gợi cảm xúc trong lời nhạc Việt.",
+  "mưa": [-0.3, "gợi buồn, nhớ nhung"], "cơn mưa": [-0.3, "gợi buồn, nhớ nhung"],
+  "mùa thu": [-0.2, "lãng mạn, man mác buồn"], "lá vàng": [-0.3, "chia xa, tàn phai"],
+  "hoàng hôn": [-0.3, "kết thúc, tiếc nuối"], "đêm": [-0.2, "cô đơn, suy tư"], "khuya": [-0.3, "trằn trọc, cô đơn"],
+  "phố": [-0.1, "bâng khuâng, lạc lõng"], "sân ga": [-0.4, "chia ly"], "bến": [-0.2, "chờ đợi"],
+  "mùa đông": [-0.3, "lạnh lẽo, thiếu vắng"], "gió lạnh": [-0.3, "cô đơn"], "bão": [-0.5, "sóng gió, khó khăn"],
+  "giông": [-0.4, "sóng gió"], "nắng": [0.4, "tươi sáng, ấm áp"], "mùa xuân": [0.6, "tươi mới, sum vầy"],
+  "xuân": [0.5, "tươi mới"], "tết": [0.7, "đoàn tụ, vui"], "hoa": [0.4, "đẹp, tình yêu"],
+  "bình minh": [0.5, "khởi đầu, hy vọng"], "cầu vồng": [0.6, "hy vọng sau mưa"], "ánh sáng": [0.4, "hy vọng"],
+  "bầu trời": [0.3, "tự do"], "biển": [0.2, "rộng lớn, nhớ"], "trăng": [0.2, "lãng mạn"],
+  "tuổi thơ": [0.4, "trong trẻo, nhớ"], "mẹ": [0.5, "yêu thương, che chở"], "quê hương": [0.4, "gắn bó, nhớ"],
+  "giấc mơ": [0.3, "mong ước"], "thanh xuân": [0.3, "tươi trẻ, tiếc nuối"], "cà phê": [0.1, "thư thái"]
+}

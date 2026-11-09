@@ -1,0 +1,237 @@
+{% extends "base.html" %}
+{% block title %}Phòng lab: thử từng kỹ thuật | ViSongSearch{% endblock %}
+{% block body %}
+{% set q1 = examples.Q1 or "em ơi lên phố cổ" %}
+{% set w = q1.split() %}
+{% set masked = (w[:(w|length)//2] + ["___"] + w[(w|length)//2 + 1:]) | join(" ") %}
+{% set tools = [
+  ("TMG301", [
+    ("edit", "Khoảng cách sửa bằng quy hoạch động", "TMG 01"),
+    ("spell", "Sửa chính tả theo mô hình kênh nhiễu", "TMG 01"),
+    ("lm", "Mô hình ngôn ngữ n-gram, perplexity, sinh câu", "TMG 02"),
+    ("restore", "Phục hồi dấu: n-best, so sánh bậc n-gram", "TMG 02, 09"),
+    ("sentiment", "Cảm xúc: từ điển và Naive Bayes", "TMG 03, 17"),
+    ("qtype", "Phân loại loại truy vấn", "TMG 04"),
+    ("embed", "Vector từ PPMI + SVD, phép tương tự", "TMG 05"),
+    ("cluster", "Phân cụm: k-means, phân cấp, DBSCAN", "TMG 06"),
+    ("attn", "Self-attention với mã hóa vị trí", "TMG 07"),
+    ("mask", "Điền chỗ trống kiểu masked LM", "TMG 08"),
+    ("parse", "PCFG + CKY, cây phụ thuộc, dạng logic", "TMG 11, 12, 13"),
+    ("ie", "Trích thực thể, quan hệ, sự kiện", "TMG 14"),
+    ("time", "Biểu thức thời gian và thì", "TMG 15"),
+    ("wsd", "Nghĩa của từ: WordNet và Lesk", "TMG 16"),
+  ]),
+  ("SEG301", [
+    ("index", "Chỉ mục ngược, nén, con trỏ nhảy", "SEG 5"),
+    ("daat", "Duyệt theo tài liệu và theo từ (DAAT, TAAT)", "SEG 5"),
+    ("boolean", "Truy vấn Boolean và cụm từ", "SEG 7"),
+    ("assoc", "Liên kết từ: Dice, MIM, EMIM, chi²", "SEG 6"),
+  ]),
+] %}
+<div class="container mt-4 mb-5">
+  <h1 class="font-serif h2">Phòng lab</h1>
+  <p class="hero-sub small">Mỗi ô là một kỹ thuật trong slide, chạy trên chính kho bài hát của bạn. Sửa câu rồi bấm "Chạy" để xem từng bước.
+    Trang tìm kiếm dùng lại đúng các thành phần này.</p>
+  <div class="row">
+    <div class="col-lg-3 d-none d-lg-block">
+      <div class="lab-nav sticky-top pt-2" style="top:.5rem">
+        {% for course, items in tools %}
+        <div class="fw-bold small mt-2">{{ course }}</div>
+        {% for t, title, c in items %}<a href="#{{ t }}">{{ title }}</a>{% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-lg-9">
+
+      <div class="lab-card" id="edit">
+        <h5>Khoảng cách sửa bằng quy hoạch động <span class="course tmg">TMG 01</span></h5>
+        <div class="desc">Bảng D[i][j] = số phép xóa / chèn / thay ít nhất để biến i ký tự đầu của A thành j ký tự đầu của B; ô tô màu là đường truy vết.</div>
+        <form class="lab-form row g-2" data-tool="edit">
+          <div class="col-md-4"><input class="form-control form-control-sm" name="a" value="ngày mai" aria-label="Chuỗi A"></div>
+          <div class="col-md-4"><input class="form-control form-control-sm" name="b" value="ngày mia" aria-label="Chuỗi B"></div>
+          <div class="col-md-3"><select class="form-select form-select-sm" name="w" aria-label="Kiểu khoảng cách">
+            <option value="1">Damerau (có đổi chỗ), thay = 1</option><option value="2">Levenshtein, thay = 2</option></select></div>
+          <div class="col-md-1"><button class="btn btn-primary btn-sm w-100">Chạy</button></div>
+        </form>
+        <div class="lab-out"></div>
+      </div>
+
+      <div class="lab-card" id="spell">
+        <h5>Sửa chính tả theo mô hình kênh nhiễu <span class="course tmg">TMG 01</span></h5>
+        <div class="desc">Ứng viên cho từng âm tiết lấy từ chỉ mục xóa ký tự (kiểu SymSpell), khóa phát âm, gõ Telex; điểm = log P(câu) theo mô hình ngôn ngữ − chi phí lỗi.</div>
+        <form class="lab-form row g-2" data-tool="spell">
+          <div class="col-md-10"><input class="form-control form-control-sm" name="q" value="{{ examples.Q3 }}" aria-label="Câu có lỗi"></div>
+          <div class="col-md-2"><button class="btn btn-primary btn-sm w-100">Chạy</button></div>
+        </form>
+        <div class="lab-out"></div>
+      </div>
+
+      <div class="lab-card" id="lm">
+        <h5>Mô hình ngôn ngữ n-gram <span class="course tmg">TMG 02</span></h5>
+        <div class="desc">Trigram Kneser-Ney học trên lời bài hát: xác suất từng từ, perplexity theo bậc 1-3 (so với câu bị xáo trộn), từ kế tiếp hay gặp, sinh câu.</div>
+        <form class="lab-form row g-2" data-tool="lm">
+          <div class="col-md-10"><input class="form-control form-control-sm" name="q" value="{{ q1 }}" aria-label="Câu"></div>
+          <div class="col-md-2"><button class="btn btn-primary btn-sm w-100">Chạy</button></div>
+        </form>
+        <div class="lab-out"></div>
+      </div>
+
+      <div class="lab-card" id="restore">
+        <h5>Phục hồi dấu <span class="course tmg">TMG 02</span><span class="course tmg">TMG 09</span></h5>
+        <div class="desc">Xem như dịch "không dấu → có dấu": mỗi âm tiết có vài dạng có dấu, tìm chùm (beam search) theo mô hình ngôn ngữ, giữ 5 câu tốt nhất.</div>
+        <form class="lab-form row g-2" data-tool="restore">
+          <div class="col-md-10"><input class="form-control form-control-sm" name="q" value="{{ examples.Q2 }}" aria-label="Câu không dấu"></div>
+          <div class="col-md-2"><button class="btn btn-primary btn-sm w-100">Chạy</button></div>
+        </form>
+        <div class="lab-out"></div>
+      </div>
+
+      <div class="lab-card" id="sentiment">
+        <h5>Cảm xúc: từ điển và Naive Bayes <span class="course tmg">TMG 17</span><span class="course tmg">TMG 03</span></h5>
+        <div class="desc">Từ điển có xử lý phủ định ("không buồn") và nhấn mạnh ("rất vui"); Naive Bayes học trên các dòng lời được từ điển gán nhãn chắc chắn (nhãn yếu).</div>
+        <form class="lab-form row g-2" data-tool="sentiment">
+          <div class="col-md-10"><input class="form-control form-control-sm" name="q" value="anh không còn buồn nữa vì em đã quay về rất vui" aria-label="Câu"></div>
+          <div class="col-md-2"><button class="btn btn-primary btn-sm w-100">Chạy</button></div>
+        </form>
+        <div class="lab-out"></div>
+      </div>
+
+      <div class="lab-card" id="qtype">
+        <h5>Phân loại loại truy vấn <span class="course tmg">TMG 04</span></h5>
+        <div class="desc">Hồi quy logistic trên n-gram ký tự và từ, cộng đặc trưng "tỉ lệ âm tiết có trong từ vựng có dấu / không dấu".</div>
+        <form class="lab-form row g-2" data-tool="qtype">
+          <div class="col-md-10"><input class="form-control form-control-sm" name="q" value="{{ examples.Q4 }}" aria-label="Truy vấn"></div>
+          <div class="col-md-2"><button class="btn btn-primary btn-sm w-100">Chạy</button></div>
+        </form>
+        <div class="lab-out"></div>
+      </div>
+
+      <div class="lab-card" id="embed">
+        <h5>Vector từ PPMI + SVD <span class="course tmg">TMG 05</span></h5>
+        <div class="desc">Ma trận đồng xuất hiện (cửa sổ ±2) → PPMI (α = 0,75) → SVD 64 chiều. Từ gần nhất theo cosine; phép tương tự a : b như c : ?</div>
+        <form class="lab-form row g-2" data-tool="embed">
+          <div class="col-md-4"><input class="form-control form-control-sm" name="w" value="nhớ" aria-label="Từ"></div>
+          <div class="col-md-6"><input class="form-control form-control-sm" name="a" value="anh em ông" aria-label="Ba từ a b c"></div>
+          <div class="col-md-2"><button class="btn btn-primary btn-sm w-100">Chạy</button></div>
+        </form>
+        <div class="lab-out"></div>
+      </div>
+
+      <div class="lab-card" id="cluster">
+        <h5>Phân cụm bài hát <span class="course tmg">TMG 06</span><span class="course">SEG 10</span></h5>
+        <div class="desc">60 bài ngẫu nhiên trên vector LSA: k-means từng vòng đến hội tụ, 11 bước gộp của phân cấp average-link, vai trò lõi / biên / nhiễu của DBSCAN, so sánh các độ đo khoảng cách.</div>
+        <form class="lab-form" data-tool="cluster"><button class="btn btn-primary btn-sm">Chạy</button></form>
+        <div class="lab-out"></div>
+      </div>
+
+      <div class="lab-card" id="attn">
+        <h5>Self-attention <span class="course tmg">TMG 07</span></h5>
+        <div class="desc">Mỗi từ = vector PPMI-SVD + mã hóa vị trí sin/cos; trọng số chú ý = softmax(QKᵀ/√d) với Q = K = X. Ô càng đậm, từ ở hàng càng "nhìn" từ ở cột.</div>
+        <form class="lab-form row g-2" data-tool="attn">
+          <div class="col-md-10"><input class="form-control form-control-sm" name="q" value="{{ q1 }}" aria-label="Câu"></div>
+          <div class="col-md-2"><button class="btn btn-primary btn-sm w-100">Chạy</button></div>
+        </form>
+        <div class="lab-out"></div>
+      </div>
+
+      <div class="lab-card" id="mask">
+        <h5>Điền chỗ trống <span class="course tmg">TMG 08</span></h5>
+        <div class="desc">Ý tưởng của masked language model: đoán từ ở chỗ ___ dựa vào cả hai phía (n-gram trái và phải).</div>
+        <form class="lab-form row g-2" data-tool="mask">
+          <div class="col-md-10"><input class="form-control form-control-sm" name="q" value="{{ masked }}" aria-label="Câu có ___"></div>
+          <div class="col-md-2"><button class="btn btn-primary btn-sm w-100">Chạy</button></div>
+        </form>
+        <div class="lab-out"></div>
+      </div>
+
+      <div class="lab-card" id="parse">
+        <h5>Phân tích câu truy vấn <span class="course tmg">TMG 11</span><span class="course tmg">TMG 12</span><span class="course tmg">TMG 13</span></h5>
+        <div class="desc">Gom cụm (từ điển ca sĩ, từ chức năng) → văn phạm phi ngữ cảnh xác suất, CKY → cây phụ thuộc bằng luật chọn đầu ngữ, dãy chuyển arc-standard
+          → dạng logic bậc nhất, rồi kiểm tra công thức trên kho (model checking).</div>
+        <form class="lab-form row g-2" data-tool="parse">
+          <div class="col-md-10"><input class="form-control form-control-sm" name="q" value="bài hát buồn về mùa thu của {{ examples.artist_name or 'mỹ tâm' }}" aria-label="Truy vấn"></div>
+          <div class="col-md-2"><button class="btn btn-primary btn-sm w-100">Chạy</button></div>
+        </form>
+        <div class="lab-out"></div>
+      </div>
+
+      <div class="lab-card" id="ie">
+        <h5>Trích xuất thông tin <span class="course tmg">TMG 14</span></h5>
+        <div class="desc">Thực thể bằng từ điển (ca sĩ trong kho, địa danh), quan hệ theo mẫu "X là Y", "X như Y", "Y của X", sự kiện theo từ kích hoạt (đi, về, chờ, khóc…) kèm ai, ở đâu, khi nào.</div>
+        <form class="lab-form row g-2" data-tool="ie">
+          <div class="col-md-10"><textarea class="form-control form-control-sm" name="q" rows="3" aria-label="Đoạn lời">Em là nắng ấm của anh
+Mùa thu năm ấy anh về Hà Nội tìm em
+Nỗi nhớ của em như cơn mưa chiều</textarea></div>
+          <div class="col-md-2"><button class="btn btn-primary btn-sm w-100">Chạy</button></div>
+        </form>
+        <div class="lab-out"></div>
+      </div>
+
+      <div class="lab-card" id="time">
+        <h5>Biểu thức thời gian và thì <span class="course tmg">TMG 15</span></h5>
+        <div class="desc">Gán nhãn kiểu TIMEX3 (DATE, TIME, SEASON, DURATION, SET) với giá trị chuẩn hóa; xác định thì của từng dòng theo "đã, từng, sẽ, đang, ngày xưa, mai sau…".</div>
+        <form class="lab-form row g-2" data-tool="time">
+          <div class="col-md-10"><textarea class="form-control form-control-sm" name="q" rows="3" aria-label="Đoạn lời">Mùa thu năm ấy anh đã ra đi
+Đêm nay em sẽ chờ anh đến sáng
+Tết này con về thăm mẹ mỗi năm</textarea></div>
+          <div class="col-md-2"><button class="btn btn-primary btn-sm w-100">Chạy</button></div>
+        </form>
+        <div class="lab-out"></div>
+      </div>
+
+      <div class="lab-card" id="wsd">
+        <h5>Nghĩa của từ: WordNet và Lesk <span class="course tmg">TMG 16</span></h5>
+        <div class="desc">WordNet thu nhỏ cho lời nhạc (nghĩa, từ đồng nghĩa, thượng vị, trái nghĩa, bộ phận). Thuật toán Lesk chọn nghĩa có định nghĩa và ví dụ trùng ngữ cảnh nhiều nhất.</div>
+        <form class="lab-form row g-2" data-tool="wsd">
+          <div class="col-md-10"><input class="form-control form-control-sm" name="q" value="mùa thu lá vàng rơi trên con đường xưa" aria-label="Câu"></div>
+          <div class="col-md-2"><button class="btn btn-primary btn-sm w-100">Chạy</button></div>
+        </form>
+        <div class="lab-out"></div>
+      </div>
+
+      <div class="lab-card" id="index">
+        <h5>Chỉ mục ngược và nén <span class="course">SEG 5</span></h5>
+        <div class="desc">Danh sách thẻ của một từ (không dấu): docid, khoảng cách docid, tần suất, vị trí; mã v-byte và Elias-gamma của khoảng cách.
+          Gõ hai từ để so sánh phép giao có và không có con trỏ nhảy (bước √n).</div>
+        <form class="lab-form row g-2" data-tool="index">
+          <div class="col-md-10"><input class="form-control form-control-sm" name="w" value="nho em" aria-label="Một hoặc hai từ"></div>
+          <div class="col-md-2"><button class="btn btn-primary btn-sm w-100">Chạy</button></div>
+        </form>
+        <div class="lab-out"></div>
+      </div>
+
+      <div class="lab-card" id="daat">
+        <h5>DAAT và TAAT <span class="course">SEG 5</span></h5>
+        <div class="desc">Cùng điểm BM25, hai cách duyệt: theo từ (cộng dồn vào bộ tích lũy) và theo tài liệu (đi song song các danh sách, giữ đống k phần tử).</div>
+        <form class="lab-form row g-2" data-tool="daat">
+          <div class="col-md-10"><input class="form-control form-control-sm" name="q" value="{{ examples.Q2 }}" aria-label="Truy vấn"></div>
+          <div class="col-md-2"><button class="btn btn-primary btn-sm w-100">Chạy</button></div>
+        </form>
+        <div class="lab-out"></div>
+      </div>
+
+      <div class="lab-card" id="boolean">
+        <h5>Truy vấn Boolean <span class="course">SEG 7</span></h5>
+        <div class="desc">AND là mặc định, có OR, NOT (hoặc dấu -), cụm từ trong ngoặc kép dùng vị trí trong chỉ mục.</div>
+        <form class="lab-form row g-2" data-tool="boolean">
+          <div class="col-md-10"><input class="form-control form-control-sm" name="q" value="{{ examples.boolean }}" aria-label="Truy vấn Boolean"></div>
+          <div class="col-md-2"><button class="btn btn-primary btn-sm w-100">Chạy</button></div>
+        </form>
+        <div class="lab-out"></div>
+      </div>
+
+      <div class="lab-card" id="assoc">
+        <h5>Liên kết từ <span class="course">SEG 6</span></h5>
+        <div class="desc">Từ hay đi cùng một từ trong cùng bài, xếp theo bốn độ đo của slide: Dice, MIM, EMIM, chi². Dùng để gợi ý mở rộng truy vấn. Như slide nhận xét, MIM ưu tiên từ hiếm (chỉ cùng xuất hiện vài lần), còn EMIM và chi² ưu tiên từ phổ biến hơn.</div>
+        <form class="lab-form row g-2" data-tool="assoc">
+          <div class="col-md-10"><input class="form-control form-control-sm" name="w" value="mưa" aria-label="Từ"></div>
+          <div class="col-md-2"><button class="btn btn-primary btn-sm w-100">Chạy</button></div>
+        </form>
+        <div class="lab-out"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/js/lab.js"></script>{% endblock %}

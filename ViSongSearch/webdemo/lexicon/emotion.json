@@ -1,0 +1,10 @@
+{
+  "_mo_ta": "Từ điển cảm xúc theo loại (TMG 17 Affect Lexicon, kiểu NRC Emotion Lexicon thu nhỏ).",
+  "vui": ["vui", "vui vẻ", "hạnh phúc", "cười", "nụ cười", "mừng", "hân hoan", "rộn ràng", "tươi", "rực rỡ", "náo nức", "ngất ngây", "nhảy", "quẩy", "lung linh"],
+  "buồn": ["buồn", "nỗi buồn", "khóc", "lệ", "nước mắt", "sầu", "cô đơn", "đau", "xót xa", "lẻ loi", "trống vắng", "chơi vơi", "nghẹn ngào", "thở dài", "tổn thương"],
+  "yêu": ["yêu", "thương", "người yêu", "say đắm", "nồng nàn", "hôn", "ôm", "trái tim", "con tim", "bên nhau", "chung đôi", "cưới", "tình yêu", "người thương"],
+  "nhớ": ["nhớ", "nỗi nhớ", "kỷ niệm", "kỉ niệm", "ngày xưa", "năm xưa", "ngày ấy", "hoài niệm", "quê", "quê hương", "tuổi thơ", "ký ức", "thương nhớ", "nhớ nhung"],
+  "giận": ["giận", "hận", "ghét", "hờn", "căm", "phẫn nộ", "trách"],
+  "sợ": ["sợ", "lo", "lo âu", "run", "hoảng", "sợ hãi"],
+  "hy vọng": ["mơ", "ước mơ", "mơ ước", "hy vọng", "hi vọng", "mai sau", "ngày mai", "niềm tin", "bình minh", "vươn", "cố gắng", "tương lai"]
+}

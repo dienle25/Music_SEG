@@ -1,0 +1,77 @@
+/* Bổ sung cho theme.css (không cần biên dịch lại SCSS). */
+:root {
+  --ink-1: #1d1d1c; --ink-2: #52514e; --ink-3: #8f8d8c;
+  --grid: #e7e5e2; --surface: #ffffff;
+  --series-1: #2a78d6; --series-2: #eb6834; --series-3: #1baf7a; --series-4: #eda100;
+  --good: #1f6b2a; --bad: #a3191c;
+}
+body { color: var(--ink-1); }
+.navbar-site .navbar-brand { font-size: 1.35rem; letter-spacing: -.02rem; }
+.navbar-site .nav-link { font-size: .86rem; padding: .45rem .7rem !important; }
+.hero-sub { color: var(--ink-2); }
+.example-chip { display: inline-block; margin: .15rem .2rem; padding: .1rem .5rem; background: #fff;
+  border: 1px solid #e3d5a5; font-size: .8rem; cursor: pointer; color: var(--ink-1); }
+.example-chip:hover { border-color: #a30015; text-decoration: none; }
+.example-chip .k { color: #a30015; font-weight: 700; margin-right: .3rem; }
+.search-result-card h6 a { color: inherit; }
+.search-result-card .rank { position: absolute; top: .55rem; right: .7rem; color: var(--ink-3); font-size: 11px; }
+.search-result-card .snippet { margin-top: .45rem; }
+.search-result-card .meta-badges .badge { margin: 0 .2rem .2rem 0; }
+.team-A { border-left: 4px solid var(--series-1); }
+.team-B { border-left: 4px solid var(--series-2); }
+.why .step { margin-bottom: .45rem; }
+.why table td, .why table th { font-size: 11px; padding: .12rem .35rem; }
+.why .chip { display: inline-block; padding: 0 .35rem; margin: 0 .25rem .2rem 0; background: #fff; border: 1px solid #dddbd9; }
+.why .chip b { color: #a30015; font-weight: 600; }
+.why-summary { cursor: pointer; }
+.course { display: inline-block; font-size: 10px; font-weight: 600; padding: 0 .3rem; margin-left: .3rem;
+  background: #f8eece; color: #8a0012; vertical-align: 1px; letter-spacing: .02rem; }
+.course.tmg { background: #e9eef8; color: #23457a; }
+.pbar { display: inline-block; height: 7px; background: #a30015; vertical-align: middle; margin-right: .3rem; }
+.ok-mark { color: var(--good); font-weight: 700; }
+.bad-mark { color: var(--bad); font-weight: 700; }
+.section-title { border-bottom: 2px solid #f8eece; padding-bottom: .3rem; margin-top: 1.8rem; margin-bottom: .8rem; }
+.section-title small { font-weight: 400; color: var(--ink-3); font-size: .8rem; }
+.tbl-wrap { overflow-x: auto; }
+table.data { font-size: .8rem; }
+table.data th { font-weight: 600; color: var(--ink-2); white-space: nowrap; }
+table.data td.num, table.data th.num { text-align: right; font-variant-numeric: tabular-nums; }
+table.data tr.hl td { background: #fdf6e3; font-weight: 600; }
+.lab-card { border: 1px solid #dddbd9; background: #fff; padding: 1rem; margin-bottom: 1rem; scroll-margin-top: 1rem; }
+.lab-card h5 { font-size: 1rem; margin-bottom: .2rem; }
+.lab-card .desc { font-size: .8rem; color: var(--ink-2); margin-bottom: .6rem; }
+.lab-out { font-size: .8rem; margin-top: .6rem; }
+.lab-out pre { white-space: pre-wrap; background: #faf9f8; padding: .5rem; font-size: .75rem; max-height: 360px; overflow: auto; }
+.lab-nav a { display: block; font-size: .8rem; padding: .12rem 0; color: var(--ink-2); }
+.dp td { font-family: ui-monospace, Consolas, monospace; font-size: 11px; text-align: center; min-width: 24px; padding: 1px 3px; }
+.dp td.path { background: #f8eece; font-weight: 700; }
+.dp th { font-size: 11px; text-align: center; padding: 1px 3px; background: #faf9f8; }
+.attn td { width: 34px; height: 24px; text-align: center; font-size: 10px; }
+.chart { display: block; max-width: 100%; height: auto; }
+.chart .grid line { stroke: var(--grid); stroke-width: 1; }
+.chart .axis text, .chart text.lbl { fill: var(--ink-2); font-size: 11px; }
+.chart text.val { fill: var(--ink-1); font-size: 11px; }
+.chart .pt { stroke: #fff; stroke-width: 2; }
+.chart .hit { fill: transparent; }
+.legend { font-size: .78rem; color: var(--ink-2); }
+.legend .sw { display: inline-block; width: 14px; height: 3px; vertical-align: middle; margin: 0 .3rem 0 .8rem; }
+.legend .sw:first-child { margin-left: 0; }
+.cov-row td { font-size: .8rem; vertical-align: top; }
+.st { display: inline-block; font-size: .72rem; padding: .05rem .4rem; white-space: nowrap; font-weight: 600; }
+.st-co { background: #e3f4e5; color: #1f6b2a; }
+.st-bs { background: #fdf0d5; color: #7a4b00; }
+.st-cb { background: #e5ecf7; color: #23457a; }
+.st-cl { background: #f3e3e3; color: #a3191c; }
+.chat-wrap { display: flex; flex-direction: column; }
+.chat-wrap .form-control { font-size: 1rem; padding: .55rem .9rem; }
+.chat-results a { display: block; font-size: .82rem; }
+.quick a { margin: 0 .3rem .3rem 0; }
+.state-tbl td { font-size: .8rem; padding: .15rem .4rem; }
+.lyrics-excerpt { background: #fffdf7; border-left: 3px solid #f8eece; padding: .6rem .9rem; }
+.progress-log { font-size: .75rem; max-height: 180px; overflow: auto; background: #faf9f8; padding: .5rem; }
+@media (max-width: 767px) { .navbar-site .nav-link { padding: .3rem .2rem !important; } }
+
+/* điện thoại: bảng rộng thì cuộn ngang trong khung, không làm cả trang tràn */
+@media (max-width: 576px) {
+  table.data, table.heat { display: block; overflow-x: auto; max-width: 100%; }
+}

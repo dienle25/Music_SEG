@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% block title %}ViSongSearch: tìm bài hát khi chỉ nhớ lời{% endblock %}
+{% block body %}
+{% set chips = [("Q1", "nhớ đúng lời", examples.Q1, ""), ("Q2", "gõ không dấu", examples.Q2, ""),
+                ("Q3", "nhớ sai, gõ nhầm", examples.Q3, ""), ("Q4", "diễn đạt lại lời", examples.Q4, ""),
+                ("Q5", "mô tả bài hát", examples.Q5, ""), ("Ca sĩ", "ca sĩ + lời", examples.artist, ""),
+                ("Tên bài", "nhớ tên bài", examples.title, ""), ("Boolean", "AND / OR / NOT, cụm từ", examples.boolean, "boolean")] %}
+<div class="container">
+  <header class="row mt-4">
+    <div class="col-md text-md-center">
+      <h1 class="font-serif">Tìm bài hát khi chỉ nhớ lời</h1>
+      <p class="hero-sub mt-2 mb-0">Gõ có dấu hay không dấu, nhớ sai vài chữ, hay chỉ kể nội dung bài hát.
+        Tìm trong {{ "{:,}".format(summary().songs).replace(",", ".") }} bài của {{ summary().artists }} ca sĩ.</p>
+    </div>
+  </header>
+</div>
+
+<div class="row mt-3 g-0">
+  <div class="col-md p-0">
+    <div id="searchbox-container" class="bg-secondary pt-3 pt-md-5 pb-2 pb-md-4 px-3 px-md-5">
+      <div class="row justify-content-md-center">
+        <div class="col-md-8">
+          <div id="searchbox"></div>
+          <datalist id="suggest-list"></datalist>
+          <div class="mt-2 small" id="example-search-terms">Thử:
+            {% for k, label, q, m in chips if q %}
+            <a role="button" class="example-chip clickable-example" data-q="{{ q }}" data-m="{{ m }}" title="{{ label }}"><span class="k">{{ k }}</span>{{ q if q|length < 46 else q[:44] ~ "…" }}</a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="results-section" class="container d-none">
+  <div class="row mt-3">
+    <div class="col-md-3"></div>
+    <div class="col-md">
+      <div class="row d-flex justify-content-end align-items-center">
+        <div class="col-12 col-md-6 mt-2 mt-md-0 d-flex align-items-center">
+          <label for="sort-by" class="small me-2 text-nowrap text-muted">Mô hình</label>
+          <div id="sort-by" class="flex-grow-1"></div>
+        </div>
+        <div id="stats" class="col-md text-end small order-first order-md-last"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-3">
+      <nav class="navbar navbar-expand-md navbar-light p-0 pb-3">
+        <button class="navbar-toggler text-primary border-light-2" type="button" data-bs-toggle="collapse"
+                data-bs-target="#filters-section" aria-controls="filters-section" aria-expanded="false" aria-label="Lọc kết quả">
+          <span class="navbar-toggler-icon"></span><span class="ms-2" style="font-size:15px">Lọc</span>
+        </button>
+        <div class="collapse navbar-collapse d-md-block mt-3 mt-md-0" id="filters-section">
+          <div id="current-refinements" class="mb-2"></div>
+          <h4 class="fw-light text-primary h5">Tâm trạng <span class="course tmg">TMG 17</span></h4>
+          <div id="mood-menu"></div>
+          <h4 class="fw-light text-primary h5 mt-4">Nhóm kết quả <span class="course">SEG 10</span></h4>
+          <div class="small text-muted mb-1">Gom 40 kết quả đầu theo nội dung</div>
+          <div id="group-list"></div>
+          <h4 class="fw-light text-primary h5 mt-4">Ca sĩ</h4>
+          <div id="artists-list"></div>
+          <h4 class="fw-light text-primary h5 mt-4">Chủ đề <span class="course tmg">TMG 06</span></h4>
+          <div id="topic-list"></div>
+          <h4 class="fw-light text-primary h5 mt-4">Thời gian trong lời <span class="course tmg">TMG 15</span></h4>
+          <div id="time-list"></div>
+          <h4 class="fw-light text-primary h5 mt-4">Nguồn</h4>
+          <div id="source-list"></div>
+        </div>
+      </nav>
+    </div>
+    <div class="col-md">
+      <div id="why"></div>
+      <div id="hits"></div>
+    </div>
+  </div>
+</div>
+
+<div id="intro" class="container mt-4 mb-5">
+  <div class="row g-3">
+    {% for t, name, how in [("Q1", type_names.Q1, "BM25 trên âm tiết có dấu và cặp âm tiết"),
+                            ("Q2", type_names.Q2, "Phục hồi dấu bằng mô hình ngôn ngữ trigram Kneser-Ney, lấy n-best"),
+                            ("Q3", type_names.Q3, "Sửa lỗi theo mô hình kênh nhiễu, n-gram ký tự, khóa phát âm"),
+                            ("Q4", type_names.Q4, "Mở rộng từ đồng nghĩa (WordNet), LSA, trường tên bài"),
+                            ("Q5", type_names.Q5, "Phân tích câu (PCFG), dạng logic: ca sĩ, tâm trạng, thời gian")] %}
+    <div class="col-md">
+      <div class="kpi h-100">
+        <div class="fw-bold text-primary">{{ t }} · {{ name }}</div>
+        <div class="small mt-1">{{ how }}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <p class="small text-muted mt-3 mb-1">Bộ máy tự nhận loại truy vấn và trộn các danh sách xếp hạng (RRF) với trọng số của loại đó
+    (trọng số hiện tại: {{ weights_source }}). Bấm "Vì sao ra kết quả này?" phía trên kết quả để xem từng bước.</p>
+  <p class="small text-muted">Các trang khác: <a href="/tro-ly">trợ lý hội thoại</a>, <a href="/phong-lab">phòng lab</a> thử từng kỹ thuật,
+    <a href="/danh-gia">đánh giá</a> 12 mô hình, <a href="/thong-ke">thống kê, PageRank, SEO</a>, <a href="/doi-chieu">đối chiếu với slide hai môn</a>.</p>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="/static/vendor/instantsearch.production.min.js"></script>
+<script>window.VSS = {{ {"models": models, "types": type_names} | tojson }};</script>
+<script src="/static/js/search.js"></script>
+{% endblock %}

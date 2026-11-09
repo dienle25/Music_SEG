@@ -1,0 +1,31 @@
+{
+  "_mo_ta": "Từ điển cảm xúc (TMG 17 Sentiment Lexicon). Điểm trong khoảng [-1, 1]. Cụm nhiều âm tiết được so khớp trước.",
+  "positive": {
+    "vui": 0.8, "vui vẻ": 0.9, "hạnh phúc": 1.0, "yêu": 0.6, "yêu thương": 0.8, "thương yêu": 0.8,
+    "thương": 0.4, "cười": 0.7, "nụ cười": 0.7, "ấm áp": 0.8, "ấm": 0.4, "ngọt ngào": 0.8, "đẹp": 0.6,
+    "xinh": 0.5, "rạng rỡ": 0.8, "mừng": 0.7, "vui mừng": 0.9, "tươi": 0.5, "tươi vui": 0.8,
+    "hy vọng": 0.7, "hi vọng": 0.7, "bình yên": 0.7, "an yên": 0.7, "say đắm": 0.6, "nồng nàn": 0.6,
+    "dịu dàng": 0.6, "ước mơ": 0.5, "mơ ước": 0.5, "tuyệt vời": 0.9, "rực rỡ": 0.7, "êm đềm": 0.5,
+    "tự do": 0.5, "lung linh": 0.5, "may mắn": 0.7, "tin yêu": 0.7, "đoàn tụ": 0.8, "sum vầy": 0.8,
+    "bên nhau": 0.6, "chung đôi": 0.6, "hân hoan": 0.9, "náo nức": 0.6, "rộn ràng": 0.6, "thiết tha": 0.4,
+    "ngất ngây": 0.6, "trọn vẹn": 0.6, "vững tin": 0.6, "mạnh mẽ": 0.5, "tỏa sáng": 0.7, "chúc mừng": 0.8,
+    "cưới": 0.6, "hôn": 0.5, "ôm": 0.4, "che chở": 0.5, "nâng niu": 0.6, "thanh xuân": 0.4, "quý": 0.4
+  },
+  "negative": {
+    "buồn": -0.8, "nỗi buồn": -0.8, "buồn bã": -0.9, "đau": -0.8, "đau đớn": -1.0, "đau khổ": -1.0,
+    "nỗi đau": -0.9, "khóc": -0.8, "lệ": -0.6, "nước mắt": -0.7, "cô đơn": -0.8, "chia tay": -0.8,
+    "chia ly": -0.8, "biệt ly": -0.8, "xa cách": -0.6, "sầu": -0.7, "u sầu": -0.8, "tổn thương": -0.9,
+    "lạnh lùng": -0.6, "giá lạnh": -0.5, "tan vỡ": -1.0, "vỡ tan": -1.0, "đổ vỡ": -0.9, "mất": -0.5,
+    "đánh mất": -0.7, "hận": -0.9, "ghét": -0.8, "cay đắng": -0.9, "đắng cay": -0.9, "lẻ loi": -0.7,
+    "phai": -0.4, "phai nhạt": -0.6, "dối gian": -0.8, "gian dối": -0.8, "lừa dối": -0.9, "phản bội": -1.0,
+    "nhạt nhòa": -0.4, "tiếc nuối": -0.6, "hối tiếc": -0.7, "vô vọng": -0.8, "tuyệt vọng": -1.0,
+    "chơi vơi": -0.6, "trống vắng": -0.7, "lạc lõng": -0.7, "xót xa": -0.8, "ngậm ngùi": -0.6,
+    "day dứt": -0.6, "dằn vặt": -0.7, "mệt mỏi": -0.6, "sợ": -0.5, "lo âu": -0.5, "hờn": -0.5,
+    "giận": -0.6, "rời xa": -0.6, "buông tay": -0.6, "lỡ làng": -0.6, "muộn màng": -0.5, "héo úa": -0.6,
+    "tàn": -0.4, "vụn vỡ": -0.8, "quên lãng": -0.5, "lãng quên": -0.5, "cách xa": -0.6, "xa xôi": -0.3,
+    "thở dài": -0.5, "nghẹn ngào": -0.6, "đơn côi": -0.7, "cô độc": -0.8, "bỏ rơi": -0.8, "bật khóc": -0.9
+  },
+  "negators": ["không", "chẳng", "chả", "chưa", "đừng", "không hề", "chẳng hề", "đâu có", "chẳng còn", "không còn"],
+  "intensifiers": {"rất": 1.5, "quá": 1.5, "lắm": 1.4, "thật": 1.3, "vô cùng": 1.8, "nhất": 1.6, "thật sự": 1.4,
+                   "mãi": 1.2, "hoài": 1.2, "nhiều": 1.2, "bao": 1.2, "cứ": 1.1}
+}

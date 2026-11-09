@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="theme-color" content="#a30015">
+<title>{% block title %}ViSongSearch{% endblock %}</title>
+{% block meta %}<meta name="description" content="ViSongSearch: tìm bài hát tiếng Việt khi chỉ nhớ lời, gõ không dấu, nhớ sai vài chữ hoặc chỉ mô tả được nội dung bài hát.">{% endblock %}
+<link rel="icon" href="/static/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Lora:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="/static/css/theme.css">
+<link rel="stylesheet" href="/static/css/app.css">
+{% block head %}{% endblock %}
+</head>
+<body>
+{% set nav = [("/", "Tìm kiếm"), ("/tro-ly", "Trợ lý"), ("/phong-lab", "Phòng lab"), ("/danh-gia", "Đánh giá"),
+              ("/thong-ke", "Thống kê & SEO"), ("/the", "Thẻ"), ("/doi-chieu", "Đối chiếu môn học")] %}
+<nav class="navbar navbar-expand-lg navbar-dark navbar-site py-1">
+  <div class="container">
+    <a class="navbar-brand font-serif" href="/">ViSongSearch</a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#site-nav"
+            aria-controls="site-nav" aria-expanded="false" aria-label="Mở menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="site-nav">
+      <ul class="navbar-nav ms-auto">
+        {% for href, label in nav %}
+        <li class="nav-item"><a class="nav-link{% if request.url.path == href %} active{% endif %}" href="{{ href }}">{{ label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>
+{% block body %}{% endblock %}
+<footer class="site-footer py-2">
+  <div class="container d-flex flex-wrap justify-content-between gap-2">
+    <span>ViSongSearch · đồ án SEG301 + TMG301 · {{ summary().songs }} bài hát lấy từ file .db của nhóm</span>
+    <span>Giao diện chỉnh từ <a href="https://github.com/typesense/showcase-songs-search" target="_blank" rel="noopener">typesense/showcase-songs-search</a>
+      (Apache-2.0), InstantSearch.js và Bootstrap (MIT)</span>
+  </div>
+</footer>
+<script src="/static/vendor/bootstrap.bundle.min.js"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>
