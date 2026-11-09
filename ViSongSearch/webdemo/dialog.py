@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 import re
+import time
 
 from visong.text import clean, remove_diacritics
 
@@ -24,6 +25,7 @@ INTENTS = [
     ("không nhớ", r"(không nhớ|quên rồi|không biết|chịu|hổng nhớ|ko nhớ)"),
     ("đồng ý", r"^(đúng rồi|đúng|chính nó|phải rồi|ok|oke|ừ|uh|đúng bài|chuẩn|yes)\b"),
     ("xem thêm", r"(không phải|sai rồi|chưa đúng|bài khác|còn bài nào|xem thêm|tiếp|bài nào nữa)"),
+    ("hỏi về bài", r"^(bài (này|đó|đấy|đấy là) )?(của ai|ai hát|ai sáng tác|tên (là )?gì)( (vậy|thế|nhỉ|đấy|ạ))*$"),
 ]
 # Cụm yêu cầu chung ở đầu câu ("mình muốn tìm bài hát", "bài gì mà"...): bỏ đi trước khi hiểu câu,
 # để không bị coi là lời bài hát. Không bỏ đại từ đứng một mình ("em của ngày hôm qua" vẫn là lời).
@@ -160,11 +162,14 @@ class DialogManager:
         """NLU bằng LLM: mô hình trả JSON, rồi chuẩn hóa về đúng dạng khe của hệ luật (tên ca sĩ, nhãn thời gian)."""
         asked = st.get("last_act") or ""
         q = QUESTIONS.get(asked[4:], "") if asked.startswith("hỏi_") else ""
-        raw = self.llm.chat(llm_mod.NLU_SYSTEM, (f"Trợ lý vừa hỏi: {q}\n" if q else "") + f"Người dùng: {text}",
-                            as_json=True, max_tokens=160)
+        ctx = f"Trợ lý vừa hỏi: {q}\n" if q else ""
+        if asked in ("đưa_kết_quả", "đưa_thêm", "xác_nhận") and st["last_results"]:   # ngữ cảnh: bài vừa đưa
+            ctx = "Trợ lý vừa đưa bài: " + "; ".join(f"{h['title']} - {h['artist']}" for h in st["last_results"][:3]) + "\n"
+        raw = self.llm.chat(llm_mod.NLU_SYSTEM, ctx + f"Người dùng: {text}", as_json=True, max_tokens=160,
+                            examples=llm_mod.NLU_EXAMPLES, schema=llm_mod.NLU_SCHEMA)
         d = json.loads(raw)
         intent = d.get("intent") or "cung cấp thông tin"
-        if intent not in {n for n, _ in INTENTS} | {"tìm chung", "cung cấp thông tin"}:
+        if intent not in llm_mod.INTENT_NAMES:
             intent = "cung cấp thông tin"
         slots = {}
         if (d.get("lyric") or "").strip():
@@ -184,7 +189,19 @@ class DialogManager:
             slots["about"] = clean(d["about"])
         if intent in ("xem thêm", "tìm chung") and slots:
             intent = "cung cấp thông tin"
+        if intent == "hỏi về bài":
+            slots = {}
         return {"intent": intent, "slots": slots, "by": "llm"}
+
+    def _answer_about(self, text: str, hit: dict, engine: str) -> str:
+        """Trả lời câu hỏi về bài vừa đưa, chỉ dựa trên dữ liệu của bài (RAG); chế độ luật trả lời theo mẫu."""
+        song = self.eng.by_id.get(hit["objectID"])
+        album = (song.extra.get("album", "") if song else "") or ""
+        if engine == "llm" and song:
+            lines = " / ".join(song.lines()[:8])
+            info = f"Tên bài: {song.title}\nNghệ sĩ: {song.artist}\nAlbum: {album or 'không rõ'}\nĐoạn đầu lời: {lines}"
+            return self.llm.chat(llm_mod.QA_SYSTEM, f"{info}\n\nCâu hỏi: {text}", max_tokens=150).strip()
+        return f"Bài “{hit['title']}” do {hit['artist']} thể hiện" + (f", trong album {album}" if album else "") + "."
 
     def _nlg_llm(self, text: str, r: dict) -> str:
         """NLG bằng LLM, chỉ dựa trên các bài máy tìm kiếm vừa trả về (RAG)."""
@@ -218,6 +235,7 @@ class DialogManager:
     # ------------------------------------------------------------ một lượt
     def turn(self, session: str, text: str, mode: str = "rule") -> dict:
         """mode="llm": hiểu câu và viết câu trả lời bằng mô hình Ollama; lỗi hoặc chưa bật thì tự dùng luật."""
+        t0 = time.perf_counter()
         engine, note = "luật", ""
         if mode == "llm":
             ok, why = self.llm.status()
@@ -241,7 +259,8 @@ class DialogManager:
                 r["reply"] = self._nlg_llm(text, r) or r["reply"]
             except Exception:
                 note = "LLM viết câu lỗi, dùng câu mẫu"
-        r["engine"] = (f"LLM ({self.llm.model})" if engine == "llm" else "luật") + (f" · {note}" if note else "")
+        r["engine"] = (f"LLM ({self.llm.model}) · {time.perf_counter() - t0:.1f} giây" if engine == "llm" else "luật") + \
+            (f" · {note}" if note else "")
         return r
 
     def _turn(self, session: str, text: str, engine: str) -> dict:
@@ -266,6 +285,15 @@ class DialogManager:
             return self._reply(st, nlu, "xác_nhận",
                                f"Tuyệt! Bài bạn tìm là “{top['title']}” ({top['artist']}). Có thể bạn cũng thích: {names}.",
                                [top])
+        if intent == "hỏi về bài":
+            if not st["last_results"]:
+                st["last_act"] = "hỏi_lyric"
+                return self._reply(st, nlu, "hỏi_lyric", "Mình chưa đưa bài nào. " + QUESTIONS["lyric"])
+            act = st["last_act"]
+            r = self._reply(st, nlu, "trả_lời", self._answer_about(text, st["last_results"][0], engine),
+                            st["last_results"][:1])
+            st["last_act"] = act            # giữ ngữ cảnh: người dùng vẫn có thể nói "đúng rồi" / "bài khác"
+            return r
         if intent == "tìm chung":
             if st["slots"]:
                 return self._search_and_reply(st, nlu)

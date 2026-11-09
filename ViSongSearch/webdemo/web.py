@@ -57,6 +57,7 @@ def create_app(engine, evaluator, runtime: str) -> FastAPI:
         return memo["comp"]
 
     dialog = DialogManager(engine)
+    dialog.llm.warm_up()          # nạp sẵn mô hình Ollama (nếu có) để câu đầu ở chế độ LLM không phải chờ
     examples = make_examples(engine)
 
     def session_of(request: Request) -> str:
