@@ -254,7 +254,6 @@
     }),
     facetList("#group-list", "group", { limit: 6, showMore: false }),
     facetList("#artists-list", "artists", { searchable: true, searchablePlaceholder: "Tìm ca sĩ" }),
-    facetList("#topic-list", "topic", { showMore: false }),
     facetList("#time-list", "time_tags"),
     facetList("#source-list", "source", { showMore: false }),
     W.configure({ hitsPerPage: 12 }),
