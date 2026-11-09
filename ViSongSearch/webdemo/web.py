@@ -24,6 +24,7 @@ from visong.queries import fragment
 from visong.text import clean, remove_diacritics
 
 from . import charts, clustering, seo, temporal
+from . import llm as llm_mod
 from .core import MODELS, RUN_NAMES, TYPE_NAMES
 from .coverage import COVERAGE
 from .coverage import counts as coverage_counts
@@ -231,11 +232,19 @@ def create_app(engine, evaluator, runtime: str) -> FastAPI:
     def chat_page(request: Request):
         return page(request, "chat.html", {})
 
+    @app.get("/api/llm")
+    def llm_models():
+        """Các mô hình Ollama đã tải trên máy (mạnh nhất trước), để trang Trợ lý cho chọn."""
+        names = dialog.llm.models()
+        return {"running": names is not None, "models": names or [], "suggest": llm_mod.SUGGEST}
+
     @app.post("/api/chat")
     async def chat(request: Request):
         body = await request.json()
+        mode = str(body.get("mode") or "rule")          # "rule", "llm" hoặc "llm:<tên mô hình>"
         return await run_in_threadpool(dialog.turn, session_of(request) + ":" + body.get("conv", ""),
-                                       body.get("text", ""), "llm" if body.get("mode") == "llm" else "rule")
+                                       body.get("text", ""), "llm" if mode.startswith("llm") else "rule",
+                                       mode[4:] or None)
 
     # ------------------------------------------------------------ đánh giá và thống kê
     @app.get("/danh-gia", response_class=HTMLResponse)

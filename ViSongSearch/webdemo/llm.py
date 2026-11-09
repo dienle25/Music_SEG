@@ -2,56 +2,86 @@
 
 Dùng cho chế độ "LLM" của trợ lý: mô hình hiểu câu (trả về khe dạng JSON) và viết câu trả lời,
 còn việc tìm bài vẫn do máy tìm kiếm của nhóm làm (kiểu RAG), nên mô hình không bịa tên bài.
-Đổi mô hình: đặt biến môi trường VISONG_LLM_MODEL (mặc định qwen2.5:3b), địa chỉ: OLLAMA_HOST.
+Mô hình: mặc định tự chọn mô hình mạnh nhất (nhiều tham số nhất) đã tải bằng "ollama pull"; trang Trợ lý
+cho chọn từng mô hình. Ép một mô hình: biến môi trường VISONG_LLM_MODEL; địa chỉ Ollama: OLLAMA_HOST.
 """
 from __future__ import annotations
 
 import json
 import os
+import re
 import threading
 import time
 import urllib.error
 import urllib.request
 
-MODEL = os.environ.get("VISONG_LLM_MODEL", "qwen2.5:3b")
+MODEL = os.environ.get("VISONG_LLM_MODEL", "")      # để trống: tự chọn mô hình mạnh nhất đã tải
 HOST = os.environ.get("OLLAMA_HOST", "http://127.0.0.1:11434")
 KEEP_ALIVE = os.environ.get("VISONG_LLM_KEEP_ALIVE", "60m")   # giữ mô hình trong bộ nhớ, khỏi nạp lại mỗi câu
+SUGGEST = "qwen2.5:7b"
 if not HOST.startswith("http"):
     HOST = "http://" + HOST
+NOT_CHAT = ("embed", "bge", "minilm", "rerank", "nomic", "vision", "llava")   # mô hình không dùng để trò chuyện
+
+
+def size_of(name: str) -> float:
+    """Số tỷ tham số đọc từ tên: "qwen2.5:7b" -> 7, "qwen2.5:1.5b-instruct" -> 1.5; không ghi thì 0."""
+    m = re.search(r"(\d+(?:\.\d+)?)b(?![a-z])", name.split(":")[-1].lower())
+    return float(m.group(1)) if m else 0.0
+
+
+def rank_models(names: list[str]) -> list[str]:
+    """Mô hình trò chuyện, mạnh nhất trước; cùng cỡ thì ưu tiên Qwen (viết tiếng Việt tốt nhất trong cỡ nhỏ)."""
+    chat = [n for n in names if not any(k in n.lower() for k in NOT_CHAT)]
+    return sorted(chat, key=lambda n: (-size_of(n), not n.lower().startswith("qwen"), n))
 
 
 class Ollama:
-    def __init__(self, model: str = MODEL, host: str = HOST, timeout: float = 20.0):
+    def __init__(self, model: str = MODEL, host: str = HOST, timeout: float = 45.0):
         self.model, self.host, self.timeout = model, host.rstrip("/"), timeout
-        self._ok: tuple[float, bool, str] = (0.0, False, "")
+        self._tags: tuple[float, list[str] | None] = (0.0, None)
         self._schema_ok = True
 
-    def status(self) -> tuple[bool, str]:
-        """(chạy được không, lý do). Kết quả được nhớ 20 giây để không hỏi Ollama mỗi lượt."""
-        t, ok, why = self._ok
+    def models(self) -> list[str] | None:
+        """Các mô hình đã tải, mạnh nhất trước; None nếu Ollama chưa chạy. Nhớ 20 giây."""
+        t, names = self._tags
         if time.time() - t < 20:
-            return ok, why
+            return names
         try:
             with urllib.request.urlopen(self.host + "/api/tags", timeout=2) as r:
-                names = [m.get("name", "") for m in json.load(r).get("models", [])]
-            if any(n == self.model or n.split(":")[0] == self.model for n in names):
-                ok, why = True, ""
-            else:
-                ok, why = False, f"chưa tải mô hình {self.model} (gõ: ollama pull {self.model})"
+                names = rank_models([m.get("name", "") for m in json.load(r).get("models", [])])
         except Exception:
-            ok, why = False, "chưa bật Ollama (tải tại ollama.com/download)"
-        self._ok = (time.time(), ok, why)
-        return ok, why
+            names = None
+        self._tags = (time.time(), names)
+        return names
+
+    def pick(self, want: str | None = None) -> tuple[str | None, str]:
+        """(tên mô hình sẽ dùng, lý do nếu không dùng được). want: mô hình người dùng chọn trên trang."""
+        names = self.models()
+        if names is None:
+            return None, "chưa bật Ollama (tải tại ollama.com/download)"
+        w = want or self.model
+        if w:
+            hit = [n for n in names if n == w or n.split(":")[0] == w]
+            return (hit[0], "") if hit else (None, f"chưa tải mô hình {w} (gõ: ollama pull {w})")
+        if not names:
+            return None, f"chưa tải mô hình nào (gõ: ollama pull {SUGGEST})"
+        return names[0], ""
+
+    def status(self) -> tuple[bool, str]:
+        m, why = self.pick()
+        return m is not None, why
 
     def chat(self, system: str, user: str, as_json: bool = False, max_tokens: int = 200,
-             examples: list[tuple[str, str]] = (), schema: dict | None = None, timeout: float | None = None) -> str:
+             examples: list[tuple[str, str]] = (), schema: dict | None = None, timeout: float | None = None,
+             model: str | None = None) -> str:
         """examples: các cặp (câu người dùng, câu trả lời mẫu) đặt trước câu thật (few-shot).
         schema: ép đầu ra đúng khuôn JSON (Ollama >= 0.5); bản Ollama cũ không hiểu thì tự dùng "json"."""
         msgs = [{"role": "system", "content": system}]
         for u, a in examples:
             msgs += [{"role": "user", "content": u}, {"role": "assistant", "content": a}]
         msgs.append({"role": "user", "content": user})
-        body = {"model": self.model, "stream": False, "messages": msgs, "keep_alive": KEEP_ALIVE,
+        body = {"model": model or self.pick()[0] or self.model, "stream": False, "messages": msgs, "keep_alive": KEEP_ALIVE,
                 "options": {"temperature": 0.1 if as_json else 0.4, "num_predict": max_tokens}}
         if as_json:
             body["format"] = schema if schema and self._schema_ok else "json"
@@ -71,11 +101,12 @@ class Ollama:
             return json.load(r)["message"]["content"]
 
     def warm_up(self) -> None:
-        """Nạp sẵn mô hình vào bộ nhớ (chạy nền khi mở web), để câu hỏi đầu tiên không phải chờ."""
+        """Nạp sẵn mô hình mạnh nhất vào bộ nhớ (chạy nền khi mở web), để câu hỏi đầu tiên không phải chờ."""
         def run():
             try:
-                if self.status()[0]:
-                    self.chat("Trả lời: ok", "ok", max_tokens=1, timeout=120)
+                m = self.pick()[0]
+                if m:
+                    self.chat("Trả lời: ok", "ok", max_tokens=1, timeout=180, model=m)
             except Exception:
                 pass
         threading.Thread(target=run, daemon=True).start()

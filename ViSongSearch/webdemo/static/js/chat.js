@@ -60,6 +60,27 @@
     }
   }
 
+  // Danh sách mô hình Ollama đã tải trên máy (mạnh nhất trước): mỗi mô hình là một lựa chọn "LLM · tên"
+  fetch("/api/llm").then((r) => r.json()).then((d) => {
+    const sel = $("chat-mode");
+    const keep = sel.value;
+    sel.querySelectorAll("option[value^='llm']").forEach((o) => o.remove());
+    if (d.models && d.models.length) {
+      d.models.forEach((m, i) => {
+        const o = document.createElement("option");
+        o.value = "llm:" + m;
+        o.textContent = "LLM · " + m + (i === 0 && d.models.length > 1 ? " (mạnh nhất)" : "");
+        sel.appendChild(o);
+      });
+    } else {
+      const o = document.createElement("option");
+      o.value = "llm";
+      o.textContent = d.running ? "LLM (chưa tải mô hình: ollama pull " + d.suggest + ")" : "LLM (chưa bật Ollama)";
+      sel.appendChild(o);
+    }
+    if ([...sel.options].some((o) => o.value === keep)) sel.value = keep;
+  }).catch(() => {});
+
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const t = input.value.trim();

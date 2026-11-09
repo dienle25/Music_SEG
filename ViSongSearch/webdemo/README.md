@@ -75,15 +75,21 @@ Giấy phép của phần giao diện mượn: xem `NOTICE` và `static/vendor/L
 
 ## Trợ lý chế độ LLM (Ollama + Qwen2.5, chạy trên máy)
 
-Trang `/tro-ly` có ô chọn **Luật / LLM**. Ở chế độ LLM, mô hình Qwen2.5 chạy bằng Ollama làm hai việc:
-hiểu câu (trả về các khe lời, ca sĩ, tâm trạng, thời gian, chủ đề dạng JSON) và viết câu trả lời.
+Trang `/tro-ly` có ô chọn **Luật** hoặc **LLM · tên mô hình** (mọi mô hình đã tải bằng Ollama, mạnh nhất đứng đầu).
+Ở chế độ LLM, mô hình làm ba việc:
+hiểu câu (trả về ý định và các khe lời, ca sĩ, tâm trạng, thời gian, chủ đề dạng JSON, có ví dụ mẫu và
+ngữ cảnh câu trợ lý vừa nói), viết câu trả lời, và trả lời câu hỏi về bài vừa tìm được
+("bài này của ai", "lời thế nào") chỉ dựa trên dữ liệu của bài đó.
 Việc tìm bài vẫn do máy tìm kiếm của nhóm làm (kiểu RAG), mô hình chỉ được nhắc các bài máy tìm kiếm trả về.
 Không cần mạng hay khóa API.
 
 Cài một lần:
 1. Tải và cài Ollama: https://ollama.com/download
-2. `ollama pull qwen2.5:3b` (khoảng 2 GB; máy mạnh có thể dùng `qwen2.5:7b`, đặt `set VISONG_LLM_MODEL=qwen2.5:7b` trước khi chạy demo)
-3. Chạy demo như thường (`run_demo.bat`), mở `/tro-ly`, chọn **LLM**.
+2. Tải mô hình: `ollama pull qwen2.5:7b` (khoảng 4,7 GB, hiểu câu tốt hơn; cần card đồ họa từ 6 GB hoặc chạy CPU
+   chậm hơn) hoặc `ollama pull qwen2.5:3b` (khoảng 2 GB, nhanh). Tải cả hai thì chọn trên trang để so sánh.
+3. Chạy demo như thường (`run_demo.bat`), mở `/tro-ly`, chọn **LLM · qwen2.5:7b**.
 
+Mô hình được nạp sẵn khi mở web và giữ trong bộ nhớ 60 phút (`VISONG_LLM_KEEP_ALIVE`).
+Ép một mô hình cố định: `set VISONG_LLM_MODEL=qwen2.5:3b` trước khi chạy demo.
 Nếu Ollama chưa bật, chưa tải mô hình, hoặc mô hình lỗi giữa chừng, trợ lý tự quay về chế độ luật;
-dòng "Bộ hiểu câu" ở bảng bên phải cho biết lượt đó dùng gì và vì sao.
+dòng "Bộ hiểu câu" ở bảng bên phải cho biết lượt đó dùng gì, mất bao nhiêu giây và vì sao.
