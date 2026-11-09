@@ -72,3 +72,18 @@ Tùy chọn: `--port 8001` (đổi cổng), `--no-browser`, `--no-eval` (không 
 - Sửa file .db: demo tự nhận ra và dựng lại chỉ mục ở lần chạy sau.
 
 Giấy phép của phần giao diện mượn: xem `NOTICE` và `static/vendor/LICENSE-*.txt`.
+
+## Trợ lý chế độ LLM (Ollama + Qwen2.5, chạy trên máy)
+
+Trang `/tro-ly` có ô chọn **Luật / LLM**. Ở chế độ LLM, mô hình Qwen2.5 chạy bằng Ollama làm hai việc:
+hiểu câu (trả về các khe lời, ca sĩ, tâm trạng, thời gian, chủ đề dạng JSON) và viết câu trả lời.
+Việc tìm bài vẫn do máy tìm kiếm của nhóm làm (kiểu RAG), mô hình chỉ được nhắc các bài máy tìm kiếm trả về.
+Không cần mạng hay khóa API.
+
+Cài một lần:
+1. Tải và cài Ollama: https://ollama.com/download
+2. `ollama pull qwen2.5:3b` (khoảng 2 GB; máy mạnh có thể dùng `qwen2.5:7b`, đặt `set VISONG_LLM_MODEL=qwen2.5:7b` trước khi chạy demo)
+3. Chạy demo như thường (`run_demo.bat`), mở `/tro-ly`, chọn **LLM**.
+
+Nếu Ollama chưa bật, chưa tải mô hình, hoặc mô hình lỗi giữa chừng, trợ lý tự quay về chế độ luật;
+dòng "Bộ hiểu câu" ở bảng bên phải cho biết lượt đó dùng gì và vì sao.

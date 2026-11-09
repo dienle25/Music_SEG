@@ -11,6 +11,10 @@
         <div class="chat-msg chat-bot">Chào bạn! Bạn nhớ được gì về bài hát? Một câu hát (nhớ sai cũng được), ca sĩ, vui hay buồn, mùa nào…</div>
       </div>
       <form id="chat-form" class="d-flex gap-2 mt-2">
+        <select id="chat-mode" class="form-select w-auto" aria-label="Bộ hiểu câu" title="Luật: văn phạm + từ điển. LLM: mô hình Qwen chạy bằng Ollama trên máy">
+          <option value="rule" selected>Luật</option>
+          <option value="llm">LLM</option>
+        </select>
         <input id="chat-input" class="form-control" placeholder="Ví dụ: bài buồn của Mỹ Tâm về mùa thu" autocomplete="off" aria-label="Tin nhắn" required>
         <button class="btn btn-primary" type="submit">Gửi</button>
       </form>
@@ -25,6 +29,7 @@
         <h6>Lượt vừa rồi</h6>
         <table class="table table-sm state-tbl mb-0">
           <tbody>
+            <tr><td class="text-muted">Bộ hiểu câu</td><td id="t-engine">–</td></tr>
             <tr><td class="text-muted">NLU: ý định</td><td id="t-intent">–</td></tr>
             <tr><td class="text-muted">NLU: khe điền được</td><td id="t-nlu">–</td></tr>
             <tr><td class="text-muted">DST: trạng thái khung</td><td id="t-state">–</td></tr>

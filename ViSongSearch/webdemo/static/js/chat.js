@@ -30,10 +30,11 @@
     try {
       const r = await fetch("/api/chat", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ conv, text }),
+        body: JSON.stringify({ conv, text, mode: $("chat-mode").value }),
       });
       const data = await r.json();
       wait.textContent = data.reply;
+      $("t-engine").textContent = data.engine || "luật";
       $("t-intent").textContent = show(data.nlu && data.nlu.intent);
       $("t-nlu").textContent = show(data.nlu && data.nlu.slots);
       $("t-state").textContent = show(data.state);
