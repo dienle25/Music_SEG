@@ -13,6 +13,7 @@ import time
 import uuid
 from urllib.parse import parse_qs, quote
 
+from starlette.concurrency import run_in_threadpool
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, JSONResponse, PlainTextResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
@@ -232,7 +233,8 @@ def create_app(engine, evaluator, runtime: str) -> FastAPI:
     @app.post("/api/chat")
     async def chat(request: Request):
         body = await request.json()
-        return dialog.turn(session_of(request) + ":" + body.get("conv", ""), body.get("text", ""))
+        return await run_in_threadpool(dialog.turn, session_of(request) + ":" + body.get("conv", ""),
+                                       body.get("text", ""), "llm" if body.get("mode") == "llm" else "rule")
 
     # ------------------------------------------------------------ đánh giá và thống kê
     @app.get("/danh-gia", response_class=HTMLResponse)
