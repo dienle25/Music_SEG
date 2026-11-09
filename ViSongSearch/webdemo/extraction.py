@@ -32,6 +32,19 @@ class Gazetteer:
         self.by_clean: dict[str, str] = {}
         for n in sorted(self.artists, key=lambda x: -self.artists[x]):
             self.by_clean.setdefault(clean(n), n)
+        # Tên gọi tắt: "sơn tùng" cho "Sơn Tùng M-TP" (bỏ phần đuôi viết tắt / ngoặc), nếu không trùng tên khác
+        short: dict[str, set] = {}
+        for k, n in self.by_clean.items():
+            toks = k.split()
+            if len(toks) >= 3:
+                head = " ".join(toks[:2])
+                if len(head) >= 5:
+                    short.setdefault(head, set()).add(n)
+        for head, names in short.items():
+            # nhiều cách viết của cùng một ca sĩ ("Sơn Tùng M-TP", "Sơn Tùng MTP") thì lấy cách viết phổ biến nhất
+            if head not in self.by_clean and len({remove_diacritics(clean(n)).replace(" ", "")[:len(head) + 2]
+                                                   for n in names}) == 1:
+                self.by_clean[head] = max(names, key=lambda n: self.artists.get(n, 0))
         self.artist_matcher = PhraseMatcher(list(self.by_clean))
         self.artist_exact = PhraseMatcher(list(self.by_clean), plain_too=False)
         ev = load("events")

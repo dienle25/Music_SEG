@@ -18,11 +18,24 @@ from . import temporal
 INTENTS = [
     ("chào", r"^(xin chào|chào|hello|hi|alo|hey)\b"),
     ("cảm ơn", r"(cảm ơn|cám ơn|thank|thanks|tks)"),
-    ("làm lại", r"(làm lại|bắt đầu lại|tìm bài khác|reset|xóa hết)"),
+    ("làm lại", r"(làm lại|bắt đầu lại|reset|xóa hết)"),
     ("không nhớ", r"(không nhớ|quên rồi|không biết|chịu|hổng nhớ|ko nhớ)"),
     ("đồng ý", r"^(đúng rồi|đúng|chính nó|phải rồi|ok|oke|ừ|uh|đúng bài|chuẩn|yes)\b"),
     ("xem thêm", r"(không phải|sai rồi|chưa đúng|bài khác|còn bài nào|xem thêm|tiếp|bài nào nữa)"),
 ]
+# Cụm yêu cầu chung ở đầu câu ("mình muốn tìm bài hát", "bài gì mà"...): bỏ đi trước khi hiểu câu,
+# để không bị coi là lời bài hát. Không bỏ đại từ đứng một mình ("em của ngày hôm qua" vẫn là lời).
+REQUEST_RX = re.compile(
+    r"^(?:(?:mình|tôi|tui|em|anh|bạn)\s+)?(?:(?:muốn|cần|đang|định)\s+)*(?:tìm|kiếm|nghe)"
+    r"(?:\s+(?:giúp|giùm|hộ|dùm))?(?:\s+(?:mình|tôi|tui|em))?(?:\s+(?:lại|một|cái))*"
+    r"(?:\s+(?:bài hát|bài nhạc|bài|nhạc))?(?:\s+(?:nào|gì))?\b"
+    r"|^cho\s+(?:mình|tôi|tui|em)\s+(?:xin\s+|nghe\s+)?(?:một\s+)?(?:bài hát|bài nhạc|bài|nhạc)\b"
+    r"|^(?:bài|bài hát|bài nhạc)\s+(?:gì|nào)\s+mà\b"
+    r"|^(?:mình|tôi|tui|em|anh)\s+nhớ\s+(?:là\s+)?(?:có\s+)?(?:một\s+)?(?:bài|bài hát)\b")
+# Câu chỉ còn từ chung chung, không có thông tin gì để tìm
+GENERIC = re.compile(r"^(?:bài hát|bài nhạc|bài|nhạc|nào|gì|hay|có|không|ko|vậy|nhé|nha|đi|với|giúp|mình|tôi|ạ|ơi|\s)*$")
+# "của ai cũng được": người dùng không nhớ / không cần ca sĩ
+ANY_ARTIST = re.compile(r"(?:của\s+)?(?:ai hát|ca sĩ nào|ai)\s+cũng\s+được")
 QUESTIONS = {
     "lyric": "Bạn còn nhớ câu hát nào không, dù chỉ vài chữ hay nhớ sai cũng được?",
     "artist": "Bạn có nhớ ca sĩ hoặc nhạc sĩ không?",
@@ -78,6 +91,18 @@ class DialogManager:
                     t = " ".join(toks[:len(src[:m.start()].split())] + toks[len(src[:m.end()].split()):])
                 break
         slots = {}
+        if intent == "cung cấp thông tin" and ANY_ARTIST.search(t):
+            if "artist" not in st["asked"]:
+                st["asked"].append("artist")
+            t = ANY_ARTIST.sub(" ", t).strip()
+            if not t or GENERIC.match(t):
+                intent = "không nhớ"
+        if intent in ("cung cấp thông tin", "xem thêm") and t:
+            t = REQUEST_RX.sub(" ", t).strip()
+            if GENERIC.match(t):
+                t = ""
+                if intent == "cung cấp thông tin":
+                    intent = "tìm chung"
         if intent in ("cung cấp thông tin", "xem thêm") and t:
             u = self.eng.grammar.understand(t)
             s = u["slots"]
@@ -107,6 +132,21 @@ class DialogManager:
                         slots[k] = s[k]
                 if s.get("artist_text"):
                     slots["artist_text"] = s["artist_text"]
+                if not slots.get("artist"):      # ca sĩ nằm giữa câu: "bài sơn tùng hát về ...", "ca sĩ là mỹ tâm"
+                    ents = [e for e in self.eng.gazetteer.find(t) if e["type"] == "CA_SĨ"]
+                    if ents:
+                        e = ents[0]
+                        slots["artist"] = e["value"]
+                        toks = t.split()
+                        i, j = e["span"] if e.get("span") else (0, 0)
+                        left, right = toks[:i], toks[j:]
+                        while left and left[-1] in ("là", "của", "do", "bài", "sĩ", "ca", "nhạc"):
+                            left = left[:-1]
+                        while right and right[0] in ("hát", "trình", "bày", "thể", "hiện"):
+                            right = right[1:]
+                        rest = " ".join(left + right)
+                        if slots.get("lyric"):
+                            slots["lyric"] = rest if not GENERIC.match(rest) else None
             if intent == "xem thêm" and not slots:
                 pass
             elif intent == "xem thêm" and slots:
@@ -142,6 +182,9 @@ class DialogManager:
             return self._reply(st, nlu, "chào", "Chào bạn! Mình giúp bạn tìm bài hát khi quên tên. " + QUESTIONS["lyric"])
         if intent == "cảm ơn":
             return self._reply(st, nlu, "kết_thúc", "Không có gì! Khi nào cần tìm bài khác cứ gõ cho mình nhé.")
+        if intent == "đồng ý" and not st["last_results"]:
+            st["last_act"] = "hỏi_lyric"
+            return self._reply(st, nlu, "hỏi_lyric", QUESTIONS["lyric"])
         if intent == "đồng ý" and st["last_results"]:
             top = st["last_results"][0]
             sim = self.eng.similar(top["objectID"], 3)
@@ -149,13 +192,18 @@ class DialogManager:
             return self._reply(st, nlu, "xác_nhận",
                                f"Tuyệt! Bài bạn tìm là “{top['title']}” ({top['artist']}). Có thể bạn cũng thích: {names}.",
                                [top])
+        if intent == "tìm chung":
+            if st["slots"]:
+                return self._search_and_reply(st, nlu)
+            st["last_act"] = "hỏi_lyric"
+            return self._reply(st, nlu, "hỏi_lyric", "Được, mình giúp bạn. " + QUESTIONS["lyric"])
         if intent == "không nhớ":
             if st["last_act"] and st["last_act"].startswith("hỏi_"):
                 st["asked"].append(st["last_act"][4:])
             return self._search_and_reply(st, nlu, note="Không sao. ")
         if intent == "xem thêm" and not nlu["slots"]:
             st["offset"] += 3
-            return self._search_and_reply(st, nlu, note="Mình đưa thêm vài bài khác nhé. ")
+            return self._search_and_reply(st, nlu, note="Mình đưa thêm vài bài khác nhé. ", more=True)
         # cung cấp thông tin: cập nhật trạng thái (DST)
         for k, v in nlu["slots"].items():
             if k == "lyric" and st["slots"].get("lyric") and v not in st["slots"]["lyric"]:
@@ -167,7 +215,7 @@ class DialogManager:
             st["slots"]["lyric"] = clean(text)
         return self._search_and_reply(st, nlu)
 
-    def _search_and_reply(self, st, nlu, note: str = "") -> dict:
+    def _search_and_reply(self, st, nlu, note: str = "", more: bool = False) -> dict:
         q = self.frame_query(st["slots"])
         if not q:
             st["last_act"] = "hỏi_lyric"
@@ -185,7 +233,11 @@ class DialogManager:
             return self._reply(st, nlu, act, text, [], q, conf)
         known = ", ".join(f"{SLOT_NAMES[k]}: {v['name'] if isinstance(v, dict) else v}"
                           for k, v in st["slots"].items() if k in SLOT_NAMES)
-        if conf >= 0.35 or not missing:
+        if more:
+            act = "đưa_thêm"
+            names = "; ".join(f"“{h['title']}” ({h['artist']})" for h in hits)
+            return self._reply(st, nlu, act, note + f"{names}. Có bài nào đúng không?", hits, q, conf)
+        if conf >= 0.35 or not missing or self._exact(st["slots"], hits[0]):
             act = "đưa_kết_quả"
             text = (note + f"Với thông tin ({known}), mình nghĩ đó là “{hits[0]['title']}” của {hits[0]['artist']}. "
                     "Đúng bài chưa? Nếu chưa, gõ “bài khác” hoặc kể thêm chi tiết.")
@@ -194,6 +246,16 @@ class DialogManager:
             st["asked"].append(missing[0])
             text = (note + f"Mình tìm được vài bài gần đúng ({known}) nhưng chưa chắc. " + QUESTIONS[missing[0]])
         return self._reply(st, nlu, act, text, hits, q, conf)
+
+    def _exact(self, slots: dict, hit: dict) -> bool:
+        """Lời người dùng nhớ trùng gần nguyên văn với tên bài hoặc một đoạn lời của bài đứng đầu."""
+        lyric = plain(slots.get("lyric") or "")
+        if len(lyric.split()) < 2:
+            return False
+        song = self.eng.by_id.get(hit["objectID"])
+        title = plain(hit.get("title") or "")
+        body = plain(" ".join((getattr(song, "lyrics", "") or "").split())) if song else ""
+        return bool(title) and (title in lyric or lyric in title) or (len(lyric.split()) >= 4 and lyric in body)
 
     def _reply(self, st, nlu, act, text, hits=None, query="", conf=None) -> dict:
         st["last_act"] = act

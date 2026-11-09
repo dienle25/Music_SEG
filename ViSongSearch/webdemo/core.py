@@ -44,7 +44,7 @@ from .sentiment import NaiveBayes, SentimentLexicon, features, weak_labels
 from .snippets import highlight, snippet
 from .spelling import NoisyChannelSpeller
 
-CODE_VERSION = "1.0.7"
+CODE_VERSION = "1.0.9"
 TYPES = ("Q1", "Q2", "Q3", "Q4", "Q5")
 TYPE_NAMES = {"Q1": "Nhớ đúng lời", "Q2": "Gõ không dấu", "Q3": "Nhớ sai / gõ nhầm", "Q4": "Diễn đạt lại lời",
               "Q5": "Mô tả bài hát"}
