@@ -1,0 +1,100 @@
+// ViSongSearch web demo theme.
+// Adapted from typesense/showcase-songs-search (src/bootstrap.scss, src/index.scss, src/app.scss),
+// Copyright Typesense, Apache License 2.0. Changes: Vietnamese-capable fonts, offline fallbacks,
+// panels for query analysis, song pages, lab, evaluation and the chat assistant.
+
+$primary: #a30015;
+$secondary: #f8eece;
+$gray-100: #fcfbfb;
+$gray-200: #faf9f8;
+$gray-300: #f8f7f5;
+$gray-400: #f5f3f1;
+$gray-500: #dddbd9;
+$gray-600: #c4c2c1;
+$gray-700: #8f8d8c;
+$gray-800: #6b6a69;
+$gray-900: #3d3d3c;
+$black: #020202;
+$light: $gray-400;
+$text-muted: $gray-700;
+$component-active-bg: $secondary;
+$input-color: $primary;
+$input-focus-box-shadow: 0 0 0 0.2rem #f3dfa240;
+$form-select-focus-box-shadow: 0 0 0 0.2rem #f3dfa240;
+$form-select-indicator-padding: 2.5rem;
+$form-select-bg-size: 12px 9px;
+$form-select-bg: $gray-400;
+$input-padding-x: 1.3rem;
+$input-padding-y: 0.8rem;
+$font-family-sans-serif: "Be Vietnam Pro", system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+$font-size-base: 0.92rem;
+$input-font-size: 1.35rem;
+$input-font-weight: 500;
+$headings-font-weight: 700;
+$border-radius: 0px;
+$enable-rounded: false;
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px, xxl: 1320px);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { letter-spacing: -0.03rem; }
+input { letter-spacing: -0.03rem; }
+.font-serif { font-family: "Lora", Georgia, "Times New Roman", serif; }
+.font-letter-spacing-loose { letter-spacing: 0.01rem; }
+.border-light-2 { border-color: $gray-500 !important; }
+.bg-light-2 { background-color: $gray-400; }
+.navbar-toggler-icon { background-size: 75% 75%; }
+
+html { scroll-behavior: smooth; position: relative; min-height: 100%; }
+body { margin-bottom: 60px; background: #fff; }
+footer.site-footer { position: absolute; bottom: 0; width: 100%; background-color: $gray-300; color: $gray-800; font-size: .8rem; }
+footer.site-footer a { color: $gray-800; }
+
+.search-result-card { min-height: 100px; font-size: 12.5px; position: relative; }
+@media (min-width: 768px) { .search-result-card { min-height: 190px; } #filters-section.d-md-block { display: block !important; } }
+a.clickable-search-term { color: unset; text-decoration-line: underline; text-decoration-color: darken($secondary, 40%); cursor: pointer; }
+.grid-container { display: grid; grid-template-columns: minmax(0, 1fr); row-gap: 10px; }
+@media (min-width: 768px) { .grid-container { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 20px; row-gap: 20px; } }
+mark, .ais-Highlight-highlighted { color: unset; background-color: rgba(darken($secondary, 8%), 0.85); padding: 0 0.08em; }
+.searchbox-input:focus { outline: none; box-shadow: none; border-color: white; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+.ais-SearchBox-form { position: relative; }
+.ais-SearchBox-loadingIndicator { position: absolute; top: 21px; right: 24px; }
+
+// ---- ViSongSearch additions
+.navbar-site { background: $primary; }
+.navbar-site .nav-link, .navbar-site .navbar-brand { color: #fff !important; }
+.navbar-site .nav-link.active { background: rgba(255,255,255,.15); }
+.snippet { color: $gray-900; font-size: 12.5px; line-height: 1.45; }
+.badge-soft { background: $gray-300; color: $gray-900; border: 1px solid $gray-500; font-weight: 400; }
+.badge-course { background: $secondary; color: darken($primary, 5%); font-weight: 600; font-size: 10.5px; letter-spacing: .02rem; }
+.mood-vui { background: #e3f4e5 !important; color: #1f6b2a !important; }
+.mood-buon { background: #e5ecf7 !important; color: #23457a !important; }
+.mood-tt { background: $gray-300 !important; color: $gray-800 !important; }
+.why { font-size: 11px; color: $gray-800; }
+.panel { border: 1px solid $gray-500; background: $gray-200; padding: .9rem 1rem; }
+.panel h6 { font-weight: 700; color: $primary; margin-bottom: .4rem; }
+.step { border-left: 3px solid $secondary; padding-left: .6rem; margin-bottom: .55rem; }
+.step-title { font-weight: 600; font-size: .82rem; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .8rem; }
+.tree ul { padding-left: 1.1rem; margin: 0; list-style: none; border-left: 1px dotted $gray-600; }
+.tree li { margin: 1px 0; }
+.tree .nt { color: $primary; font-weight: 600; }
+.tree .tok { background: $secondary; padding: 0 .25rem; }
+.prob-bar { height: 8px; background: $gray-400; position: relative; }
+.prob-bar > span { position: absolute; left: 0; top: 0; bottom: 0; background: $primary; }
+.table-sm td, .table-sm th { padding: .25rem .4rem; }
+.heat td { text-align: center; font-size: 11px; min-width: 38px; }
+.chat-box { height: 460px; overflow-y: auto; background: $gray-200; border: 1px solid $gray-500; padding: 1rem; }
+.chat-msg { max-width: 80%; padding: .5rem .8rem; margin-bottom: .6rem; white-space: pre-wrap; }
+.chat-user { margin-left: auto; background: $primary; color: #fff; }
+.chat-bot { background: #fff; border: 1px solid $gray-500; }
+.lyrics-excerpt { white-space: pre-line; font-family: "Lora", Georgia, serif; font-size: 1rem; line-height: 1.6; }
+.tag-cloud a { margin: .2rem .35rem; display: inline-block; }
+.kpi { border: 1px solid $gray-500; padding: .8rem 1rem; background: #fff; }
+.kpi .v { font-size: 1.6rem; font-weight: 700; color: $primary; }
+.kpi .l { font-size: .75rem; color: $gray-800; }
+.status-ok { color: #1f6b2a; font-weight: 600; }
+.status-new { color: #8a5a00; font-weight: 600; }
+svg text { font-family: "Be Vietnam Pro", system-ui, sans-serif; }

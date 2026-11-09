@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Trợ lý tìm bài hát | ViSongSearch{% endblock %}
+{% block body %}
+<div class="container mt-4 mb-5">
+  <h1 class="font-serif h2">Trợ lý tìm bài hát <span class="course tmg">TMG 10</span></h1>
+  <p class="hero-sub small">Hệ hội thoại theo khung: hiểu câu (NLU) → theo dõi trạng thái (DST) → chọn hành động (policy) → sinh câu trả lời (NLG).
+    Kể dần những gì bạn nhớ, trợ lý sẽ hỏi thêm khi chưa chắc.</p>
+  <div class="row g-3">
+    <div class="col-lg-7 chat-wrap">
+      <div id="chat-box" class="chat-box" aria-live="polite">
+        <div class="chat-msg chat-bot">Chào bạn! Bạn nhớ được gì về bài hát? Một câu hát (nhớ sai cũng được), ca sĩ, vui hay buồn, mùa nào…</div>
+      </div>
+      <form id="chat-form" class="d-flex gap-2 mt-2">
+        <input id="chat-input" class="form-control" placeholder="Ví dụ: bài buồn của Mỹ Tâm về mùa thu" autocomplete="off" aria-label="Tin nhắn" required>
+        <button class="btn btn-primary" type="submit">Gửi</button>
+      </form>
+      <div class="quick mt-2 small">Gợi ý:
+        {% for q in ["bài hát buồn về mùa thu", "hình như có câu em ơi", "không nhớ", "bài khác", "đúng rồi", "làm lại"] %}
+        <a role="button" class="example-chip quick-reply" data-q="{{ q }}">{{ q }}</a>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-lg-5">
+      <div class="panel mb-3">
+        <h6>Lượt vừa rồi</h6>
+        <table class="table table-sm state-tbl mb-0">
+          <tbody>
+            <tr><td class="text-muted">NLU: ý định</td><td id="t-intent">–</td></tr>
+            <tr><td class="text-muted">NLU: khe điền được</td><td id="t-nlu">–</td></tr>
+            <tr><td class="text-muted">DST: trạng thái khung</td><td id="t-state">–</td></tr>
+            <tr><td class="text-muted">Policy: hành động</td><td id="t-policy">–</td></tr>
+            <tr><td class="text-muted">Truy vấn gửi máy tìm kiếm</td><td id="t-query">–</td></tr>
+            <tr><td class="text-muted">Độ tự tin (khoảng cách bài 1 và 2)</td><td id="t-conf">–</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="panel">
+        <h6>Kết quả</h6>
+        <div id="chat-results" class="chat-results small text-muted">Chưa có.</div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/js/chat.js"></script>{% endblock %}

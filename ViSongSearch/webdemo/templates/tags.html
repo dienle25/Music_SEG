@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Thẻ bài hát | ViSongSearch{% endblock %}
+{% block body %}
+<div class="container mt-4 mb-5">
+  <h1 class="font-serif h2">Thẻ do người dùng gắn <span class="course">SEG 11</span></h1>
+  <p class="hero-sub small">Gắn thẻ ở cuối mỗi trang bài hát. Từ thẻ của vài bài, demo suy ra thẻ cho bài tương tự (lan truyền theo cosine LSA),
+    giống ý tưởng tìm kiếm xã hội trong slide.</p>
+  <div class="row">
+    <div class="col-lg-6">
+      <h2 class="h5">Đám mây thẻ</h2>
+      <div class="tag-cloud mb-3">
+        {% for t in cloud %}<a href="/the?t={{ t.tag | urlencode }}" style="font-size: {{ t.size }}rem">{{ t.tag }}</a>{% else %}
+        <span class="small text-muted">Chưa có thẻ nào. Mở một bài hát và gắn thẻ thử.</span>{% endfor %}
+      </div>
+      <h2 class="h5">Thẻ tự gán từ nội dung <span class="course tmg">TMG 15</span><span class="course tmg">TMG 17</span></h2>
+      <div class="tag-cloud small">{% for t, c in auto_cloud %}<span class="badge badge-soft">{{ t }} ×{{ c }}</span> {% endfor %}</div>
+      <p class="small text-muted mt-1">Tâm trạng theo từ điển cảm xúc, thời gian nhắc trong lời, cảm xúc nổi bật nhất.</p>
+    </div>
+    <div class="col-lg-6">
+      {% if t %}
+      <h2 class="h5">Bài có thẻ “{{ t }}”</h2>
+      {% for s, c in songs %}<div class="small"><a href="/bai-hat/{{ s.doc_id }}-{{ slug(s.title) }}">{{ s.title }}</a> · {{ s.artist }} <span class="text-muted">×{{ c }}</span></div>{% else %}<div class="small text-muted">Chưa có bài nào.</div>{% endfor %}
+      {% if inferred %}
+      <h3 class="h6 mt-3">Có thể cũng hợp thẻ này</h3>
+      {% for s, v in inferred %}<div class="small"><a href="/bai-hat/{{ s.doc_id }}-{{ slug(s.title) }}">{{ s.title }}</a> · {{ s.artist }} <span class="text-muted">({{ v }})</span></div>{% endfor %}
+      {% endif %}
+      {% else %}
+      <p class="small text-muted">Chọn một thẻ bên trái để xem các bài.</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

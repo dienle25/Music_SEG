@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Đối chiếu với slide hai môn | ViSongSearch{% endblock %}
+{% block body %}
+{% set cls = {"có sẵn": "st-co", "bổ sung": "st-bs", "có sẵn + bổ sung": "st-cb", "chưa làm": "st-cl"} %}
+<div class="container mt-4 mb-5">
+  <h1 class="font-serif h2">Đối chiếu với slide SEG301 và TMG301</h1>
+  <p class="hero-sub small">Mỗi bài giảng của hai môn, kỹ thuật tương ứng trong dự án, nằm ở file nào và xem demo ở đâu.
+    <span class="st st-co">có sẵn</span> đã có trong mã của bài báo (visong/, app/, crawler/, scripts/);
+    <span class="st st-bs">bổ sung</span> phần thiếu, viết thêm trong webdemo/;
+    <span class="st st-cb">có sẵn + bổ sung</span> có sẵn và được làm rõ thêm trong demo.</p>
+  {% for course in ["SEG301", "TMG301"] %}
+  {% set rows = cov | selectattr(0, "equalto", course) | list %}
+  <h2 class="h4 section-title" id="{{ course | lower }}">{{ course }} <small>{{ rows | length }} bài giảng ·
+    {% for k, v in counts.get(course, {}).items() if v %}{{ v }} {{ k }}{% if not loop.last %}, {% endif %}{% endfor %}</small></h2>
+  <div class="tbl-wrap">
+  <table class="table table-sm data">
+    <thead><tr><th style="width:22%">Bài giảng</th><th>Kỹ thuật</th><th>Trạng thái</th><th>Mã nguồn</th><th>Xem demo</th></tr></thead>
+    <tbody>
+    {% for _, num, title, items in rows %}
+      {% for topic, st, code, link, note in items %}
+      <tr class="cov-row">
+        {% if loop.first %}<td rowspan="{{ items | length }}"><b>{{ num }}.</b> {{ title }}</td>{% endif %}
+        <td>{{ topic }}{% if note %}<div class="text-muted small">{{ note }}</div>{% endif %}</td>
+        <td><span class="st {{ cls.get(st, '') }}">{{ st }}</span></td>
+        <td class="mono" style="font-size:11px">{{ code }}</td>
+        <td>{% if link %}<a href="{{ link }}">{{ link }}</a>{% endif %}</td>
+      </tr>
+      {% endfor %}
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

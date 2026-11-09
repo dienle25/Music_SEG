@@ -1,0 +1,19 @@
+{
+  "_mo_ta": "Từ kích hoạt sự kiện (TMG 14 Event Extraction) và từ điển địa danh (gazetteer) cho trích xuất thông tin (SEG 4.6).",
+  "triggers": {
+    "CHIA_TAY": ["chia tay", "chia ly", "biệt ly", "rời xa", "xa nhau", "buông tay", "ra đi", "bỏ đi", "lìa xa", "từ biệt"],
+    "GẶP_GỠ": ["gặp", "gặp gỡ", "gặp lại", "tương phùng", "quen nhau", "làm quen"],
+    "YÊU": ["yêu", "thương", "say đắm", "phải lòng", "tỏ tình", "cảm nắng"],
+    "CƯỚI": ["cưới", "đám cưới", "lễ cưới", "cô dâu", "chú rể", "về chung một nhà", "rước dâu"],
+    "TRỞ_VỀ": ["trở về", "quay về", "về lại", "trở lại", "quay lại", "về quê"],
+    "KHÓC": ["khóc", "rơi lệ", "bật khóc", "lệ rơi", "nước mắt rơi"],
+    "CHỜ_ĐỢI": ["chờ", "đợi", "chờ đợi", "mong chờ", "ngóng", "trông"],
+    "NHỚ": ["nhớ", "nhớ nhung", "thương nhớ", "hoài niệm"],
+    "QUÊN": ["quên", "lãng quên", "quên lãng"]
+  },
+  "agents": ["anh", "em", "tôi", "ta", "mình", "người", "chúng ta", "chúng mình", "đôi ta", "ai", "con", "mẹ", "cha", "ba"],
+  "places": ["hà nội", "sài gòn", "huế", "đà lạt", "hội an", "đà nẵng", "cần thơ", "hải phòng", "nha trang", "vũng tàu",
+             "sa pa", "sapa", "hồ gươm", "hồ tây", "phố cổ", "sông hương", "bến thành", "phú quốc", "quy nhơn", "tây nguyên",
+             "miền tây", "miền trung", "miền bắc", "miền nam", "phố", "biển", "sân ga", "bến đò", "bến sông", "dòng sông",
+             "quê", "làng", "sân trường", "góc phố", "con phố", "hiên nhà", "ga", "đồi thông", "rừng", "núi", "đồng lúa"]
+}

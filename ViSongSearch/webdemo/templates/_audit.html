@@ -1,0 +1,16 @@
+<div class="panel mb-3" id="seo">
+  <h6>Chấm SEO trang này <span class="course">SEG 8</span>
+    <span class="badge {{ 'mood-vui' if audit.score >= 80 else 'mood-tt' }} ms-1">{{ audit.score }}/100</span></h6>
+  <table class="table table-sm mb-2">
+    <tbody>
+    {% for c in audit.checks %}
+      <tr>
+        <td class="text-nowrap">{% if c.ok %}<span class="ok-mark">✓ đạt</span>{% else %}<span class="bad-mark">✗ chưa</span>{% endif %}</td>
+        <td class="small">{{ c.name }}{% if c.detail %}<div class="text-muted" style="font-size:11px">{{ c.detail }}</div>{% endif %}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  <div class="small text-muted">Kỹ thuật: <a href="/sitemap.xml">sitemap.xml</a>, <a href="/robots.txt">robots.txt</a>,
+    dữ liệu cấu trúc schema.org MusicRecording (JSON-LD) trong mã trang. Tổng hợp nhiều trang ở <a href="/thong-ke#seo">Thống kê</a>.</div>
+</div>
