@@ -397,6 +397,12 @@ class DemoEngine:
         a["spell"] = self.speller.suggest(a["content"]) if len(a["content"].split()) >= 2 else None
         if a["spell"] and a["type"] == "Q1":
             a["type"], a["type_source"] = "Q3", "sửa chính tả thấy lỗi gõ / nghe nhầm"
+        if a["type"] != next(iter(a["type_proba"]), a["type"]):
+            # luật (văn phạm, sửa chính tả) quyết định khác bộ phân loại: xác suất hiển thị là kết hợp
+            # 0,8 x luật + 0,2 x hồi quy logistic, để thanh xác suất khớp với loại được chọn
+            mix = {c: 0.2 * p + (0.8 if c == a["type"] else 0.0) for c, p in a["type_proba"].items()}
+            a["type_proba"] = {c: round(p, 3) for c, p in sorted(mix.items(), key=lambda x: -x[1])}
+            a["type_source"] += "; kết hợp luật 0,8 + hồi quy logistic 0,2"
         # nghĩa từ và mở rộng (TMG 16)
         exp_text, exp_w, wsd = self.wordnet.expansion(a["restored"])
         a["wsd"] = [{"word": x["word"], "sense": x["sense"], "gloss": x["gloss"], "ambiguous": x["ambiguous"],
@@ -612,7 +618,17 @@ class DemoEngine:
             rows = [self.pos[d] for d, _ in results[:40]]
             excl = set(clean(a["restored"]).split())
             g = clustering.cluster_results(self.vsm.Z, rows, self.X_marked, self.terms_marked, exclude=excl)
-            groups = {self.ids[r]: name for r, name in g.items()}
+            # đặt tên nhóm theo bài xếp cao nhất trong nhóm (dễ hiểu hơn vài từ khóa rời rạc), đánh số theo thứ hạng
+            first = {}
+            for d, _ in results[:40]:
+                name = g.get(self.pos[d])
+                if name is not None and name not in first:
+                    first[name] = d
+            def short(t):
+                t = re.split(r"\s+[-–(\[]", t)[0].strip()
+                return t if len(t) <= 28 else t[:27].rstrip() + "…"
+            rename = {name: f"Nhóm {i}: gần “{short(self.by_id[d].title)}”" for i, (name, d) in enumerate(first.items(), 1)}
+            groups = {self.ids[r]: rename[name] for r, name in g.items()}
         val = (results, versions, groups, trace)
         with self._lock:
             self._rcache[key] = val

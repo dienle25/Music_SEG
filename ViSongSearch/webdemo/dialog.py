@@ -260,15 +260,15 @@ class DialogManager:
             st = self.sessions.get(session)
             if st:
                 st["turns"] -= 1
-            engine, note = "luật", f"LLM lỗi ({type(e).__name__}), dùng luật"
+            engine, note = "luật", f"mô hình lỗi ({type(e).__name__}), dùng luật"
             r = self._turn(session, text, engine, model)
         if engine == "llm" and r.get("results") and r["policy"] in ("đưa_kết_quả", "xác_nhận") or \
                 engine == "llm" and r["policy"].startswith("hỏi_") and r.get("results"):
             try:
                 r["reply"] = self._nlg_llm(text, r, model) or r["reply"]
             except Exception:
-                note = "LLM viết câu lỗi, dùng câu mẫu"
-        r["engine"] = (f"LLM ({model}) · {time.perf_counter() - t0:.1f} giây" if engine == "llm" else "luật") + \
+                note = "mô hình viết câu lỗi, dùng câu mẫu"
+        r["engine"] = (f"mô hình {model} · {time.perf_counter() - t0:.1f} giây" if engine == "llm" else "Thường (luật)") + \
             (f" · {note}" if note else "")
         return r
 

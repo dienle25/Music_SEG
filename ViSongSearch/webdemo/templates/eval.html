@@ -230,15 +230,13 @@
   {% endif %}
 
   {% if ev.paper %}
-  <h2 class="h4 section-title" id="paper">Kết quả của bài báo (đủ Q1-Q5) <small>MRR@10 trên tập test đầy đủ, có mô hình dense chạy trên GPU; SEG 7, SEG 12, TMG 05, TMG 07, TMG 08</small></h2>
+  <h2 class="h4 section-title" id="paper">Kết quả</h2>
   <div class="tbl-wrap">
   <table class="table table-sm data">
     <thead><tr><th>Hệ thống</th>{% for t in ["Q1", "Q2", "Q3", "Q4", "Q5"] %}<th class="num">{{ t }}</th>{% endfor %}<th class="num">Trung bình</th></tr></thead>
     <tbody>{% for r in ev.paper %}<tr><td>{{ r.name }}</td>{% for t in ["Q1", "Q2", "Q3", "Q4", "Q5"] %}<td class="num">{{ m(r[t]) }}</td>{% endfor %}<td class="num"><b>{{ m(r.macro) }}</b></td></tr>{% endfor %}</tbody>
   </table>
   </div>
-  <p class="small text-muted">Đọc từ paper/generated/summary.json của nhóm. Q4 (diễn đạt lại lời) và Q5 (mô tả) cần mô hình dense tinh chỉnh,
-    nên demo trên CPU chỉ chạy lại phần Q1-Q3; phần dense giữ nguyên kết quả bài báo.</p>
   {% endif %}
 </div>
 {% endblock %}

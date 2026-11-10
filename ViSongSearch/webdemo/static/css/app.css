@@ -75,3 +75,7 @@ table.data tr.hl td { background: #fdf6e3; font-weight: 600; }
 @media (max-width: 576px) {
   table.data, table.heat { display: block; overflow-x: auto; max-width: 100%; }
 }
+
+/* Ẩn nhãn chương TMG/SEG trên giao diện (bảng đối chiếu bài giảng ở /doi-chieu vẫn giữ) */
+.course { display: none !important; }
+.lab-card .purpose { font-size: .9rem; margin-bottom: .35rem; }

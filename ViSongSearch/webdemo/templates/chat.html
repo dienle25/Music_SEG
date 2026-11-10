@@ -2,27 +2,32 @@
 {% block title %}Trợ lý tìm bài hát | ViSongSearch{% endblock %}
 {% block body %}
 <div class="container mt-4 mb-5">
-  <h1 class="font-serif h2">Trợ lý tìm bài hát <span class="course tmg">TMG 10</span></h1>
+  <h1 class="font-serif h2">Trợ lý tìm bài hát</h1>
   <p class="hero-sub small">Hệ hội thoại theo khung: hiểu câu (NLU) → theo dõi trạng thái (DST) → chọn hành động (policy) → sinh câu trả lời (NLG).
     Kể dần những gì bạn nhớ, trợ lý sẽ hỏi thêm khi chưa chắc.</p>
   <div class="row g-3">
     <div class="col-lg-7 chat-wrap">
+      <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+        <div id="chat-mode" class="btn-group btn-group-sm" role="group" aria-label="Cách trợ lý hiểu câu">
+          <button type="button" class="btn btn-outline-primary active" data-mode="rule"
+                  title="Văn phạm + từ điển, chạy ngay không cần mô hình">Thường</button>
+          <button type="button" class="btn btn-outline-primary" data-mode="llm" data-slot="1" disabled
+                  title="Mô hình ngôn ngữ nhỏ chạy bằng Ollama trên máy">Mô hình 1</button>
+          <button type="button" class="btn btn-outline-primary" data-mode="llm" data-slot="2" disabled
+                  title="Mô hình ngôn ngữ lớn hơn: hiểu câu tốt hơn nhưng chậm hơn">Mô hình 2</button>
+        </div>
+        <span id="mode-note" class="small text-muted"></span>
+        <button id="chat-reset" type="button" class="btn btn-sm btn-outline-primary ms-auto"
+                title="Xóa đoạn chat và bắt đầu tìm bài mới">↺ Làm lại cuộc trò chuyện</button>
+      </div>
       <div id="chat-box" class="chat-box" aria-live="polite">
         <div class="chat-msg chat-bot">Chào bạn! Bạn nhớ được gì về bài hát? Một câu hát (nhớ sai cũng được), ca sĩ, vui hay buồn, mùa nào…</div>
       </div>
       <form id="chat-form" class="d-flex gap-2 mt-2">
-        <select id="chat-mode" class="form-select w-auto" aria-label="Bộ hiểu câu" title="Luật: văn phạm + từ điển. LLM: mô hình chạy bằng Ollama trên máy (mô hình càng lớn càng hiểu tốt nhưng chậm hơn)">
-          <option value="rule" selected>Luật</option>
-          <option value="llm">LLM</option>
-        </select>
         <input id="chat-input" class="form-control" placeholder="Ví dụ: bài buồn của Mỹ Tâm về mùa thu" autocomplete="off" aria-label="Tin nhắn" required>
         <button class="btn btn-primary" type="submit">Gửi</button>
       </form>
-      <div class="quick mt-2 small">Gợi ý:
-        {% for q in ["bài hát buồn về mùa thu", "hình như có câu em ơi", "không nhớ", "bài khác", "đúng rồi", "làm lại"] %}
-        <a role="button" class="example-chip quick-reply" data-q="{{ q }}">{{ q }}</a>
-        {% endfor %}
-      </div>
+      <div class="quick mt-2 small">Gợi ý: <span id="chat-suggest"></span></div>
     </div>
     <div class="col-lg-5">
       <div class="panel mb-3">
