@@ -61,11 +61,11 @@ PRESET_WEIGHTS = {   # đặt tay ban đầu; sau khi đánh giá xong được 
     "Q4": {"syl12": 0.5, "nodiac12": 0.5, "char5x": 0.5, "phon12": 0.2, "spell": 0.0, "meta": 0.6, "lsa": 1.0, "expand": 1.0},
     "Q5": {"syl12": 0.5, "nodiac12": 0.5, "char5x": 0.3, "phon12": 0.0, "spell": 0.0, "meta": 1.0, "lsa": 1.0, "expand": 1.0},
 }
-MODELS = {"fusion": "ViSongSearch (trộn RRF theo loại truy vấn)", "bm25": "BM25 âm tiết (SEG 7.2)",
-          "bm25_nodiac": "BM25 không dấu", "char5x": "BM25 n-gram ký tự", "ql": "Query likelihood, Dirichlet (SEG 7.3)",
-          "rm3": "RM3 phản hồi giả (SEG 7.3)", "tfidf": "Không gian vector tf-idf (SEG 7.1)",
-          "lsa": "LSA chủ đề ẩn (SEG 7.6)", "boolean": "Boolean AND/OR/NOT (SEG 7.1)",
-          "pagerank": "BM25 + PageRank (SEG 4.5)", "interleave": "So sánh xen kẽ: ViSongSearch vs BM25 (SEG 9.6)"}
+MODELS = {"fusion": "ViSongSearch (trộn RRF theo loại truy vấn)", "bm25": "BM25 âm tiết",
+          "bm25_nodiac": "BM25 không dấu", "char5x": "BM25 n-gram ký tự", "ql": "Query likelihood, Dirichlet",
+          "rm3": "RM3 phản hồi giả", "tfidf": "Không gian vector tf-idf",
+          "lsa": "LSA chủ đề ẩn", "boolean": "Boolean AND/OR/NOT",
+          "pagerank": "BM25 + PageRank", "interleave": "So sánh xen kẽ: ViSongSearch vs BM25"}
 FUNCTION_KINDS = {"V_REQ", "N_SONG", "N_SINGER", "P_BY", "P_HAS", "P_ABOUT", "P_IN", "WH", "V_SING", "ARTIST", "ADV", "HEDGE"}
 
 
@@ -572,7 +572,7 @@ class DemoEngine:
             for _, _, f in kept:
                 vals = f.get(attr)
                 for v in (vals if isinstance(vals, list) else [vals]):
-                    if v is not None and not (attr == "group" and v == "Khác"):
+                    if v is not None and not (attr == "group" and v == "Khác") and v != "(không nhắc)":
                         c[v] += 1
             facet_counts[attr] = dict(c.most_common(max_values))
         n = len(kept)

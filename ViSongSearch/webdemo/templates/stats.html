@@ -6,7 +6,7 @@
   <h1 class="font-serif h2">Thống kê, PageRank và SEO</h1>
   <p class="hero-sub small">Số liệu ghi trên máy bạn khi dùng demo (nhật ký truy vấn, lượt nhấp), cộng với đồ thị liên kết đã thu thập trong file .db.</p>
 
-  <h2 class="h4 section-title" id="log">Nhật ký truy vấn và lượt nhấp <small>SEG 6, SEG 9</small></h2>
+  <h2 class="h4 section-title" id="log">Nhật ký truy vấn và lượt nhấp</h2>
   <div class="row g-3 mb-3">
     <div class="col-6 col-md-2"><div class="kpi"><div class="v">{{ an.queries }}</div><div class="l">truy vấn sau làm sạch ({{ an.raw_queries }} thô)</div></div></div>
     <div class="col-6 col-md-2"><div class="kpi"><div class="v">{{ an.sessions }}</div><div class="l">phiên</div></div></div>
@@ -38,14 +38,14 @@
     </div>
   </div>
 
-  <h2 class="h4 section-title" id="interleave">So sánh xen kẽ (interleaving) <small>SEG 9</small></h2>
+  <h2 class="h4 section-title" id="interleave">So sánh xen kẽ (interleaving)</h2>
   <p class="small mb-1">Chọn mô hình "So sánh xen kẽ" ở trang tìm kiếm: kết quả của ViSongSearch (A) và BM25 (B) được trộn kiểu team-draft,
     bên nào được nhấp nhiều hơn trong một truy vấn thì thắng truy vấn đó.</p>
   <div class="small">{% if wins %}{% for k, v in wins.items() %}<span class="badge badge-soft">{{ {"A": "ViSongSearch thắng", "B": "BM25 thắng", "hòa": "hòa", "không nhấp": "không nhấp"}.get(k, k) }}: {{ v }}</span> {% endfor %}
     {% else %}<span class="text-muted">Chưa có truy vấn nào ở chế độ xen kẽ.</span>{% endif %}
     <a class="ms-2" href="/?q={{ examples.Q1 | urlencode }}&m=interleave">Thử ngay</a></div>
 
-  <h2 class="h4 section-title" id="pagerank">Đồ thị liên kết và PageRank <small>SEG 4, HITS ở SEG 10</small></h2>
+  <h2 class="h4 section-title" id="pagerank">Đồ thị liên kết và PageRank <small>kèm HITS</small></h2>
   <div class="row g-3 mb-2">
     <div class="col-6 col-md-3"><div class="kpi"><div class="v">{{ n(gstats.pages) }}</div><div class="l">trang</div></div></div>
     <div class="col-6 col-md-3"><div class="kpi"><div class="v">{{ n(gstats.edges) }}</div><div class="l">liên kết</div></div></div>
@@ -71,7 +71,7 @@
       {% for p in top_hub %}<div class="small">{{ p.title[:60] }} <span class="text-muted">{{ "%.3f" | format(p.hub) }}</span></div>{% endfor %}</div>
   </div>
 
-  <h2 class="h4 section-title" id="community">Cộng đồng ca sĩ hợp tác <small>lan truyền nhãn trên đồ thị song ca; SEG 11</small></h2>
+  <h2 class="h4 section-title" id="community">Cộng đồng ca sĩ hợp tác <small>lan truyền nhãn trên đồ thị song ca</small></h2>
   <p class="small text-muted">{{ comms.n_artists }} ca sĩ có song ca, {{ comms.n_edges }} cặp hợp tác.</p>
   <div class="row">
     {% for g in comms.communities[:8] %}
@@ -79,10 +79,10 @@
     {% endfor %}
   </div>
 
-  <h2 class="h4 section-title" id="relations">Quan hệ trích từ siêu dữ liệu <small>bộ ba (chủ thể, quan hệ, đối tượng); TMG 14</small></h2>
+  <h2 class="h4 section-title" id="relations">Quan hệ trích từ siêu dữ liệu <small>bộ ba (chủ thể, quan hệ, đối tượng)</small></h2>
   <div class="small">{% for r, c in rel.items() %}<span class="badge badge-soft">{{ r }}: {{ n(c) }}</span> {% endfor %}</div>
 
-  <h2 class="h4 section-title" id="seo">Chấm SEO {{ audits | length }} trang bài hát ngẫu nhiên <small>SEG 8</small></h2>
+  <h2 class="h4 section-title" id="seo">Chấm SEO {{ audits | length }} trang bài hát ngẫu nhiên</h2>
   <div class="row">
     <div class="col-lg-6">
       <table class="table table-sm data"><thead><tr><th>Tiêu chí</th><th class="num">Số trang đạt</th></tr></thead><tbody>
@@ -98,7 +98,7 @@
   <p class="small text-muted">Trang bài hát có title, meta description, một thẻ H1, URL dạng slug, canonical, Open Graph, JSON-LD schema.org;
     máy chủ có <a href="/sitemap.xml">sitemap.xml</a> và <a href="/robots.txt">robots.txt</a>. Tiêu chí "liên kết trỏ vào" lấy từ đồ thị liên kết thật.</p>
 
-  <h2 class="h4 section-title" id="build">Các bước dựng bộ máy tìm kiếm <small>kiến trúc máy tìm kiếm; SEG 2</small></h2>
+  <h2 class="h4 section-title" id="build">Các bước dựng bộ máy tìm kiếm <small>kiến trúc máy tìm kiếm</small></h2>
   <table class="table table-sm data"><thead><tr><th>Bước</th><th class="num">Giây</th></tr></thead><tbody>
   {% for k, v in timing.items() %}<tr><td>{{ k }}</td><td class="num">{{ v }}</td></tr>{% endfor %}
   </tbody></table>

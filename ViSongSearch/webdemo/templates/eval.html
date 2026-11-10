@@ -4,7 +4,7 @@
 {% macro m(x) %}{% if x is number %}{{ "%.3f" | format(x) }}{% else %}–{% endif %}{% endmacro %}
 {% macro p3(x) %}{% if x is number %}{{ "%.1f" | format(100 * x) }}%{% else %}–{% endif %}{% endmacro %}
 <div class="container mt-4 mb-5">
-  <h1 class="font-serif h2">Đánh giá tự động <span class="course">SEG 9</span></h1>
+  <h1 class="font-serif h2">Đánh giá tự động</h1>
   <p class="hero-sub small mb-2">Chạy nền ngay sau khi mở web, trên chính file .db của bạn. Truy vấn test được sinh từ lời bài hát:
     Q1 lấy nguyên một đoạn lời, Q2 bỏ dấu, Q3 thêm lỗi gõ / nghe nhầm. Bài được chia train / dev / test theo cụm bản trùng,
     nên không có bản nào của bài test lọt vào tập dev hay train.</p>
@@ -15,10 +15,10 @@
       {% if ev.started %}<div class="small text-muted">bắt đầu {{ ev.started }}</div>{% endif %}
       {% if ev.seconds %}<div class="small text-muted">chạy hết {{ ev.seconds }} giây</div>{% endif %}
       <div class="small text-muted">Trọng số đang dùng ở trang tìm kiếm: {{ eng.weights_source }}</div>
-    </div>
+</div>
     <div class="progress-log mono mt-2" id="ev-log">{% for line in ev.progress or [] %}<div>{{ line }}</div>{% endfor %}</div>
     {% if ev.status == "lỗi" %}<pre class="small text-danger mt-2">{{ ev.error }}</pre>{% endif %}
-  </div>
+</div>
 
   {% if ev.collection %}
   <div class="row g-3 mb-2">
@@ -26,7 +26,7 @@
     <div class="col-6 col-md-3"><div class="kpi"><div class="v">{{ ev.collection.dev_queries }}</div><div class="l">truy vấn dev để dò trọng số</div></div></div>
     <div class="col-6 col-md-3"><div class="kpi"><div class="v">{{ eng.summary().songs }}</div><div class="l">bài trong kho</div></div></div>
     <div class="col-6 col-md-3"><div class="kpi"><div class="v">12</div><div class="l">hệ thống được so sánh</div></div></div>
-  </div>
+</div>
   <details class="small mb-3"><summary>Xem vài truy vấn test</summary>
     <table class="table table-sm data mt-2"><thead><tr><th>Loại</th><th>Truy vấn</th><th>Bài đúng</th></tr></thead><tbody>
     {% for q in ev.collection.examples %}<tr><td>{{ q.type }}</td><td>{{ q.text }}</td><td>{{ q.song }}</td></tr>{% endfor %}
@@ -35,7 +35,7 @@
   {% endif %}
 
   {% if ev.systems %}
-  <h2 class="h4 section-title" id="systems">So sánh các mô hình <small>MRR@10 theo loại; S@1, R@10, NDCG@10, MAP trên toàn bộ; SEG 7, SEG 9</small></h2>
+  <h2 class="h4 section-title" id="systems">So sánh các mô hình <small>MRR@10 theo loại; S@1, R@10, NDCG@10, MAP trên toàn bộ</small></h2>
   <div class="tbl-wrap">
   <table class="table table-sm data">
     <thead><tr><th>Mô hình</th><th class="num">Q1</th><th class="num">Q2</th><th class="num">Q3</th><th class="num">MRR@10</th>
@@ -53,13 +53,13 @@
     {% endfor %}
     </tbody>
   </table>
-  </div>
+</div>
   <p class="small text-muted">Kiểm định ngẫu nhiên hóa hai phía (5.000 lần hoán vị) trên reciprocal rank từng truy vấn, hiệu chỉnh Holm cho nhiều phép so sánh;
     * là khác biệt có ý nghĩa ở mức 0,05. Mỗi truy vấn chỉ có một cụm bài đúng, nên MAP ở đây bằng MRR không cắt ở 10.</p>
   {% endif %}
 
   {% if ev.tuning %}
-  <h2 class="h4 section-title" id="tuning">Dò trọng số trộn RRF trên tập dev <small>SEG 12, lưới {{ ev.tuning.grid_size }} bộ trọng số cho mỗi loại</small></h2>
+  <h2 class="h4 section-title" id="tuning">Dò trọng số trộn RRF trên tập dev <small>lưới {{ ev.tuning.grid_size }} bộ trọng số cho mỗi loại</small></h2>
   <div class="tbl-wrap">
   <table class="table table-sm data">
     <thead><tr><th>Loại</th><th class="num">Số truy vấn</th>
@@ -73,12 +73,12 @@
     {% endfor %}
     </tbody>
   </table>
-  </div>
+</div>
   <p class="small text-muted">Q4, Q5 không có truy vấn tự sinh nên giữ trọng số đặt tay. Sau khi dò xong, trang tìm kiếm tự dùng trọng số mới.</p>
   {% endif %}
 
   {% if ev.noise_sweep %}
-  <h2 class="h4 section-title" id="noise">Độ bền khi truy vấn có lỗi <small>MRR@10 của truy vấn Q1 khi thêm 0-50% lỗi gõ / nghe nhầm; TMG 01</small></h2>
+  <h2 class="h4 section-title" id="noise">Độ bền khi truy vấn có lỗi <small>MRR@10 của truy vấn Q1 khi thêm 0-50% lỗi gõ / nghe nhầm</small></h2>
   <div class="row">
     <div class="col-lg-8">
       {{ line_chart(noise_x,
@@ -87,33 +87,33 @@
                      ("BM25 khóa phát âm", ev.noise_sweep | map(attribute="phon12") | list),
                      ("ViSongSearch", ev.noise_sweep | map(attribute="fusion_tuned") | list)],
                     640, 270, 0, 1, "{}%", "{:.2f}", "tỉ lệ âm tiết bị làm nhiễu", "MRR@10", "MRR@10 theo tỉ lệ nhiễu") }}
-    </div>
+</div>
     <div class="col-lg-4">
       <table class="table table-sm data"><thead><tr><th>Nhiễu</th><th class="num">BM25</th><th class="num">ký tự</th><th class="num">phát âm</th><th class="num">ViSong</th></tr></thead><tbody>
       {% for r in ev.noise_sweep %}<tr><td>{{ (100 * r.rate) | int }}%</td><td class="num">{{ m(r.bm25) }}</td><td class="num">{{ m(r.char5x) }}</td><td class="num">{{ m(r.phon12) }}</td><td class="num">{{ m(r.fusion_tuned) }}</td></tr>{% endfor %}
       </tbody></table>
-    </div>
-  </div>
+</div>
+</div>
   {% endif %}
 
   {% if ev.adhoc %}
-  <h2 class="h4 section-title" id="adhoc">Truy vấn tên ca sĩ: nhiều bài đúng <small>{{ ev.adhoc.n_queries }} ca sĩ; MAP, P@10, R-precision, đường P-R 11 điểm; SEG 9</small></h2>
+  <h2 class="h4 section-title" id="adhoc">Truy vấn tên ca sĩ: nhiều bài đúng <small>{{ ev.adhoc.n_queries }} ca sĩ; MAP, P@10, R-precision, đường P-R 11 điểm</small></h2>
   <div class="row">
     <div class="col-lg-5">
       <table class="table table-sm data"><thead><tr><th>Hệ thống</th><th class="num">MAP</th><th class="num">P@10</th><th class="num">R-prec</th><th class="num">NDCG@10</th></tr></thead><tbody>
       {% for r in ev.adhoc.rows %}<tr><td>{{ r.system }}</td><td class="num">{{ m(r.MAP) }}</td><td class="num">{{ m(r["P@10"]) }}</td><td class="num">{{ m(r["R-prec"]) }}</td><td class="num">{{ m(r["NDCG@10"]) }}</td></tr>{% endfor %}
       </tbody></table>
       <p class="small text-muted">Bài đúng: mọi bài có tên ca sĩ đó. Ví dụ: {{ ev.adhoc.artists[:6] | join(", ") }}.</p>
-    </div>
+</div>
     <div class="col-lg-7">
       {{ line_chart([0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100], ev.adhoc.pr_curve.items() | list, 600, 260, 0, 1, "{}%", "{:.2f}",
                     "độ phủ (recall)", "độ chính xác nội suy", "Đường precision-recall") }}
-    </div>
-  </div>
+</div>
+</div>
   {% endif %}
 
   {% if ev.classifier %}
-  <h2 class="h4 section-title" id="classifier">Phân loại loại truy vấn <small>Naive Bayes và hồi quy logistic; P/R/F1, ma trận nhầm lẫn, đặc trưng chi²; TMG 03, TMG 04, SEG 10</small></h2>
+  <h2 class="h4 section-title" id="classifier">Phân loại loại truy vấn <small>Naive Bayes và hồi quy logistic; P/R/F1, ma trận nhầm lẫn, đặc trưng chi²</small></h2>
   <p class="small text-muted">Huấn luyện: {% for k, v in ev.classifier.train.items() %}{{ k }} {{ v }}{% if not loop.last %}, {% endif %}{% endfor %}.
     Kiểm tra: {% for k, v in ev.classifier.test.items() %}{{ k }} {{ v }}{% if not loop.last %}, {% endif %}{% endfor %} (Q4, Q5 do LLM viết, phần test).</p>
   <div class="row g-3">
@@ -133,10 +133,10 @@
           {% endfor %}</tr>
         {% endfor %}
         </tbody></table>
-      </div>
-    </div>
+</div>
+</div>
   {% endfor %}
-  </div>
+</div>
   {% if ev.classifier.chi2 %}
   <div class="small mt-2"><b>Đặc trưng có chi² cao nhất của mỗi lớp</b> (n-gram ký tự / từ, ␣ là dấu cách):
     {% for l, feats in ev.classifier.chi2.items() %}<div><span class="d-inline-block" style="width:2.5em">{{ l }}</span><span class="mono">{{ feats | join(" · ") }}</span></div>{% endfor %}</div>
@@ -145,22 +145,22 @@
 
   {% if ev.restoration %}
   {% set rs = ev.restoration %}
-  <h2 class="h4 section-title" id="restoration">Phục hồi dấu như một bài toán dịch máy <small>BLEU-4, độ chính xác âm tiết, oracle n-best; TMG 02, TMG 09</small></h2>
+  <h2 class="h4 section-title" id="restoration">Phục hồi dấu như một bài toán dịch máy <small>BLEU-4, độ chính xác âm tiết, oracle n-best</small></h2>
   <div class="row">
     <div class="col-lg-6">
       <table class="table table-sm data"><thead><tr><th>Mô hình ngôn ngữ</th><th class="num">Đúng từng âm tiết</th><th class="num">Đúng cả câu</th><th class="num">BLEU-4</th></tr></thead><tbody>
       {% for r in rs.rows %}<tr><td>{{ ["", "unigram (dạng hay gặp nhất)", "bigram", "trigram Kneser-Ney"][r.order] }}</td><td class="num">{{ p3(r.syllable_acc) }}</td><td class="num">{{ p3(r.exact) }}</td><td class="num">{{ "%.2f" | format(r.bleu) }}</td></tr>{% endfor %}
       </tbody></table>
       <p class="small">Câu đúng nằm trong 5 cách thêm dấu tốt nhất (oracle@5): <b>{{ p3(rs.oracle5) }}</b> trên {{ rs.n }} câu Q1. {{ rs.note }}</p>
-    </div>
+</div>
     <div class="col-lg-6">
       <table class="table table-sm data"><thead><tr><th>Không dấu</th><th>Mô hình thêm dấu</th><th>Câu gốc</th></tr></thead><tbody>
       {% for e in rs.examples %}<tr><td>{{ e.input }}</td><td>{% if e.output == e.gold %}<span class="ok-mark">✓</span>{% else %}<span class="bad-mark">✗</span>{% endif %} {{ e.output }}</td><td>{{ e.gold }}</td></tr>{% endfor %}
       </tbody></table>
-    </div>
-  </div>
+</div>
+</div>
   {% if rs.spelling %}
-  <h3 class="h6 mt-2">Sửa chính tả theo kênh nhiễu trên {{ rs.spelling.n }} truy vấn Q3 <span class="course tmg">TMG 01</span></h3>
+  <h3 class="h6 mt-2">Sửa chính tả theo kênh nhiễu trên {{ rs.spelling.n }} truy vấn Q3</h3>
   <p class="small mb-1">Tỉ lệ âm tiết đúng: trước khi sửa <b>{{ p3(rs.spelling.syllable_acc_before) }}</b>, sau khi sửa <b>{{ p3(rs.spelling.syllable_acc_after) }}</b>.</p>
   <table class="table table-sm data"><thead><tr><th>Truy vấn có lỗi</th><th>Sau khi sửa</th><th>Câu gốc</th></tr></thead><tbody>
   {% for e in rs.spelling.examples %}<tr><td>{{ e.input }}</td><td>{{ e.output }}</td><td>{{ e.gold }}</td></tr>{% endfor %}
@@ -170,13 +170,13 @@
 
   {% if ev.clustering %}
   {% set cl = ev.clustering %}
-  <h2 class="h4 section-title" id="clustering">Phân cụm chủ đề <small>k-means, phân cấp, DBSCAN trên vector LSA; chọn K bằng silhouette; TMG 06, SEG 10</small></h2>
+  <h2 class="h4 section-title" id="clustering">Phân cụm chủ đề <small>k-means, phân cấp, DBSCAN trên vector LSA; chọn K bằng silhouette</small></h2>
   <div class="row">
     <div class="col-lg-6">
       {{ line_chart(cl.k_choice.rows | map(attribute="k") | list, [("silhouette", cl.k_choice.rows | map(attribute="silhouette") | list)],
                     520, 220, None, None, "K={}", "{:.3f}", "số cụm K", "silhouette (cosine)", "Silhouette theo K") }}
       <p class="small text-muted">Chọn K = {{ cl.k_choice.best_k }} (silhouette cao nhất).</p>
-    </div>
+</div>
     <div class="col-lg-6">
       <table class="table table-sm data"><thead><tr><th>Phương pháp ({{ cl.sample }} bài mẫu)</th><th class="num">Silhouette</th></tr></thead><tbody>
       {% for r in cl.compare %}<tr><td>{{ r.method }}</td><td class="num">{{ m(r.silhouette) }}</td></tr>{% endfor %}
@@ -189,13 +189,13 @@
       {% endif %}
       <div class="small"><b>Tên các chủ đề</b> (từ tf-idf nổi bật của cụm):
         {% for k, v in cl.topics.items() %}<div>{{ v }} <span class="text-muted">· {{ cl.topic_sizes.get(v, 0) }} bài</span></div>{% endfor %}</div>
-    </div>
-  </div>
+</div>
+</div>
   {% endif %}
 
   {% if ev.minhash %}
   {% set mh = ev.minhash %}
-  <h2 class="h4 section-title" id="minhash">Phát hiện bản trùng bằng MinHash <small>so với Jaccard thật trên {{ mh.pairs }} cặp; SEG 3</small></h2>
+  <h2 class="h4 section-title" id="minhash">Phát hiện bản trùng bằng MinHash <small>so với Jaccard thật trên {{ mh.pairs }} cặp</small></h2>
   <div class="row">
     <div class="col-lg-6">
       <p class="small mb-1">Sai số trung bình của ước lượng MinHash (128 hàm băm): <b>{{ "%.4f" | format(mh.mae) }}</b>, lớn nhất {{ "%.4f" | format(mh.max_err) }}.</p>
@@ -205,24 +205,24 @@
       <table class="table table-sm data"><thead><tr><th class="num">Jaccard thật</th><th class="num">Ước lượng MinHash</th></tr></thead><tbody>
       {% for j, e in mh.sample[:8] %}<tr><td class="num">{{ "%.3f" | format(j) }}</td><td class="num">{{ "%.3f" | format(e) }}</td></tr>{% endfor %}
       </tbody></table>
-    </div>
+</div>
     <div class="col-lg-6">
       {{ line_chart(mh.lsh_curve | map(attribute="j") | list, [("xác suất thành ứng viên", mh.lsh_curve | map(attribute="p") | list)],
                     520, 230, 0, 1, "{:.2f}", "{:.2f}", "Jaccard của hai bài", "xác suất LSH đề xuất cặp", "Đường S của LSH") }}
       <p class="small text-muted">Đường S: 1 − (1 − J³)⁴²; cặp có Jaccard 0,5 gần như chắc chắn được đề xuất, rồi được kiểm lại bằng Jaccard thật.</p>
-    </div>
-  </div>
+</div>
+</div>
   {% endif %}
 
   {% if ev.index %}
   {% set c = ev.index.compression %}
-  <h2 class="h4 section-title" id="index">Chỉ mục ngược và nén <small>khoảng cách docid, v-byte, Elias-gamma; SEG 5</small></h2>
+  <h2 class="h4 section-title" id="index">Chỉ mục ngược và nén <small>khoảng cách docid, v-byte, Elias-gamma</small></h2>
   <div class="row g-3">
     <div class="col-6 col-md-3"><div class="kpi"><div class="v">{{ "{:,}".format(c.terms).replace(",", ".") }}</div><div class="l">từ (không dấu)</div></div></div>
     <div class="col-6 col-md-3"><div class="kpi"><div class="v">{{ "{:,}".format(c.postings).replace(",", ".") }}</div><div class="l">mục trong danh sách thẻ</div></div></div>
     <div class="col-6 col-md-3"><div class="kpi"><div class="v">{{ c.ratio_vbyte }}×</div><div class="l">nén bằng v-byte</div></div></div>
     <div class="col-6 col-md-3"><div class="kpi"><div class="v">{{ c.ratio_gamma }}×</div><div class="l">nén bằng Elias-gamma</div></div></div>
-  </div>
+</div>
   <p class="small text-muted mt-2">docid + tf chưa nén {{ "{:,}".format(c.raw_bytes).replace(",", ".") }} byte → v-byte {{ "{:,}".format(c.vbyte_bytes).replace(",", ".") }} byte, gamma {{ "{:,}".format(c.gamma_bytes).replace(",", ".") }} byte.
     Vị trí: {{ "{:,}".format(c.raw_position_bytes).replace(",", ".") }} → {{ "{:,}".format(c.vbyte_position_bytes).replace(",", ".") }} byte.
     Kích thước từ vựng theo bộ phân tích: {% for k, v in ev.index.vocab.items() %}{{ k }} {{ "{:,}".format(v).replace(",", ".") }}{% if not loop.last %}, {% endif %}{% endfor %}.
@@ -236,7 +236,7 @@
     <thead><tr><th>Hệ thống</th>{% for t in ["Q1", "Q2", "Q3", "Q4", "Q5"] %}<th class="num">{{ t }}</th>{% endfor %}<th class="num">Trung bình</th></tr></thead>
     <tbody>{% for r in ev.paper %}<tr><td>{{ r.name }}</td>{% for t in ["Q1", "Q2", "Q3", "Q4", "Q5"] %}<td class="num">{{ m(r[t]) }}</td>{% endfor %}<td class="num"><b>{{ m(r.macro) }}</b></td></tr>{% endfor %}</tbody>
   </table>
-  </div>
+</div>
   {% endif %}
 </div>
 {% endblock %}

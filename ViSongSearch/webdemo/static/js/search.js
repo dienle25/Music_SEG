@@ -126,58 +126,58 @@
           ${x.restorations && x.restorations.length ? html`<span class="chip">thêm dấu: <b>${x.restorations[0].text}</b></span>` : ""}
           <span class="text-muted">${x.model} · ${x.ms} ms</span>
           <span class="ms-auto text-muted">${whyOpen ? "Thu gọn ▲" : "Xem từng bước ▼"}</span>
-        </div>
+</div>
         <div id="why-detail" class="collapse ${whyOpen ? "show" : ""} mt-2">
           <div class="row">
             <div class="col-lg-6">
-              <div class="step"><div class="step-title">1. Nhận loại truy vấn <span class="course tmg">TMG 03-04</span></div>
+              <div class="step"><div class="step-title">1. Nhận loại truy vấn</div>
                 ${proba.map(([t, p]) => html`<div><span class="d-inline-block" style="width:2.2em">${t}</span>
                   <span class="pbar" style="width:${Math.max(2, 120 * p)}px"></span>${pct(p)}</div>`)}
                 <div class="text-muted">Quyết định: ${x.type} (${x.type_source || "bộ phân loại"})${x.content && x.content !== "" ? html`; phần lời: “${x.content}”` : ""}</div>
-              </div>
+</div>
               ${x.restorations && x.restorations.length ? html`
-              <div class="step"><div class="step-title">2. Phục hồi dấu, n-best <span class="course tmg">TMG 02</span><span class="course tmg">TMG 09</span></div>
+              <div class="step"><div class="step-title">2. Phục hồi dấu, n-best</div>
                 ${x.restorations.map((r) => html`<div><span class="pbar" style="width:${Math.max(2, 80 * r.p)}px"></span>${r.text} <span class="text-muted">(p=${r.p})</span></div>`)}
                 <div class="text-muted">Mô hình trigram Kneser-Ney chấm từng cách thêm dấu; BM25 trộn cả 5 cách theo xác suất.</div>
-              </div>` : ""}
+</div>` : ""}
               ${x.spell ? html`
-              <div class="step"><div class="step-title">3. Sửa chính tả theo kênh nhiễu <span class="course tmg">TMG 01</span></div>
+              <div class="step"><div class="step-title">3. Sửa chính tả theo kênh nhiễu</div>
                 <div>Có phải bạn muốn tìm: <b>${x.spell.text}</b></div>
                 <div class="text-muted">${(x.spell.edits || []).map((e) => html`<span class="chip">${e.from} → ${e.to} <i>${e.kind}</i></span>`)}</div>
-              </div>` : ""}
-              <div class="step"><div class="step-title">4. Phân tích câu, dạng logic <span class="course tmg">TMG 11</span><span class="course tmg">TMG 13</span></div>
+</div>` : ""}
+              <div class="step"><div class="step-title">4. Phân tích câu, dạng logic</div>
                 ${x.bracket ? html`<div class="mono">${x.bracket}</div>` : ""}
                 <div>Ý định: ${intentName[(x.slots || {}).intent] || "—"}</div>
                 <div>${slots.map(([k, v]) => html`<span class="chip">${slotName[k] || k}: <b>${slotVal(v)}</b></span>`)}</div>
                 ${x.logic ? html`<div class="mono text-muted">${x.logic}</div>` : ""}
-              </div>
-            </div>
+</div>
+</div>
             <div class="col-lg-6">
               ${(x.wsd && x.wsd.length) || x.expansion ? html`
-              <div class="step"><div class="step-title">5. Nghĩa của từ, mở rộng đồng nghĩa <span class="course tmg">TMG 16</span></div>
+              <div class="step"><div class="step-title">5. Nghĩa của từ, mở rộng đồng nghĩa</div>
                 ${(x.wsd || []).filter((w) => w.ambiguous).slice(0, 3).map((w) => html`<div><b>${w.word}</b>: ${w.gloss}</div>`)}
                 ${x.expansion ? html`<div class="text-muted">Thêm vào truy vấn (trọng số 0,3): ${x.expansion}</div>` : ""}
-              </div>` : ""}
+</div>` : ""}
               ${(x.entities && x.entities.length) || (x.timex && x.timex.length) ? html`
-              <div class="step"><div class="step-title">6. Thực thể và thời gian trong câu <span class="course tmg">TMG 14</span><span class="course tmg">TMG 15</span></div>
+              <div class="step"><div class="step-title">6. Thực thể và thời gian trong câu</div>
                 ${(x.entities || []).map((e) => html`<span class="chip">${e}</span>`)}
                 ${(x.timex || []).map((t) => html`<span class="chip">${t}</span>`)}
-              </div>` : ""}
+</div>` : ""}
               ${x.runs && x.runs.length ? html`
-              <div class="step"><div class="step-title">7. Trộn các danh sách xếp hạng (RRF) <span class="course">SEG 7</span><span class="course">SEG 12</span></div>
+              <div class="step"><div class="step-title">7. Trộn các danh sách xếp hạng (RRF)</div>
                 <table class="table table-sm mb-1"><thead><tr><th>Danh sách</th><th class="text-end">Trọng số</th><th>3 bài đầu</th></tr></thead>
                 <tbody>${x.runs.map((r) => html`<tr class="${r.weight > 0 ? "" : "text-muted"}"><td>${r.name}</td><td class="text-end">${r.weight}</td><td>${(r.top || []).join(" · ")}</td></tr>`)}</tbody></table>
                 <div class="text-muted">Trọng số của loại ${x.type}: ${x.weights_source}.</div>
-              </div>` : ""}
+</div>` : ""}
               ${x.boosts && Object.keys(x.boosts).length ? html`
               <div class="step"><div class="step-title">8. Điểm cộng theo ràng buộc của câu</div>
                 ${Object.entries(x.boosts).map(([k, n]) => html`<span class="chip">${k}: ${n} bài</span>`)}
-              </div>` : ""}
+</div>` : ""}
               <div class="text-muted">Phân tích câu ${x.ms_analyze} ms, tổng ${x.ms} ms.</div>
-            </div>
-          </div>
-        </div>
-      </div>`;
+</div>
+</div>
+</div>
+</div>`;
   }
 
   // ------------------------------------------------------------------ các widget
@@ -219,20 +219,20 @@
             <span class="rank">#${hit.rank}${hit.team ? " · " + (hit.team === "A" ? "ViSongSearch" : "BM25") : ""}</span>
             <h6 class="text-primary fw-light font-letter-spacing-loose mb-0 pe-4">
               <a href="${hit.click}">${components.Highlight({ hit, attribute: "title" })}</a>
-            </h6>
+</h6>
             <div>của <a role="button" class="clickable-search-term" data-q="${hit.artists && hit.artists[0] ? hit.artists[0] : hit.artist}">${components.Highlight({ hit, attribute: "artist" })}</a></div>
             <div class="snippet">${components.Snippet({ hit, attribute: "lyrics" })}</div>
             <div class="meta-badges mt-2">
               <span class="badge ${moodClass(hit.mood)}">${hit.mood}</span>
               ${(hit.time_tags || []).slice(0, 2).map((t) => html`<span class="badge badge-soft">${t}</span>`)}
               ${hit.versions > 1 ? html`<span class="badge badge-soft" title="Các bản của cùng bài, gom bằng MinHash">${hit.versions} phiên bản</span>` : ""}
-            </div>
+</div>
             <div class="mt-auto d-flex justify-content-between align-items-end small text-muted pt-2">
               <span title="Thứ hạng PageRank trong đồ thị liên kết đã thu thập">PageRank top ${Math.max(1, 100 - hit.pagerank_pct)}%</span>
               <a href="${hit.url}" target="_blank" rel="noopener nofollow" title="Trang gốc">
                 <img src="/static/img/generic_song_link_icon.svg" alt="Trang gốc ${hit.source}" height="13" /> ${hit.source}</a>
-            </div>
-          </div>`,
+</div>
+</div>`,
         empty: (data, { html }) => html`<div class="mt-3">Không tìm thấy bài nào cho <q>${data.query}</q>.
             Thử bỏ bớt bộ lọc, gõ ít chữ hơn, hoặc hỏi <a href="/tro-ly">trợ lý</a>.</div>`,
       },

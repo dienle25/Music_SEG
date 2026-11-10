@@ -37,14 +37,37 @@ from .spelling import edit_distance
 from .store import Store
 
 BASE_URL = os.environ.get("VISONG_BASE_URL", "http://127.0.0.1:8000")
+CHAPTER_REF = re.compile(r"\s*\((?=[^()]*\b(?:SEG|TMG) ?\d)(?:SEG|TMG|[\d.,;\s\-–])+\)")
 # dòng ghi chú của trang hợp âm còn sót trong lời (không đưa vào đoạn trích)
 NOISE_LINE = re.compile(r"(vòng hòa thanh|vòng hoà thanh|hợp âm|capo|^\s*(tone|intro|outro|điệu|nhịp)\s*:)", re.I)
+
+
+def asset_version() -> str:
+    """Dấu vân tay của thư mục static (thời gian sửa và cỡ file)."""
+    import hashlib
+    h = hashlib.md5()
+    for root, _, files in os.walk(os.path.join(HERE, "static")):
+        for f in sorted(files):
+            st = os.stat(os.path.join(root, f))
+            h.update(f"{f}{st.st_mtime_ns}{st.st_size}".encode())
+    return h.hexdigest()[:8]
 
 
 def create_app(engine, evaluator, runtime: str) -> FastAPI:
     app = FastAPI(title="ViSongSearch demo", docs_url="/api/docs", redoc_url=None)
     app.mount("/static", StaticFiles(directory=os.path.join(HERE, "static")), name="static")
+
+    @app.middleware("http")
+    async def static_no_cache(request: Request, call_next):
+        """File tĩnh: bắt trình duyệt hỏi lại máy chủ mỗi lần (trả 304 nếu chưa đổi), không dùng bản cũ đã lưu."""
+        resp = await call_next(request)
+        if request.url.path.startswith("/static/"):
+            resp.headers["Cache-Control"] = "no-cache"
+        return resp
     tpl = Jinja2Templates(directory=os.path.join(HERE, "templates"))
+    tpl.env.globals["v"] = asset_version()      # đổi khi file tĩnh đổi, để trình duyệt tải bản mới
+    # bỏ số chương trong ngoặc, ví dụ "(SEG 3.8, 4.1)", ở mọi chuỗi in ra trang (tên bước dựng lưu trong bộ nhớ đệm...)
+    tpl.env.finalize = lambda x: CHAPTER_REF.sub("", x) if type(x) is str else x
     tpl.env.globals.update(models=MODELS, type_names=TYPE_NAMES, summary=engine.summary, base_url=BASE_URL,
                            slug=seo.slug, line_chart=charts.line_chart, bar_chart=charts.bar_chart)
     tpl.env.filters["pct"] = lambda x: f"{100 * x:.1f}%" if isinstance(x, (int, float)) else "–"
